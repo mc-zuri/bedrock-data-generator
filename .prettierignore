@@ -1,0 +1,8 @@
+# Generated / vendored Minecraft data — huge trees, never format
+servers/
+data/
+node_modules/
+dist/
+build/
+out/
+output/
