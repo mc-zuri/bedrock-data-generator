@@ -5,7 +5,9 @@
     "format": "prettier --write \"src/**/*.{ts,js,json}\"",
     "format:check": "prettier --check \"src/**/*.{ts,js,json}\"",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "start": "node main.ts",
+    "capture-steve": "node captureSteve.ts"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",

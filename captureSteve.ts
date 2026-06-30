@@ -32,7 +32,12 @@ const pickSkin = (o: any) => Object.fromEntries(SKIN_KEYS.filter((k) => k in o).
 
 const arg = (name: string, def: string) => {
   const a = process.argv.find((x) => x.startsWith(`--${name}=`));
-  return a ? a.slice(name.length + 3) : def;
+
+  if (!a) {
+    throw new Error(`missing --${name}= parameter`);
+  }
+
+  return a.slice(name.length + 3);
 };
 
 async function main() {
