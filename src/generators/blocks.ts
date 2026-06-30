@@ -1,6 +1,6 @@
 import assert from "node:assert";
 import stringify from "json-stringify-pretty-compact";
-import { strip } from "../utils.ts";
+import { BLOCK_ORDER, orderKeys, shortenFloats, strip } from "../utils.ts";
 import { Generator } from "./generator.ts";
 
 function sequential(data: number[]): boolean {
@@ -85,6 +85,7 @@ export class BlocksGenerator extends Generator {
       usedIds.add(entry.id);
     }
 
-    this.publish("blocks.json", stringify(fin, { indent: 2, maxLength: 200 }));
+    const ordered = fin.map((entry) => orderKeys(entry, BLOCK_ORDER));
+    this.publish("blocks.json", stringify(shortenFloats(ordered), { indent: 2, maxLength: 200 }));
   }
 }

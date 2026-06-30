@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { ExternalServer } from "./src/server/external-server.ts";
 import { versions } from "./src/versions.ts";
+import { normalizeSteveSkin } from "./src/steve-normalize.ts";
 
 const rootDir = import.meta.dirname;
 
@@ -79,7 +80,7 @@ async function main() {
           return;
         }
         fs.mkdirSync(path.dirname(steveFile), { recursive: true });
-        fs.writeFileSync(steveFile, JSON.stringify(pickSkin(skin), null, 2));
+        fs.writeFileSync(steveFile, JSON.stringify(normalizeSteveSkin(pickSkin(skin)), null, 2));
         captured = true;
         clearTimeout(timer);
         console.log(`✓ captured skin (SkinId=${skin.SkinId}) -> ${steveFile}`);

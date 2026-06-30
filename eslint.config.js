@@ -21,5 +21,10 @@ export default tseslint.config(
   },
   // Runs Prettier as an ESLint rule and disables conflicting stylistic rules.
   // Must be last so it overrides formatting rules from the configs above.
-  prettierRecommended
+  prettierRecommended,
+  {
+    rules: {
+      "prettier/prettier": ["error", { endOfLine: "auto" }],
+    },
+  }
 );

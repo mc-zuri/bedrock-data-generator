@@ -1,4 +1,4 @@
-import { strip } from "../utils.ts";
+import { ITEM_ORDER, ITEM_VARIATION_ORDER, orderKeys, shortenFloats, strip } from "../utils.ts";
 import { Generator } from "./generator.ts";
 
 function titleCase(str: string): string {
@@ -120,6 +120,11 @@ export class ItemsGenerator extends Generator {
       }
     }
 
-    this.publishJson("items.json", ret);
+    const ordered = ret.map((item) => {
+      const o = orderKeys(item, ITEM_ORDER);
+      if (Array.isArray(o.variations)) o.variations = o.variations.map((v: any) => orderKeys(v, ITEM_VARIATION_ORDER));
+      return o;
+    });
+    this.publishJson("items.json", shortenFloats(ordered));
   }
 }

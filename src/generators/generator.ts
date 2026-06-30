@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { dataPath, outputPath } from "../utils.ts";
+import { dataPath, mcDataDir, outputPath } from "../utils.ts";
 
 // minecraft-data shares java resource files across versions via dataPaths.json (e.g. pc/1.20.3's
 // biomes physically live in pc/1.20.2). java-data.ts downloads into that same layout, so generators
@@ -35,7 +35,7 @@ export abstract class Generator {
 
   async run(): Promise<void> {
     fs.mkdirSync(outputPath(this.bedrockVersion), { recursive: true });
-    fs.mkdirSync(outputPath("minecraft-data", this.bedrockVersion), { recursive: true });
+    fs.mkdirSync(mcDataDir("bedrock", this.bedrockVersion), { recursive: true });
     const result = await this.generate();
     if (result === "skip") return;
     console.log("    ✔ ok ->", this.bedrockVersion, this.label);
@@ -62,7 +62,7 @@ export abstract class Generator {
   }
 
   protected mcDataFile(...parts: string[]): string {
-    return outputPath("minecraft-data", this.bedrockVersion, ...parts);
+    return mcDataDir("bedrock", this.bedrockVersion, ...parts);
   }
 
   protected write(absPath: string, content: string | Buffer): void {

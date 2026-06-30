@@ -1,8 +1,11 @@
 import fs from "node:fs";
 import assert from "node:assert";
 import nbt from "prismarine-nbt";
-import stringify from "json-stringify-pretty-compact";
-import { strip } from "../utils.ts";
+import { customJSONStringify, shortenFloats, strip } from "../utils.ts";
+
+// blocks: one block per line, its state-index array inline; shapes: one shape per line, its
+// coordinate arrays inline (block index arrays can be long — 10000 keeps them on one line).
+const COLLISION_FORMAT = { indent: "\t", inline: { blockArrays: true, shapeArrays: true, maxLength: 10000 } } as const;
 import { Generator } from "./generator.ts";
 
 function sequential(data: (string | number)[]): boolean {
@@ -98,7 +101,7 @@ export class CollisionGenerator extends Generator {
     // Air (and any empty collisionShape) collapses onto index 0; force it to the empty shape.
     shapes[0] = [];
 
-    this.publish("blockCollisionShapes.json", stringify({ blocks: out, shapes }, { indent: "\t", maxLength: 19999 }));
+    this.publish("blockCollisionShapes.json", customJSONStringify(shortenFloats({ blocks: out, shapes }), COLLISION_FORMAT));
   }
 
   private async generateV1() {
@@ -202,7 +205,7 @@ export class CollisionGenerator extends Generator {
       if (next.length < keys.length) throw Error();
     }
 
-    this.publish("blockCollisionShapes.json", stringify({ blocks: out, shapes: col }, { indent: "\t", maxLength: 19999 }));
+    this.publish("blockCollisionShapes.json", customJSONStringify(shortenFloats({ blocks: out, shapes: col }), COLLISION_FORMAT));
   }
 
   private async generateV2() {
@@ -260,7 +263,7 @@ export class CollisionGenerator extends Generator {
       collisions.shapes[key] = value;
     }
 
-    this.publish("blockCollisionShapes.json", stringify(collisions, { indent: "\t", maxLength: 19999 }));
+    this.publish("blockCollisionShapes.json", customJSONStringify(shortenFloats(collisions), COLLISION_FORMAT));
   }
 }
 

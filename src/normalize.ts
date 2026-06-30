@@ -7,7 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import stringify from "json-stringify-pretty-compact";
-import { outputPath } from "./utils.ts";
+import { BLOCK_ORDER, ITEM_ORDER, ITEM_VARIATION_ORDER, customJSONStringify, shortenFloats, mcDataDir } from "./utils.ts";
 
 type Spec = { kind: "keep" } | { kind: "array"; items: Spec } | { kind: "map"; values: Spec } | { kind: "objectOrArray"; object: Spec } | { kind: "object"; fields: string[]; nested?: Record<string, Spec> };
 
@@ -28,8 +28,10 @@ function map(values: Spec): Spec {
 function compact2(value: unknown): string {
   return stringify(value, { indent: 2, maxLength: 200 });
 }
-function compactTab(value: unknown): string {
-  return stringify(value, { indent: "\t", maxLength: 19999 });
+// blockCollisionShapes: shorten each coordinate to its shortest float32 round-trip form, then format
+// one block / one shape per line with leaf arrays inline (matches the generator).
+function collisionShapes(value: unknown): string {
+  return customJSONStringify(shortenFloats(value), { indent: "\t", inline: { blockArrays: true, shapeArrays: true, maxLength: 10000 } });
 }
 function json2(value: unknown): string {
   return JSON.stringify(value, null, 2);
@@ -45,18 +47,14 @@ const RECIPE = object(["type", "id", "name", "ingredients", "input", "output", "
 
 const REGISTRY: Record<string, FileSpec> = {
   "blocks.json": {
-    serialize: compact2,
-    spec: array(
-      object(["id", "name", "displayName", "hardness", "resistance", "stackSize", "diggable", "material", "transparent", "emitLight", "filterLight", "defaultState", "minStateId", "maxStateId", "harvestTools", "drops", "boundingBox"])
-    ),
+    // float-shorten so float32 values (e.g. hardness) collapse to their shortest round-trip form.
+    serialize: (v) => compact2(shortenFloats(v)),
+    spec: array(object([...BLOCK_ORDER])),
   },
   "items.json": {
-    serialize: json2,
-    spec: array(
-      object(["id", "stackSize", "name", "displayName", "nbt", "version", "metadata", "variations", "enchantCategories", "repairWith", "maxDurability", "durability", "blockStateId"], {
-        variations: array(object(["metadata", "id", "displayName", "name", "stackSize", "enchantCategories", "maxDurability"])),
-      })
-    ),
+    // float-shorten so float32 values (e.g. nbt component floats) collapse to their shortest round-trip form.
+    serialize: (v) => json2(shortenFloats(v)),
+    spec: array(object([...ITEM_ORDER], { variations: array(object([...ITEM_VARIATION_ORDER])) })),
   },
   "biomes.json": {
     serialize: json2,
@@ -79,7 +77,7 @@ const REGISTRY: Record<string, FileSpec> = {
     spec: map({ kind: "objectOrArray", object: RECIPE }),
   },
   "blockCollisionShapes.json": {
-    serialize: compactTab,
+    serialize: collisionShapes,
     spec: object(["blocks", "visualBlocks", "shapes", "dynamicShapes"], { blocks: KEEP, visualBlocks: KEEP, shapes: KEEP, dynamicShapes: KEEP }),
   },
 };
@@ -124,7 +122,7 @@ function reorder(value: any, spec: Spec, location: string): any {
 }
 
 export function normalize(): { changed: string[]; checked: number } {
-  const base = outputPath("minecraft-data");
+  const base = mcDataDir("bedrock");
   const changed: string[] = [];
   let checked = 0;
   for (const version of fs.readdirSync(base)) {
