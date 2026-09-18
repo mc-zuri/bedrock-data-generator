@@ -56,7 +56,7 @@ page map to these origins:
 | **Geyser mappings**           | `GeyserMC/mappings` @ pinned commit                    | `bedrock/<ver>/items_mappings.json`, `generator_blocks_v1.json`, `collision.json` / `collisions.nbt`                                                  | `src/geyser-mappings.ts`        |
 | **Geyser mappings-generator** | `GeyserMC/mappings-generator` @ pinned `mg` commit     | `bedrock/<ver>/generator_blocks_v2.json`                                                                                                              | `src/geyser-mappings.ts`        |
 | **Java minecraft-data**       | `mc-zuri/node-minecraft-data` @ `bedrock-v2`           | `java/<dir>/{biomes,blocks,entities,items}.json`                                                                                                      | `src/java-data.ts`              |
-| **PyMCTranslate**             | `gentlegiantJGC/PyMCTranslate` @ pinned commit         | `pymctranslate/{java_26_2,bedrock_26_30}.json`                                                                                                        | `src/pymctranslate.ts`          |
+| **PyMCTranslate**             | `Amulet-Team/PyMCTranslate` @ pinned commit         | `pymctranslate/{java_26_3,bedrock_26_50}.json`                                                                                                        | `src/pymctranslate.ts`          |
 | **Vanilla resource pack**     | Shipped inside each BDS download                       | `servers/<ver>/resource_packs/vanilla/texts/en_US.lang`                                                                                               | server download step            |
 
 ## Coverage

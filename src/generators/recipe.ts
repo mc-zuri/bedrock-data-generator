@@ -6,7 +6,7 @@ export class RecipesGenerator extends Generator {
   protected readonly label = "recipes.json";
 
   protected async generate() {
-    const craftingData = this.readJson(this.bedrockData("crafting_data.json"));
+    const craftingData = normalizeCraftingData(this.readJson(this.bedrockData("crafting_data.json")));
     const itemstates = this.readJson(this.bedrockData("item_registry.json")).itemstates;
     const uniqueTypes = new Set();
 
@@ -18,7 +18,7 @@ export class RecipesGenerator extends Generator {
     const makeOutputItem = (_it: any) => {
       const it = typeof _it === "string" ? JSON.parse(_it) : _it;
       if (it.type === "item_tag") return { tag: strip(it.tag), count: it.count ?? 1 };
-      if (it.type === "complex_alias") return { name: strip(it.name), count: it.count ?? 1 };
+      if (it.type === "complex_alias") return { name: strip(it.name), metadata: it.metadata, count: it.count ?? 1 };
       const name = itemRuntimeId2String[it.network_id];
       if (!name) throw Error("unknown item network_id " + it.network_id);
       return {
@@ -86,6 +86,57 @@ export class RecipesGenerator extends Generator {
 
     this.publish("recipes.json", stringify(final, { indent: 2, maxLength: 200 }));
   }
+}
+
+// 1.26.40 restructured CraftingDataPacket: the single tagged `recipes` list became eight typed
+// per-category arrays, shaped ingredients became a FLAT row-major list (width x height, with an
+// explicit count) instead of a nested grid, and each ingredient became a Cereal tagged descriptor.
+// Without this the generator iterates a `recipes` key that no longer exists and emits an empty
+// recipes.json. Normalising back to the legacy shape keeps the rest of this file version-agnostic.
+const LEGACY_TYPE: Record<string, string> = {
+  shaped: "shaped",
+  shapeless: "shapeless",
+  multi: "multi",
+  user_data_shapeless: "shulker_box", // enum slot 5 — "shulker_box" is just the old label for it
+  shapeless_chemistry: "shapeless_chemistry",
+  shaped_chemistry: "shaped_chemistry",
+  smithing_transform: "smithing_transform",
+  smithing_trim: "smithing_trim",
+};
+
+/** A 1.26.40 ingredient -> the legacy `{type, ...}` form the rest of this generator understands. */
+function legacyIngredient(c: any): any {
+  const outer = c?.descriptor ?? {};
+  const count = c?.count ?? 1;
+  // present === 0 means an empty grid slot; the legacy shape spelt that "invalid".
+  if (!outer.present) return { type: "invalid", count: 0 };
+  const inner = outer.descriptor ?? {};
+  const value = inner.value ?? {};
+  if (inner.type_name === "item_tag") return { type: "item_tag", tag: value.tag, count };
+  if (inner.type_name === "molang") return { type: "molang", expression: value.expression, count };
+  // "name" descriptors carry the item name directly, which is what complex_alias meant before.
+  return { type: "complex_alias", name: value.name, count, metadata: c?.aux };
+}
+
+function normalizeCraftingData(cd: any): any {
+  if (cd?.recipes) return cd; // already the legacy shape
+  const recipes: any[] = [];
+  for (const [key, type] of Object.entries(LEGACY_TYPE)) {
+    for (const r of cd?.[key] ?? []) {
+      const recipe: any = { ...r };
+      if (Array.isArray(r.input)) {
+        const ing = r.input.map(legacyIngredient);
+        // Shaped recipes must keep their grid: re-nest the flat row-major list into `height` rows
+        // of `width`. Shapeless ones stay a flat list.
+        recipe.input =
+          r.width && r.height
+            ? Array.from({ length: r.height }, (_, y) => ing.slice(y * r.width, (y + 1) * r.width))
+            : ing;
+      }
+      recipes.push({ type, recipe });
+    }
+  }
+  return { ...cd, recipes };
 }
 
 function tfi(inp: any): string {

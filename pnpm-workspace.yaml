@@ -1,2 +1,22 @@
 allowBuilds:
   raknet-native: true
+
+# minecraft-data comes in through bedrock-protocol (^3.0.0); pin it to a release that knows
+# bedrock 1.26.40 / 1.26.45.
+overrides:
+  minecraft-data: 3.116.0
+
+# 1.26.50 ships protocol 2193, which minecraft-data 3.116.0 does not know yet — without these the
+# export dies with "Unsupported version 1.26.50" before it ever connects.
+#
+#   minecraft-data   registers bedrock 1.26.50 (dataPaths.json, common/versions.json,
+#                    common/protocolVersions.json, bedrock/1.26.50/, AND the generated data.js —
+#                    miss data.js and mcData() returns null, which surfaces much later as
+#                    "Cannot read properties of null (reading 'protocol')"). The 1.26.50
+#                    protocol.json is taken from ../bedrock-data-extractor's patch.
+#   bedrock-protocol sends the enum NAME alongside the index in ResourcePackClientResponsePacket,
+#                    which 1.26.40+ requires. Harmless on older protocols — their schemas simply do
+#                    not declare that field. Shared with ../bedrock-data-extractor.
+patchedDependencies:
+  minecraft-data@3.116.0: patches/minecraft-data@3.116.0.patch
+  bedrock-protocol@3.57.0: patches/bedrock-protocol@3.57.0.patch

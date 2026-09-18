@@ -10,6 +10,13 @@ import { type ExternalServerInstance } from "./external-server.ts";
 
 const CAPTURE_TIMEOUT_MS = 120_000;
 
+// DeviceOS must be one the server still accepts. 1.26.43 added an allow-list to the
+// ConnectionRequest check - rejecting the retired platforms: 0 Unknown,
+// 5 GearVR, 6 Hololens, 7 Win10, 10 TVOS, 14 WindowsPhone. bedrock-protocol defaults to 7, so from
+// 1.26.43 on the server refuses the login with "Connection Request invalid." and NO local decode
+// error, which surfaces as a bare capture timeout. 8 (Win32) is accepted; so are 1-4, 9, 11-13, 15.
+const loginClientData = { skinData: { DeviceOS: 8 } };
+
 // JSON.stringify can't serialise bigint (packet fields such as runtime ids may be bigint).
 const toJson = (obj: any) => JSON.stringify(obj, (_k, v) => (typeof v?.valueOf?.() === "bigint" ? v.toString() : v), 2);
 
@@ -82,16 +89,30 @@ export class PacketExporter {
         username: "ex",
         offline: true,
         skipPing: true,
+        ...loginClientData,
       });
 
-      const timer = setTimeout(() => {
+      let settled = false;
+      const decodeFailures = new Set<string>();
+
+      const closeQuietly = () => {
+        // close() calls removeAllListeners(), but packets already queued can still fail to decode
+        // afterwards — and an 'error' with no listener takes the whole process down. Re-arm a no-op.
         client.close();
+        client.on("error", () => {});
+      };
+
+      const timer = setTimeout(() => {
+        settled = true;
+        closeQuietly();
         reject(new Error(`timeout; missing packets: ${[...remaining].join(", ")}`));
       }, CAPTURE_TIMEOUT_MS);
 
       const finish = (err?: Error) => {
+        if (settled) return;
+        settled = true;
         clearTimeout(timer);
-        client.close();
+        closeQuietly();
         if (err) {
           reject(err);
         } else {
@@ -99,7 +120,17 @@ export class PacketExporter {
         }
       };
 
-      client.on("error", (err: any) => finish(err instanceof Error ? err : new Error(String(err))));
+      // A new build can change the shape of packets we do NOT consume, and killing the capture over
+      // one of those loses every packet we do need. 1.26.40's start_game is exactly that case. Record
+      // the failure and keep going; the timeout above is the real "we never got it" signal.
+      client.on("error", (err: any) => {
+        const e = err instanceof Error ? err : new Error(String(err));
+        const where = /at Object\.(packet_\w+)/.exec(e.stack ?? "")?.[1] ?? "unknown";
+        if (!decodeFailures.has(where)) {
+          decodeFailures.add(where);
+          console.log(`  [decode-failure] ${version} ${where}: ${e.message.split("\n")[0]}`);
+        }
+      });
 
       client.on("packet", ({ data: { name, params } }: any) => {
         const def = byPacket.get(name);

@@ -1,13 +1,14 @@
 import nbt from "prismarine-nbt";
 import { dataPath, strip } from "../utils.ts";
 import { Generator } from "./generator.ts";
+import { JAVA_SNAPSHOT, BEDROCK_SNAPSHOT } from "../pymctranslate.ts";
 
 export class BiomeMapGenerator extends Generator {
   protected readonly label = "biome";
 
   protected async generate() {
-    const javaData = this.readJson(dataPath("pymctranslate", "java_26_2.json"));
-    const bedrockData = this.readJson(dataPath("pymctranslate", "bedrock_26_30.json"));
+    const javaData = this.readJson(dataPath("pymctranslate", `${JAVA_SNAPSHOT}.json`));
+    const bedrockData = this.readJson(dataPath("pymctranslate", `${BEDROCK_SNAPSHOT}.json`));
     const present = this.versionBiomes();
 
     const j2b: Record<string, any> = {};

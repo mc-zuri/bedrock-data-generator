@@ -27,7 +27,7 @@ matched Java biome's fields, then has temperature/rainfall overwritten from the 
 ## biomeMap (intermediate, not in minecraft-data output)
 
 `biomeMap.ts` produces `biome/Biomes.json` (bedrock name → id), `Java2Bedrock.json`, and
-`Bedrock2Java.json` using PyMCTranslate's universal biome tables (`java_26_2` + `bedrock_26_30`
+`Bedrock2Java.json` using PyMCTranslate's universal biome tables (`java_26_3` + `bedrock_26_50`
 snapshots), filtered to the biomes actually present in this version's `biome_definition_list.json`.
 
 ## Notes

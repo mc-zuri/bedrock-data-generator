@@ -61,7 +61,7 @@ async function main() {
     host: "0.0.0.0",
     port,
     offline: true,
-    username: "McZuri5840",
+    username: "McZuri",
     profilesFolder: "C:/git/profiles",
     destination: { host: "127.0.0.1", port: server.serverPort, offline: true },
   } as any);
@@ -86,6 +86,12 @@ async function main() {
         console.log(`✓ captured skin (SkinId=${skin.SkinId}) -> ${steveFile}`);
         resolve();
       });
+    });
+
+    (relay as any).on("error", (err: Error) => {
+      if (captured) return;
+      clearTimeout(timer);
+      reject(err);
     });
 
     relay.listen();

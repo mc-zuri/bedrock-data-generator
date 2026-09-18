@@ -8,9 +8,11 @@ import { join } from "node:path";
 import { rootDir } from "./utils.ts";
 import { download, githubRaw } from "./download.ts";
 
-const REPO = "gentlegiantJGC/PyMCTranslate";
-const REF = "dc68d5426dd613d39ecc197c05a72fff81b40f6b";
-const SNAPSHOTS = ["java_26_2", "bedrock_26_30"];
+const REPO = "Amulet-Team/PyMCTranslate";
+const REF = "b05862d585cd06b6b49a693d6cfe8c2562a6ab26";
+export const JAVA_SNAPSHOT = "java_26_3";
+export const BEDROCK_SNAPSHOT = "bedrock_26_50";
+const SNAPSHOTS = [JAVA_SNAPSHOT, BEDROCK_SNAPSHOT];
 
 function snapshotFile(snapshot: string): string {
   return join(rootDir(), "data", "pymctranslate", snapshot + ".json");

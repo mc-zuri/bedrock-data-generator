@@ -34,3 +34,4 @@ servers/
 /output/*/blocks.json
 /output/*/entities.json
 /data/pymctranslate/*
+/minecraft-data/*

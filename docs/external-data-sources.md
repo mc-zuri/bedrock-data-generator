@@ -147,9 +147,9 @@ files under their canonical dir; `data/java/dataPaths.json` is saved so the gene
 |               |                                                                                                                                                            |
 | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **What**      | Universal biome translation tables (numeric ids + Java↔Bedrock biome mapping).                                                                             |
-| **Origin**    | GitHub `gentlegiantJGC/PyMCTranslate`, pinned commit.                                                                                                      |
+| **Origin**    | GitHub `Amulet-Team/PyMCTranslate`, pinned commit.                                                                                                      |
 | **Pinned by** | A single fixed commit in [`src/pymctranslate.ts`](../src/pymctranslate.ts) (latest snapshot is a superset of older ones, so one pair serves all versions). |
-| **Lands in**  | `data/pymctranslate/java_26_2.json`, `data/pymctranslate/bedrock_26_30.json` (the `__biome_data__.json` snapshots).                                        |
+| **Lands in**  | `data/pymctranslate/java_26_3.json`, `data/pymctranslate/bedrock_26_50.json` (the `__biome_data__.json` snapshots).                                        |
 
 **Feeds:** `biomes.json` (Bedrock biome ids + the intermediate biome J2B/B2J maps from `biomeMap.ts`).
 

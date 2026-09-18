@@ -20,6 +20,10 @@ export interface ExternalServerOptions {
   "max-players"?: number;
   "online-mode"?: boolean;
   "allow-list"?: boolean;
+  // 1.26.50 flipped the shipped default to "nethernet", a WebRTC transport bedrock-protocol does
+  // not speak. A nethernet server never completes the RakNet handshake, so the client fails with
+  // "Connect timed out" BEFORE login — which looks like an unreachable server, not a config issue.
+  transport?: "raknet" | "nethernet";
   "server-port"?: number;
   "server-portv6"?: number;
   "enable-lan-visibility"?: boolean;
@@ -93,6 +97,7 @@ export const defaultExternalServerOptions: ExternalServerOptions = {
   "player-rewind-min-correction-delay-ticks": 10000,
   "player-rewind-history-size-ticks": 40,
   "allow-list": false,
+  transport: "raknet",
 } as const;
 
 export interface ExternalServerInstance {

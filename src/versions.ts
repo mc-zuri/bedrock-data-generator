@@ -69,4 +69,6 @@ export const versions: versionData[] = [
   { mcDataVersion: "1.26.10", serverVersion: "1.26.11.1", javaVersion: "1.26.1", javaItemsVersion: "1.21.11", mg: "2c0d798ce8f5a6f435e115911dca85067c529ba8", mappings: "f06bcf04be1b18536189aebfca2bd90673b83ad4" },
   { mcDataVersion: "1.26.20", serverVersion: "1.26.20.5", javaVersion: "1.26.1", javaItemsVersion: "1.26.1", mg: "3742321731d8deaf00e7782b4ce417d0a4c6e486", mappings: "021e45045e00bb65d73477c01052276caf9bf92a" },
   { mcDataVersion: "1.26.30", serverVersion: "1.26.30.5", javaVersion: "1.26.2", mg: "94c21e0ca59a13ab184b2bf7f01e1a216c344216", mappings: "0841080639a3ca3154e77dc2ad4f10474f9dc9bb" },
+  { mcDataVersion: "1.26.40", serverVersion: "1.26.40.8", javaVersion: "1.26.2", mg: "94c21e0ca59a13ab184b2bf7f01e1a216c344216", mappings: "0841080639a3ca3154e77dc2ad4f10474f9dc9bb" },
+  { mcDataVersion: "1.26.50", serverVersion: "1.26.51.1", javaVersion: "1.26.3", javaItemsVersion: "1.26.2", mg: "94c21e0ca59a13ab184b2bf7f01e1a216c344216", mappings: "0841080639a3ca3154e77dc2ad4f10474f9dc9bb" },
 ];

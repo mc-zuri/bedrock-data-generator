@@ -4,6 +4,13 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  minecraft-data: 3.116.0
+
+patchedDependencies:
+  bedrock-protocol@3.57.0: 2c673817784d65f6d69d43a396e731673187b76e13a20371b9dc2e98103bba5d
+  minecraft-data@3.116.0: 595284f9676a00de85efb18a4fe79a218ca118ac629e6301e5e91eaea6ad6372
+
 importers:
 
   .:
@@ -16,7 +23,7 @@ importers:
         version: 24.13.2
       bedrock-protocol:
         specifier: 3.57.0
-        version: 3.57.0
+        version: 3.57.0(patch_hash=2c673817784d65f6d69d43a396e731673187b76e13a20371b9dc2e98103bba5d)
       eslint:
         specifier: ^9.39.4
         version: 9.39.4
@@ -411,6 +418,7 @@ packages:
   eslint@9.39.4:
     resolution: {integrity: sha512-XoMjdBOwe/esVgEvLmNsD3IRHkm7fbKIUGvrleloJXUZgDHig2IPWNniv+GwjyJXzuNqVjlr5+4yVUZjycJwfQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
@@ -690,8 +698,8 @@ packages:
     resolution: {integrity: sha512-2gltl3mPBjXC153/w5lNquctlrfgF9GpEe9Xqu+cEPKdV/O0NguTWDVqflTPIjvWSPitUqTfDK1j0/spIFJV9g==}
     hasBin: true
 
-  minecraft-data@3.111.0:
-    resolution: {integrity: sha512-0kKHqNZL/D1IbH7tJXBJ3z7YSn1/ylnWWR7X2zFwtEV+yr23nimItpGjP3o8UaLYrC+OV1gKLFQoew03XvJyoA==}
+  minecraft-data@3.116.0:
+    resolution: {integrity: sha512-2XwQjnAqCdCdhEts6cm1nnmzeeCCbsiAhhuOa6rQOTKceGkwZTE8ZJwO3UeJLwvjEAh8S0/irXN1Xqv/lhceNg==}
 
   minecraft-folder-path@1.2.0:
     resolution: {integrity: sha512-qaUSbKWoOsH9brn0JQuBhxNAzTDMwrOXorwuRxdJKKKDYvZhtml+6GVCUrY5HRiEsieBEjCUnhVpDuQiKsiFaw==}
@@ -1268,12 +1276,12 @@ snapshots:
     dependencies:
       yargs-parser: 21.1.1
 
-  bedrock-protocol@3.57.0:
+  bedrock-protocol@3.57.0(patch_hash=2c673817784d65f6d69d43a396e731673187b76e13a20371b9dc2e98103bba5d):
     dependencies:
       debug: 4.4.3
       jsonwebtoken: 9.0.3
       jsp-raknet: 2.2.0
-      minecraft-data: 3.111.0
+      minecraft-data: 3.116.0(patch_hash=595284f9676a00de85efb18a4fe79a218ca118ac629e6301e5e91eaea6ad6372)
       minecraft-folder-path: 1.2.0
       prismarine-auth: 3.1.1
       prismarine-nbt: 2.8.0
@@ -1728,7 +1736,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  minecraft-data@3.111.0: {}
+  minecraft-data@3.116.0(patch_hash=595284f9676a00de85efb18a4fe79a218ca118ac629e6301e5e91eaea6ad6372): {}
 
   minecraft-folder-path@1.2.0: {}
 
