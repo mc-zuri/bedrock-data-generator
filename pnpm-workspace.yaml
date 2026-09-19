@@ -14,9 +14,7 @@ overrides:
 #                    miss data.js and mcData() returns null, which surfaces much later as
 #                    "Cannot read properties of null (reading 'protocol')"). The 1.26.50
 #                    protocol.json is taken from ../bedrock-data-extractor's patch.
-#   bedrock-protocol sends the enum NAME alongside the index in ResourcePackClientResponsePacket,
-#                    which 1.26.40+ requires. Harmless on older protocols — their schemas simply do
-#                    not declare that field. Shared with ../bedrock-data-extractor.
+#                    Its resource-pack response field is `response_status_name`, the name
+#                    bedrock-protocol 3.59.0 writes (it needs no patch of its own).
 patchedDependencies:
   minecraft-data@3.116.0: patches/minecraft-data@3.116.0.patch
-  bedrock-protocol@3.57.0: patches/bedrock-protocol@3.57.0.patch

@@ -35,3 +35,4 @@ servers/
 /output/*/entities.json
 /data/pymctranslate/*
 /minecraft-data/*
+/data/bedrock/*/generator_blocks_v3.nbt

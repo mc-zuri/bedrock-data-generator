@@ -7929,7 +7929,7 @@ index 0000000000000000000000000000000000000000..40736d9b3efc9a4a44b3b918cec964e4
 +          ]
 +        },
 +        {
-+          "name": "response_name",
++          "name": "response_status_name",
 +          "type": "string"
 +        },
 +        {

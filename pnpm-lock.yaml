@@ -8,8 +8,7 @@ overrides:
   minecraft-data: 3.116.0
 
 patchedDependencies:
-  bedrock-protocol@3.57.0: 2c673817784d65f6d69d43a396e731673187b76e13a20371b9dc2e98103bba5d
-  minecraft-data@3.116.0: 595284f9676a00de85efb18a4fe79a218ca118ac629e6301e5e91eaea6ad6372
+  minecraft-data@3.116.0: fa1cd078de52d9a2a35c6a6068ec37d2bc1897259485cfcbb62167cf7ad69ab5
 
 importers:
 
@@ -22,8 +21,8 @@ importers:
         specifier: ^24.0.0
         version: 24.13.2
       bedrock-protocol:
-        specifier: 3.57.0
-        version: 3.57.0(patch_hash=2c673817784d65f6d69d43a396e731673187b76e13a20371b9dc2e98103bba5d)
+        specifier: 3.59.0
+        version: 3.59.0
       eslint:
         specifier: ^9.39.4
         version: 9.39.4
@@ -250,8 +249,8 @@ packages:
   basic-args@1.5.0:
     resolution: {integrity: sha512-2xZ+F/NfKsYQAcIVwdYyPUs92iRMGtlqi2YUElfBrv+elVKot1MzD7OzrqxtSxjf6jGaJzCD3u6jycBWfTAfww==}
 
-  bedrock-protocol@3.57.0:
-    resolution: {integrity: sha512-+4YyRvDD4Wf5g8ZInxjJRoVySDJBQKy0atHBGcQqmrwPJ4DQWrlj3DavQTt78cw3iPZMTQ3ZgKvWMGfnv+jilg==}
+  bedrock-protocol@3.59.0:
+    resolution: {integrity: sha512-4kIXAPxq0sBDGL3pQQeZ0lzmP1lLOsOyZ1S7Xt8onstDXPwC0tmgxiV3fwfK2u5KiOBsRecCPXgajAAyp3IATA==}
 
   big-integer@1.6.52:
     resolution: {integrity: sha512-QxD8cf2eVqJOOz63z6JIN9BzvVs/dlySa5HGSBH5xtR8dPteIRQnBxxKqkNTiT6jbDTF6jAfrd4oMcND9RGbQg==}
@@ -1276,12 +1275,12 @@ snapshots:
     dependencies:
       yargs-parser: 21.1.1
 
-  bedrock-protocol@3.57.0(patch_hash=2c673817784d65f6d69d43a396e731673187b76e13a20371b9dc2e98103bba5d):
+  bedrock-protocol@3.59.0:
     dependencies:
       debug: 4.4.3
       jsonwebtoken: 9.0.3
       jsp-raknet: 2.2.0
-      minecraft-data: 3.116.0(patch_hash=595284f9676a00de85efb18a4fe79a218ca118ac629e6301e5e91eaea6ad6372)
+      minecraft-data: 3.116.0(patch_hash=fa1cd078de52d9a2a35c6a6068ec37d2bc1897259485cfcbb62167cf7ad69ab5)
       minecraft-folder-path: 1.2.0
       prismarine-auth: 3.1.1
       prismarine-nbt: 2.8.0
@@ -1412,7 +1411,7 @@ snapshots:
 
   duplexer2@0.1.4:
     dependencies:
-      readable-stream: 2.1.5
+      readable-stream: 2.3.8
 
   ecdsa-sig-formatter@1.0.11:
     dependencies:
@@ -1736,7 +1735,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  minecraft-data@3.116.0(patch_hash=595284f9676a00de85efb18a4fe79a218ca118ac629e6301e5e91eaea6ad6372): {}
+  minecraft-data@3.116.0(patch_hash=fa1cd078de52d9a2a35c6a6068ec37d2bc1897259485cfcbb62167cf7ad69ab5): {}
 
   minecraft-folder-path@1.2.0: {}
 

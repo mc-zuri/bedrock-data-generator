@@ -29,15 +29,19 @@ export class ItemsGenerator extends Generator {
     const javaItems: any[] = this.readJson(this.javaResource(javaVersion, "items"));
     const itemstates = this.readJson(this.bedrockData("item_registry.json")).itemstates;
 
-    // verify: the mappings-generator items must line up index-by-index with the java item palette.
+    // verify: the mapped java items must be exactly this java version's item palette. Compare as SETS,
+    // not index-by-index: the datagen rewrite (GeyserMC/mappings #123) re-sorted items.json
+    // alphabetically, while the older pins list it in java palette order. Both carry the same items, and
+    // the only consumer (ItemMapGenerator.buildJ2B) keys by java item name, so order is irrelevant here.
     // Geyser prepends `minecraft:air` (not a real java item) and some minecraft-data versions list air
-    // as id 0 while others omit it, so drop air from both sides before the strict compare.
-    const mappingsItems = Object.entries(this.readJson(this.bedrockData("items_mappings.json"))).filter(([k]) => k !== "minecraft:air");
-    const javaNames = javaItems.filter((it) => it.name !== "air");
-    for (let i = 0; i < mappingsItems.length; i++) {
-      if (mappingsItems[i][0] !== `minecraft:${javaNames[i]?.name}`) {
-        throw Error(`items mapping mismatch at ${i}: ${mappingsItems[i][0]} != minecraft:${javaNames[i]?.name} (bedrock ${version} vs java ${javaVersion})`);
-      }
+    // as id 0 while others omit it, so drop air from both sides before comparing.
+    const mapped = new Set(Object.keys(this.readJson(this.bedrockData("items_mappings.json"))).filter((k) => k !== "minecraft:air"));
+    const expected = new Set(javaItems.filter((it) => it.name !== "air").map((it) => `minecraft:${it.name}`));
+    const missing = [...expected].filter((n) => !mapped.has(n));
+    const extra = [...mapped].filter((n) => !expected.has(n));
+    if (missing.length || extra.length) {
+      const detail = [missing.length ? `missing ${missing.length} (${missing.slice(0, 5).join(", ")})` : "", extra.length ? `unexpected ${extra.length} (${extra.slice(0, 5).join(", ")})` : ""].filter(Boolean).join("; ");
+      throw Error(`items mapping mismatch (bedrock ${version} vs java ${javaVersion}): ${detail}`);
     }
 
     // Some items are bedrock exclusive and cannot be found in the Java Edition item palette, so we assign our own ID starting

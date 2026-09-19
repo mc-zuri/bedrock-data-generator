@@ -104,8 +104,27 @@ const LEGACY_TYPE: Record<string, string> = {
   smithing_trim: "smithing_trim",
 };
 
+// minecraft-data's own 1.26.40/1.26.45 schema names these arrays with a `_recipes` suffix (and
+// user_data_shapeless `shulker_box_recipes`); our 1.26.50 schema uses the bare names.
+const UPSTREAM_KEY: Record<string, string> = {
+  shaped: "shaped_recipes",
+  shapeless: "shapeless_recipes",
+  multi: "multi_recipes",
+  user_data_shapeless: "shulker_box_recipes",
+  shapeless_chemistry: "shapeless_chemistry_recipes",
+  shaped_chemistry: "shaped_chemistry_recipes",
+  smithing_transform: "smithing_transform_recipes",
+  smithing_trim: "smithing_trim_recipes",
+};
+
 /** A 1.26.40 ingredient -> the legacy `{type, ...}` form the rest of this generator understands. */
 function legacyIngredient(c: any): any {
+  // minecraft-data's own schema decodes an ingredient flat: {type, descriptor_type, name|tag, metadata, count}.
+  if (c && !("descriptor" in c)) {
+    if (c.type !== "valid") return { type: "invalid", count: 0 };
+    if (c.descriptor_type === "item_tag") return { type: "item_tag", tag: c.tag, count: c.count };
+    return { type: "complex_alias", name: c.name, count: c.count, metadata: c.metadata };
+  }
   const outer = c?.descriptor ?? {};
   const count = c?.count ?? 1;
   // present === 0 means an empty grid slot; the legacy shape spelt that "invalid".
@@ -122,7 +141,7 @@ function normalizeCraftingData(cd: any): any {
   if (cd?.recipes) return cd; // already the legacy shape
   const recipes: any[] = [];
   for (const [key, type] of Object.entries(LEGACY_TYPE)) {
-    for (const r of cd?.[key] ?? []) {
+    for (const r of cd?.[key] ?? cd?.[UPSTREAM_KEY[key]] ?? []) {
       const recipe: any = { ...r };
       if (Array.isArray(r.input)) {
         const ing = r.input.map(legacyIngredient);

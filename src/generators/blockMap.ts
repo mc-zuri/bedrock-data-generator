@@ -12,7 +12,7 @@ export class BlockMapGenerator extends Generator {
   private brid2bs: { b: string; j: string }[] = [];
   private bs2brid: Record<string, number> = {};
 
-  buildJ2B() {
+  async buildJ2B() {
     if (fs.existsSync(this.bedrockData("generator_blocks_v1.json"))) {
       // v1 (Geyser mappings repo blocks.json): a flat object keyed by the full java block-state
       // string, each value carrying bedrock_identifier + bedrock_states. Stateless java blocks are
@@ -27,6 +27,8 @@ export class BlockMapGenerator extends Generator {
         j2b[javaKey] ??= bedrockKey;
       }
       this.j2b = j2b;
+    } else if (fs.existsSync(this.bedrockData("generator_blocks_v3.nbt"))) {
+      this.j2b = await this.buildJ2Bv3();
     } else {
       // 1.21.0+
       const j2b: Record<string, string> = {};
@@ -41,6 +43,40 @@ export class BlockMapGenerator extends Generator {
       }
       this.j2b = j2b;
     }
+  }
+
+  // v3 (GeyserMC/mappings blocks.nbt): a single `bedrock_mappings` list, positional — entry N is the
+  // bedrock mapping for JAVA BLOCK-STATE ID N. Each entry is { bedrock_identifier?, state? }: a missing
+  // identifier means "same name as the java block", and {} is a plain identity mapping. So the java side
+  // is not in the file at all; we rebuild it by enumerating this java version's block states in id order.
+  // Bedrock block states are only int / string / byte, and a byte is always a boolean, so we read the raw
+  // (typed) NBT rather than nbt.simplify() to print true/false instead of 1/0 — matching the v2 JSON.
+  private async buildJ2Bv3(): Promise<Record<string, string>> {
+    const { parsed } = await nbt.parse(fs.readFileSync(this.bedrockData("generator_blocks_v3.nbt")));
+    const entries = (parsed.value as any).bedrock_mappings.value.value as any[];
+    const javaBlocks = this.readJson(this.javaResource(this.javaVersion, "blocks"));
+    const states = javaBlockStates(javaBlocks);
+
+    // The mapping is positional, so a length mismatch silently shifts every state after the first gap.
+    // Refuse rather than emit a whole file of wrong mappings (the 1.26.0 pin's blocks.nbt, for one, was
+    // generated against an older java version than that entry pairs with).
+    if (entries.length !== states.length) {
+      throw Error(`blocks.nbt is not aligned with java ${this.javaVersion}: ${entries.length} entries vs ${states.length} block states (bedrock ${this.bedrockVersion})`);
+    }
+
+    const j2b: Record<string, string> = {};
+    for (const state of states) {
+      const entry = entries[state.id] ?? {};
+      const identifier = entry.bedrock_identifier?.value ?? `minecraft:${state.name}`;
+      const bedrockStates: Record<string, string> = {};
+      for (const [key, tag] of Object.entries<any>(entry.state?.value ?? {})) {
+        bedrockStates[key] = tag.type === "byte" ? (tag.value ? "true" : "false") : String(tag.value);
+      }
+      const javaKey = `minecraft:${state.name}[${this._concatStatesJ2B(state.values, true)}]`;
+      const prefixed = identifier.startsWith("minecraft:") ? identifier : `minecraft:${identifier}`;
+      j2b[javaKey] ??= `${prefixed}[${this._concatStatesJ2B(bedrockStates, true)}]`;
+    }
+    return j2b;
   }
 
   jss2bss(val) {
@@ -159,7 +195,7 @@ export class BlockMapGenerator extends Generator {
 
     // * Build Java BSS to Bedrock BSS map
     {
-      this.buildJ2B(); // Geyser mappings
+      await this.buildJ2B(); // Geyser mappings
       this.writeJson(this.outputFile("blocks", "Java2Bedrock.json"), this.j2b);
       this.writeJson(this.mcDataFile("blocksJ2B.json"), this.j2b);
     }
@@ -204,6 +240,29 @@ export function getPatches() {
   }
 
   return patches;
+}
+
+// Enumerates a java version's block states in block-state-id order, which is how blocks.nbt is indexed.
+// Minecraft varies the LAST property fastest. Always use the declared `values` list where present: an
+// int property is not necessarily 0-based (oak_leaves `distance` runs 1..7).
+function javaBlockStates(javaBlocks: any[]): { name: string; id: number; values: Record<string, string> }[] {
+  const out: { name: string; id: number; values: Record<string, string> }[] = [];
+  for (const block of javaBlocks) {
+    const props: any[] = block.states ?? [];
+    const count = block.maxStateId - block.minStateId + 1;
+    for (let i = 0; i < count; i++) {
+      const values: Record<string, string> = {};
+      let rem = i;
+      for (let p = props.length - 1; p >= 0; p--) {
+        const prop = props[p];
+        const vals: any[] = prop.values ?? (prop.type === "bool" ? ["true", "false"] : Array.from({ length: prop.num_values }, (_, n) => String(n)));
+        values[prop.name] = String(vals[rem % prop.num_values]);
+        rem = Math.floor(rem / prop.num_values);
+      }
+      out.push({ name: block.name, id: block.minStateId + i, values });
+    }
+  }
+  return out;
 }
 
 type Mapping = {

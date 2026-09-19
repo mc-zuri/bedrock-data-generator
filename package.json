@@ -12,7 +12,7 @@
   "devDependencies": {
     "@eslint/js": "^9.39.4",
     "@types/node": "^24.0.0",
-    "bedrock-protocol": "3.57.0",
+    "bedrock-protocol": "3.59.0",
     "eslint": "^9.39.4",
     "eslint-config-prettier": "^9.1.2",
     "eslint-plugin-prettier": "^5.5.6",
