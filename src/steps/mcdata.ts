@@ -20,6 +20,7 @@ import { BLOCK_ORDER, orderKeys, strip } from '../mcdata/format.ts'
 import { attributes, attributesJson } from '../mcdata/attributes.ts'
 import { biomeDefinitions, biomes, biomesJson, withServerBiomeFields } from '../mcdata/biomes.ts'
 import { effects, effectsJson } from '../mcdata/effects.ts'
+import { foods, foodsJson } from '../mcdata/foods.ts'
 import { entityLoot, entityLootJson } from '../mcdata/entityLoot.ts'
 import { enchantments, enchantmentsJson } from '../mcdata/enchantments.ts'
 import { entities, entitiesJson, entityIdentifiers } from '../mcdata/entities.ts'
@@ -307,6 +308,7 @@ export async function mcdata (accept = false): Promise<string[]> {
   let previousEffects: { text: string, dir: string } | undefined
   let previousEnchantments: { text: string, dir: string } | undefined
   let previousEntityLoot: { text: string, dir: string } | undefined
+  let previousFoods: { text: string, dir: string } | undefined
   const previousMap: Record<string, { meaning: string, dir: string } | undefined> = {}
   const bedrockBiomes = await pymctranslateBiomes(BEDROCK_BIOMES)
   const counts: Record<string, number> = { written: 0, unchanged: 0, shared: 0, deleted: 0 }
@@ -607,6 +609,21 @@ export async function mcdata (accept = false): Promise<string[]> {
       previousEnchantments = { text, dir: entry.enchantments }
     }
 
+    // foods.json: the items the server says are food (its item registry, else its behavior packs), pc's form
+    {
+      const text = foodsJson(foods(b, itemList))
+      placeAfter(entry, 'foods', 'enchantments')
+      if (previousFoods?.text === text) {
+        entry.foods = previousFoods.dir
+        counts.shared++
+        notes.push(`foods = ${previousFoods.dir.replace('bedrock/', '')}`)
+      } else {
+        notes.push(`foods ${write(join(DATA, 'bedrock', v, 'foods.json'), text)}`)
+        entry.foods = `bedrock/${v}`
+      }
+      previousFoods = { text, dir: entry.foods }
+    }
+
     // language.json: the en_US.lang of the server's vanilla resource pack, as legacy2 parses it
     const languageText = languageJson(language(b))
     if (previousLanguage?.text === languageText) {
@@ -661,7 +678,7 @@ export async function mcdata (accept = false): Promise<string[]> {
     console.log(`  ${v.padEnd(10)} ${notes.join(', ')}`)
   }
   // a version's own file that no version points to any more (it now shares an earlier one) goes
-  const published = ['attributes', 'blocks', ...KEYS, 'biomes', 'entities', 'items', ...(PUBLISH_RECIPES ? ['recipes'] : []), 'materials', 'effects', 'enchantments', 'entityLoot', 'steve', 'language', ...(PUBLISH_BLOCK_MAPS ? ['blocksB2J', 'blocksJ2B'] : [])]
+  const published = ['attributes', 'blocks', ...KEYS, 'biomes', 'entities', 'items', ...(PUBLISH_RECIPES ? ['recipes'] : []), 'materials', 'effects', 'enchantments', 'foods', 'entityLoot', 'steve', 'language', ...(PUBLISH_BLOCK_MAPS ? ['blocksB2J', 'blocksJ2B'] : [])]
   const used = new Set(Object.values<any>(paths.bedrock).flatMap(e => published.map(k => `${e[k]}/${k}.json`)))
   for (const b of builds) {
     for (const k of published) {

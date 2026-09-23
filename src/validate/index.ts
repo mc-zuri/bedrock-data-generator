@@ -18,6 +18,7 @@ import { effects } from './files/effects.ts'
 import { enchantments } from './files/enchantments.ts'
 import { entities } from './files/entities.ts'
 import { entityLoot } from './files/entityLoot.ts'
+import { foods } from './files/foods.ts'
 import { items } from './files/items.ts'
 import { language } from './files/language.ts'
 import { materials } from './files/materials.ts'
@@ -27,7 +28,7 @@ export const DATA = join(MINECRAFT_DATA_DIR, 'data')
 
 /** Every file a bedrock version must resolve, and its validator. */
 export const VALIDATORS: Record<string, Validator> = {
-  attributes, blocks, blockStates, blockCollisionShapes, biomes, entities, items, materials, effects, enchantments, entityLoot, language, steve
+  attributes, blocks, blockStates, blockCollisionShapes, biomes, entities, items, materials, effects, enchantments, foods, entityLoot, language, steve
 }
 export const FILE_KEYS = Object.keys(VALIDATORS)
 

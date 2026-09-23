@@ -164,6 +164,31 @@ describe('entity loot', () => {
   }
 })
 
+describe('foods', () => {
+  for (const v of ORDER) {
+    test(v, () => {
+      const foods = new Map<string, any>(files(v)('foods').map((f: any) => [f.name, f]))
+      const is = (name: string, points: number, saturation: number) => {
+        const f = foods.get(name)
+        assert.ok(f, `${v}: no food ${name}`)
+        assert.deepEqual([f.foodPoints, f.saturation], [points, saturation], name)
+      }
+      is('apple', 4, 2.4)
+      is('golden_apple', 4, 9.6)
+      is('cooked_beef', 8, 12.8)
+      is('bread', 5, 6)
+      is('rotten_flesh', 4, 0.8)
+      is('golden_carrot', 6, 14.4)
+      is('sweet_berries', 2, 1.2)
+      // the older builds name them by their older ids
+      is(foods.has('enchanted_golden_apple') ? 'enchanted_golden_apple' : 'appleenchanted', 4, 9.6)
+      is(foods.has('cooked_mutton') ? 'cooked_mutton' : 'muttoncooked', 6, 9.6)
+      assert.ok(!foods.has('stick') && !foods.has('cake'))
+      assert.ok(foods.size >= 39, `${v}: ${foods.size} foods`)
+    })
+  }
+})
+
 describe('attributes', () => {
   for (const v of ORDER) {
     test(v, () => {

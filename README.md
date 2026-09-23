@@ -211,6 +211,12 @@ Both are used as they are: fix them, and commit, in the checkout. An existing ch
   the game marks it harmful (minecraft-data had Java's pc/1.17 for every bedrock version, whose ids after 24
   are not Bedrock's);
 - `bedrock/<version>/enchantments.json`: every enchantment by its Bedrock id (`enchantments.ts`), below;
+- `bedrock/<version>/foods.json` (new: minecraft-data had none for bedrock): every item the server says is
+  food (`foods.ts`), pc's form: `foodPoints` its nutrition, `saturationRatio` twice its saturation modifier,
+  `saturation` their product. From its item registry's `minecraft:food` components where it sends them
+  (1.21.60 on), else from the item definitions of its behavior packs (named modifiers before 1.20: poor 0.1,
+  low 0.3, normal 0.6, good 0.8, max 1, supernatural 1.2; the packs' older ids, `appleEnchanted`,
+  `muttonCooked`, are the items' names in lower case or their aliases). Where a build has both, they agree;
 - `bedrock/<version>/items.json`: every item of the server's item registry (`start_game` until 1.21.50,
   `item_registry` after); from 1.21.100 `id` is the runtime id, with the registry's `nbt` and `version`,
   since prismarine-registry's `writeItemStates` makes the registry a server sends from it; the fields as
@@ -257,11 +263,12 @@ on the checkout as it is, `pnpm test` too (and more, below). For each file of ea
   boxes as the server has them; `items` are exactly the server's item registry (from 1.21.100 id, nbt,
   version the registry's), stack size and durability the server's; `materials` has exactly the materials
   blocks name, each speed the game's for its item; `biomes`, `entities`, `effects`, `enchantments`,
-  `attributes` are exactly what the server sends, with its values; `entityLoot` names the version's
+  `attributes` are exactly what the server sends, with its values; `foods` are the items the registry
+  calls food, with its values (from 1.21.60), each the item of its name; `entityLoot` names the version's
   entities and items; `language` names what the server describes; `steve` is a whole, anonymized skin;
 - the registry, [registry/](registry): each block's states (every property, its type, every value it
   takes), each block's, item's, entity's, biome's, effect's and enchantment's id, each attribute and
-  material, as ranges of versions. It is what the published files said when their changes were last
+  material, each food's values, as ranges of versions. It is what the published files said when their changes were last
   accepted: a run that loses a block, a state value or an item, or moves an id, fails; `pnpm mcdata
   --accept` takes such differences as intended, writes the files and the registry again, and the change to
   review is the registry's git diff.

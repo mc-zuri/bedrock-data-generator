@@ -1,0 +1,21 @@
+{
+  "$id": "foods",
+  "title": "bedrock foods.json",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "stackSize", "displayName", "foodPoints", "saturation", "effectiveQuality", "saturationRatio"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "type": "integer" },
+      "name": { "$ref": "common#/definitions/itemName" },
+      "stackSize": { "$ref": "common#/definitions/stackSize" },
+      "displayName": { "$ref": "common#/definitions/displayName" },
+      "foodPoints": { "type": "integer", "minimum": 0, "maximum": 20 },
+      "saturation": { "type": "number", "minimum": 0, "maximum": 40 },
+      "effectiveQuality": { "type": "number", "minimum": 0, "maximum": 60 },
+      "saturationRatio": { "$comment": "2 x the game's saturation modifiers: poor, low, normal, good, max, supernatural", "enum": [0.2, 0.6, 1.2, 1.6, 2, 2.4] }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 // The registry (registry/, committed): what every published version has, by name, as ranges of versions:
 // each block's states (every property, its type and the values it takes), each block's, item's, entity's,
-// biome's, effect's and enchantment's id, each attribute, each material. It is written only on purpose
+// biome's, effect's and enchantment's id, each attribute, each material, each food's values. It is written only on purpose
 // (pnpm mcdata --accept), so a run that loses a block, a state value, an item, or moves an id fails the
 // validation instead of being published; the change it asks to accept is its git diff.
 import { existsSync, mkdirSync, readFileSync } from 'node:fs'
@@ -48,7 +48,9 @@ export const KINDS: Record<string, (files: Files) => Record<string, Value>> = {
   effects: files => Object.fromEntries(files('effects').map((e: any) => [e.name, e.id])),
   enchantments: files => Object.fromEntries(files('enchantments').map((e: any) => [e.name, e.id])),
   attributes: files => Object.fromEntries(files('attributes').map((e: any) => [e.name, e.resource])),
-  materials: files => Object.fromEntries(Object.keys(files('materials')).map(m => [m, true]))
+  materials: files => Object.fromEntries(Object.keys(files('materials')).map(m => [m, true])),
+  /** a food: its food points and saturation ratio */
+  foods: files => Object.fromEntries(files('foods').map((f: any) => [f.name, [f.foodPoints, f.saturationRatio]]))
 }
 
 /** The versions, oldest first: the order ranges are in. */

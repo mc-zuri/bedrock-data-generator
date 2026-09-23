@@ -106,6 +106,13 @@ const CASES: Case[] = [
   { what: 'an exclusion one way', key: 'enchantments', apply: d => { find<any>(d.enchantments, e => e.name === 'protection', 'protection').exclude = [] } },
   { what: 'a max level not the server\'s', key: 'enchantments', apply: d => { d.enchantments[0].maxLevel = 9 } },
   { what: 'a cost not the server\'s', key: 'enchantments', apply: d => { d.enchantments[0].minCost.b += 1 } },
+  // foods.json
+  { what: 'food points not the server\'s', key: 'foods', since: '1.21.60', apply: d => { find<any>(d.foods, f => f.name === 'apple', 'apple').foodPoints = 5 } },
+  { what: 'a saturation not points x ratio', key: 'foods', apply: d => { find<any>(d.foods, f => f.name === 'apple', 'apple').saturation = 3 } },
+  { what: 'a ratio no modifier gives', key: 'foods', apply: d => { find<any>(d.foods, f => f.name === 'apple', 'apple').saturationRatio = 0.7 } },
+  { what: 'a food that is no item', key: 'foods', apply: d => { d.foods[0].name = 'unobtainium' } },
+  { what: 'a food gone', key: 'registry', apply: d => { d.foods.pop() } },
+  { what: 'an id not its item\'s', key: 'foods', apply: d => { d.foods[0].id += 1 } },
   // entityLoot.json
   { what: 'a drop that is no item', key: 'entityLoot', apply: d => { find<any>(d.entityLoot, l => l.drops.length, 'loot').drops[0].item = 'unobtainium' } },
   { what: 'an entity gone', key: 'entityLoot', apply: d => { d.entityLoot.pop() } },
