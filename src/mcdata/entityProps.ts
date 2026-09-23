@@ -17,7 +17,7 @@ export function entityDefinitions (b: Build): Map<string, any> {
   return behaviorPackDefinitions(b, 'entities', j => j['minecraft:entity']?.description?.identifier?.replace(/^minecraft:/, ''))
 }
 
-function collisionBox (e: any): { width: number, height: number } | undefined {
+export function collisionBox (e: any): { width: number, height: number } | undefined {
   const groups = Object.entries<any>(e.component_groups ?? {})
   const adult = groups.find(([name, g]) => /adult/.test(name) && !/baby/.test(name) && g['minecraft:collision_box'])
   const box = adult?.[1]['minecraft:collision_box'] ?? e.components?.['minecraft:collision_box']

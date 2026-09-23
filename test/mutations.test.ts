@@ -5,6 +5,7 @@ import assert from 'node:assert/strict'
 import { describe, test } from 'node:test'
 import { compareVersions } from '../src/config.ts'
 import { formatProblems, validateVersion } from '../src/validate/index.ts'
+import { server } from '../src/validate/server.ts'
 import { build, copy, paths } from './helpers.ts'
 
 type Data = Record<string, any>
@@ -14,6 +15,8 @@ interface Case {
   key: string
   /** only for versions from this one */
   since?: string
+  /** only where the server itself is there (servers/, SERVERS_DIR) */
+  packs?: boolean
   apply: (d: Data) => void
 }
 
@@ -124,6 +127,12 @@ const CASES: Case[] = [
   // language.json
   { what: 'an effect\'s name gone', key: 'language', apply: d => { delete d.language['potion.moveSpeed'] } },
   { what: 'most of it gone', key: 'language', apply: d => { d.language = Object.fromEntries(Object.entries(d.language).slice(0, 100)) } },
+  { what: 'an item name not the language file\'s', key: 'items', apply: d => { item(d, 'diamond').displayName = 'Gem' } },
+  // what the server's packs and language file say (where the server is there)
+  { what: 'a string not the server\'s', key: 'language', packs: true, apply: d => { d.language['potion.moveSpeed'] = 'Fast' } },
+  { what: 'a key the server does not have', key: 'language', packs: true, apply: d => { d.language['bogus.key'] = 'x' } },
+  { what: 'a hitbox not its definition\'s', key: 'entities', packs: true, apply: d => { find<any>(d.entities, e => e.name === 'zombie', 'zombie').height = 3 } },
+  { what: 'a drop chance not its loot table\'s', key: 'entityLoot', packs: true, apply: d => { find<any>(d.entityLoot, l => l.entity === 'zombie', 'zombie').drops[0].dropChance = 0.123 } },
   // steve.json
   { what: 'an image short', key: 'steve', apply: d => { d.steve.SkinData = d.steve.SkinData.slice(0, 1000) } },
   { what: 'a real persona id', key: 'steve', apply: d => { if (!d.steve.PersonaSkin) d.steve.PersonaSkin = true; d.steve.SkinId = 'persona-437vsr5lh19kek5q-3' } },
@@ -139,6 +148,7 @@ for (const v of ['1.16.201', '1.20.80', '1.21.50', '1.26.51']) {
     })
     for (const c of CASES) {
       if (c.since && compareVersions(v, c.since) < 0) continue
+      if (c.packs && !server(b).language()) continue
       test(`${c.key}: ${c.what}`, () => {
         const { data, files } = copy(v)
         c.apply(data)

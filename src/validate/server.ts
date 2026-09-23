@@ -1,12 +1,17 @@
 // What a build's server says, from this repo's data/<build>/ (committed): the ground truth the published
-// files are checked against. Each part is read once, when first asked for.
+// files are checked against; and, where the server itself is there (servers/, not committed: pnpm mcdata
+// always has it), its language file and behavior packs. Each part is read once, when first asked for.
 import { existsSync, readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import { dataFile, type Build } from '../config.ts'
 import { attributes } from '../mcdata/attributes.ts'
 import { readBlockStates, type BlockState } from '../mcdata/blocks.ts'
 import { biomeDefinitions, type BiomeDefinition } from '../mcdata/biomes.ts'
 import { entityIdentifiers, type EntityId } from '../mcdata/entities.ts'
 import { itemStates, type ItemState } from '../mcdata/items.ts'
+import { entityDefinitions } from '../mcdata/entityProps.ts'
+import { langFile, language } from '../mcdata/language.ts'
+import { serverDir } from '../server.ts'
 import { readNbt } from '../nbt.ts'
 
 const bare = (name: string): string => name.replace(/^minecraft:/, '')
@@ -49,6 +54,10 @@ export interface Server {
   attributes: () => { name: string, resource: string, default: number, min: number, max: number }[]
   effects: () => ServerEffect[]
   enchantments: () => ServerEnchantment[]
+  /** en_US.lang of its vanilla resource pack, where the server is there */
+  language: () => Record<string, string> | undefined
+  /** its behavior packs' entity definitions, where the server is there */
+  entityDefinitions: () => Map<string, any> | undefined
 }
 
 const cache = new Map<string, Server>()
@@ -72,7 +81,9 @@ export function server (b: Build): Server {
     biomeIds: once(() => existsSync(dataFile(b, 'biome_ids.json')) ? json(b, 'biome_ids.json') : undefined),
     attributes: once(() => attributes(b)),
     effects: once(() => json(b, 'effects.json')),
-    enchantments: once(() => json(b, 'enchantments.json'))
+    enchantments: once(() => json(b, 'enchantments.json')),
+    language: once(() => existsSync(langFile(b)) ? language(b) : undefined),
+    entityDefinitions: once(() => existsSync(join(serverDir(b), 'behavior_packs')) ? entityDefinitions(b) : undefined)
   }
   cache.set(b.serverVersion, s)
   return s
