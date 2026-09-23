@@ -2,7 +2,11 @@
   "minecraft:acacia_boat": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.acacia_boat"
+    "descriptionId": "item.acacia_boat",
+    "tags": [
+      "minecraft:boat",
+      "minecraft:boats"
+    ]
   },
   "minecraft:acacia_button": {
     "maxStackSize": 64,
@@ -12,12 +16,19 @@
   "minecraft:acacia_chest_boat": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.acacia_chest_boat"
+    "descriptionId": "item.acacia_chest_boat",
+    "tags": [
+      "minecraft:boat",
+      "minecraft:boats"
+    ]
   },
   "minecraft:acacia_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.acacia_door"
+    "descriptionId": "item.acacia_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:acacia_fence": {
     "maxStackSize": 64,
@@ -32,17 +43,28 @@
   "minecraft:acacia_hanging_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.acacia_hanging_sign"
+    "descriptionId": "item.acacia_hanging_sign",
+    "tags": [
+      "minecraft:hanging_sign",
+      "minecraft:sign"
+    ]
   },
   "minecraft:acacia_log": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.acacia_log"
+    "descriptionId": "item.acacia_log",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn"
+    ]
   },
   "minecraft:acacia_planks": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.acacia_planks"
+    "descriptionId": "item.acacia_planks",
+    "tags": [
+      "minecraft:planks"
+    ]
   },
   "minecraft:acacia_pressure_plate": {
     "maxStackSize": 64,
@@ -52,7 +74,10 @@
   "minecraft:acacia_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.acacia_sign"
+    "descriptionId": "item.acacia_sign",
+    "tags": [
+      "minecraft:sign"
+    ]
   },
   "minecraft:acacia_stairs": {
     "maxStackSize": 64,
@@ -82,7 +107,10 @@
   "minecraft:agent_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.agent_spawn_egg"
+    "descriptionId": "item.agent_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:air": {
     "maxStackSize": 64,
@@ -92,7 +120,10 @@
   "minecraft:allay_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.allay_spawn_egg"
+    "descriptionId": "item.allay_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:allow": {
     "maxStackSize": 64,
@@ -112,7 +143,10 @@
   "minecraft:amethyst_shard": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.amethyst_shard"
+    "descriptionId": "item.amethyst_shard",
+    "tags": [
+      "minecraft:trim_materials"
+    ]
   },
   "minecraft:ancient_debris": {
     "maxStackSize": 64,
@@ -132,7 +166,10 @@
   "minecraft:angler_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.angler_pottery_sherd"
+    "descriptionId": "item.angler_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:anvil": {
     "maxStackSize": 64,
@@ -142,12 +179,18 @@
   "minecraft:apple": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.apple"
+    "descriptionId": "item.apple",
+    "tags": [
+      "minecraft:is_food"
+    ]
   },
   "minecraft:archer_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.archer_pottery_sherd"
+    "descriptionId": "item.archer_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:armadillo_scute": {
     "maxStackSize": 64,
@@ -157,7 +200,10 @@
   "minecraft:armadillo_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.armadillo_spawn_egg"
+    "descriptionId": "item.armadillo_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:armor_stand": {
     "maxStackSize": 64,
@@ -167,12 +213,18 @@
   "minecraft:arms_up_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.arms_up_pottery_sherd"
+    "descriptionId": "item.arms_up_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:arrow": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.arrow"
+    "descriptionId": "item.arrow",
+    "tags": [
+      "minecraft:arrow"
+    ]
   },
   "minecraft:axolotl_bucket": {
     "maxStackSize": 1,
@@ -182,7 +234,10 @@
   "minecraft:axolotl_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.axolotl_spawn_egg"
+    "descriptionId": "item.axolotl_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:azalea": {
     "maxStackSize": 64,
@@ -202,7 +257,10 @@
   "minecraft:baked_potato": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.baked_potato"
+    "descriptionId": "item.baked_potato",
+    "tags": [
+      "minecraft:is_food"
+    ]
   },
   "minecraft:balloon": {
     "maxStackSize": 64,
@@ -227,12 +285,19 @@
   "minecraft:bamboo_chest_raft": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.bamboo_chest_raft"
+    "descriptionId": "item.bamboo_chest_raft",
+    "tags": [
+      "minecraft:boat",
+      "minecraft:boats"
+    ]
   },
   "minecraft:bamboo_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.bamboo_door"
+    "descriptionId": "item.bamboo_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:bamboo_double_slab": {
     "maxStackSize": 64,
@@ -252,7 +317,11 @@
   "minecraft:bamboo_hanging_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.bamboo_hanging_sign"
+    "descriptionId": "item.bamboo_hanging_sign",
+    "tags": [
+      "minecraft:hanging_sign",
+      "minecraft:sign"
+    ]
   },
   "minecraft:bamboo_mosaic": {
     "maxStackSize": 64,
@@ -277,7 +346,10 @@
   "minecraft:bamboo_planks": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.bamboo_planks"
+    "descriptionId": "item.bamboo_planks",
+    "tags": [
+      "minecraft:planks"
+    ]
   },
   "minecraft:bamboo_pressure_plate": {
     "maxStackSize": 64,
@@ -287,7 +359,11 @@
   "minecraft:bamboo_raft": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.bamboo_raft"
+    "descriptionId": "item.bamboo_raft",
+    "tags": [
+      "minecraft:boat",
+      "minecraft:boats"
+    ]
   },
   "minecraft:bamboo_sapling": {
     "maxStackSize": 64,
@@ -297,12 +373,18 @@
   "minecraft:bamboo_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.bamboo_sign"
+    "descriptionId": "item.bamboo_sign",
+    "tags": [
+      "minecraft:sign"
+    ]
   },
   "minecraft:bamboo_slab": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.bamboo_slab"
+    "descriptionId": "item.bamboo_slab",
+    "tags": [
+      "minecraft:wooden_slabs"
+    ]
   },
   "minecraft:bamboo_stairs": {
     "maxStackSize": 64,
@@ -327,7 +409,10 @@
   "minecraft:banner": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.banner"
+    "descriptionId": "item.banner",
+    "tags": [
+      "minecraft:banner"
+    ]
   },
   "minecraft:banner_pattern": {
     "maxStackSize": 64,
@@ -352,7 +437,10 @@
   "minecraft:bat_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.bat_spawn_egg"
+    "descriptionId": "item.bat_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:beacon": {
     "maxStackSize": 64,
@@ -377,12 +465,19 @@
   "minecraft:bee_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.bee_spawn_egg"
+    "descriptionId": "item.bee_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:beef": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.beef"
+    "descriptionId": "item.beef",
+    "tags": [
+      "minecraft:is_food",
+      "minecraft:is_meat"
+    ]
   },
   "minecraft:beehive": {
     "maxStackSize": 64,
@@ -392,7 +487,10 @@
   "minecraft:beetroot": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.beetroot"
+    "descriptionId": "item.beetroot",
+    "tags": [
+      "minecraft:is_food"
+    ]
   },
   "minecraft:beetroot_seeds": {
     "maxStackSize": 64,
@@ -402,7 +500,10 @@
   "minecraft:beetroot_soup": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.beetroot_soup"
+    "descriptionId": "item.beetroot_soup",
+    "tags": [
+      "minecraft:is_food"
+    ]
   },
   "minecraft:bell": {
     "maxStackSize": 64,
@@ -417,7 +518,11 @@
   "minecraft:birch_boat": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.birch_boat"
+    "descriptionId": "item.birch_boat",
+    "tags": [
+      "minecraft:boat",
+      "minecraft:boats"
+    ]
   },
   "minecraft:birch_button": {
     "maxStackSize": 64,
@@ -427,12 +532,19 @@
   "minecraft:birch_chest_boat": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.birch_chest_boat"
+    "descriptionId": "item.birch_chest_boat",
+    "tags": [
+      "minecraft:boat",
+      "minecraft:boats"
+    ]
   },
   "minecraft:birch_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.birch_door"
+    "descriptionId": "item.birch_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:birch_fence": {
     "maxStackSize": 64,
@@ -447,17 +559,28 @@
   "minecraft:birch_hanging_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.birch_hanging_sign"
+    "descriptionId": "item.birch_hanging_sign",
+    "tags": [
+      "minecraft:hanging_sign",
+      "minecraft:sign"
+    ]
   },
   "minecraft:birch_log": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.birch_log"
+    "descriptionId": "item.birch_log",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn"
+    ]
   },
   "minecraft:birch_planks": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.birch_planks"
+    "descriptionId": "item.birch_planks",
+    "tags": [
+      "minecraft:planks"
+    ]
   },
   "minecraft:birch_pressure_plate": {
     "maxStackSize": 64,
@@ -467,7 +590,10 @@
   "minecraft:birch_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.birch_sign"
+    "descriptionId": "item.birch_sign",
+    "tags": [
+      "minecraft:sign"
+    ]
   },
   "minecraft:birch_stairs": {
     "maxStackSize": 64,
@@ -502,7 +628,10 @@
   "minecraft:black_carpet": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.black_carpet"
+    "descriptionId": "item.black_carpet",
+    "tags": [
+      "minecraft:vibration_damper"
+    ]
   },
   "minecraft:black_concrete": {
     "maxStackSize": 64,
@@ -547,12 +676,20 @@
   "minecraft:black_wool": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.black_wool"
+    "descriptionId": "item.black_wool",
+    "tags": [
+      "minecraft:vibration_damper",
+      "minecraft:wool"
+    ]
   },
   "minecraft:blackstone": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.blackstone"
+    "descriptionId": "item.blackstone",
+    "tags": [
+      "minecraft:stone_crafting_materials",
+      "minecraft:stone_tool_materials"
+    ]
   },
   "minecraft:blackstone_double_slab": {
     "maxStackSize": 64,
@@ -577,7 +714,10 @@
   "minecraft:blade_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.blade_pottery_sherd"
+    "descriptionId": "item.blade_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:blast_furnace": {
     "maxStackSize": 64,
@@ -597,7 +737,10 @@
   "minecraft:blaze_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.blaze_spawn_egg"
+    "descriptionId": "item.blaze_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:bleach": {
     "maxStackSize": 64,
@@ -617,7 +760,10 @@
   "minecraft:blue_carpet": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.blue_carpet"
+    "descriptionId": "item.blue_carpet",
+    "tags": [
+      "minecraft:vibration_damper"
+    ]
   },
   "minecraft:blue_concrete": {
     "maxStackSize": 64,
@@ -667,7 +813,11 @@
   "minecraft:blue_wool": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.blue_wool"
+    "descriptionId": "item.blue_wool",
+    "tags": [
+      "minecraft:vibration_damper",
+      "minecraft:wool"
+    ]
   },
   "minecraft:boat": {
     "maxStackSize": 64,
@@ -692,7 +842,10 @@
   "minecraft:book": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.book"
+    "descriptionId": "item.book",
+    "tags": [
+      "minecraft:bookshelf_books"
+    ]
   },
   "minecraft:bookshelf": {
     "maxStackSize": 64,
@@ -727,17 +880,26 @@
   "minecraft:bread": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.bread"
+    "descriptionId": "item.bread",
+    "tags": [
+      "minecraft:is_food"
+    ]
   },
   "minecraft:breeze_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.breeze_spawn_egg"
+    "descriptionId": "item.breeze_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:brewer_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.brewer_pottery_sherd"
+    "descriptionId": "item.brewer_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:brewing_stand": {
     "maxStackSize": 64,
@@ -747,7 +909,10 @@
   "minecraft:brick": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.brick"
+    "descriptionId": "item.brick",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:brick_block": {
     "maxStackSize": 64,
@@ -772,7 +937,10 @@
   "minecraft:brown_carpet": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.brown_carpet"
+    "descriptionId": "item.brown_carpet",
+    "tags": [
+      "minecraft:vibration_damper"
+    ]
   },
   "minecraft:brown_concrete": {
     "maxStackSize": 64,
@@ -827,7 +995,11 @@
   "minecraft:brown_wool": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.brown_wool"
+    "descriptionId": "item.brown_wool",
+    "tags": [
+      "minecraft:vibration_damper",
+      "minecraft:wool"
+    ]
   },
   "minecraft:brush": {
     "maxStackSize": 1,
@@ -857,7 +1029,10 @@
   "minecraft:burn_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.burn_pottery_sherd"
+    "descriptionId": "item.burn_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:cactus": {
     "maxStackSize": 64,
@@ -882,7 +1057,10 @@
   "minecraft:camel_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.camel_spawn_egg"
+    "descriptionId": "item.camel_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:camera": {
     "maxStackSize": 64,
@@ -912,7 +1090,10 @@
   "minecraft:carrot": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.carrot"
+    "descriptionId": "item.carrot",
+    "tags": [
+      "minecraft:is_food"
+    ]
   },
   "minecraft:carrot_on_a_stick": {
     "maxStackSize": 1,
@@ -937,7 +1118,10 @@
   "minecraft:cat_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cat_spawn_egg"
+    "descriptionId": "item.cat_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:cauldron": {
     "maxStackSize": 64,
@@ -947,7 +1131,10 @@
   "minecraft:cave_spider_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cave_spider_spawn_egg"
+    "descriptionId": "item.cave_spider_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:cave_vines": {
     "maxStackSize": 64,
@@ -977,27 +1164,50 @@
   "minecraft:chainmail_boots": {
     "maxStackSize": 1,
     "maxDamage": 195,
-    "descriptionId": "item.chainmail_boots"
+    "descriptionId": "item.chainmail_boots",
+    "tags": [
+      "minecraft:chainmail_tier",
+      "minecraft:is_armor",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:chainmail_chestplate": {
     "maxStackSize": 1,
     "maxDamage": 240,
-    "descriptionId": "item.chainmail_chestplate"
+    "descriptionId": "item.chainmail_chestplate",
+    "tags": [
+      "minecraft:chainmail_tier",
+      "minecraft:is_armor",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:chainmail_helmet": {
     "maxStackSize": 1,
     "maxDamage": 165,
-    "descriptionId": "item.chainmail_helmet"
+    "descriptionId": "item.chainmail_helmet",
+    "tags": [
+      "minecraft:chainmail_tier",
+      "minecraft:is_armor",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:chainmail_leggings": {
     "maxStackSize": 1,
     "maxDamage": 225,
-    "descriptionId": "item.chainmail_leggings"
+    "descriptionId": "item.chainmail_leggings",
+    "tags": [
+      "minecraft:chainmail_tier",
+      "minecraft:is_armor",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:charcoal": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.charcoal"
+    "descriptionId": "item.charcoal",
+    "tags": [
+      "minecraft:coals"
+    ]
   },
   "minecraft:chemical_heat": {
     "maxStackSize": 64,
@@ -1012,7 +1222,11 @@
   "minecraft:cherry_boat": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.cherry_boat"
+    "descriptionId": "item.cherry_boat",
+    "tags": [
+      "minecraft:boat",
+      "minecraft:boats"
+    ]
   },
   "minecraft:cherry_button": {
     "maxStackSize": 64,
@@ -1022,12 +1236,19 @@
   "minecraft:cherry_chest_boat": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.cherry_chest_boat"
+    "descriptionId": "item.cherry_chest_boat",
+    "tags": [
+      "minecraft:boat",
+      "minecraft:boats"
+    ]
   },
   "minecraft:cherry_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cherry_door"
+    "descriptionId": "item.cherry_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:cherry_double_slab": {
     "maxStackSize": 64,
@@ -1047,7 +1268,11 @@
   "minecraft:cherry_hanging_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.cherry_hanging_sign"
+    "descriptionId": "item.cherry_hanging_sign",
+    "tags": [
+      "minecraft:hanging_sign",
+      "minecraft:sign"
+    ]
   },
   "minecraft:cherry_leaves": {
     "maxStackSize": 64,
@@ -1057,12 +1282,19 @@
   "minecraft:cherry_log": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cherry_log"
+    "descriptionId": "item.cherry_log",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn"
+    ]
   },
   "minecraft:cherry_planks": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cherry_planks"
+    "descriptionId": "item.cherry_planks",
+    "tags": [
+      "minecraft:planks"
+    ]
   },
   "minecraft:cherry_pressure_plate": {
     "maxStackSize": 64,
@@ -1077,12 +1309,18 @@
   "minecraft:cherry_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.cherry_sign"
+    "descriptionId": "item.cherry_sign",
+    "tags": [
+      "minecraft:sign"
+    ]
   },
   "minecraft:cherry_slab": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cherry_slab"
+    "descriptionId": "item.cherry_slab",
+    "tags": [
+      "minecraft:wooden_slabs"
+    ]
   },
   "minecraft:cherry_stairs": {
     "maxStackSize": 64,
@@ -1107,7 +1345,11 @@
   "minecraft:cherry_wood": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cherry_wood"
+    "descriptionId": "item.cherry_wood",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn"
+    ]
   },
   "minecraft:chest": {
     "maxStackSize": 64,
@@ -1122,17 +1364,27 @@
   "minecraft:chest_minecart": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.chest_minecart"
+    "descriptionId": "item.chest_minecart",
+    "tags": [
+      "minecraft:is_minecart"
+    ]
   },
   "minecraft:chicken": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.chicken"
+    "descriptionId": "item.chicken",
+    "tags": [
+      "minecraft:is_food",
+      "minecraft:is_meat"
+    ]
   },
   "minecraft:chicken_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.chicken_spawn_egg"
+    "descriptionId": "item.chicken_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:chiseled_bookshelf": {
     "maxStackSize": 64,
@@ -1207,7 +1459,10 @@
   "minecraft:coal": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.coal"
+    "descriptionId": "item.coal",
+    "tags": [
+      "minecraft:coals"
+    ]
   },
   "minecraft:coal_block": {
     "maxStackSize": 64,
@@ -1222,12 +1477,19 @@
   "minecraft:coast_armor_trim_smithing_template": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.coast_armor_trim_smithing_template"
+    "descriptionId": "item.coast_armor_trim_smithing_template",
+    "tags": [
+      "minecraft:trim_templates"
+    ]
   },
   "minecraft:cobbled_deepslate": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cobbled_deepslate"
+    "descriptionId": "item.cobbled_deepslate",
+    "tags": [
+      "minecraft:stone_crafting_materials",
+      "minecraft:stone_tool_materials"
+    ]
   },
   "minecraft:cobbled_deepslate_double_slab": {
     "maxStackSize": 64,
@@ -1252,7 +1514,11 @@
   "minecraft:cobblestone": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cobblestone"
+    "descriptionId": "item.cobblestone",
+    "tags": [
+      "minecraft:stone_crafting_materials",
+      "minecraft:stone_tool_materials"
+    ]
   },
   "minecraft:cobblestone_wall": {
     "maxStackSize": 64,
@@ -1272,7 +1538,10 @@
   "minecraft:cod": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.fish"
+    "descriptionId": "item.fish",
+    "tags": [
+      "minecraft:is_fish"
+    ]
   },
   "minecraft:cod_bucket": {
     "maxStackSize": 1,
@@ -1282,7 +1551,10 @@
   "minecraft:cod_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cod_spawn_egg"
+    "descriptionId": "item.cod_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:colored_torch_bp": {
     "maxStackSize": 64,
@@ -1302,7 +1574,10 @@
   "minecraft:command_block_minecart": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.command_block_minecart"
+    "descriptionId": "item.command_block_minecart",
+    "tags": [
+      "minecraft:is_minecart"
+    ]
   },
   "minecraft:comparator": {
     "maxStackSize": 64,
@@ -1342,42 +1617,78 @@
   "minecraft:cooked_beef": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cooked_beef"
+    "descriptionId": "item.cooked_beef",
+    "tags": [
+      "minecraft:is_cooked",
+      "minecraft:is_food",
+      "minecraft:is_meat"
+    ]
   },
   "minecraft:cooked_chicken": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cooked_chicken"
+    "descriptionId": "item.cooked_chicken",
+    "tags": [
+      "minecraft:is_cooked",
+      "minecraft:is_food",
+      "minecraft:is_meat"
+    ]
   },
   "minecraft:cooked_cod": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cooked_fish"
+    "descriptionId": "item.cooked_fish",
+    "tags": [
+      "minecraft:is_cooked",
+      "minecraft:is_fish"
+    ]
   },
   "minecraft:cooked_mutton": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.muttonCooked"
+    "descriptionId": "item.muttonCooked",
+    "tags": [
+      "minecraft:is_cooked",
+      "minecraft:is_food",
+      "minecraft:is_meat"
+    ]
   },
   "minecraft:cooked_porkchop": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cooked_porkchop"
+    "descriptionId": "item.cooked_porkchop",
+    "tags": [
+      "minecraft:is_cooked",
+      "minecraft:is_food",
+      "minecraft:is_meat"
+    ]
   },
   "minecraft:cooked_rabbit": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cooked_rabbit"
+    "descriptionId": "item.cooked_rabbit",
+    "tags": [
+      "minecraft:is_cooked",
+      "minecraft:is_food",
+      "minecraft:is_meat"
+    ]
   },
   "minecraft:cooked_salmon": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cooked_salmon"
+    "descriptionId": "item.cooked_salmon",
+    "tags": [
+      "minecraft:is_cooked",
+      "minecraft:is_fish"
+    ]
   },
   "minecraft:cookie": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cookie"
+    "descriptionId": "item.cookie",
+    "tags": [
+      "minecraft:is_food"
+    ]
   },
   "minecraft:copper_block": {
     "maxStackSize": 64,
@@ -1392,7 +1703,10 @@
   "minecraft:copper_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.copper_door"
+    "descriptionId": "item.copper_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:copper_grate": {
     "maxStackSize": 64,
@@ -1402,7 +1716,10 @@
   "minecraft:copper_ingot": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.copper_ingot"
+    "descriptionId": "item.copper_ingot",
+    "tags": [
+      "minecraft:trim_materials"
+    ]
   },
   "minecraft:copper_ore": {
     "maxStackSize": 64,
@@ -1452,7 +1769,10 @@
   "minecraft:cow_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cow_spawn_egg"
+    "descriptionId": "item.cow_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:cracked_deepslate_bricks": {
     "maxStackSize": 64,
@@ -1492,7 +1812,10 @@
   "minecraft:creeper_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.creeper_spawn_egg"
+    "descriptionId": "item.creeper_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:crimson_button": {
     "maxStackSize": 64,
@@ -1502,7 +1825,10 @@
   "minecraft:crimson_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.crimson_door"
+    "descriptionId": "item.crimson_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:crimson_double_slab": {
     "maxStackSize": 64,
@@ -1527,12 +1853,20 @@
   "minecraft:crimson_hanging_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.crimson_hanging_sign"
+    "descriptionId": "item.crimson_hanging_sign",
+    "tags": [
+      "minecraft:hanging_sign",
+      "minecraft:sign"
+    ]
   },
   "minecraft:crimson_hyphae": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.crimson_hyphae"
+    "descriptionId": "item.crimson_hyphae",
+    "tags": [
+      "minecraft:crimson_stems",
+      "minecraft:logs"
+    ]
   },
   "minecraft:crimson_nylium": {
     "maxStackSize": 64,
@@ -1542,7 +1876,10 @@
   "minecraft:crimson_planks": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.crimson_planks"
+    "descriptionId": "item.crimson_planks",
+    "tags": [
+      "minecraft:planks"
+    ]
   },
   "minecraft:crimson_pressure_plate": {
     "maxStackSize": 64,
@@ -1557,12 +1894,18 @@
   "minecraft:crimson_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.crimson_sign"
+    "descriptionId": "item.crimson_sign",
+    "tags": [
+      "minecraft:sign"
+    ]
   },
   "minecraft:crimson_slab": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.crimson_slab"
+    "descriptionId": "item.crimson_slab",
+    "tags": [
+      "minecraft:wooden_slabs"
+    ]
   },
   "minecraft:crimson_stairs": {
     "maxStackSize": 64,
@@ -1577,7 +1920,11 @@
   "minecraft:crimson_stem": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.crimson_stem"
+    "descriptionId": "item.crimson_stem",
+    "tags": [
+      "minecraft:crimson_stems",
+      "minecraft:logs"
+    ]
   },
   "minecraft:crimson_trapdoor": {
     "maxStackSize": 64,
@@ -1627,7 +1974,10 @@
   "minecraft:cyan_carpet": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cyan_carpet"
+    "descriptionId": "item.cyan_carpet",
+    "tags": [
+      "minecraft:vibration_damper"
+    ]
   },
   "minecraft:cyan_concrete": {
     "maxStackSize": 64,
@@ -1672,17 +2022,28 @@
   "minecraft:cyan_wool": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.cyan_wool"
+    "descriptionId": "item.cyan_wool",
+    "tags": [
+      "minecraft:vibration_damper",
+      "minecraft:wool"
+    ]
   },
   "minecraft:danger_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.danger_pottery_sherd"
+    "descriptionId": "item.danger_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:dark_oak_boat": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.dark_oak_boat"
+    "descriptionId": "item.dark_oak_boat",
+    "tags": [
+      "minecraft:boat",
+      "minecraft:boats"
+    ]
   },
   "minecraft:dark_oak_button": {
     "maxStackSize": 64,
@@ -1692,12 +2053,19 @@
   "minecraft:dark_oak_chest_boat": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.dark_oak_chest_boat"
+    "descriptionId": "item.dark_oak_chest_boat",
+    "tags": [
+      "minecraft:boat",
+      "minecraft:boats"
+    ]
   },
   "minecraft:dark_oak_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.dark_oak_door"
+    "descriptionId": "item.dark_oak_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:dark_oak_fence": {
     "maxStackSize": 64,
@@ -1712,17 +2080,28 @@
   "minecraft:dark_oak_hanging_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.dark_oak_hanging_sign"
+    "descriptionId": "item.dark_oak_hanging_sign",
+    "tags": [
+      "minecraft:hanging_sign",
+      "minecraft:sign"
+    ]
   },
   "minecraft:dark_oak_log": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.dark_oak_log"
+    "descriptionId": "item.dark_oak_log",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn"
+    ]
   },
   "minecraft:dark_oak_planks": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.dark_oak_planks"
+    "descriptionId": "item.dark_oak_planks",
+    "tags": [
+      "minecraft:planks"
+    ]
   },
   "minecraft:dark_oak_pressure_plate": {
     "maxStackSize": 64,
@@ -1732,7 +2111,10 @@
   "minecraft:dark_oak_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.darkoak_sign"
+    "descriptionId": "item.darkoak_sign",
+    "tags": [
+      "minecraft:sign"
+    ]
   },
   "minecraft:dark_oak_stairs": {
     "maxStackSize": 64,
@@ -1912,12 +2294,22 @@
   "minecraft:diamond": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.diamond"
+    "descriptionId": "item.diamond",
+    "tags": [
+      "minecraft:trim_materials"
+    ]
   },
   "minecraft:diamond_axe": {
     "maxStackSize": 1,
     "maxDamage": 1561,
-    "descriptionId": "item.diamond_axe"
+    "descriptionId": "item.diamond_axe",
+    "tags": [
+      "minecraft:diamond_tier",
+      "minecraft:digger",
+      "minecraft:is_axe",
+      "minecraft:is_tool",
+      "minecraft:transformable_items"
+    ]
   },
   "minecraft:diamond_block": {
     "maxStackSize": 64,
@@ -1927,32 +2319,66 @@
   "minecraft:diamond_boots": {
     "maxStackSize": 1,
     "maxDamage": 429,
-    "descriptionId": "item.diamond_boots"
+    "descriptionId": "item.diamond_boots",
+    "tags": [
+      "minecraft:diamond_tier",
+      "minecraft:is_armor",
+      "minecraft:transformable_items",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:diamond_chestplate": {
     "maxStackSize": 1,
     "maxDamage": 528,
-    "descriptionId": "item.diamond_chestplate"
+    "descriptionId": "item.diamond_chestplate",
+    "tags": [
+      "minecraft:diamond_tier",
+      "minecraft:is_armor",
+      "minecraft:transformable_items",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:diamond_helmet": {
     "maxStackSize": 1,
     "maxDamage": 363,
-    "descriptionId": "item.diamond_helmet"
+    "descriptionId": "item.diamond_helmet",
+    "tags": [
+      "minecraft:diamond_tier",
+      "minecraft:is_armor",
+      "minecraft:transformable_items",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:diamond_hoe": {
     "maxStackSize": 1,
     "maxDamage": 1561,
-    "descriptionId": "item.diamond_hoe"
+    "descriptionId": "item.diamond_hoe",
+    "tags": [
+      "minecraft:diamond_tier",
+      "minecraft:digger",
+      "minecraft:is_hoe",
+      "minecraft:is_tool",
+      "minecraft:transformable_items"
+    ]
   },
   "minecraft:diamond_horse_armor": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.horsearmordiamond"
+    "descriptionId": "item.horsearmordiamond",
+    "tags": [
+      "minecraft:horse_armor"
+    ]
   },
   "minecraft:diamond_leggings": {
     "maxStackSize": 1,
     "maxDamage": 495,
-    "descriptionId": "item.diamond_leggings"
+    "descriptionId": "item.diamond_leggings",
+    "tags": [
+      "minecraft:diamond_tier",
+      "minecraft:is_armor",
+      "minecraft:transformable_items",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:diamond_ore": {
     "maxStackSize": 64,
@@ -1962,17 +2388,37 @@
   "minecraft:diamond_pickaxe": {
     "maxStackSize": 1,
     "maxDamage": 1561,
-    "descriptionId": "item.diamond_pickaxe"
+    "descriptionId": "item.diamond_pickaxe",
+    "tags": [
+      "minecraft:diamond_tier",
+      "minecraft:digger",
+      "minecraft:is_pickaxe",
+      "minecraft:is_tool",
+      "minecraft:transformable_items"
+    ]
   },
   "minecraft:diamond_shovel": {
     "maxStackSize": 1,
     "maxDamage": 1561,
-    "descriptionId": "item.diamond_shovel"
+    "descriptionId": "item.diamond_shovel",
+    "tags": [
+      "minecraft:diamond_tier",
+      "minecraft:digger",
+      "minecraft:is_shovel",
+      "minecraft:is_tool",
+      "minecraft:transformable_items"
+    ]
   },
   "minecraft:diamond_sword": {
     "maxStackSize": 1,
     "maxDamage": 1561,
-    "descriptionId": "item.diamond_sword"
+    "descriptionId": "item.diamond_sword",
+    "tags": [
+      "minecraft:diamond_tier",
+      "minecraft:is_sword",
+      "minecraft:is_tool",
+      "minecraft:transformable_items"
+    ]
   },
   "minecraft:diorite": {
     "maxStackSize": 64,
@@ -2007,12 +2453,18 @@
   "minecraft:dolphin_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.dolphin_spawn_egg"
+    "descriptionId": "item.dolphin_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:donkey_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.donkey_spawn_egg"
+    "descriptionId": "item.donkey_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:double_cut_copper_slab": {
     "maxStackSize": 64,
@@ -2062,7 +2514,10 @@
   "minecraft:dried_kelp": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.dried_kelp"
+    "descriptionId": "item.dried_kelp",
+    "tags": [
+      "minecraft:is_food"
+    ]
   },
   "minecraft:dried_kelp_block": {
     "maxStackSize": 64,
@@ -2082,12 +2537,18 @@
   "minecraft:drowned_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.drowned_spawn_egg"
+    "descriptionId": "item.drowned_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:dune_armor_trim_smithing_template": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.dune_armor_trim_smithing_template"
+    "descriptionId": "item.dune_armor_trim_smithing_template",
+    "tags": [
+      "minecraft:trim_templates"
+    ]
   },
   "minecraft:dye": {
     "maxStackSize": 64,
@@ -2107,7 +2568,10 @@
   "minecraft:elder_guardian_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.elder_guardian_spawn_egg"
+    "descriptionId": "item.elder_guardian_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:element_0": {
     "maxStackSize": 64,
@@ -2707,12 +3171,18 @@
   "minecraft:elytra": {
     "maxStackSize": 1,
     "maxDamage": 432,
-    "descriptionId": "item.elytra"
+    "descriptionId": "item.elytra",
+    "tags": [
+      "minecraft:is_armor"
+    ]
   },
   "minecraft:emerald": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.emerald"
+    "descriptionId": "item.emerald",
+    "tags": [
+      "minecraft:trim_materials"
+    ]
   },
   "minecraft:emerald_block": {
     "maxStackSize": 64,
@@ -2732,12 +3202,18 @@
   "minecraft:enchanted_book": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.enchanted_book"
+    "descriptionId": "item.enchanted_book",
+    "tags": [
+      "minecraft:bookshelf_books"
+    ]
   },
   "minecraft:enchanted_golden_apple": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.appleEnchanted"
+    "descriptionId": "item.appleEnchanted",
+    "tags": [
+      "minecraft:is_food"
+    ]
   },
   "minecraft:enchanting_table": {
     "maxStackSize": 64,
@@ -2792,7 +3268,10 @@
   "minecraft:ender_dragon_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.ender_dragon_spawn_egg"
+    "descriptionId": "item.ender_dragon_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:ender_eye": {
     "maxStackSize": 64,
@@ -2807,17 +3286,26 @@
   "minecraft:enderman_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.enderman_spawn_egg"
+    "descriptionId": "item.enderman_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:endermite_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.endermite_spawn_egg"
+    "descriptionId": "item.endermite_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:evoker_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.evoker_spawn_egg"
+    "descriptionId": "item.evoker_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:experience_bottle": {
     "maxStackSize": 64,
@@ -2827,7 +3315,10 @@
   "minecraft:explorer_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.explorer_pottery_sherd"
+    "descriptionId": "item.explorer_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:exposed_chiseled_copper": {
     "maxStackSize": 64,
@@ -2847,7 +3338,10 @@
   "minecraft:exposed_copper_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.exposed_copper_door"
+    "descriptionId": "item.exposed_copper_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:exposed_copper_grate": {
     "maxStackSize": 64,
@@ -2882,7 +3376,10 @@
   "minecraft:eye_armor_trim_smithing_template": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.eye_armor_trim_smithing_template"
+    "descriptionId": "item.eye_armor_trim_smithing_template",
+    "tags": [
+      "minecraft:trim_templates"
+    ]
   },
   "minecraft:farmland": {
     "maxStackSize": 64,
@@ -2992,7 +3489,10 @@
   "minecraft:fox_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.fox_spawn_egg"
+    "descriptionId": "item.fox_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:frame": {
     "maxStackSize": 64,
@@ -3002,7 +3502,10 @@
   "minecraft:friend_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.friend_pottery_sherd"
+    "descriptionId": "item.friend_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:frog_spawn": {
     "maxStackSize": 64,
@@ -3012,7 +3515,10 @@
   "minecraft:frog_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.frog_spawn_egg"
+    "descriptionId": "item.frog_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:frosted_ice": {
     "maxStackSize": 64,
@@ -3027,7 +3533,10 @@
   "minecraft:ghast_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.ghast_spawn_egg"
+    "descriptionId": "item.ghast_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:ghast_tear": {
     "maxStackSize": 64,
@@ -3087,7 +3596,10 @@
   "minecraft:glow_squid_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.glow_squid_spawn_egg"
+    "descriptionId": "item.glow_squid_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:glow_stick": {
     "maxStackSize": 1,
@@ -3117,7 +3629,10 @@
   "minecraft:goat_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.goat_spawn_egg"
+    "descriptionId": "item.goat_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:gold_block": {
     "maxStackSize": 64,
@@ -3127,7 +3642,10 @@
   "minecraft:gold_ingot": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.gold_ingot"
+    "descriptionId": "item.gold_ingot",
+    "tags": [
+      "minecraft:trim_materials"
+    ]
   },
   "minecraft:gold_nugget": {
     "maxStackSize": 64,
@@ -3142,52 +3660,100 @@
   "minecraft:golden_apple": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.golden_apple"
+    "descriptionId": "item.golden_apple",
+    "tags": [
+      "minecraft:is_food"
+    ]
   },
   "minecraft:golden_axe": {
     "maxStackSize": 1,
     "maxDamage": 32,
-    "descriptionId": "item.golden_axe"
+    "descriptionId": "item.golden_axe",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:golden_tier",
+      "minecraft:is_axe",
+      "minecraft:is_tool"
+    ]
   },
   "minecraft:golden_boots": {
     "maxStackSize": 1,
     "maxDamage": 91,
-    "descriptionId": "item.golden_boots"
+    "descriptionId": "item.golden_boots",
+    "tags": [
+      "minecraft:golden_tier",
+      "minecraft:is_armor",
+      "minecraft:transformable_items",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:golden_carrot": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.golden_carrot"
+    "descriptionId": "item.golden_carrot",
+    "tags": [
+      "minecraft:is_food"
+    ]
   },
   "minecraft:golden_chestplate": {
     "maxStackSize": 1,
     "maxDamage": 112,
-    "descriptionId": "item.golden_chestplate"
+    "descriptionId": "item.golden_chestplate",
+    "tags": [
+      "minecraft:golden_tier",
+      "minecraft:is_armor",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:golden_helmet": {
     "maxStackSize": 1,
     "maxDamage": 77,
-    "descriptionId": "item.golden_helmet"
+    "descriptionId": "item.golden_helmet",
+    "tags": [
+      "minecraft:golden_tier",
+      "minecraft:is_armor",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:golden_hoe": {
     "maxStackSize": 1,
     "maxDamage": 32,
-    "descriptionId": "item.golden_hoe"
+    "descriptionId": "item.golden_hoe",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:golden_tier",
+      "minecraft:is_hoe",
+      "minecraft:is_tool"
+    ]
   },
   "minecraft:golden_horse_armor": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.horsearmorgold"
+    "descriptionId": "item.horsearmorgold",
+    "tags": [
+      "minecraft:horse_armor"
+    ]
   },
   "minecraft:golden_leggings": {
     "maxStackSize": 1,
     "maxDamage": 105,
-    "descriptionId": "item.golden_leggings"
+    "descriptionId": "item.golden_leggings",
+    "tags": [
+      "minecraft:golden_tier",
+      "minecraft:is_armor",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:golden_pickaxe": {
     "maxStackSize": 1,
     "maxDamage": 32,
-    "descriptionId": "item.golden_pickaxe"
+    "descriptionId": "item.golden_pickaxe",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:golden_tier",
+      "minecraft:is_pickaxe",
+      "minecraft:is_tool"
+    ]
   },
   "minecraft:golden_rail": {
     "maxStackSize": 64,
@@ -3197,12 +3763,23 @@
   "minecraft:golden_shovel": {
     "maxStackSize": 1,
     "maxDamage": 32,
-    "descriptionId": "item.golden_shovel"
+    "descriptionId": "item.golden_shovel",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:golden_tier",
+      "minecraft:is_shovel",
+      "minecraft:is_tool"
+    ]
   },
   "minecraft:golden_sword": {
     "maxStackSize": 1,
     "maxDamage": 32,
-    "descriptionId": "item.golden_sword"
+    "descriptionId": "item.golden_sword",
+    "tags": [
+      "minecraft:golden_tier",
+      "minecraft:is_sword",
+      "minecraft:is_tool"
+    ]
   },
   "minecraft:granite": {
     "maxStackSize": 64,
@@ -3242,7 +3819,10 @@
   "minecraft:gray_carpet": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.gray_carpet"
+    "descriptionId": "item.gray_carpet",
+    "tags": [
+      "minecraft:vibration_damper"
+    ]
   },
   "minecraft:gray_concrete": {
     "maxStackSize": 64,
@@ -3287,7 +3867,11 @@
   "minecraft:gray_wool": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.gray_wool"
+    "descriptionId": "item.gray_wool",
+    "tags": [
+      "minecraft:vibration_damper",
+      "minecraft:wool"
+    ]
   },
   "minecraft:green_candle": {
     "maxStackSize": 64,
@@ -3302,7 +3886,10 @@
   "minecraft:green_carpet": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.green_carpet"
+    "descriptionId": "item.green_carpet",
+    "tags": [
+      "minecraft:vibration_damper"
+    ]
   },
   "minecraft:green_concrete": {
     "maxStackSize": 64,
@@ -3347,7 +3934,11 @@
   "minecraft:green_wool": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.green_wool"
+    "descriptionId": "item.green_wool",
+    "tags": [
+      "minecraft:vibration_damper",
+      "minecraft:wool"
+    ]
   },
   "minecraft:grindstone": {
     "maxStackSize": 64,
@@ -3357,7 +3948,10 @@
   "minecraft:guardian_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.guardian_spawn_egg"
+    "descriptionId": "item.guardian_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:gunpowder": {
     "maxStackSize": 64,
@@ -3567,12 +4161,18 @@
   "minecraft:heart_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.heart_pottery_sherd"
+    "descriptionId": "item.heart_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:heartbreak_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.heartbreak_pottery_sherd"
+    "descriptionId": "item.heartbreak_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:heavy_weighted_pressure_plate": {
     "maxStackSize": 64,
@@ -3582,7 +4182,10 @@
   "minecraft:hoglin_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.hoglin_spawn_egg"
+    "descriptionId": "item.hoglin_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:honey_block": {
     "maxStackSize": 64,
@@ -3612,7 +4215,10 @@
   "minecraft:hopper_minecart": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.hopper_minecart"
+    "descriptionId": "item.hopper_minecart",
+    "tags": [
+      "minecraft:is_minecart"
+    ]
   },
   "minecraft:horn_coral": {
     "maxStackSize": 64,
@@ -3622,22 +4228,34 @@
   "minecraft:horse_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.horse_spawn_egg"
+    "descriptionId": "item.horse_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:host_armor_trim_smithing_template": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.host_armor_trim_smithing_template"
+    "descriptionId": "item.host_armor_trim_smithing_template",
+    "tags": [
+      "minecraft:trim_templates"
+    ]
   },
   "minecraft:howl_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.howl_pottery_sherd"
+    "descriptionId": "item.howl_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:husk_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.husk_spawn_egg"
+    "descriptionId": "item.husk_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:ice": {
     "maxStackSize": 64,
@@ -3677,7 +4295,13 @@
   "minecraft:iron_axe": {
     "maxStackSize": 1,
     "maxDamage": 250,
-    "descriptionId": "item.iron_axe"
+    "descriptionId": "item.iron_axe",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:iron_tier",
+      "minecraft:is_axe",
+      "minecraft:is_tool"
+    ]
   },
   "minecraft:iron_bars": {
     "maxStackSize": 64,
@@ -3692,47 +4316,85 @@
   "minecraft:iron_boots": {
     "maxStackSize": 1,
     "maxDamage": 195,
-    "descriptionId": "item.iron_boots"
+    "descriptionId": "item.iron_boots",
+    "tags": [
+      "minecraft:iron_tier",
+      "minecraft:is_armor",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:iron_chestplate": {
     "maxStackSize": 1,
     "maxDamage": 240,
-    "descriptionId": "item.iron_chestplate"
+    "descriptionId": "item.iron_chestplate",
+    "tags": [
+      "minecraft:iron_tier",
+      "minecraft:is_armor",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:iron_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.iron_door"
+    "descriptionId": "item.iron_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:iron_golem_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.iron_golem_spawn_egg"
+    "descriptionId": "item.iron_golem_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:iron_helmet": {
     "maxStackSize": 1,
     "maxDamage": 165,
-    "descriptionId": "item.iron_helmet"
+    "descriptionId": "item.iron_helmet",
+    "tags": [
+      "minecraft:iron_tier",
+      "minecraft:is_armor",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:iron_hoe": {
     "maxStackSize": 1,
     "maxDamage": 250,
-    "descriptionId": "item.iron_hoe"
+    "descriptionId": "item.iron_hoe",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:iron_tier",
+      "minecraft:is_hoe",
+      "minecraft:is_tool"
+    ]
   },
   "minecraft:iron_horse_armor": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.horsearmoriron"
+    "descriptionId": "item.horsearmoriron",
+    "tags": [
+      "minecraft:horse_armor"
+    ]
   },
   "minecraft:iron_ingot": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.iron_ingot"
+    "descriptionId": "item.iron_ingot",
+    "tags": [
+      "minecraft:trim_materials"
+    ]
   },
   "minecraft:iron_leggings": {
     "maxStackSize": 1,
     "maxDamage": 225,
-    "descriptionId": "item.iron_leggings"
+    "descriptionId": "item.iron_leggings",
+    "tags": [
+      "minecraft:iron_tier",
+      "minecraft:is_armor",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:iron_nugget": {
     "maxStackSize": 64,
@@ -3747,17 +4409,34 @@
   "minecraft:iron_pickaxe": {
     "maxStackSize": 1,
     "maxDamage": 250,
-    "descriptionId": "item.iron_pickaxe"
+    "descriptionId": "item.iron_pickaxe",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:iron_tier",
+      "minecraft:is_pickaxe",
+      "minecraft:is_tool"
+    ]
   },
   "minecraft:iron_shovel": {
     "maxStackSize": 1,
     "maxDamage": 250,
-    "descriptionId": "item.iron_shovel"
+    "descriptionId": "item.iron_shovel",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:iron_tier",
+      "minecraft:is_shovel",
+      "minecraft:is_tool"
+    ]
   },
   "minecraft:iron_sword": {
     "maxStackSize": 1,
     "maxDamage": 250,
-    "descriptionId": "item.iron_sword"
+    "descriptionId": "item.iron_sword",
+    "tags": [
+      "minecraft:iron_tier",
+      "minecraft:is_sword",
+      "minecraft:is_tool"
+    ]
   },
   "minecraft:iron_trapdoor": {
     "maxStackSize": 64,
@@ -3922,7 +4601,11 @@
   "minecraft:jungle_boat": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.jungle_boat"
+    "descriptionId": "item.jungle_boat",
+    "tags": [
+      "minecraft:boat",
+      "minecraft:boats"
+    ]
   },
   "minecraft:jungle_button": {
     "maxStackSize": 64,
@@ -3932,12 +4615,19 @@
   "minecraft:jungle_chest_boat": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.jungle_chest_boat"
+    "descriptionId": "item.jungle_chest_boat",
+    "tags": [
+      "minecraft:boat",
+      "minecraft:boats"
+    ]
   },
   "minecraft:jungle_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.jungle_door"
+    "descriptionId": "item.jungle_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:jungle_fence": {
     "maxStackSize": 64,
@@ -3952,17 +4642,28 @@
   "minecraft:jungle_hanging_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.jungle_hanging_sign"
+    "descriptionId": "item.jungle_hanging_sign",
+    "tags": [
+      "minecraft:hanging_sign",
+      "minecraft:sign"
+    ]
   },
   "minecraft:jungle_log": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.jungle_log"
+    "descriptionId": "item.jungle_log",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn"
+    ]
   },
   "minecraft:jungle_planks": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.jungle_planks"
+    "descriptionId": "item.jungle_planks",
+    "tags": [
+      "minecraft:planks"
+    ]
   },
   "minecraft:jungle_pressure_plate": {
     "maxStackSize": 64,
@@ -3972,7 +4673,10 @@
   "minecraft:jungle_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.jungle_sign"
+    "descriptionId": "item.jungle_sign",
+    "tags": [
+      "minecraft:sign"
+    ]
   },
   "minecraft:jungle_stairs": {
     "maxStackSize": 64,
@@ -4017,7 +4721,10 @@
   "minecraft:lapis_lazuli": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.lapis_lazuli"
+    "descriptionId": "item.lapis_lazuli",
+    "tags": [
+      "minecraft:trim_materials"
+    ]
   },
   "minecraft:lapis_ore": {
     "maxStackSize": 64,
@@ -4052,27 +4759,50 @@
   "minecraft:leather_boots": {
     "maxStackSize": 1,
     "maxDamage": 65,
-    "descriptionId": "item.leather_boots"
+    "descriptionId": "item.leather_boots",
+    "tags": [
+      "minecraft:is_armor",
+      "minecraft:leather_tier",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:leather_chestplate": {
     "maxStackSize": 1,
     "maxDamage": 80,
-    "descriptionId": "item.leather_chestplate"
+    "descriptionId": "item.leather_chestplate",
+    "tags": [
+      "minecraft:is_armor",
+      "minecraft:leather_tier",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:leather_helmet": {
     "maxStackSize": 1,
     "maxDamage": 55,
-    "descriptionId": "item.leather_helmet"
+    "descriptionId": "item.leather_helmet",
+    "tags": [
+      "minecraft:is_armor",
+      "minecraft:leather_tier",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:leather_horse_armor": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.horsearmorleather"
+    "descriptionId": "item.horsearmorleather",
+    "tags": [
+      "minecraft:horse_armor"
+    ]
   },
   "minecraft:leather_leggings": {
     "maxStackSize": 1,
     "maxDamage": 75,
-    "descriptionId": "item.leather_leggings"
+    "descriptionId": "item.leather_leggings",
+    "tags": [
+      "minecraft:is_armor",
+      "minecraft:leather_tier",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:leaves": {
     "maxStackSize": 64,
@@ -4112,7 +4842,10 @@
   "minecraft:light_blue_carpet": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.light_blue_carpet"
+    "descriptionId": "item.light_blue_carpet",
+    "tags": [
+      "minecraft:vibration_damper"
+    ]
   },
   "minecraft:light_blue_concrete": {
     "maxStackSize": 64,
@@ -4157,7 +4890,11 @@
   "minecraft:light_blue_wool": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.light_blue_wool"
+    "descriptionId": "item.light_blue_wool",
+    "tags": [
+      "minecraft:vibration_damper",
+      "minecraft:wool"
+    ]
   },
   "minecraft:light_gray_candle": {
     "maxStackSize": 64,
@@ -4172,7 +4909,10 @@
   "minecraft:light_gray_carpet": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.light_gray_carpet"
+    "descriptionId": "item.light_gray_carpet",
+    "tags": [
+      "minecraft:vibration_damper"
+    ]
   },
   "minecraft:light_gray_concrete": {
     "maxStackSize": 64,
@@ -4212,7 +4952,11 @@
   "minecraft:light_gray_wool": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.light_gray_wool"
+    "descriptionId": "item.light_gray_wool",
+    "tags": [
+      "minecraft:vibration_damper",
+      "minecraft:wool"
+    ]
   },
   "minecraft:light_weighted_pressure_plate": {
     "maxStackSize": 64,
@@ -4237,7 +4981,10 @@
   "minecraft:lime_carpet": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.lime_carpet"
+    "descriptionId": "item.lime_carpet",
+    "tags": [
+      "minecraft:vibration_damper"
+    ]
   },
   "minecraft:lime_concrete": {
     "maxStackSize": 64,
@@ -4282,7 +5029,11 @@
   "minecraft:lime_wool": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.lime_wool"
+    "descriptionId": "item.lime_wool",
+    "tags": [
+      "minecraft:vibration_damper",
+      "minecraft:wool"
+    ]
   },
   "minecraft:lingering_potion": {
     "maxStackSize": 1,
@@ -4327,7 +5078,10 @@
   "minecraft:llama_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.llama_spawn_egg"
+    "descriptionId": "item.llama_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:lodestone": {
     "maxStackSize": 64,
@@ -4367,7 +5121,10 @@
   "minecraft:magenta_carpet": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.magenta_carpet"
+    "descriptionId": "item.magenta_carpet",
+    "tags": [
+      "minecraft:vibration_damper"
+    ]
   },
   "minecraft:magenta_concrete": {
     "maxStackSize": 64,
@@ -4412,7 +5169,11 @@
   "minecraft:magenta_wool": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.magenta_wool"
+    "descriptionId": "item.magenta_wool",
+    "tags": [
+      "minecraft:vibration_damper",
+      "minecraft:wool"
+    ]
   },
   "minecraft:magma": {
     "maxStackSize": 64,
@@ -4427,12 +5188,19 @@
   "minecraft:magma_cube_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.magma_cube_spawn_egg"
+    "descriptionId": "item.magma_cube_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:mangrove_boat": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.mangrove_boat"
+    "descriptionId": "item.mangrove_boat",
+    "tags": [
+      "minecraft:boat",
+      "minecraft:boats"
+    ]
   },
   "minecraft:mangrove_button": {
     "maxStackSize": 64,
@@ -4442,12 +5210,19 @@
   "minecraft:mangrove_chest_boat": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.mangrove_chest_boat"
+    "descriptionId": "item.mangrove_chest_boat",
+    "tags": [
+      "minecraft:boat",
+      "minecraft:boats"
+    ]
   },
   "minecraft:mangrove_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.mangrove_door"
+    "descriptionId": "item.mangrove_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:mangrove_double_slab": {
     "maxStackSize": 64,
@@ -4467,7 +5242,11 @@
   "minecraft:mangrove_hanging_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.mangrove_hanging_sign"
+    "descriptionId": "item.mangrove_hanging_sign",
+    "tags": [
+      "minecraft:hanging_sign",
+      "minecraft:sign"
+    ]
   },
   "minecraft:mangrove_leaves": {
     "maxStackSize": 64,
@@ -4477,12 +5256,20 @@
   "minecraft:mangrove_log": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.mangrove_log"
+    "descriptionId": "item.mangrove_log",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn",
+      "minecraft:mangrove_logs"
+    ]
   },
   "minecraft:mangrove_planks": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.mangrove_planks"
+    "descriptionId": "item.mangrove_planks",
+    "tags": [
+      "minecraft:planks"
+    ]
   },
   "minecraft:mangrove_pressure_plate": {
     "maxStackSize": 64,
@@ -4502,12 +5289,18 @@
   "minecraft:mangrove_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.mangrove_sign"
+    "descriptionId": "item.mangrove_sign",
+    "tags": [
+      "minecraft:sign"
+    ]
   },
   "minecraft:mangrove_slab": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.mangrove_slab"
+    "descriptionId": "item.mangrove_slab",
+    "tags": [
+      "minecraft:wooden_slabs"
+    ]
   },
   "minecraft:mangrove_stairs": {
     "maxStackSize": 64,
@@ -4532,7 +5325,12 @@
   "minecraft:mangrove_wood": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.mangrove_wood"
+    "descriptionId": "item.mangrove_wood",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn",
+      "minecraft:mangrove_logs"
+    ]
   },
   "minecraft:medicine": {
     "maxStackSize": 1,
@@ -4557,7 +5355,10 @@
   "minecraft:melon_slice": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.melon"
+    "descriptionId": "item.melon",
+    "tags": [
+      "minecraft:is_food"
+    ]
   },
   "minecraft:melon_stem": {
     "maxStackSize": 64,
@@ -4572,12 +5373,18 @@
   "minecraft:minecart": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.minecart"
+    "descriptionId": "item.minecart",
+    "tags": [
+      "minecraft:is_minecart"
+    ]
   },
   "minecraft:miner_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.miner_pottery_sherd"
+    "descriptionId": "item.miner_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:mob_spawner": {
     "maxStackSize": 64,
@@ -4597,7 +5404,10 @@
   "minecraft:mooshroom_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.mooshroom_spawn_egg"
+    "descriptionId": "item.mooshroom_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:moss_block": {
     "maxStackSize": 64,
@@ -4627,7 +5437,10 @@
   "minecraft:mourner_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.mourner_pottery_sherd"
+    "descriptionId": "item.mourner_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:moving_block": {
     "maxStackSize": 64,
@@ -4672,97 +5485,155 @@
   "minecraft:mule_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.mule_spawn_egg"
+    "descriptionId": "item.mule_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:mushroom_stew": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.mushroom_stew"
+    "descriptionId": "item.mushroom_stew",
+    "tags": [
+      "minecraft:is_food"
+    ]
   },
   "minecraft:music_disc_11": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.record_11"
+    "descriptionId": "item.record_11",
+    "tags": [
+      "minecraft:music_disc"
+    ]
   },
   "minecraft:music_disc_13": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.record_13"
+    "descriptionId": "item.record_13",
+    "tags": [
+      "minecraft:music_disc"
+    ]
   },
   "minecraft:music_disc_5": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.record_5"
+    "descriptionId": "item.record_5",
+    "tags": [
+      "minecraft:music_disc"
+    ]
   },
   "minecraft:music_disc_blocks": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.record_blocks"
+    "descriptionId": "item.record_blocks",
+    "tags": [
+      "minecraft:music_disc"
+    ]
   },
   "minecraft:music_disc_cat": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.record_cat"
+    "descriptionId": "item.record_cat",
+    "tags": [
+      "minecraft:music_disc"
+    ]
   },
   "minecraft:music_disc_chirp": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.record_chirp"
+    "descriptionId": "item.record_chirp",
+    "tags": [
+      "minecraft:music_disc"
+    ]
   },
   "minecraft:music_disc_far": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.record_far"
+    "descriptionId": "item.record_far",
+    "tags": [
+      "minecraft:music_disc"
+    ]
   },
   "minecraft:music_disc_mall": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.record_mall"
+    "descriptionId": "item.record_mall",
+    "tags": [
+      "minecraft:music_disc"
+    ]
   },
   "minecraft:music_disc_mellohi": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.record_mellohi"
+    "descriptionId": "item.record_mellohi",
+    "tags": [
+      "minecraft:music_disc"
+    ]
   },
   "minecraft:music_disc_otherside": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.record_otherside"
+    "descriptionId": "item.record_otherside",
+    "tags": [
+      "minecraft:music_disc"
+    ]
   },
   "minecraft:music_disc_pigstep": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.record_pigstep"
+    "descriptionId": "item.record_pigstep",
+    "tags": [
+      "minecraft:music_disc"
+    ]
   },
   "minecraft:music_disc_relic": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.record_relic"
+    "descriptionId": "item.record_relic",
+    "tags": [
+      "minecraft:music_disc"
+    ]
   },
   "minecraft:music_disc_stal": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.record_stal"
+    "descriptionId": "item.record_stal",
+    "tags": [
+      "minecraft:music_disc"
+    ]
   },
   "minecraft:music_disc_strad": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.record_strad"
+    "descriptionId": "item.record_strad",
+    "tags": [
+      "minecraft:music_disc"
+    ]
   },
   "minecraft:music_disc_wait": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.record_wait"
+    "descriptionId": "item.record_wait",
+    "tags": [
+      "minecraft:music_disc"
+    ]
   },
   "minecraft:music_disc_ward": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.record_ward"
+    "descriptionId": "item.record_ward",
+    "tags": [
+      "minecraft:music_disc"
+    ]
   },
   "minecraft:mutton": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.muttonRaw"
+    "descriptionId": "item.muttonRaw",
+    "tags": [
+      "minecraft:is_food",
+      "minecraft:is_meat"
+    ]
   },
   "minecraft:mycelium": {
     "maxStackSize": 64,
@@ -4827,7 +5698,13 @@
   "minecraft:netherite_axe": {
     "maxStackSize": 1,
     "maxDamage": 2031,
-    "descriptionId": "item.netherite_axe"
+    "descriptionId": "item.netherite_axe",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:is_axe",
+      "minecraft:is_tool",
+      "minecraft:netherite_tier"
+    ]
   },
   "minecraft:netherite_block": {
     "maxStackSize": 64,
@@ -4837,37 +5714,73 @@
   "minecraft:netherite_boots": {
     "maxStackSize": 1,
     "maxDamage": 481,
-    "descriptionId": "item.netherite_boots"
+    "descriptionId": "item.netherite_boots",
+    "tags": [
+      "minecraft:is_armor",
+      "minecraft:netherite_tier",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:netherite_chestplate": {
     "maxStackSize": 1,
     "maxDamage": 592,
-    "descriptionId": "item.netherite_chestplate"
+    "descriptionId": "item.netherite_chestplate",
+    "tags": [
+      "minecraft:is_armor",
+      "minecraft:netherite_tier",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:netherite_helmet": {
     "maxStackSize": 1,
     "maxDamage": 407,
-    "descriptionId": "item.netherite_helmet"
+    "descriptionId": "item.netherite_helmet",
+    "tags": [
+      "minecraft:is_armor",
+      "minecraft:netherite_tier",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:netherite_hoe": {
     "maxStackSize": 1,
     "maxDamage": 2031,
-    "descriptionId": "item.netherite_hoe"
+    "descriptionId": "item.netherite_hoe",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:is_hoe",
+      "minecraft:is_tool",
+      "minecraft:netherite_tier"
+    ]
   },
   "minecraft:netherite_ingot": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.netherite_ingot"
+    "descriptionId": "item.netherite_ingot",
+    "tags": [
+      "minecraft:transform_materials",
+      "minecraft:trim_materials"
+    ]
   },
   "minecraft:netherite_leggings": {
     "maxStackSize": 1,
     "maxDamage": 555,
-    "descriptionId": "item.netherite_leggings"
+    "descriptionId": "item.netherite_leggings",
+    "tags": [
+      "minecraft:is_armor",
+      "minecraft:netherite_tier",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:netherite_pickaxe": {
     "maxStackSize": 1,
     "maxDamage": 2031,
-    "descriptionId": "item.netherite_pickaxe"
+    "descriptionId": "item.netherite_pickaxe",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:is_pickaxe",
+      "minecraft:is_tool",
+      "minecraft:netherite_tier"
+    ]
   },
   "minecraft:netherite_scrap": {
     "maxStackSize": 64,
@@ -4877,17 +5790,31 @@
   "minecraft:netherite_shovel": {
     "maxStackSize": 1,
     "maxDamage": 2031,
-    "descriptionId": "item.netherite_shovel"
+    "descriptionId": "item.netherite_shovel",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:is_shovel",
+      "minecraft:is_tool",
+      "minecraft:netherite_tier"
+    ]
   },
   "minecraft:netherite_sword": {
     "maxStackSize": 1,
     "maxDamage": 2031,
-    "descriptionId": "item.netherite_sword"
+    "descriptionId": "item.netherite_sword",
+    "tags": [
+      "minecraft:is_sword",
+      "minecraft:is_tool",
+      "minecraft:netherite_tier"
+    ]
   },
   "minecraft:netherite_upgrade_smithing_template": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.netherite_upgrade_smithing_template"
+    "descriptionId": "item.netherite_upgrade_smithing_template",
+    "tags": [
+      "minecraft:transform_templates"
+    ]
   },
   "minecraft:netherrack": {
     "maxStackSize": 64,
@@ -4912,17 +5839,28 @@
   "minecraft:npc_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.npc_spawn_egg"
+    "descriptionId": "item.npc_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:oak_boat": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.oak_boat"
+    "descriptionId": "item.oak_boat",
+    "tags": [
+      "minecraft:boat",
+      "minecraft:boats"
+    ]
   },
   "minecraft:oak_chest_boat": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.oak_chest_boat"
+    "descriptionId": "item.oak_chest_boat",
+    "tags": [
+      "minecraft:boat",
+      "minecraft:boats"
+    ]
   },
   "minecraft:oak_fence": {
     "maxStackSize": 64,
@@ -4932,22 +5870,36 @@
   "minecraft:oak_hanging_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.oak_hanging_sign"
+    "descriptionId": "item.oak_hanging_sign",
+    "tags": [
+      "minecraft:hanging_sign",
+      "minecraft:sign"
+    ]
   },
   "minecraft:oak_log": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.oak_log"
+    "descriptionId": "item.oak_log",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn"
+    ]
   },
   "minecraft:oak_planks": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.oak_planks"
+    "descriptionId": "item.oak_planks",
+    "tags": [
+      "minecraft:planks"
+    ]
   },
   "minecraft:oak_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.sign"
+    "descriptionId": "item.sign",
+    "tags": [
+      "minecraft:sign"
+    ]
   },
   "minecraft:oak_stairs": {
     "maxStackSize": 64,
@@ -4967,7 +5919,10 @@
   "minecraft:ocelot_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.ocelot_spawn_egg"
+    "descriptionId": "item.ocelot_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:ochre_froglight": {
     "maxStackSize": 64,
@@ -4987,7 +5942,10 @@
   "minecraft:orange_carpet": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.orange_carpet"
+    "descriptionId": "item.orange_carpet",
+    "tags": [
+      "minecraft:vibration_damper"
+    ]
   },
   "minecraft:orange_concrete": {
     "maxStackSize": 64,
@@ -5032,7 +5990,11 @@
   "minecraft:orange_wool": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.orange_wool"
+    "descriptionId": "item.orange_wool",
+    "tags": [
+      "minecraft:vibration_damper",
+      "minecraft:wool"
+    ]
   },
   "minecraft:oxidized_chiseled_copper": {
     "maxStackSize": 64,
@@ -5052,7 +6014,10 @@
   "minecraft:oxidized_copper_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.oxidized_copper_door"
+    "descriptionId": "item.oxidized_copper_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:oxidized_copper_grate": {
     "maxStackSize": 64,
@@ -5097,12 +6062,18 @@
   "minecraft:painting": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.painting"
+    "descriptionId": "item.painting",
+    "tags": [
+      "minecraft:hanging_actor"
+    ]
   },
   "minecraft:panda_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.panda_spawn_egg"
+    "descriptionId": "item.panda_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:paper": {
     "maxStackSize": 64,
@@ -5112,7 +6083,10 @@
   "minecraft:parrot_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.parrot_spawn_egg"
+    "descriptionId": "item.parrot_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:pearlescent_froglight": {
     "maxStackSize": 64,
@@ -5127,12 +6101,18 @@
   "minecraft:phantom_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.phantom_spawn_egg"
+    "descriptionId": "item.phantom_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:pig_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.pig_spawn_egg"
+    "descriptionId": "item.pig_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:piglin_banner_pattern": {
     "maxStackSize": 1,
@@ -5142,17 +6122,26 @@
   "minecraft:piglin_brute_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.piglin_brute_spawn_egg"
+    "descriptionId": "item.piglin_brute_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:piglin_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.piglin_spawn_egg"
+    "descriptionId": "item.piglin_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:pillager_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.pillager_spawn_egg"
+    "descriptionId": "item.pillager_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:pink_candle": {
     "maxStackSize": 64,
@@ -5167,7 +6156,10 @@
   "minecraft:pink_carpet": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.pink_carpet"
+    "descriptionId": "item.pink_carpet",
+    "tags": [
+      "minecraft:vibration_damper"
+    ]
   },
   "minecraft:pink_concrete": {
     "maxStackSize": 64,
@@ -5217,7 +6209,11 @@
   "minecraft:pink_wool": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.pink_wool"
+    "descriptionId": "item.pink_wool",
+    "tags": [
+      "minecraft:vibration_damper",
+      "minecraft:wool"
+    ]
   },
   "minecraft:piston": {
     "maxStackSize": 64,
@@ -5252,7 +6248,10 @@
   "minecraft:plenty_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.plenty_pottery_sherd"
+    "descriptionId": "item.plenty_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:podzol": {
     "maxStackSize": 64,
@@ -5272,7 +6271,10 @@
   "minecraft:polar_bear_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.polar_bear_spawn_egg"
+    "descriptionId": "item.polar_bear_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:polished_andesite": {
     "maxStackSize": 64,
@@ -5427,7 +6429,11 @@
   "minecraft:porkchop": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.porkchop"
+    "descriptionId": "item.porkchop",
+    "tags": [
+      "minecraft:is_food",
+      "minecraft:is_meat"
+    ]
   },
   "minecraft:portal": {
     "maxStackSize": 64,
@@ -5437,7 +6443,10 @@
   "minecraft:potato": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.potato"
+    "descriptionId": "item.potato",
+    "tags": [
+      "minecraft:is_food"
+    ]
   },
   "minecraft:potatoes": {
     "maxStackSize": 64,
@@ -5497,12 +6506,18 @@
   "minecraft:prize_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.prize_pottery_sherd"
+    "descriptionId": "item.prize_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:pufferfish": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.pufferfish"
+    "descriptionId": "item.pufferfish",
+    "tags": [
+      "minecraft:is_fish"
+    ]
   },
   "minecraft:pufferfish_bucket": {
     "maxStackSize": 1,
@@ -5512,7 +6527,10 @@
   "minecraft:pufferfish_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.pufferfish_spawn_egg"
+    "descriptionId": "item.pufferfish_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:pumpkin": {
     "maxStackSize": 64,
@@ -5522,7 +6540,10 @@
   "minecraft:pumpkin_pie": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.pumpkin_pie"
+    "descriptionId": "item.pumpkin_pie",
+    "tags": [
+      "minecraft:is_food"
+    ]
   },
   "minecraft:pumpkin_seeds": {
     "maxStackSize": 64,
@@ -5547,7 +6568,10 @@
   "minecraft:purple_carpet": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.purple_carpet"
+    "descriptionId": "item.purple_carpet",
+    "tags": [
+      "minecraft:vibration_damper"
+    ]
   },
   "minecraft:purple_concrete": {
     "maxStackSize": 64,
@@ -5592,7 +6616,11 @@
   "minecraft:purple_wool": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.purple_wool"
+    "descriptionId": "item.purple_wool",
+    "tags": [
+      "minecraft:vibration_damper",
+      "minecraft:wool"
+    ]
   },
   "minecraft:purpur_block": {
     "maxStackSize": 64,
@@ -5607,7 +6635,10 @@
   "minecraft:quartz": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.quartz"
+    "descriptionId": "item.quartz",
+    "tags": [
+      "minecraft:trim_materials"
+    ]
   },
   "minecraft:quartz_block": {
     "maxStackSize": 64,
@@ -5632,7 +6663,11 @@
   "minecraft:rabbit": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.rabbit"
+    "descriptionId": "item.rabbit",
+    "tags": [
+      "minecraft:is_food",
+      "minecraft:is_meat"
+    ]
   },
   "minecraft:rabbit_foot": {
     "maxStackSize": 64,
@@ -5647,12 +6682,20 @@
   "minecraft:rabbit_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.rabbit_spawn_egg"
+    "descriptionId": "item.rabbit_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:rabbit_stew": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.rabbit_stew"
+    "descriptionId": "item.rabbit_stew",
+    "tags": [
+      "minecraft:is_cooked",
+      "minecraft:is_food",
+      "minecraft:is_meat"
+    ]
   },
   "minecraft:rail": {
     "maxStackSize": 64,
@@ -5662,7 +6705,10 @@
   "minecraft:raiser_armor_trim_smithing_template": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.raiser_armor_trim_smithing_template"
+    "descriptionId": "item.raiser_armor_trim_smithing_template",
+    "tags": [
+      "minecraft:trim_templates"
+    ]
   },
   "minecraft:rapid_fertilizer": {
     "maxStackSize": 64,
@@ -5672,7 +6718,10 @@
   "minecraft:ravager_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.ravager_spawn_egg"
+    "descriptionId": "item.ravager_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:raw_copper": {
     "maxStackSize": 64,
@@ -5722,7 +6771,10 @@
   "minecraft:red_carpet": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.red_carpet"
+    "descriptionId": "item.red_carpet",
+    "tags": [
+      "minecraft:vibration_damper"
+    ]
   },
   "minecraft:red_concrete": {
     "maxStackSize": 64,
@@ -5802,12 +6854,19 @@
   "minecraft:red_wool": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.red_wool"
+    "descriptionId": "item.red_wool",
+    "tags": [
+      "minecraft:vibration_damper",
+      "minecraft:wool"
+    ]
   },
   "minecraft:redstone": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.redstone"
+    "descriptionId": "item.redstone",
+    "tags": [
+      "minecraft:trim_materials"
+    ]
   },
   "minecraft:redstone_block": {
     "maxStackSize": 64,
@@ -5862,12 +6921,19 @@
   "minecraft:rib_armor_trim_smithing_template": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.rib_armor_trim_smithing_template"
+    "descriptionId": "item.rib_armor_trim_smithing_template",
+    "tags": [
+      "minecraft:trim_templates"
+    ]
   },
   "minecraft:rotten_flesh": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.rotten_flesh"
+    "descriptionId": "item.rotten_flesh",
+    "tags": [
+      "minecraft:is_food",
+      "minecraft:is_meat"
+    ]
   },
   "minecraft:saddle": {
     "maxStackSize": 1,
@@ -5877,7 +6943,10 @@
   "minecraft:salmon": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.salmon"
+    "descriptionId": "item.salmon",
+    "tags": [
+      "minecraft:is_fish"
+    ]
   },
   "minecraft:salmon_bucket": {
     "maxStackSize": 1,
@@ -5887,12 +6956,18 @@
   "minecraft:salmon_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.salmon_spawn_egg"
+    "descriptionId": "item.salmon_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:sand": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.sand"
+    "descriptionId": "item.sand",
+    "tags": [
+      "minecraft:sand"
+    ]
   },
   "minecraft:sandstone": {
     "maxStackSize": 64,
@@ -5957,17 +7032,26 @@
   "minecraft:sentry_armor_trim_smithing_template": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.sentry_armor_trim_smithing_template"
+    "descriptionId": "item.sentry_armor_trim_smithing_template",
+    "tags": [
+      "minecraft:trim_templates"
+    ]
   },
   "minecraft:shaper_armor_trim_smithing_template": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.shaper_armor_trim_smithing_template"
+    "descriptionId": "item.shaper_armor_trim_smithing_template",
+    "tags": [
+      "minecraft:trim_templates"
+    ]
   },
   "minecraft:sheaf_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.sheaf_pottery_sherd"
+    "descriptionId": "item.sheaf_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:shears": {
     "maxStackSize": 1,
@@ -5977,12 +7061,18 @@
   "minecraft:sheep_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.sheep_spawn_egg"
+    "descriptionId": "item.sheep_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:shelter_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.shelter_pottery_sherd"
+    "descriptionId": "item.shelter_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:shield": {
     "maxStackSize": 1,
@@ -6007,12 +7097,18 @@
   "minecraft:shulker_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.shulker_spawn_egg"
+    "descriptionId": "item.shulker_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:silence_armor_trim_smithing_template": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.silence_armor_trim_smithing_template"
+    "descriptionId": "item.silence_armor_trim_smithing_template",
+    "tags": [
+      "minecraft:trim_templates"
+    ]
   },
   "minecraft:silver_glazed_terracotta": {
     "maxStackSize": 64,
@@ -6022,17 +7118,26 @@
   "minecraft:silverfish_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.silverfish_spawn_egg"
+    "descriptionId": "item.silverfish_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:skeleton_horse_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.skeleton_horse_spawn_egg"
+    "descriptionId": "item.skeleton_horse_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:skeleton_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.skeleton_spawn_egg"
+    "descriptionId": "item.skeleton_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:skull": {
     "maxStackSize": 64,
@@ -6047,7 +7152,10 @@
   "minecraft:skull_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.skull_pottery_sherd"
+    "descriptionId": "item.skull_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:slime": {
     "maxStackSize": 64,
@@ -6062,7 +7170,10 @@
   "minecraft:slime_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.slime_spawn_egg"
+    "descriptionId": "item.slime_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:small_amethyst_bud": {
     "maxStackSize": 64,
@@ -6117,17 +7228,26 @@
   "minecraft:sniffer_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.sniffer_spawn_egg"
+    "descriptionId": "item.sniffer_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:snort_pottery_sherd": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.snort_pottery_sherd"
+    "descriptionId": "item.snort_pottery_sherd",
+    "tags": [
+      "minecraft:decorated_pot_sherds"
+    ]
   },
   "minecraft:snout_armor_trim_smithing_template": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.snout_armor_trim_smithing_template"
+    "descriptionId": "item.snout_armor_trim_smithing_template",
+    "tags": [
+      "minecraft:trim_templates"
+    ]
   },
   "minecraft:snow": {
     "maxStackSize": 64,
@@ -6137,7 +7257,10 @@
   "minecraft:snow_golem_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.snow_golem_spawn_egg"
+    "descriptionId": "item.snow_golem_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:snow_layer": {
     "maxStackSize": 64,
@@ -6167,12 +7290,18 @@
   "minecraft:soul_sand": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.soul_sand"
+    "descriptionId": "item.soul_sand",
+    "tags": [
+      "minecraft:soul_fire_base_blocks"
+    ]
   },
   "minecraft:soul_soil": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.soul_soil"
+    "descriptionId": "item.soul_soil",
+    "tags": [
+      "minecraft:soul_fire_base_blocks"
+    ]
   },
   "minecraft:soul_torch": {
     "maxStackSize": 64,
@@ -6187,7 +7316,10 @@
   "minecraft:spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.spawn_egg"
+    "descriptionId": "item.spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:spider_eye": {
     "maxStackSize": 64,
@@ -6197,12 +7329,18 @@
   "minecraft:spider_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.spider_spawn_egg"
+    "descriptionId": "item.spider_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:spire_armor_trim_smithing_template": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.spire_armor_trim_smithing_template"
+    "descriptionId": "item.spire_armor_trim_smithing_template",
+    "tags": [
+      "minecraft:trim_templates"
+    ]
   },
   "minecraft:splash_potion": {
     "maxStackSize": 1,
@@ -6222,7 +7360,11 @@
   "minecraft:spruce_boat": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.spruce_boat"
+    "descriptionId": "item.spruce_boat",
+    "tags": [
+      "minecraft:boat",
+      "minecraft:boats"
+    ]
   },
   "minecraft:spruce_button": {
     "maxStackSize": 64,
@@ -6232,12 +7374,19 @@
   "minecraft:spruce_chest_boat": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.spruce_chest_boat"
+    "descriptionId": "item.spruce_chest_boat",
+    "tags": [
+      "minecraft:boat",
+      "minecraft:boats"
+    ]
   },
   "minecraft:spruce_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.spruce_door"
+    "descriptionId": "item.spruce_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:spruce_fence": {
     "maxStackSize": 64,
@@ -6252,17 +7401,28 @@
   "minecraft:spruce_hanging_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.spruce_hanging_sign"
+    "descriptionId": "item.spruce_hanging_sign",
+    "tags": [
+      "minecraft:hanging_sign",
+      "minecraft:sign"
+    ]
   },
   "minecraft:spruce_log": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.spruce_log"
+    "descriptionId": "item.spruce_log",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn"
+    ]
   },
   "minecraft:spruce_planks": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.spruce_planks"
+    "descriptionId": "item.spruce_planks",
+    "tags": [
+      "minecraft:planks"
+    ]
   },
   "minecraft:spruce_pressure_plate": {
     "maxStackSize": 64,
@@ -6272,7 +7432,10 @@
   "minecraft:spruce_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.spruce_sign"
+    "descriptionId": "item.spruce_sign",
+    "tags": [
+      "minecraft:sign"
+    ]
   },
   "minecraft:spruce_stairs": {
     "maxStackSize": 64,
@@ -6302,7 +7465,10 @@
   "minecraft:squid_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.squid_spawn_egg"
+    "descriptionId": "item.squid_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:stained_glass": {
     "maxStackSize": 64,
@@ -6352,7 +7518,13 @@
   "minecraft:stone_axe": {
     "maxStackSize": 1,
     "maxDamage": 131,
-    "descriptionId": "item.stone_axe"
+    "descriptionId": "item.stone_axe",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:is_axe",
+      "minecraft:is_tool",
+      "minecraft:stone_tier"
+    ]
   },
   "minecraft:stone_block_slab": {
     "maxStackSize": 64,
@@ -6387,12 +7559,24 @@
   "minecraft:stone_hoe": {
     "maxStackSize": 1,
     "maxDamage": 131,
-    "descriptionId": "item.stone_hoe"
+    "descriptionId": "item.stone_hoe",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:is_hoe",
+      "minecraft:is_tool",
+      "minecraft:stone_tier"
+    ]
   },
   "minecraft:stone_pickaxe": {
     "maxStackSize": 1,
     "maxDamage": 131,
-    "descriptionId": "item.stone_pickaxe"
+    "descriptionId": "item.stone_pickaxe",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:is_pickaxe",
+      "minecraft:is_tool",
+      "minecraft:stone_tier"
+    ]
   },
   "minecraft:stone_pressure_plate": {
     "maxStackSize": 64,
@@ -6402,7 +7586,13 @@
   "minecraft:stone_shovel": {
     "maxStackSize": 1,
     "maxDamage": 131,
-    "descriptionId": "item.stone_shovel"
+    "descriptionId": "item.stone_shovel",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:is_shovel",
+      "minecraft:is_tool",
+      "minecraft:stone_tier"
+    ]
   },
   "minecraft:stone_stairs": {
     "maxStackSize": 64,
@@ -6412,12 +7602,20 @@
   "minecraft:stone_sword": {
     "maxStackSize": 1,
     "maxDamage": 131,
-    "descriptionId": "item.stone_sword"
+    "descriptionId": "item.stone_sword",
+    "tags": [
+      "minecraft:is_sword",
+      "minecraft:is_tool",
+      "minecraft:stone_tier"
+    ]
   },
   "minecraft:stonebrick": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.stonebrick"
+    "descriptionId": "item.stonebrick",
+    "tags": [
+      "minecraft:stone_bricks"
+    ]
   },
   "minecraft:stonecutter": {
     "maxStackSize": 64,
@@ -6432,12 +7630,18 @@
   "minecraft:stray_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.stray_spawn_egg"
+    "descriptionId": "item.stray_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:strider_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.strider_spawn_egg"
+    "descriptionId": "item.strider_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:string": {
     "maxStackSize": 64,
@@ -6447,7 +7651,11 @@
   "minecraft:stripped_acacia_log": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.stripped_acacia_log"
+    "descriptionId": "item.stripped_acacia_log",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn"
+    ]
   },
   "minecraft:stripped_bamboo_block": {
     "maxStackSize": 64,
@@ -6457,67 +7665,121 @@
   "minecraft:stripped_birch_log": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.stripped_birch_log"
+    "descriptionId": "item.stripped_birch_log",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn"
+    ]
   },
   "minecraft:stripped_cherry_log": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.stripped_cherry_log"
+    "descriptionId": "item.stripped_cherry_log",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn"
+    ]
   },
   "minecraft:stripped_cherry_wood": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.stripped_cherry_wood"
+    "descriptionId": "item.stripped_cherry_wood",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn"
+    ]
   },
   "minecraft:stripped_crimson_hyphae": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.stripped_crimson_hyphae"
+    "descriptionId": "item.stripped_crimson_hyphae",
+    "tags": [
+      "minecraft:crimson_stems",
+      "minecraft:logs"
+    ]
   },
   "minecraft:stripped_crimson_stem": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.stripped_crimson_stem"
+    "descriptionId": "item.stripped_crimson_stem",
+    "tags": [
+      "minecraft:crimson_stems",
+      "minecraft:logs"
+    ]
   },
   "minecraft:stripped_dark_oak_log": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.stripped_dark_oak_log"
+    "descriptionId": "item.stripped_dark_oak_log",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn"
+    ]
   },
   "minecraft:stripped_jungle_log": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.stripped_jungle_log"
+    "descriptionId": "item.stripped_jungle_log",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn"
+    ]
   },
   "minecraft:stripped_mangrove_log": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.stripped_mangrove_log"
+    "descriptionId": "item.stripped_mangrove_log",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn",
+      "minecraft:mangrove_logs"
+    ]
   },
   "minecraft:stripped_mangrove_wood": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.stripped_mangrove_wood"
+    "descriptionId": "item.stripped_mangrove_wood",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn",
+      "minecraft:mangrove_logs"
+    ]
   },
   "minecraft:stripped_oak_log": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.stripped_oak_log"
+    "descriptionId": "item.stripped_oak_log",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn"
+    ]
   },
   "minecraft:stripped_spruce_log": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.stripped_spruce_log"
+    "descriptionId": "item.stripped_spruce_log",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn"
+    ]
   },
   "minecraft:stripped_warped_hyphae": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.stripped_warped_hyphae"
+    "descriptionId": "item.stripped_warped_hyphae",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:warped_stems"
+    ]
   },
   "minecraft:stripped_warped_stem": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.stripped_warped_stem"
+    "descriptionId": "item.stripped_warped_stem",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:warped_stems"
+    ]
   },
   "minecraft:structure_block": {
     "maxStackSize": 64,
@@ -6557,7 +7819,10 @@
   "minecraft:sweet_berries": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.sweet_berries"
+    "descriptionId": "item.sweet_berries",
+    "tags": [
+      "minecraft:is_food"
+    ]
   },
   "minecraft:sweet_berry_bush": {
     "maxStackSize": 64,
@@ -6572,7 +7837,10 @@
   "minecraft:tadpole_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.tadpole_spawn_egg"
+    "descriptionId": "item.tadpole_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:tallgrass": {
     "maxStackSize": 64,
@@ -6587,7 +7855,10 @@
   "minecraft:tide_armor_trim_smithing_template": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.tide_armor_trim_smithing_template"
+    "descriptionId": "item.tide_armor_trim_smithing_template",
+    "tags": [
+      "minecraft:trim_templates"
+    ]
   },
   "minecraft:tinted_glass": {
     "maxStackSize": 64,
@@ -6602,7 +7873,10 @@
   "minecraft:tnt_minecart": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.tnt_minecart"
+    "descriptionId": "item.tnt_minecart",
+    "tags": [
+      "minecraft:is_minecart"
+    ]
   },
   "minecraft:torch": {
     "maxStackSize": 64,
@@ -6632,7 +7906,10 @@
   "minecraft:trader_llama_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.trader_llama_spawn_egg"
+    "descriptionId": "item.trader_llama_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:trapdoor": {
     "maxStackSize": 64,
@@ -6657,7 +7934,10 @@
   "minecraft:trident": {
     "maxStackSize": 1,
     "maxDamage": 250,
-    "descriptionId": "item.trident"
+    "descriptionId": "item.trident",
+    "tags": [
+      "minecraft:is_trident"
+    ]
   },
   "minecraft:trip_wire": {
     "maxStackSize": 64,
@@ -6672,7 +7952,10 @@
   "minecraft:tropical_fish": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.clownfish"
+    "descriptionId": "item.clownfish",
+    "tags": [
+      "minecraft:is_fish"
+    ]
   },
   "minecraft:tropical_fish_bucket": {
     "maxStackSize": 1,
@@ -6682,7 +7965,10 @@
   "minecraft:tropical_fish_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.tropical_fish_spawn_egg"
+    "descriptionId": "item.tropical_fish_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:tube_coral": {
     "maxStackSize": 64,
@@ -6747,7 +8033,11 @@
   "minecraft:turtle_helmet": {
     "maxStackSize": 1,
     "maxDamage": 275,
-    "descriptionId": "item.turtle_helmet"
+    "descriptionId": "item.turtle_helmet",
+    "tags": [
+      "minecraft:is_armor",
+      "minecraft:trimmable_armors"
+    ]
   },
   "minecraft:turtle_scute": {
     "maxStackSize": 64,
@@ -6757,7 +8047,10 @@
   "minecraft:turtle_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.turtle_spawn_egg"
+    "descriptionId": "item.turtle_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:twisting_vines": {
     "maxStackSize": 64,
@@ -6802,22 +8095,34 @@
   "minecraft:vex_armor_trim_smithing_template": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.vex_armor_trim_smithing_template"
+    "descriptionId": "item.vex_armor_trim_smithing_template",
+    "tags": [
+      "minecraft:trim_templates"
+    ]
   },
   "minecraft:vex_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.vex_spawn_egg"
+    "descriptionId": "item.vex_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:villager_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.villager_spawn_egg"
+    "descriptionId": "item.villager_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:vindicator_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.vindicator_spawn_egg"
+    "descriptionId": "item.vindicator_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:vine": {
     "maxStackSize": 64,
@@ -6837,17 +8142,26 @@
   "minecraft:wandering_trader_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.wandering_trader_spawn_egg"
+    "descriptionId": "item.wandering_trader_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:ward_armor_trim_smithing_template": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.ward_armor_trim_smithing_template"
+    "descriptionId": "item.ward_armor_trim_smithing_template",
+    "tags": [
+      "minecraft:trim_templates"
+    ]
   },
   "minecraft:warden_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.warden_spawn_egg"
+    "descriptionId": "item.warden_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:warped_button": {
     "maxStackSize": 64,
@@ -6857,7 +8171,10 @@
   "minecraft:warped_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.warped_door"
+    "descriptionId": "item.warped_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:warped_double_slab": {
     "maxStackSize": 64,
@@ -6887,12 +8204,20 @@
   "minecraft:warped_hanging_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.warped_hanging_sign"
+    "descriptionId": "item.warped_hanging_sign",
+    "tags": [
+      "minecraft:hanging_sign",
+      "minecraft:sign"
+    ]
   },
   "minecraft:warped_hyphae": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.warped_hyphae"
+    "descriptionId": "item.warped_hyphae",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:warped_stems"
+    ]
   },
   "minecraft:warped_nylium": {
     "maxStackSize": 64,
@@ -6902,7 +8227,10 @@
   "minecraft:warped_planks": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.warped_planks"
+    "descriptionId": "item.warped_planks",
+    "tags": [
+      "minecraft:planks"
+    ]
   },
   "minecraft:warped_pressure_plate": {
     "maxStackSize": 64,
@@ -6917,12 +8245,18 @@
   "minecraft:warped_sign": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.warped_sign"
+    "descriptionId": "item.warped_sign",
+    "tags": [
+      "minecraft:sign"
+    ]
   },
   "minecraft:warped_slab": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.warped_slab"
+    "descriptionId": "item.warped_slab",
+    "tags": [
+      "minecraft:wooden_slabs"
+    ]
   },
   "minecraft:warped_stairs": {
     "maxStackSize": 64,
@@ -6937,7 +8271,11 @@
   "minecraft:warped_stem": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.warped_stem"
+    "descriptionId": "item.warped_stem",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:warped_stems"
+    ]
   },
   "minecraft:warped_trapdoor": {
     "maxStackSize": 64,
@@ -6987,7 +8325,10 @@
   "minecraft:waxed_copper_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.waxed_copper_door"
+    "descriptionId": "item.waxed_copper_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:waxed_copper_grate": {
     "maxStackSize": 64,
@@ -7037,7 +8378,10 @@
   "minecraft:waxed_exposed_copper_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.waxed_exposed_copper_door"
+    "descriptionId": "item.waxed_exposed_copper_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:waxed_exposed_copper_grate": {
     "maxStackSize": 64,
@@ -7087,7 +8431,10 @@
   "minecraft:waxed_oxidized_copper_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.waxed_oxidized_copper_door"
+    "descriptionId": "item.waxed_oxidized_copper_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:waxed_oxidized_copper_grate": {
     "maxStackSize": 64,
@@ -7137,7 +8484,10 @@
   "minecraft:waxed_weathered_copper_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.waxed_weathered_copper_door"
+    "descriptionId": "item.waxed_weathered_copper_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:waxed_weathered_copper_grate": {
     "maxStackSize": 64,
@@ -7172,7 +8522,10 @@
   "minecraft:wayfinder_armor_trim_smithing_template": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.wayfinder_armor_trim_smithing_template"
+    "descriptionId": "item.wayfinder_armor_trim_smithing_template",
+    "tags": [
+      "minecraft:trim_templates"
+    ]
   },
   "minecraft:weathered_chiseled_copper": {
     "maxStackSize": 64,
@@ -7192,7 +8545,10 @@
   "minecraft:weathered_copper_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.weathered_copper_door"
+    "descriptionId": "item.weathered_copper_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:weathered_copper_grate": {
     "maxStackSize": 64,
@@ -7257,7 +8613,10 @@
   "minecraft:white_carpet": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.white_carpet"
+    "descriptionId": "item.white_carpet",
+    "tags": [
+      "minecraft:vibration_damper"
+    ]
   },
   "minecraft:white_concrete": {
     "maxStackSize": 64,
@@ -7302,17 +8661,27 @@
   "minecraft:white_wool": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.white_wool"
+    "descriptionId": "item.white_wool",
+    "tags": [
+      "minecraft:vibration_damper",
+      "minecraft:wool"
+    ]
   },
   "minecraft:wild_armor_trim_smithing_template": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.wild_armor_trim_smithing_template"
+    "descriptionId": "item.wild_armor_trim_smithing_template",
+    "tags": [
+      "minecraft:trim_templates"
+    ]
   },
   "minecraft:witch_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.witch_spawn_egg"
+    "descriptionId": "item.witch_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:wither_rose": {
     "maxStackSize": 64,
@@ -7322,12 +8691,18 @@
   "minecraft:wither_skeleton_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.wither_skeleton_spawn_egg"
+    "descriptionId": "item.wither_skeleton_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:wither_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.wither_spawn_egg"
+    "descriptionId": "item.wither_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:wolf_armor": {
     "maxStackSize": 1,
@@ -7337,17 +8712,30 @@
   "minecraft:wolf_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.wolf_spawn_egg"
+    "descriptionId": "item.wolf_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:wood": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.wood"
+    "descriptionId": "item.wood",
+    "tags": [
+      "minecraft:logs",
+      "minecraft:logs_that_burn"
+    ]
   },
   "minecraft:wooden_axe": {
     "maxStackSize": 1,
     "maxDamage": 59,
-    "descriptionId": "item.wooden_axe"
+    "descriptionId": "item.wooden_axe",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:is_axe",
+      "minecraft:is_tool",
+      "minecraft:wooden_tier"
+    ]
   },
   "minecraft:wooden_button": {
     "maxStackSize": 64,
@@ -7357,17 +8745,32 @@
   "minecraft:wooden_door": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.wooden_door"
+    "descriptionId": "item.wooden_door",
+    "tags": [
+      "minecraft:door"
+    ]
   },
   "minecraft:wooden_hoe": {
     "maxStackSize": 1,
     "maxDamage": 59,
-    "descriptionId": "item.wooden_hoe"
+    "descriptionId": "item.wooden_hoe",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:is_hoe",
+      "minecraft:is_tool",
+      "minecraft:wooden_tier"
+    ]
   },
   "minecraft:wooden_pickaxe": {
     "maxStackSize": 1,
     "maxDamage": 59,
-    "descriptionId": "item.wooden_pickaxe"
+    "descriptionId": "item.wooden_pickaxe",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:is_pickaxe",
+      "minecraft:is_tool",
+      "minecraft:wooden_tier"
+    ]
   },
   "minecraft:wooden_pressure_plate": {
     "maxStackSize": 64,
@@ -7377,17 +8780,31 @@
   "minecraft:wooden_shovel": {
     "maxStackSize": 1,
     "maxDamage": 59,
-    "descriptionId": "item.wooden_shovel"
+    "descriptionId": "item.wooden_shovel",
+    "tags": [
+      "minecraft:digger",
+      "minecraft:is_shovel",
+      "minecraft:is_tool",
+      "minecraft:wooden_tier"
+    ]
   },
   "minecraft:wooden_slab": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.wooden_slab"
+    "descriptionId": "item.wooden_slab",
+    "tags": [
+      "minecraft:wooden_slabs"
+    ]
   },
   "minecraft:wooden_sword": {
     "maxStackSize": 1,
     "maxDamage": 59,
-    "descriptionId": "item.wooden_sword"
+    "descriptionId": "item.wooden_sword",
+    "tags": [
+      "minecraft:is_sword",
+      "minecraft:is_tool",
+      "minecraft:wooden_tier"
+    ]
   },
   "minecraft:wool": {
     "maxStackSize": 64,
@@ -7397,12 +8814,20 @@
   "minecraft:writable_book": {
     "maxStackSize": 1,
     "maxDamage": 0,
-    "descriptionId": "item.writable_book"
+    "descriptionId": "item.writable_book",
+    "tags": [
+      "minecraft:bookshelf_books",
+      "minecraft:lectern_books"
+    ]
   },
   "minecraft:written_book": {
     "maxStackSize": 16,
     "maxDamage": 0,
-    "descriptionId": "item.written_book"
+    "descriptionId": "item.written_book",
+    "tags": [
+      "minecraft:bookshelf_books",
+      "minecraft:lectern_books"
+    ]
   },
   "minecraft:yellow_candle": {
     "maxStackSize": 64,
@@ -7417,7 +8842,10 @@
   "minecraft:yellow_carpet": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.yellow_carpet"
+    "descriptionId": "item.yellow_carpet",
+    "tags": [
+      "minecraft:vibration_damper"
+    ]
   },
   "minecraft:yellow_concrete": {
     "maxStackSize": 64,
@@ -7467,31 +8895,50 @@
   "minecraft:yellow_wool": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.yellow_wool"
+    "descriptionId": "item.yellow_wool",
+    "tags": [
+      "minecraft:vibration_damper",
+      "minecraft:wool"
+    ]
   },
   "minecraft:zoglin_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.zoglin_spawn_egg"
+    "descriptionId": "item.zoglin_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:zombie_horse_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.zombie_horse_spawn_egg"
+    "descriptionId": "item.zombie_horse_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:zombie_pigman_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.zombie_pigman_spawn_egg"
+    "descriptionId": "item.zombie_pigman_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:zombie_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.zombie_spawn_egg"
+    "descriptionId": "item.zombie_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   },
   "minecraft:zombie_villager_spawn_egg": {
     "maxStackSize": 64,
     "maxDamage": 0,
-    "descriptionId": "item.zombie_villager_spawn_egg"
+    "descriptionId": "item.zombie_villager_spawn_egg",
+    "tags": [
+      "minecraft:spawn_egg"
+    ]
   }
 }

@@ -17,16 +17,17 @@ const EFFECTS_FILE = 'effects.json'
 const ENCHANTMENTS_FILE = 'enchantments.json'
 const ALIASES_FILE = 'item_aliases.json'
 const BIOMES_FILE = 'biome_ids.json'
+const COMPLEX_FILE = 'complex_aliases.json'
 
 /**
  * Step 2: block_palette.nbt + block-state-shapes.nbt + block_types.json (each type's default state, its
  * scalars and tags) + item_types.json (each item's max stack size, max damage, description id) + item_aliases.json (the old item
- * names the game still reads) + effects.json
+ * names the game still reads) + complex_aliases.json (the old names split into items by data value) + effects.json
  * (each mob effect) + enchantments.json, exported by the agent inside each server.
  */
 export async function blocks (builds: Build[], force: boolean): Promise<string[]> {
   if (!existsSync(AGENT) || !existsSync(INJECT)) throw new Error(`no ${AGENT} (run pnpm build:native)`)
-  const todo = builds.filter(b => force || !allExist([...BLOCK_FILES, TYPES_FILE, ITEMS_FILE, ALIASES_FILE, EFFECTS_FILE, ENCHANTMENTS_FILE].map(f => dataFile(b, f))))
+  const todo = builds.filter(b => force || !allExist([...BLOCK_FILES, TYPES_FILE, ITEMS_FILE, ALIASES_FILE, COMPLEX_FILE, EFFECTS_FILE, ENCHANTMENTS_FILE].map(f => dataFile(b, f))))
   console.log(`blocks: ${todo.length} to export, ${builds.length - todo.length} already there, ${JOBS} servers at a time`)
   const failed: string[] = []
   await pool(todo, JOBS, async b => {
@@ -92,7 +93,7 @@ async function exportBuild (b: Build): Promise<number> {
   const typesJson = JSON.stringify(Object.fromEntries(Object.keys(types).sort().map(n => [n, types[n]])), null, 2) + '\n'
 
   // every item once, by name; a stack size of 1 to 64
-  type ItemType = { maxStackSize: number, maxDamage: number, descriptionId?: string }
+  type ItemType = { maxStackSize: number, maxDamage: number, descriptionId?: string, tags?: string[] }
   const itemTypes: Record<string, ItemType> = JSON.parse(readFileSync(join(work, ITEMS_FILE), 'utf8'))
   const bad = Object.entries(itemTypes).filter(([, t]) => t.maxStackSize < 1 || t.maxStackSize > 64 || t.maxDamage < 0)
   if (bad.length) throw new Error(`item_types.json: ${bad.slice(0, 5).map(([n, t]) => `${n} ${t.maxStackSize}/${t.maxDamage}`).join(', ')}`)
@@ -103,10 +104,16 @@ async function exportBuild (b: Build): Promise<number> {
   writeAtomic(dataFile(b, TYPES_FILE), typesJson)
   writeAtomic(dataFile(b, ITEMS_FILE), itemsJson)
   writeAtomic(dataFile(b, ALIASES_FILE), readFileSync(join(work, ALIASES_FILE), 'utf8'))
-  // biome ids where the agent found the registry (a check on PyMCTranslate's), else none
+  // the old names whose data values became items of their own, and those items (none before 1.20)
+  const complex: Record<string, string[]> = JSON.parse(readFileSync(join(work, COMPLEX_FILE), 'utf8'))
+  const unknown = Object.entries(complex).flatMap(([k, names]) => names.length ? names.filter(n => !(n in itemTypes)).map(n => `${k}: ${n}`) : [`${k}: no names`])
+  if (unknown.length) throw new Error(`complex_aliases.json: ${unknown.slice(0, 5).join(', ')}`)
+  writeAtomic(dataFile(b, COMPLEX_FILE), JSON.stringify(complex, null, 2) + '\n')
+  // biome ids where the agent found the registry (a check on PyMCTranslate's); a run that does not find it
+  // (the search is by content, and rejects a read of a registry in the middle of a change) keeps the build's
+  // earlier ones
   const biomeIds = join(work, BIOMES_FILE)
   if (existsSync(biomeIds)) writeAtomic(dataFile(b, BIOMES_FILE), readFileSync(biomeIds, 'utf8'))
-  else rmSync(dataFile(b, BIOMES_FILE), { force: true })
   // effects numbered 1.., each once
   const effects: { id: number }[] = JSON.parse(readFileSync(join(work, EFFECTS_FILE), 'utf8'))
   if (effects.some((e, i) => e.id !== i + 1)) throw new Error('effects.json: ids are not 1..n')
@@ -116,6 +123,6 @@ async function exportBuild (b: Build): Promise<number> {
   if (enchantments.some((e, i) => e.id !== i)) throw new Error('enchantments.json: ids are not 0..n')
   writeAtomic(dataFile(b, ENCHANTMENTS_FILE), JSON.stringify(enchantments, null, 2) + '\n')
   // agent.log stays for reference
-  for (const f of [...BLOCK_FILES, TYPES_FILE, ITEMS_FILE, ALIASES_FILE, EFFECTS_FILE, ENCHANTMENTS_FILE, BIOMES_FILE, 'result.txt']) rmSync(join(work, f), { force: true })
+  for (const f of [...BLOCK_FILES, TYPES_FILE, ITEMS_FILE, ALIASES_FILE, COMPLEX_FILE, EFFECTS_FILE, ENCHANTMENTS_FILE, BIOMES_FILE, 'result.txt']) rmSync(join(work, f), { force: true })
   return shapes.length
 }

@@ -2,6 +2,7 @@
 //   servers   download the builds that are missing and apply server.properties
 //   blocks    block_palette.nbt + block-state-shapes.nbt, by the native agent (pnpm build:native first)
 //   network   packets.nbt: the first raw packet of every id a client receives while joining
+//   recipes   recipes.json: every recipe the server sends (packets.nbt), whole, checked craftable with the item data
 //   steve     steve.json: the skin a real client sends (manual: connect with Minecraft)
 //   mcdata    (--accept: take the registry's differences) attributes.json, blocks.json, blockStates.json, blockCollisionShapes.json, biomes.json, entities.json, items.json, steve.json, language.json of every build into the minecraft-data checkout
 //   validate  the published files through mcdata's validation (strict schemas, each file's validator, the registry)
@@ -18,6 +19,7 @@ import { status } from './steps/status.ts'
 import { check } from './steps/check.ts'
 import { mcdata } from './steps/mcdata.ts'
 import { validate } from './steps/validate.ts'
+import { recipes } from './steps/recipes.ts'
 
 const [command, ...rest] = process.argv.slice(2)
 const force = rest.includes('--force')
@@ -39,6 +41,7 @@ async function main (): Promise<string[]> {
       const ready = builds.filter(b => !failed.has(b.serverVersion))
       for (const v of await blocks(ready, force)) failed.add(v)
       for (const v of await network(ready, force)) failed.add(v)
+      for (const v of await recipes(ready.filter(b => !failed.has(b.serverVersion) && !failed.has(b.mcDataVersion)))) failed.add(v)
       if (!failed.size) await mcdata()
       return [...failed]
     }
@@ -46,8 +49,9 @@ async function main (): Promise<string[]> {
     case 'check': return check(builds)
     case 'mcdata': return mcdata(rest.includes('--accept'))
     case 'validate': return validate(builds)
+    case 'recipes': return recipes(builds)
     default:
-      throw new Error(`unknown step ${command ?? '(none)'}: servers | blocks | network | steve | mcdata | validate | all | status | check`)
+      throw new Error(`unknown step ${command ?? '(none)'}: servers | blocks | network | steve | recipes | mcdata | validate | all | status | check`)
   }
 }
 

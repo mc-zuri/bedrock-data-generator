@@ -13,6 +13,19 @@ export function readBlockStates (paletteFile: string): BlockState[] {
   return raw.value.blocks.value.value.map((b: any) => ({ name: b.name.value.replace('minecraft:', ''), states: b.states.value, version: b.version.value }))
 }
 
+/**
+ * A block state's network hash (what a server sends in place of a runtime id where it hashes them, as in
+ * crafting_data's outputs from 1.20): FNV-1a 32 of the state's NBT, little-endian, { name, states } with
+ * the states in key order (block_types.json's defaultBlockStateHash is each block's default state's).
+ */
+export function stateHash (state: BlockState): number {
+  const states = Object.fromEntries(Object.keys(state.states).sort().map(k => [k, state.states[k]]))
+  const root = { type: 'compound', name: '', value: { name: { type: 'string', value: `minecraft:${state.name}` }, states: { type: 'compound', value: states } } }
+  let h = 0x811c9dc5
+  for (const byte of nbt.writeUncompressed(root as any, 'little')) h = Math.imul(h ^ byte, 0x01000193) >>> 0
+  return h
+}
+
 export const blockStatesJson = (states: BlockState[]): string => JSON.stringify(states, null, '\t')
 
 /**

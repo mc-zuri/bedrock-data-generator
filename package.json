@@ -12,6 +12,7 @@
     "servers": "node --env-file-if-exists=.env src/main.ts servers",
     "blocks": "node --env-file-if-exists=.env src/main.ts blocks",
     "network": "node --env-file-if-exists=.env src/main.ts network",
+    "recipes": "node --env-file-if-exists=.env src/main.ts recipes",
     "steve": "node --env-file-if-exists=.env src/main.ts steve",
     "all": "node --env-file-if-exists=.env src/main.ts all",
     "status": "node --env-file-if-exists=.env src/main.ts status",

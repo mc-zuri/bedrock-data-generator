@@ -35,6 +35,16 @@
 //    descriptor), at the build's vtable slots, once they give the known items' values. Without a stack
 //    size slot (some builds), the field, a filled bucket stacking to 1 and an empty one to 16
 //    (BucketItem::getMaxStackSize, the one override).
+// 4. Item::mTags, a std::vector of ItemTags (HashedStrings, 0x30 bytes each): the one offset at which the
+//    diamond sword's vector names minecraft:is_sword and minecraft:diamond_tier, and neither stone's nor the
+//    bow's names minecraft:is_sword (both are valid vectors, empty or not: 1.26.50 tags stone).
+// 5. ItemRegistry::mComplexAliasLookupMap, an std::unordered_map<HashedString, ComplexAlias>: an old name
+//    whose data values became items of their own (minecraft:log: oak_log, spruce_log, ...) and the
+//    std::function that names the item of each value. Its list is the one beside the aliases whose keys
+//    include minecraft:log and minecraft:wool. Beside its std::function, each alias keeps the names it splits
+//    into, by data value, in a vector of pointers to HashedStrings (1.26.30: at +128 of the node): the one
+//    place where minecraft:log's reads oak_log, spruce_log, birch_log, jungle_log. complex_aliases.json:
+//    each old name's names in data value order (a name twice where two values give it).
 
 namespace bdg::exporter {
 
@@ -156,6 +166,56 @@ int callStack(std::uintptr_t fn, std::uintptr_t self) {
     }
 }
 
+// a vector of strings at `at` (`stride` 8: pointers to HashedStrings; 0x20: std::strings; 0x30:
+// HashedStrings): the strings, with the namespace; empty where it is none
+std::vector<std::string> stringVector(std::uintptr_t at, std::uintptr_t stride) {
+    std::vector<std::string> out;
+    std::uintptr_t const b = memory::readPtr(at), e = memory::readPtr(at, 8);
+    if (b < 0x10000 || e <= b || (e - b) % stride || (e - b) / stride > 256) return out;
+    for (std::uintptr_t p = b; p < e; p += stride) {
+        std::string name = stride == 8 ? memory::readHashedString(memory::readPtr(p)) : stride == 0x30 ? memory::readHashedString(p) : memory::readString(p);
+        if (name.empty() || name.size() > 64) return {};
+        out.push_back(name.find(':') == std::string::npos ? "minecraft:" + name : name);
+    }
+    return out;
+}
+
+// ItemRegistry::mComplexAliasLookupMap among the words between `from` and `to` (see 5. above): each key's names
+std::vector<std::pair<std::string, std::vector<std::string>>> complexAliasesNear(std::uintptr_t from, std::uintptr_t to) {
+    for (std::uintptr_t at = from; at + 8 <= to; at += 8) {
+        std::uintptr_t const head = memory::readPtr(at);
+        if (head < 0x10000 || (head & 7)) continue;
+        std::uintptr_t node = memory::readPtr(head);
+        if (node < 0x10000 || node == head || !memory::readString(node + 24).starts_with("minecraft:")) continue;
+        std::vector<std::uintptr_t> nodes;
+        bool log = false, wool = false, ok = true;
+        for (int n = 0; node != head && n < 2000; ++n, node = memory::readPtr(node)) {
+            std::string key = memory::readString(node + 24);
+            if (!key.starts_with("minecraft:")) { ok = false; break; }
+            log |= key == "minecraft:log";
+            wool |= key == "minecraft:wool";
+            nodes.push_back(node);
+        }
+        if (!ok || node != head || !log || !wool) continue;
+        // the names: a vector in the node after the key, or behind a pointer there (the std::function's
+        // callable), where minecraft:log's are the four logs
+        auto logNode = std::find_if(nodes.begin(), nodes.end(), [](std::uintptr_t n) { return memory::readString(n + 24) == "minecraft:log"; });
+        std::vector<std::string> const logs = {"minecraft:oak_log", "minecraft:spruce_log", "minecraft:birch_log", "minecraft:jungle_log"};
+        for (std::int64_t off = 64; off <= 64 + 0x200; off += 8)
+            for (std::int64_t inner : {-1, 8, 16, 24, 32, 40, 48})
+                for (std::uintptr_t stride : {8, 0x20, 0x30}) {
+                    auto at = [&](std::uintptr_t n) { return inner < 0 ? n + off : memory::readPtr(n, off) + inner; };
+                    if (inner >= 0 && !isObject(memory::readPtr(*logNode, off))) continue;
+                    if (stringVector(at(*logNode), stride) != logs) continue;
+                    log::info("items: complex alias names at +{}{} (stride {:#x})", off, inner < 0 ? "" : std::format(" -> +{}", inner), stride);
+                    std::vector<std::pair<std::string, std::vector<std::string>>> out;
+                    for (std::uintptr_t n : nodes) out.emplace_back(memory::readString(n + 24), stringVector(at(n), stride));
+                    return out;
+                }
+    }
+    return {};
+}
+
 // ItemRegistry::mItemAliasLookupMap, an std::unordered_map<HashedString, ItemAlias>: its std::list of nodes
 // { next, prev, HashedString key (+16), ItemAlias { HashedString name } (+64) } holds the old names the game
 // still reads (loot tables name "minecraft:fish" for cod). It is the list whose keys are minecraft:* names,
@@ -240,6 +300,24 @@ Result exportItems(std::uintptr_t level, std::string const& out) {
     if (descriptionOff < 0) return result;
     log::info("items: max stack size at +{}, max damage at +{}, description id at +{}", stackOff, damageOff, descriptionOff);
 
+    // the tags: a vector of HashedStrings (0x30 bytes each)
+    auto tagsAt = [](std::uintptr_t it, std::int64_t off) {
+        std::vector<std::string> out;
+        std::uintptr_t const b = memory::readPtr(it, off), e = memory::readPtr(it, off + 8);
+        if (b == 0 && e == 0) return out;
+        if (b < 0x10000 || e < b || (e - b) % 0x30 || (e - b) / 0x30 > 64) return std::vector<std::string>{"?"};
+        for (std::uintptr_t p = b; p < e; p += 0x30) out.push_back(memory::readHashedString(p));
+        return out;
+    };
+    auto hasTag = [](std::vector<std::string> const& tags, char const* t) { return std::find(tags.begin(), tags.end(), t) != tags.end(); };
+    std::int64_t const tagsOff = onlyOffset(8, [&](std::int64_t o) {
+        auto const sw = tagsAt(sword, o), st = tagsAt(stone, o), bw = tagsAt(bow, o);
+        return hasTag(sw, "minecraft:is_sword") && hasTag(sw, "minecraft:diamond_tier") && !hasTag(st, "minecraft:is_sword") && !hasTag(st, "?") &&
+               !hasTag(bw, "minecraft:is_sword") && !hasTag(bw, "?");
+    }, result.message, "the item tags");
+    if (tagsOff < 0) return result;
+    log::info("items: tags at +{}", tagsOff);
+
     auto const& r          = bindings::current();
     int const   damageSlot = r.slot(bindings::names::ItemGetMaxDamage), stackSlot = r.slot(bindings::names::ItemGetMaxStackSize);
     auto        damageOf   = [&](std::uintptr_t it) { return callInt(memory::virtualAt(it, damageSlot), it); };
@@ -277,6 +355,17 @@ Result exportItems(std::uintptr_t level, std::string const& out) {
         }
         json += std::format("{}\n  \"{}\": {{\n    \"maxStackSize\": {},\n    \"maxDamage\": {}", first ? "" : ",", name, stackSize, damage);
         if (!desc.empty()) json += std::format(",\n    \"descriptionId\": \"{}\"", desc);
+        std::vector<std::string> tags = tagsAt(it, tagsOff);
+        std::sort(tags.begin(), tags.end());
+        if (!tags.empty()) {
+            if (std::any_of(tags.begin(), tags.end(), [](std::string const& t) { return !isGameName(t) && t.find(':') == std::string::npos; })) {
+                result.message = std::format("{}: a tag that is no name", name);
+                return result;
+            }
+            json += ",\n    \"tags\": [";
+            for (std::size_t i = 0; i < tags.size(); ++i) json += std::format("{}\"{}\"", i ? ", " : "", tags[i]);
+            json += "]";
+        }
         json += "\n  }";
         first = false;
     }
@@ -299,6 +388,24 @@ Result exportItems(std::uintptr_t level, std::string const& out) {
     log::info("items: {} aliases", aliases.size());
     if (!nbt::writeFile(out + "\\item_aliases.json", std::vector<std::uint8_t>(aliasJson.begin(), aliasJson.end()))) {
         result.message = "could not write item_aliases.json";
+        return result;
+    }
+    // the complex aliases (from 1.20; none before): beside the aliases, or in the statics around the vector
+    auto complex = complexAliasesNear(items->holder - 0x400, items->holder + 0x400);
+    if (complex.empty())
+        for (auto [from, to] : dataSections())
+            if (items->holder >= from && items->holder < to && (complex = complexAliasesNear(from, to)).size()) break;
+    std::sort(complex.begin(), complex.end());
+    std::string complexJson = "{";
+    for (std::size_t i = 0; i < complex.size(); ++i) {
+        complexJson += std::format("{}\n  \"{}\": [", i ? "," : "", complex[i].first);
+        for (std::size_t j = 0; j < complex[i].second.size(); ++j) complexJson += std::format("{}\"{}\"", j ? ", " : "", complex[i].second[j]);
+        complexJson += "]";
+    }
+    complexJson += "\n}\n";
+    log::info("items: {} complex aliases", complex.size());
+    if (!nbt::writeFile(out + "\\complex_aliases.json", std::vector<std::uint8_t>(complexJson.begin(), complexJson.end()))) {
+        result.message = "could not write complex_aliases.json";
         return result;
     }
     if (!nbt::writeFile(out + "\\item_types.json", std::vector<std::uint8_t>(json.begin(), json.end()))) {

@@ -27,6 +27,7 @@ pnpm build:native          # xmake + MSVC: native/build/windows/x64/release/bdg_
 pnpm servers [versions]    # download the exact builds into servers/ (or SERVERS_DIR, see .env.example)
 pnpm blocks  [versions]    # everything the agent exports (the table above)
 pnpm network [versions]    # packets.nbt
+pnpm recipes [versions]    # recipes.json: every recipe of packets.nbt, whole, checked craftable (Crafting, below)
 pnpm steve   <version>     # steve.json: join 127.0.0.1:19150 with Minecraft <version> when asked
 pnpm mcdata [--accept]     # the minecraft-data files of every build into the minecraft-data checkout (Publishing, below)
 pnpm validate [versions]   # the published files through the validation pnpm mcdata runs (Validation, below)
@@ -74,6 +75,52 @@ All NBT files are gzip-compressed; `prismarine-nbt`'s `parse` detects both.
   packet as the server sent it (varint id, then the body), kept before decoding, so a packet
   bedrock-protocol cannot decode is there too. Decode with `bedrock-protocol`'s serializer for `protocol`.
 - **`steve.json`**: the 20 skin fields of the login, the persona id made deterministic.
+
+## Crafting
+
+What a client needs to craft every recipe of a build is in its `data/<serverVersion>/`:
+
+- `recipes.json` (`pnpm recipes`, `src/mcdata/craft.ts`): every recipe the server sends in `crafting_data`,
+  whole, by item name, in one form for every protocol:
+  - `recipes`: each with its `networkId` (what a craft request names; the server numbers them 1 to n),
+    `type`, `id`, `block` (its station, or `deprecated`), `priority`:
+    - `shaped` / `shaped_chemistry`: `width`, `height`, `input` row by row (`null` an empty slot);
+    - `shapeless` / `shapeless_chemistry` / `shulker_box` (the user-data ones: shulker box and bundle dyeing):
+      `input`;
+    - `smithing_transform`: `template` (from 1.20), `base`, `addition`, the output; `smithing_trim`;
+    - `furnace`: a furnace's, blast furnace's, smoker's or campfire's (`block`), by its input. The server
+      sends these without a network id before 1.26.20, and as shapeless recipes of that block after;
+    - `multi`: the game's special ones (fireworks, map cloning, repair, ...), by `uuid`.
+  - an ingredient: `{ name, metadata? }` (an item; no metadata: any data), `{ tag }` (any item with the tag),
+    or `{ alias }` (any item of the complex alias), each with its `count`;
+  - an output: `{ name, metadata, count }`, with `blockStateId` (the palette's runtime id) and, from 1.20,
+    `blockStateHash` (the block state network hash the server sends) where it places a block, and `nbt`;
+  - `potions` / `potionContainers`: the brewing stand's; `materialReducers`.
+- `item_types.json`: each item's `tags` (Item::mTags: what a tag ingredient takes), max stack size, max
+  damage, description id.
+- `complex_aliases.json` (from 1.19.80): each old name whose data values became items of their own
+  (`minecraft:log`: oak, spruce, birch, jungle log), those items by data value: what an alias ingredient
+  takes. Before 1.19.80 an alias ingredient names an item itself, with any data value (`minecraft:coal`:
+  coal and charcoal).
+
+`pnpm recipes` writes a build's file only if every recipe is craftable with that item data
+(`src/validate/recipes.ts`): each ingredient takes at least one item, each output is an item (its block
+state the palette's, of its hash), the network ids are 1 to n, each grid is its size, each station is
+one the game has. `test/recipes.test.ts` checks every build's file against its packets and those rules, and
+that the recipes a player knows are there in every version (sticks, the crafting table, the furnace, tools
+of every tier, iron in a furnace and a blast furnace, beef in a smoker, the stonecutter, brewing, the special
+recipes; the smithing table's upgrades from 1.18.11, the first build whose server sends them as recipes).
+
+The agent finds the item tags and complex aliases by content, as the rest: the tag vector is the one offset
+of an Item where the diamond sword's names `minecraft:is_sword` and `minecraft:diamond_tier`; the complex
+aliases are the map beside the aliases whose keys include `minecraft:log` and `minecraft:wool`, each with a
+vector of pointers to the names it splits into. Both match bedrock-data-extractor's item tags and
+bedrock-engine-v4's client table of complex aliases exactly where those exist.
+
+Decoding every build's `crafting_data` also found four errors in minecraft-data's protocol definitions,
+fixed there: 1.16.201 typed the recipe network ids `zigzag32` (they are `varint`, as in 1.16.210); 1.17.30
+and 1.17.40 put the material reducers before the potion container recipes; 1.21.0 to 1.21.30 give a user
+data (shulker box) recipe an unlocking requirement its servers do not send.
 
 ## How blocks are exported
 
