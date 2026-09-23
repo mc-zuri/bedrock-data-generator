@@ -79,6 +79,7 @@ export function biomes (defs: Record<string, BiomeDefinition>, bedrock: BiomeTab
  * `list` (biomes.json, kept or made) with what the server's biome_definition_list says, where it says it:
  * - temperature, rainfall: the definition's temperature and downfall;
  * - dimension: its `nether` / `the_end` tag, else the overworld;
+ * - category: by its tags (biomeCategory), where they say it;
  * - depth: its depth (sent from 1.21.60);
  * - has_precipitation / precipitation: its rain flag (sent from 1.21.60): snow where it rains below 0.15;
  * - parent: the Bedrock biome that names it its child (the older Java data names the Java parent);
@@ -86,6 +87,36 @@ export function biomes (defs: Record<string, BiomeDefinition>, bedrock: BiomeTab
  *   map to, as desert_hills and desert to Java 1.18's desert, sulfur_caves to dripstone_caves), the biome of
  *   that name keeps it (else the lowest id), the others are named after themselves.
  */
+/**
+ * A biome's category by the tags the server gives it, in the latest Java data's scheme (Java's own changed
+ * in 1.19: its snowy plains became plains, its frozen river ice), so every version says it alike; undefined
+ * where no tag says it (pale_garden: the Java biome's then).
+ */
+export function biomeCategory (tags: ReadonlySet<string>): string | undefined {
+  const has = (t: string) => tags.has(t)
+  if (has('the_end')) return 'the_end'
+  if (has('nether')) return 'nether'
+  if (has('caves')) return 'underground'
+  if (has('mooshroom_island')) return 'mushroom'
+  if (has('beach')) return 'beach'
+  if (has('river')) return has('frozen') ? 'ice' : 'river'
+  if (has('ocean')) return 'ocean'
+  if (has('mangrove_swamp') || has('flower_forest')) return 'forest'
+  if (has('swamp')) return 'swamp'
+  if (has('jungle')) return 'jungle'
+  if (has('mesa')) return 'mesa'
+  if (has('savanna')) return 'savanna'
+  if (has('desert')) return 'desert'
+  if (has('taiga')) return 'taiga'
+  if (has('extreme_hills')) return has('forest') && !has('mutated') ? 'forest' : 'extreme_hills'
+  if (has('grove') || has('cherry_grove')) return 'forest'
+  if (has('mountains')) return has('frozen_peaks') ? 'ice' : 'mountain'
+  if (has('ice_plains') || has('ice')) return has('mutated') ? 'ice' : 'plains'
+  if (has('forest') || has('roofed')) return 'forest'
+  if (has('plains')) return 'plains'
+  return undefined
+}
+
 export function withServerBiomeFields (list: any[], defs: Record<string, BiomeDefinition>): any[] {
   const out = list.map(entry => {
     const def = defs[entry.name]
@@ -93,6 +124,7 @@ export function withServerBiomeFields (list: any[], defs: Record<string, BiomeDe
     const e = { ...entry, temperature: def.temperature, rainfall: def.downfall }
     const tags = new Set(def.tags ?? [])
     if (def.tags) e.dimension = tags.has('nether') ? 'nether' : tags.has('the_end') ? 'end' : 'overworld'
+    e.category = biomeCategory(tags) ?? e.category
     if (typeof def.depth === 'number') e.depth = def.depth
     if (def.rain !== undefined) {
       const rain = Boolean(def.rain)

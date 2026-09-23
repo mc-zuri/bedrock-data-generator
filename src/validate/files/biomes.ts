@@ -1,6 +1,7 @@
 // biomes.json: exactly the biomes the server sends (biome_definition_list), each name and id once, each id
 // the server's own where the agent read them (biome_ids.json); temperature and rainfall the definition's;
-// the dimension the one its tags name; a child a biome of the file, whose parent it is; displayNames unique.
+// the dimension and category the ones its tags name; a child a biome of the file, whose parent it is; displayNames unique.
+import { biomeCategory } from '../../mcdata/biomes.ts'
 import { sameFloat, sameSet, unique, type Validator } from '../context.ts'
 
 export const biomes: Validator = (list: any[], { server, bad }) => {
@@ -24,6 +25,8 @@ export const biomes: Validator = (list: any[], { server, bad }) => {
       const dimension = tags.has('nether') ? 'nether' : tags.has('the_end') ? 'end' : 'overworld'
       if (b.dimension !== dimension) bad(`${at} dimension ${b.dimension}, its tags say ${dimension}`)
     }
+    const category = biomeCategory(new Set(def.tags ?? []))
+    if (category && b.category !== category) bad(`${at} category ${b.category}, its tags say ${category}`)
     if (typeof def.depth === 'number' && !sameFloat(b.depth, def.depth)) bad(`${at} depth ${b.depth}, the server's ${def.depth}`)
     if (def.rain !== undefined) {
       const rain = Boolean(def.rain)
