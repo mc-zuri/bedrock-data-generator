@@ -337,6 +337,9 @@ export async function mcdata (accept = false): Promise<string[]> {
     counts.deleted++
   }
 
+  // the entity definitions of the latest build: an entity's kind (entityProps.ts) in every version
+  let latestDefs: Map<string, any> | undefined
+  const latestEntityDefs = () => (latestDefs ??= entityDefinitions(builds.at(-1)!))
   // the digs of the first build whose server tags its blocks by the tools that dig them, for the builds before it
   let reference: Reference | undefined
   const digReference = async (): Promise<Reference> => {
@@ -524,7 +527,7 @@ export async function mcdata (accept = false): Promise<string[]> {
       if (wrong.length) throw new Error(`${v}: biomes.json ids differ from the server's: ${wrong.slice(0, 5).map(e => `${e.name} ${e.id} (server ${serverIds[e.name]})`).join(', ')}`)
     }
     const entityDefs = entityDefinitions(b)
-    const entityList = listFile('entities', entities(entityIdentifiers(b), await javaEntities(b.javaVersion)), entitiesFit, entitiesJson, list => withServerEntityFields(list, entityDefs, lang))
+    const entityList = listFile('entities', entities(entityIdentifiers(b), await javaEntities(b.javaVersion)), entitiesFit, entitiesJson, list => withServerEntityFields(list, entityDefs, lang, latestEntityDefs()))
 
     // entityLoot.json: each entity's drops from the loot table its behavior pack definition names
     {

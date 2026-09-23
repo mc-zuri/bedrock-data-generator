@@ -151,6 +151,21 @@ describe('fixed ids', () => {
   }
 })
 
+describe('entity kinds', () => {
+  const KINDS: [string, string, string][] = [
+    ['zombie', 'hostile', 'Hostile mobs'], ['creeper', 'hostile', 'Hostile mobs'], ['cow', 'animal', 'Passive mobs'], ['pig', 'animal', 'Passive mobs'],
+    ['squid', 'water_creature', 'Passive mobs'], ['cod', 'water_creature', 'Passive mobs'], ['bat', 'ambient', 'Passive mobs'], ['villager_v2', 'passive', 'Passive mobs'],
+    ['iron_golem', 'mob', 'Passive mobs'], ['arrow', 'projectile', 'Projectiles'], ['minecart', 'other', 'Vehicles'], ['boat', 'other', 'Vehicles'],
+    ['armor_stand', 'living', 'Immobile'], ['player', 'player', 'UNKNOWN']
+  ]
+  for (const v of ORDER) {
+    test(v, () => {
+      const byName = new Map<string, any>(files(v)('entities').map((e: any) => [e.name, e]))
+      for (const [name, type, category] of KINDS) assert.deepEqual([byName.get(name)?.type, byName.get(name)?.category], [type, category], name)
+    })
+  }
+})
+
 describe('entity loot', () => {
   for (const v of ORDER) {
     test(v, () => {

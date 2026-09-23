@@ -316,11 +316,14 @@ Java-only items onto a Bedrock stand-in: furnace_minecart onto hopper_minecart).
 
 **entities.json**: `width`, `height` (and `length`) from the definition's `minecraft:collision_box` in the
 server's behavior packs (an adult group's, else the base one); `displayName` the language file's; `type` and
-`category` from the Java entity, else the definition's spawn category and families. An entity defined in
-code (item, painting, falling_block) keeps its table values.
+`category` by the definition (its families, spawn category, projectile component: `entityKind` in
+`entityProps.ts`), the latest build's where it has the entity, so every version says it alike (the Java data
+had every 1.16 entity a `mob`, and bats, villagers and boats `UNKNOWN` in 1.26). An entity defined in code
+(item, painting, falling_block) keeps its table values.
 
 **biomes.json**: `temperature`, `rainfall`, and from 1.21.60 `depth` and the rain flag, from the packet;
-`dimension` from its tags; the id from PyMCTranslate, checked by `pnpm mcdata` against the server's own
+`dimension` and `category` from its tags (the category in the latest Java data's scheme, so every version
+says it alike: `biomeCategory` in `biomes.ts`); the id from PyMCTranslate, checked by `pnpm mcdata` against the server's own
 (`biome_ids.json`) wherever the agent found the registry (1.16.201 - 1.19.21, 1.21.90 on; 1.19.30 - 1.21.80
 keep it where the search does not reach, and bedrock-data-extractor's ids for those, read through fixed
 addresses, are PyMCTranslate's too); `category`, `color`, `precipitation` before 1.21.60 from the Java biome;

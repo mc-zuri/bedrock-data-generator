@@ -132,6 +132,7 @@ const CASES: Case[] = [
   { what: 'a string not the server\'s', key: 'language', packs: true, apply: d => { d.language['potion.moveSpeed'] = 'Fast' } },
   { what: 'a key the server does not have', key: 'language', packs: true, apply: d => { d.language['bogus.key'] = 'x' } },
   { what: 'a hitbox not its definition\'s', key: 'entities', packs: true, apply: d => { find<any>(d.entities, e => e.name === 'zombie', 'zombie').height = 3 } },
+  { what: 'a kind not its definition\'s', key: 'entities', packs: true, apply: d => { find<any>(d.entities, e => e.name === 'cow', 'cow').type = 'hostile' } },
   { what: 'a drop chance not its loot table\'s', key: 'entityLoot', packs: true, apply: d => { find<any>(d.entityLoot, l => l.entity === 'zombie', 'zombie').drops[0].dropChance = 0.123 } },
   // steve.json
   { what: 'an image short', key: 'steve', apply: d => { d.steve.SkinData = d.steve.SkinData.slice(0, 1000) } },
