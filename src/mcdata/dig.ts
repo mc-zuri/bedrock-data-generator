@@ -50,6 +50,59 @@ const JAVA_ALIASES: Record<string, string> = {
   shears_major_breaking_speed: 'wool'
 }
 
+/**
+ * The blocks a block of an older build became by the reference build (Bedrock's flattening: one block per
+ * former state value, and the camel-case names renamed): each old name, the reference names it split into.
+ * A block not here is itself there, or split into <variant>_<name> (planks: oak_planks, ...).
+ */
+const WOODS = 'oak|spruce|birch|jungle|acacia|dark_oak|mangrove|cherry|bamboo|crimson|warped|pale_oak'
+const COLORS = 'white|orange|magenta|light_blue|yellow|lime|pink|gray|light_gray|cyan|purple|blue|brown|green|red|black'
+const RENAMED: Record<string, RegExp> = {
+  concretePowder: new RegExp(`^(${COLORS})_concrete_powder$`),
+  seaLantern: /^sea_lantern$/,
+  invisibleBedrock: /^invisible_bedrock$/,
+  pistonArmCollision: /^piston_arm_collision$/,
+  stickyPistonArmCollision: /^sticky_piston_arm_collision$/,
+  movingBlock: /^moving_block$/,
+  tripWire: /^trip_wire$/,
+  stonebrick: /^(mossy_|cracked_|chiseled_)?stone_bricks$/,
+  red_flower: /^(poppy|blue_orchid|allium|azure_bluet|(red|orange|white|pink)_tulip|oxeye_daisy|cornflower|lily_of_the_valley)$/,
+  yellow_flower: /^dandelion$/,
+  tallgrass: /^(short_grass|fern)$/,
+  double_plant: /^(sunflower|lilac|tall_grass|large_fern|rose_bush|peony)$/,
+  log2: /^(acacia|dark_oak)_log$/,
+  leaves2: /^(acacia|dark_oak)_leaves$/,
+  wooden_slab: new RegExp(`^(${WOODS})_slab$`),
+  double_wooden_slab: new RegExp(`^(${WOODS})_double_slab$`),
+  hard_stained_glass: new RegExp(`^hard_(${COLORS})_stained_glass$`),
+  hard_stained_glass_pane: new RegExp(`^hard_(${COLORS})_stained_glass_pane$`),
+  stained_hardened_clay: new RegExp(`^(${COLORS})_terracotta$`),
+  monster_egg: /^infested_/,
+  coral_fan_hang: /^(tube|brain)_coral_wall_fan$/,
+  coral_fan_hang2: /^(bubble|fire)_coral_wall_fan$/,
+  coral_fan_hang3: /^horn_coral_wall_fan$/,
+  coral_fan_dead: /^dead_(tube|brain|bubble|fire|horn)_coral_fan$/,
+  light_block: /^light_block_\d+$/,
+  chemistry_table: /^(compound_creator|material_reducer|element_constructor|lab_table)$/,
+  colored_torch_bp: /^colored_torch_(blue|purple)$/,
+  colored_torch_rg: /^colored_torch_(red|green)$/,
+  lava_cauldron: /^cauldron$/,
+  frog_egg: /^frog_spawn$/,
+  mangrove_propagule_hanging: /^mangrove_propagule$/
+}
+// the stone slabs (stone_slab, stone_slab2..4, stone_block_slab..4, and their double_ forms): the non-wooden ones
+const STONE_SLAB = /^(double_)?stone(_block)?_slab\d?$/
+const stoneSlab = (double: boolean) => new RegExp(`^(?!(${WOODS})_)\\w+_${double ? 'double_' : ''}slab$`)
+
+/** The reference build's blocks an older build's block `name` is: itself, what it was renamed or split into. */
+export function referenceNames (name: string, reference: Iterable<string>): string[] {
+  const names = [...reference]
+  if (names.includes(name)) return [name]
+  const pattern = RENAMED[name] ?? (STONE_SLAB.test(name) ? stoneSlab(name.startsWith('double_')) : undefined)
+  if (pattern) return names.filter(n => pattern.test(n))
+  return names.filter(n => n.endsWith(`_${name}`))
+}
+
 export interface BlockType { tags?: string[], requiresCorrectToolForDrops?: boolean }
 export interface Dig { material: string, harvestTools?: Record<string, true> }
 /** The reference build's digs, by block name: its material and its harvest tools by item name. */
@@ -99,7 +152,7 @@ export function dig ({ types, items, javaBlock, javaItems, reference, warn = () 
     if (byServer || !reference) return undefined
     const own = reference.get(name)
     if (own) return { ...own, diggers: diggers(own.material), common: others(own.material) }
-    const splits = [...reference].filter(([n]) => n.endsWith(`_${name}`)).map(([, d]) => d)
+    const splits = referenceNames(name, reference.keys()).map(n => reference.get(n)!)
     if (!splits.length) return undefined
     const key = (d: { material: string, tools: string[] }) => diggers(d.material).join() + '|' + d.tools.join()
     if (!splits.every(d => key(d) === key(splits[0]))) return undefined

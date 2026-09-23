@@ -62,6 +62,8 @@ export function behaviorPackDefinitions (b: Build, kind: string, id: (json: any)
     if (existsSync(folder)) for (const f of files(folder)) texts.push(readFileSync(f, 'utf8'))
     if (existsSync(archive)) texts.push(...readBrarchive(archive).values())
     for (const text of texts) {
+      // the newer archives also hold definitions compiled to a binary form (MCB): not JSON, and left out
+      if (text.startsWith('\x7fMCB')) continue
       const json = parseLenient(text)
       const key = id(json)
       if (key) out.set(key, json)

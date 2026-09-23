@@ -2,9 +2,10 @@
 // field the server says as it says it (block_types.json, block-state-shapes.nbt); the items it names (drops,
 // harvest tools) and its material exist in the version's items.json and materials.json; its tools are the
 // ones its server tags name (before 1.21.50, where the server has no such tags, the ones the first build
-// with them tags a block of its name, or all its variants alike: planks as oak_planks, spruce_planks, ...).
+// with them tags a block of its name, or all the blocks it became alike: planks as oak_planks, ...; dig.ts's
+// referenceNames).
 import { compareVersions, versions } from '../../config.ts'
-import { hasDiggerTags } from '../../mcdata/dig.ts'
+import { hasDiggerTags, referenceNames } from '../../mcdata/dig.ts'
 import { TIERS, TOOL, sameFloat, sameSet, unique, type Validator } from '../context.ts'
 import { server as serverOf, type ServerBlockType } from '../server.ts'
 
@@ -30,7 +31,7 @@ function referenceDig (name: string) {
     const types = serverOf(b).blockTypes()
     reference = n => {
       if (types[n]) return digOf(types[n])
-      const splits = Object.keys(types).filter(k => k.endsWith(`_${n}`)).map(k => digOf(types[k]))
+      const splits = referenceNames(n, Object.keys(types)).map(k => digOf(types[k]))
       return splits.length && splits.every(d => JSON.stringify(d) === JSON.stringify(splits[0])) ? splits[0] : undefined
     }
   }

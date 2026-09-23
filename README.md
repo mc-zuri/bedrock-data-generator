@@ -350,12 +350,14 @@ Downloads are cached in `work/mappings/` and `work/java/`.
 copper 5, iron 6, diamond 8, netherite 9, gold 12) a block with its `is_<tool>_item_destructible` tag, and
 harvests it if its tier passes the block's first `<tier>_tier_destructible` tag. The server's tags give the
 tools and the tier from 1.21.50, its `requiresCorrectToolForDrops` whether a block needs one from 1.21.50.
-Before that a block digs as the same block does in the first build with those tags (by its name, or all its
-variants alike: `planks` as `oak_planks`, `spruce_planks`, ...; variants that agree on their tools only,
+Before that a block digs as the same block does in the first build with those tags (by its name, or all the
+blocks it became alike: `planks` as `oak_planks`, `spruce_planks`, ..., and Bedrock's flattened names by the
+table in `dig.ts`, `stonebrick` as the stone bricks, `red_flower` as the flowers, `log2` as the acacia and
+dark oak logs, `concretePowder` as the concrete powders; blocks that agree on their tools only,
 as saplings do, give the tools, the rest of the material the Java block's): a block's tools have not
 changed since 1.16, where the Java data of the time does not say so (Java 1.16.2's leaves are a `plant`) or
 the build's Geyser map has no Java block for it (1.19.50 - 1.19.70 planks, logs, wool). Only a block that
-build does not have digs as its Java block does (its `material`'s `mineable/*` parts, the lowest tier of its
+build does not have (only the removed `mysterious_frame` blocks of 1.17.40 - 1.18.11) digs as its Java block does (its `material`'s `mineable/*` parts, the lowest tier of its
 `harvestTools`, whether it has any). A material is named as Java names them (`leaves;mineable/hoe`, `default` for none); its
 parts no digger makes (leaves, cobweb, wool, plants) take the speeds of swords (the game's) and shears as
 `dig.ts` lists them, not a Java `materials.json` (some Java versions have shears at 1 there).
