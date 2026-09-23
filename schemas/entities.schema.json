@@ -1,0 +1,23 @@
+{
+  "$id": "entities",
+  "title": "bedrock entities.json",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": ["id", "internalId", "name", "displayName", "height", "width", "type", "category"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "$ref": "common#/definitions/id" },
+      "internalId": { "$ref": "common#/definitions/id" },
+      "name": { "$ref": "common#/definitions/name" },
+      "displayName": { "$ref": "common#/definitions/displayName" },
+      "height": { "type": "number", "minimum": 0, "maximum": 20 },
+      "width": { "type": "number", "minimum": 0, "maximum": 20 },
+      "length": { "type": "number", "minimum": 0, "maximum": 20 },
+      "offset": { "type": "number", "minimum": 0, "maximum": 20 },
+      "type": { "enum": ["ambient", "animal", "hostile", "living", "mob", "other", "passive", "player", "projectile", "water_creature"] },
+      "category": { "enum": ["Blocks", "Drops", "Hostile mobs", "Immobile", "Passive mobs", "Projectiles", "UNKNOWN", "Vehicles"] }
+    }
+  }
+}

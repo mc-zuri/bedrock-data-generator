@@ -2,12 +2,16 @@
 // steve skin and language (and, when PUBLISH_RECIPES / PUBLISH_BLOCK_MAPS, recipes and the Java <-> Bedrock block maps) into the minecraft-data
 // checkout. Oldest build first, a file that says the same as the previous build's is not kept: its
 // dataPaths.json entry points to the build that has it, so every file in data/bedrock/ is unique and every
-// version resolves every key.
+// version resolves every key. Nothing is written until every version's files, as they would be, pass the
+// validation (src/validate: the strict schemas, each file's validator, the registry); --accept takes the
+// registry's differences as intended and writes the registry again from the new files.
 import { execFileSync } from 'node:child_process'
 import { existsSync, mkdirSync, readFileSync, rmSync } from 'node:fs'
 import { join } from 'node:path'
 import { MINECRAFT_DATA_DIR, compareVersions, dataFile, versions, writeAtomic, type Build } from '../config.ts'
 import { generateDataJs } from '../checkouts/mcdata.ts'
+import { formatProblems, publishedFiles, validateVersion } from '../validate/index.ts'
+import { writeRegistry } from '../validate/registry.ts'
 import { normalizeSteveSkin } from '../steve-normalize.ts'
 import { PLAIN_FORMAT, blockCollisionShapesJson, blockStatesJson, readBlockStates, type BlockState, type CollisionFormat } from '../mcdata/blocks.ts'
 import { bedrockToJava, javaToBedrock } from '../mcdata/blockMap.ts'
@@ -23,7 +27,7 @@ import { entityDefinitions, withServerEntityFields } from '../mcdata/entityProps
 import { bedrockToJavaItems, itemStates, itemTypes, items, itemsByRuntimeId, itemsJson, withServerItemFields, type ItemState } from '../mcdata/items.ts'
 import { language, languageJson } from '../mcdata/language.ts'
 import { craftingData, recipes, recipesJson } from '../mcdata/recipes.ts'
-import { dig, materialsJson } from '../mcdata/dig.ts'
+import { dig, hasDiggerTags, materialsJson, referenceOf, type Reference } from '../mcdata/dig.ts'
 import { serverBlockFields, withFields, type ServerBlockType } from '../mcdata/blockProps.ts'
 import { readNbt } from '../nbt.ts'
 import { BEDROCK_BIOMES, geyserBlocks, geyserItems, javaBiomes, javaBiomesSnapshot, javaBlocks, javaEntities, javaEnchantments, javaItems, pymctranslateBiomes } from '../mcdata/inputs.ts'
@@ -215,6 +219,17 @@ async function javaDropsVersion (javaVersion: string): Promise<string> {
   throw new Error(`no Java version from ${javaVersion} on has block drops`)
 }
 
+/** The Geyser block map of a build (Java <-> Bedrock states), and each Bedrock block's Java block by name. */
+async function javaBlockMap (b: Build) {
+  const java = await javaBlocks(b.javaVersion)
+  const j2b = await javaToBedrock(b.mcDataVersion, await geyserBlocks(b), java)
+  const b2j = bedrockToJava(j2b)
+  const javaByName = new Map(java.map(jb => [jb.name, jb]))
+  const b2jName: Record<string, string> = {}
+  for (const [k, jv] of Object.entries(b2j)) b2jName[strip(k)] ??= strip(jv)
+  return { java, j2b, b2j, javaByName, b2jName }
+}
+
 /** Each block's name in the language file (its description id's), by block name, where it has one. */
 function blockLangNames (b: Build, lang: Record<string, string>): Record<string, string> {
   const out: Record<string, string> = {}
@@ -274,7 +289,7 @@ function collisionFormat (h: Head, mcDataVersion: string): CollisionFormat {
   }
 }
 
-export async function mcdata (): Promise<string[]> {
+export async function mcdata (accept = false): Promise<string[]> {
   const builds = [...versions].sort((a, b) => compareVersions(a.serverVersion, b.serverVersion))
   const missing = builds.filter(b => ['block_palette.nbt', 'block-state-shapes.nbt', 'block_types.json', 'item_types.json', 'item_aliases.json', 'effects.json', 'enchantments.json', 'packets.nbt'].some(f => !existsSync(dataFile(b, f))))
   if (missing.length) throw new Error(`mcdata: no block or packet data for ${missing.map(b => b.serverVersion).join(', ')} (pnpm blocks, pnpm network first)`)
@@ -296,16 +311,40 @@ export async function mcdata (): Promise<string[]> {
   const bedrockBiomes = await pymctranslateBiomes(BEDROCK_BIOMES)
   const counts: Record<string, number> = { written: 0, unchanged: 0, shared: 0, deleted: 0 }
 
+  // what this run writes (a text) or deletes (null), by file: written once every version validates
+  const staged = new Map<string, string | null>()
+  /** a file's text as this run leaves it (undefined: none) */
+  const current = (file: string): string | undefined => {
+    const s = staged.get(file)
+    if (s !== undefined) return s ?? undefined
+    return existsSync(file) ? readFileSync(file, 'utf8').replace(/\r\n/g, '\n') : undefined
+  }
   const write = (file: string, json: string): string => {
-    const old = existsSync(file) ? readFileSync(file, 'utf8').replace(/\r\n/g, '\n') : undefined
+    const old = current(file)
     if (old === json) {
       counts.unchanged++
       return 'same'
     }
-    mkdirSync(join(file, '..'), { recursive: true })
-    writeAtomic(file, json)
+    staged.set(file, json)
     counts.written++
     return old === undefined ? 'new' : 'updated'
+  }
+  const remove = (file: string): void => {
+    if (current(file) === undefined) return
+    staged.set(file, null)
+    counts.deleted++
+  }
+
+  // the digs of the first build whose server tags its blocks by the tools that dig them, for the builds before it
+  let reference: Reference | undefined
+  const digReference = async (): Promise<Reference> => {
+    if (reference) return reference
+    const b = builds.find(x => hasDiggerTags(blockTypes(x)))
+    if (!b) throw new Error('mcdata: no build tags its blocks by their tools')
+    const { javaByName, b2jName } = await javaBlockMap(b)
+    const items = itemStates(b).map(s => ({ id: s.runtime_id, name: strip(s.name) }))
+    const digs = dig({ types: blockTypes(b), items, javaBlock: name => b2jName[name] === undefined ? undefined : javaByName.get(b2jName[name]), javaItems: await javaItems(b.javaVersion) })
+    return (reference = referenceOf(digs.blocks, items))
   }
 
   for (const b of builds) {
@@ -329,7 +368,7 @@ export async function mcdata (): Promise<string[]> {
       if (asIs && prev?.meaning !== meaning) {
         entry[key] = h.dir(v, key)!
         const onDisk = join(DATA, entry[key], `${key}.json`)
-        if (!existsSync(onDisk) || readFileSync(onDisk, 'utf8').replace(/\r\n/g, '\n') !== headText) throw new Error(`${v}: keeps ${entry[key]}/${key}.json, which this run has changed`)
+        if (current(onDisk) !== headText) throw new Error(`${v}: keeps ${entry[key]}/${key}.json, which this run has changed`)
         notes.push(`${key} kept (${entry[key].replace('bedrock/', '')})`)
       } else if (prev?.meaning === meaning) {
         entry[key] = prev.dir
@@ -339,7 +378,7 @@ export async function mcdata (): Promise<string[]> {
         const file = join(DATA, 'bedrock', v, `${key}.json`)
         // another version's file in this folder that no longer fits: every user of it gets its own
         const users = Object.entries<any>(paths.bedrock).filter(([u, e]) => u !== v && e[key] === `bedrock/${v}`).map(([u]) => u)
-        const own = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : undefined
+        const own = (t => t === undefined ? undefined : JSON.parse(t))(current(file))
         if (own && users.length && !fit(own, generated)) console.log(`  ${v}: ${key}.json replaced, also used by ${users.join(', ')}`)
         notes.push(`${key} ${write(file, json(final))}${kept ? ' (server fields)' : ''}`)
         entry[key] = `bedrock/${v}`
@@ -362,18 +401,14 @@ export async function mcdata (): Promise<string[]> {
     // into the file's own text. What stays from the Java block: id, and displayName where the language file
     // has no name for the block.
     const defaults = defaultStates(b)
-    const java = await javaBlocks(b.javaVersion)
-    const j2b = await javaToBedrock(v, await geyserBlocks(b), java)
-    const b2j = bedrockToJava(j2b)
-    const javaByName = new Map(java.map(jb => [jb.name, jb]))
-    const b2jName: Record<string, string> = {}
-    for (const [k, jv] of Object.entries(b2j)) b2jName[strip(k)] ??= strip(jv)
+    const { java, j2b, b2j, javaByName, b2jName } = await javaBlockMap(b)
     const types = blockTypes(b)
     const digs = dig({
       types,
       items: itemList,
       javaBlock: name => b2jName[name] === undefined ? undefined : javaByName.get(b2jName[name]),
       javaItems: await javaItems(b.javaVersion),
+      reference: await digReference(),
       warn: text => console.log(`  ${v}: dig: ${text}`)
     })
     const shapeRows: { collisionShape: unknown[] }[] = readNbt(dataFile(b, 'block-state-shapes.nbt'), 'little').shapes
@@ -417,7 +452,7 @@ export async function mcdata (): Promise<string[]> {
       const file = join(DATA, 'bedrock', v, 'blocks.json')
       // a version's own blocks.json is replaced only by one of the same blocks, unless no other version uses it
       const users = Object.entries<any>(paths.bedrock).filter(([u, e]) => u !== v && e.blocks === `bedrock/${v}`).map(([u]) => u)
-      const own = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : undefined
+      const own = (t => t === undefined ? undefined : JSON.parse(t))(current(file))
       if (own && users.length && !fits(own, states)) throw new Error(`${v}: its blocks.json does not fit its palette, and ${users.join(', ')} use it`)
       notes.push(`blocks ${write(file, json)}${kept ? ' (server fields)' : ''}`)
       entry.blocks = `bedrock/${v}`
@@ -467,7 +502,7 @@ export async function mcdata (): Promise<string[]> {
       const prev = previous[key]
       const meaning = sameMeaning[key](meanings[key])
       if (prev?.meaning === meaning) {
-        if (existsSync(file)) { rmSync(file); counts.deleted++ }
+        remove(file)
         entry[key] = `bedrock/${prev.owner}`
         counts.shared++
         notes.push(`${key} = ${prev.owner}`)
@@ -609,7 +644,7 @@ export async function mcdata (): Promise<string[]> {
       if (mapsKept && prev?.meaning !== meaning) {
         entry[key] = h.dir(v, key)!
         const onDisk = join(DATA, entry[key], `${key}.json`)
-        if (!existsSync(onDisk) || readFileSync(onDisk, 'utf8').replace(/\r\n/g, '\n') !== headText) throw new Error(`${v}: keeps ${entry[key]}/${key}.json, which this run has changed`)
+        if (current(onDisk) !== headText) throw new Error(`${v}: keeps ${entry[key]}/${key}.json, which this run has changed`)
         notes.push(`${key} kept (${entry[key].replace('bedrock/', '')})`)
       } else if (prev?.meaning === meaning) {
         entry[key] = prev.dir
@@ -631,11 +666,23 @@ export async function mcdata (): Promise<string[]> {
   for (const b of builds) {
     for (const k of published) {
       const rel = `bedrock/${b.mcDataVersion}/${k}.json`
-      if (!used.has(rel) && existsSync(join(DATA, rel))) { rmSync(join(DATA, rel)); counts.deleted++; console.log(`  ${rel} deleted: no version uses it`) }
+      if (!used.has(rel) && current(join(DATA, rel)) !== undefined) { remove(join(DATA, rel)); console.log(`  ${rel} deleted: no version uses it`) }
+    }
+  }
+
+  // every version as the files would be: nothing is written where one fails
+  const problems = builds.flatMap(b => validateVersion(b, paths, publishedFiles(b.mcDataVersion, paths, staged), { registry: !accept }))
+  if (problems.length) throw new Error(`mcdata: nothing written, ${problems.length} problem(s):\n${formatProblems(problems)}${problems.some(p => p.key === 'registry') ? '\n(where the registry differences are intended: pnpm mcdata --accept, then review the registry/ diff)' : ''}`)
+  for (const [file, text] of staged) {
+    if (text === null) rmSync(file)
+    else {
+      mkdirSync(join(file, '..'), { recursive: true })
+      writeAtomic(file, text)
     }
   }
   writeAtomic(pathsFile, JSON.stringify(paths, null, 2) + '\n')
   generateDataJs()
+  if (accept) for (const line of writeRegistry(v => publishedFiles(v, paths))) console.log(`  registry: ${line}`)
   console.log(`mcdata: ${counts.written} files written, ${counts.unchanged} already current, ${counts.shared} shared with an earlier version (${counts.deleted} deleted)`)
   return []
 }

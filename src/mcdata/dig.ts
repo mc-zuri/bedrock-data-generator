@@ -9,9 +9,15 @@
 // As the game uses them (DiggerItem::getDestroySpeed / canDestroySpecial, see bedrock-engine-v4's
 // DigItems.cs): a digger mines at its tier's speed a block carrying its tool's tag, and harvests it if its
 // tier's level passes the first tier tag the block has (stone > 0, iron > 1, diamond > 2, netherite > 3).
-// From the Java block (the Geyser map) where the server does not say it: the tools and the tier before
-// 1.21.50, whether a tool is needed before 1.21.50, and which parts of a material no digger makes it has
-// (leaves, wool, cobweb, plants). Those parts' speeds are the game's, PARTS below, not a Java materials.json
+// Before 1.21.50 the server has no such tags: a block the first build with them (the reference) has, by its
+// name, or split by its variants (planks: oak_planks, spruce_planks, ...) where those all agree, digs as it
+// does there (its material, and its harvest tools the version has): the tools of a block have not changed
+// since 1.16 (the Nether update made hoes the tool for leaves), where the Java data of the time does not
+// say so (Java 1.16.2's leaves are a plant), or the Geyser map of the build has no Java block for it.
+// Variants that agree on their tools only (saplings: bamboo's is instantly mined by a sword) give the tools;
+// the rest of the material is then the Java block's, else what all the variants have.
+// From the Java block (the Geyser map) where neither says it: the tools and the tier, whether a tool is
+// needed, and which parts of a material no digger makes it has (leaves, wool, cobweb, plants). Those parts' speeds are the game's, PARTS below, not a Java materials.json
 // (the Java data has shears at 1 in several versions).
 /** ItemTier: speed, level (VanillaItemTiers; the same rows DigItems.cs reads from the image). */
 const TIERS: [string, number, number][] = [
@@ -46,6 +52,8 @@ const JAVA_ALIASES: Record<string, string> = {
 
 export interface BlockType { tags?: string[], requiresCorrectToolForDrops?: boolean }
 export interface Dig { material: string, harvestTools?: Record<string, true> }
+/** The reference build's digs, by block name: its material and its harvest tools by item name. */
+export type Reference = Map<string, { material: string, tools: string[] }>
 export interface DigInput {
   /** block_types.json, by name without minecraft: */
   types: Record<string, BlockType>
@@ -55,40 +63,69 @@ export interface DigInput {
   javaBlock: (name: string) => { material?: string, harvestTools?: Record<string, boolean> } | undefined
   /** the Java items.json of the build's Java version (the Java block's harvestTools ids) */
   javaItems: { id: number, name: string }[]
+  /** the reference build's digs, for a version with no digger tags */
+  reference?: Reference
   warn?: (text: string) => void
 }
 
 /** Every block's material and harvest tools (by name, without minecraft:), and the materials.json they name. */
-export function dig ({ types, items, javaBlock, javaItems, warn = () => {} }: DigInput): { blocks: Map<string, Dig>, materials: Record<string, Record<string, number>> } {
+export function dig ({ types, items, javaBlock, javaItems, reference, warn = () => {} }: DigInput): { blocks: Map<string, Dig>, materials: Record<string, Record<string, number>> } {
   const itemId = new Map(items.map(i => [i.name, i.id]))
   const javaName = new Map(javaItems.map(i => [i.id, i.name]))
   const tools = (family: string) => TIERS.filter(([tier]) => itemId.has(`${tier}_${family}`)).map(([tier, speed, level]) => ({ id: itemId.get(`${tier}_${family}`)!, speed, level }))
   const swords = () => tools('sword').map(t => t.id)
-  const byServer = Object.values(types).some(t => t.tags?.some(tag => /^minecraft:is_\w+_item_destructible$/.test(tag)))
+  const byServer = hasDiggerTags(types)
 
   const blocks = new Map<string, Dig>()
   const materials: Record<string, Record<string, number>> = { default: {} }
+  // a material's speeds: each part's (PARTS), each digger family's tools at their tier's speed; the fastest
+  const tableOf = (material: string, of: string): Record<string, number> => {
+    const table: Record<string, number> = {}
+    const parts = material === 'default' ? [] : material.split(';')
+    for (const part of parts.filter(p => !p.startsWith('mineable/'))) {
+      const speeds = PARTS[part]
+      if (!speeds) throw new Error(`materials.json: no speeds for the Java material ${part} (of ${of})`)
+      if (speeds.sword) for (const id of swords()) table[id] = Math.max(table[id] ?? 0, speeds.sword)
+      if (speeds.shears && itemId.has('shears')) table[itemId.get('shears')!] = Math.max(table[itemId.get('shears')!] ?? 0, speeds.shears)
+    }
+    for (const part of parts.filter(p => p.startsWith('mineable/'))) for (const t of tools(part.slice(9))) table[t.id] = Math.max(table[t.id] ?? 0, t.speed)
+    return table
+  }
+  const diggers = (material: string) => material.split(';').filter(p => p.startsWith('mineable/'))
+  const others = (material: string) => material.split(';').filter(p => p !== 'default' && !p.startsWith('mineable/'))
+  // the reference build's dig of a block: by its name, else its variants' where they all agree (`material`
+  // undefined where they agree on their tools only)
+  const fromReference = (name: string): { material?: string, diggers: string[], tools: string[], common: string[] } | undefined => {
+    if (byServer || !reference) return undefined
+    const own = reference.get(name)
+    if (own) return { ...own, diggers: diggers(own.material), common: others(own.material) }
+    const splits = [...reference].filter(([n]) => n.endsWith(`_${name}`)).map(([, d]) => d)
+    if (!splits.length) return undefined
+    const key = (d: { material: string, tools: string[] }) => diggers(d.material).join() + '|' + d.tools.join()
+    if (!splits.every(d => key(d) === key(splits[0]))) return undefined
+    const material = splits.every(d => d.material === splits[0].material) ? splits[0].material : undefined
+    const common = others(splits[0].material).filter(p => splits.every(d => others(d.material).includes(p)))
+    return { material, diggers: diggers(splits[0].material), tools: splits[0].tools, common }
+  }
   for (const [name, type] of Object.entries(types)) {
-    const tags = new Set((type.tags ?? []).map(t => t.replace(/^minecraft:/, '')))
     const java = javaBlock(name)
     const javaParts = (java?.material ?? 'default').split(';').map(p => JAVA_ALIASES[p] ?? p)
+    const ref = fromReference(name)
+    if (ref) {
+      const material = ref.material ?? ([...(java ? others(javaParts.join(';')).filter(p => !p.startsWith('incorrect_for_')) : ref.common), ...ref.diggers].join(';') || 'default')
+      materials[material] ??= tableOf(material, name)
+      const ids = ref.tools.filter(t => itemId.has(t)).map(t => itemId.get(t)!).sort((a, b) => a - b)
+      blocks.set(name, ids.length ? { material, harvestTools: Object.fromEntries(ids.map(id => [String(id), true as const])) } : { material })
+      continue
+    }
+    const tags = new Set((type.tags ?? []).map(t => t.replace(/^minecraft:/, '')))
     const families: Family[] = byServer
       ? FAMILIES.filter(f => tags.has(`is_${f}_item_destructible`))
       : FAMILIES.filter(f => javaParts.includes(`mineable/${f}`) || (f === 'pickaxe' && javaParts.some(p => /^incorrect_for_\w+_tool$/.test(p))))
     // the parts no digger makes, as Java names them
     const parts = javaParts.filter(p => p !== 'default' && !p.startsWith('mineable/') && !p.startsWith('incorrect_for_'))
     const material = [...parts, ...families.map(f => `mineable/${f}`)].join(';') || 'default'
-    if (!(material in materials)) {
-      const table: Record<string, number> = {}
-      for (const part of parts) {
-        const speeds = PARTS[part]
-        if (!speeds) throw new Error(`materials.json: no speeds for the Java material ${part} (of ${name})`)
-        if (speeds.sword) for (const id of swords()) table[id] = Math.max(table[id] ?? 0, speeds.sword)
-        if (speeds.shears && itemId.has('shears')) table[itemId.get('shears')!] = Math.max(table[itemId.get('shears')!] ?? 0, speeds.shears)
-      }
-      for (const f of families) for (const t of tools(f)) table[t.id] = Math.max(table[t.id] ?? 0, t.speed)
-      materials[material] = table
-    }
+    materials[material] ??= tableOf(material, name)
 
     // the level a digger must pass: the first tier tag's, or below the lowest tier of the Java block's diggers
     const javaLevels = Object.keys(java?.harvestTools ?? {}).flatMap(id => {
@@ -130,5 +167,14 @@ export function dig ({ types, items, javaBlock, javaItems, warn = () => {} }: Di
   for (const [k, table] of Object.entries(sorted)) for (const id of Object.keys(table)) if (!known.has(Number(id))) throw new Error(`materials.json ${k}: ${id} is no item`)
   return { blocks, materials: sorted }
 }
+
+/** A build's digs as a reference (dig's `reference`): its harvest tools by item name. */
+export function referenceOf (blocks: Map<string, Dig>, items: { id: number, name: string }[]): Reference {
+  const name = new Map(items.map(i => [i.id, i.name]))
+  return new Map([...blocks].map(([n, d]) => [n, { material: d.material, tools: Object.keys(d.harvestTools ?? {}).map(id => name.get(Number(id))!) }]))
+}
+
+/** Whether a build's block types carry the digger tags (1.21.50 on). */
+export const hasDiggerTags = (types: Record<string, BlockType>): boolean => Object.values(types).some(t => t.tags?.some(tag => /^minecraft:is_\w+_item_destructible$/.test(tag)))
 
 export const materialsJson = (materials: Record<string, Record<string, number>>): string => JSON.stringify(materials, null, 2) + '\n'

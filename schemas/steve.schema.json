@@ -1,0 +1,74 @@
+{
+  "$id": "steve",
+  "title": "bedrock steve.json: the default skin a client sends",
+  "type": "object",
+  "required": ["AnimatedImageData", "ArmSize", "CapeData", "CapeId", "CapeImageHeight", "CapeImageWidth", "CapeOnClassicSkin", "PersonaPieces", "PersonaSkin", "PieceTintColors", "PremiumSkin", "SkinAnimationData", "SkinColor", "SkinData", "SkinGeometryData", "SkinId", "SkinImageHeight", "SkinImageWidth", "SkinResourcePatch"],
+  "additionalProperties": false,
+  "properties": {
+    "AnimatedImageData": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["AnimationExpression", "Frames", "Image", "ImageHeight", "ImageWidth", "Type"],
+        "additionalProperties": false,
+        "properties": {
+          "AnimationExpression": { "type": "integer" },
+          "Frames": { "type": "number" },
+          "Image": { "$ref": "#/definitions/base64" },
+          "ImageHeight": { "type": "integer", "minimum": 1 },
+          "ImageWidth": { "type": "integer", "minimum": 1 },
+          "Type": { "type": "integer" }
+        }
+      }
+    },
+    "ArmSize": { "enum": ["wide", "slim"] },
+    "CapeData": { "$ref": "#/definitions/base64" },
+    "CapeId": { "type": "string" },
+    "CapeImageHeight": { "type": "integer", "minimum": 0 },
+    "CapeImageWidth": { "type": "integer", "minimum": 0 },
+    "CapeOnClassicSkin": { "type": "boolean" },
+    "PersonaPieces": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["IsDefault", "PackId", "PieceId", "PieceType", "ProductId"],
+        "additionalProperties": false,
+        "properties": {
+          "IsDefault": { "type": "boolean" },
+          "PackId": { "$ref": "#/definitions/uuid" },
+          "PieceId": { "$ref": "#/definitions/uuid" },
+          "PieceType": { "type": "string", "pattern": "^persona_[a-z_]+$" },
+          "ProductId": { "type": "string" }
+        }
+      }
+    },
+    "PersonaSkin": { "type": "boolean" },
+    "PieceTintColors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["Colors", "PieceType"],
+        "additionalProperties": false,
+        "properties": {
+          "Colors": { "type": "array", "items": { "$ref": "#/definitions/color" } },
+          "PieceType": { "type": "string", "pattern": "^persona_[a-z_]+$" }
+        }
+      }
+    },
+    "PremiumSkin": { "type": "boolean" },
+    "SkinAnimationData": { "type": "string" },
+    "SkinColor": { "$ref": "#/definitions/color" },
+    "SkinData": { "$ref": "#/definitions/base64" },
+    "SkinGeometryData": { "$ref": "#/definitions/base64" },
+    "SkinGeometryDataEngineVersion": { "$ref": "#/definitions/base64" },
+    "SkinId": { "type": "string", "minLength": 1 },
+    "SkinImageHeight": { "type": "integer", "minimum": 1 },
+    "SkinImageWidth": { "type": "integer", "minimum": 1 },
+    "SkinResourcePatch": { "$ref": "#/definitions/base64" }
+  },
+  "definitions": {
+    "base64": { "type": "string", "pattern": "^[A-Za-z0-9+/]*={0,2}$" },
+    "uuid": { "type": "string", "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+    "color": { "type": "string", "pattern": "^#[0-9a-f]{1,8}$" }
+  }
+}

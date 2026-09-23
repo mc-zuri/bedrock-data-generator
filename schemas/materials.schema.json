@@ -1,0 +1,14 @@
+{
+  "$id": "materials",
+  "title": "bedrock materials.json: each material's dig speed by held item id",
+  "type": "object",
+  "required": ["default"],
+  "properties": { "default": { "type": "object", "maxProperties": 0 } },
+  "propertyNames": { "$ref": "common#/definitions/material" },
+  "additionalProperties": {
+    "type": "object",
+    "minProperties": 1,
+    "propertyNames": { "$ref": "common#/definitions/numericKey" },
+    "additionalProperties": { "type": "number", "exclusiveMinimum": 1 }
+  }
+}

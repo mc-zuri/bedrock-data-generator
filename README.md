@@ -28,7 +28,9 @@ pnpm servers [versions]    # download the exact builds into servers/ (or SERVERS
 pnpm blocks  [versions]    # everything the agent exports (the table above)
 pnpm network [versions]    # packets.nbt
 pnpm steve   <version>     # steve.json: join 127.0.0.1:19150 with Minecraft <version> when asked
-pnpm mcdata                # the minecraft-data files of every build into the minecraft-data checkout (Publishing, below)
+pnpm mcdata [--accept]     # the minecraft-data files of every build into the minecraft-data checkout (Publishing, below)
+pnpm validate [versions]   # the published files through the validation pnpm mcdata runs (Validation, below)
+pnpm test                  # the tests: every version validates, the validators catch what they are for, known facts
 pnpm all     [versions]    # servers, blocks, network, then mcdata
 pnpm status  [versions]    # which files each build has
 pnpm check   [versions]    # resolve the native bindings against the server exes without starting them
@@ -234,6 +236,49 @@ Both are used as they are: fix them, and commit, in the checkout. An existing ch
 - `bedrock/<version>/language.json`: the `en_US.lang` of the server's vanilla resource pack as key/value
   pairs, parsed as legacy2 (and minecraft-data's earlier extractor) parse it.
 
+### Validation
+
+Nothing `pnpm mcdata` makes is written until every version's files, as they would be, pass the validation
+([src/validate](src/validate)); a run with a problem writes nothing and lists it. `pnpm validate` runs it
+on the checkout as it is, `pnpm test` too (and more, below). For each file of each version:
+
+- its strict JSON schema, [schemas/](schemas) (`<file>.schema.json`, the shared pieces in
+  `common.schema.json`): every field typed and ranged, no field the file does not have, every name and
+  enum value of a known form (a material is `default` or known parts joined by `;`, an entity `type`, a
+  biome `category`, an enchant category, a state value is 0 / 1 for a byte);
+- its own validator, [src/validate/files](src/validate/files) (`<file>.ts`), against what the build's
+  server says ([data/](data), committed: `block_palette.nbt`, `block-state-shapes.nbt`, `block_types.json`,
+  `item_types.json`, `effects.json`, `enchantments.json`, `biome_ids.json`, the packets) and the version's
+  other files: `blockStates` is the palette state for state, each block one run, each property's values
+  the full product; `blocks` are exactly the palette's, each field the server says is the server's (state
+  range, default state, hardness, resistance, light, collision, the language file's name), every drop and
+  harvest tool an item, every harvest tool a tool of a kind its material has, the tools and tier the ones
+  the server's tags (before 1.21.50 the reference build's) name; `blockCollisionShapes` is each state's
+  boxes as the server has them; `items` are exactly the server's item registry (from 1.21.100 id, nbt,
+  version the registry's), stack size and durability the server's; `materials` has exactly the materials
+  blocks name, each speed the game's for its item; `biomes`, `entities`, `effects`, `enchantments`,
+  `attributes` are exactly what the server sends, with its values; `entityLoot` names the version's
+  entities and items; `language` names what the server describes; `steve` is a whole, anonymized skin;
+- the registry, [registry/](registry): each block's states (every property, its type, every value it
+  takes), each block's, item's, entity's, biome's, effect's and enchantment's id, each attribute and
+  material, as ranges of versions. It is what the published files said when their changes were last
+  accepted: a run that loses a block, a state value or an item, or moves an id, fails; `pnpm mcdata
+  --accept` takes such differences as intended, writes the files and the registry again, and the change to
+  review is the registry's git diff.
+
+`pnpm test` ([test/](test), `node --test`):
+- `data.test.ts`: every version validates, every published file is used, none is its version before's;
+- `registry.test.ts`: the registry is what the published files say, for exactly `versions.json`, and it
+  holds together (each version's blocks and block states the same blocks, no id twice);
+- `mutations.test.ts`: for four versions across the range, each of some 75 breaks (a state value no block
+  has, a hardness not the server's, obsidian harvested by an iron pickaxe, an item gone, a speed not the
+  tier's, a box not the server's, a biome id moved, ...) made in a copy of the files must be caught, in the
+  file it is in;
+- `facts.test.ts`: what the game is known to do, in every version (stone takes 300 ms with a diamond
+  pickaxe, obsidian 6600 ms and only diamond and netherite pickaxes harvest it, a diamond pickaxe lasts
+  1561 uses, pearls stack to 16, a zombie drops rotten flesh, Bedrock's fixed effect, enchantment, biome and
+  entity ids).
+
 ### Where each field comes from
 
 The rule is: the server's own data wherever it has it (the agent's exports, the packets it sends, its
@@ -304,9 +349,14 @@ Downloads are cached in `work/mappings/` and `work/java/`.
 / `canDestroySpecial`): a digger (pickaxe, axe, shovel, hoe) mines at its tier's speed (wood 2, stone 4,
 copper 5, iron 6, diamond 8, netherite 9, gold 12) a block with its `is_<tool>_item_destructible` tag, and
 harvests it if its tier passes the block's first `<tier>_tier_destructible` tag. The server's tags give the
-tools and the tier from 1.21.50, its `requiresCorrectToolForDrops` whether a block needs one from 1.21.50;
-before that the Java block does (its `material`'s `mineable/*` parts, the lowest tier of its `harvestTools`,
-whether it has any). A material is named as Java names them (`leaves;mineable/hoe`, `default` for none); its
+tools and the tier from 1.21.50, its `requiresCorrectToolForDrops` whether a block needs one from 1.21.50.
+Before that a block digs as the same block does in the first build with those tags (by its name, or all its
+variants alike: `planks` as `oak_planks`, `spruce_planks`, ...; variants that agree on their tools only,
+as saplings do, give the tools, the rest of the material the Java block's): a block's tools have not
+changed since 1.16, where the Java data of the time does not say so (Java 1.16.2's leaves are a `plant`) or
+the build's Geyser map has no Java block for it (1.19.50 - 1.19.70 planks, logs, wool). Only a block that
+build does not have digs as its Java block does (its `material`'s `mineable/*` parts, the lowest tier of its
+`harvestTools`, whether it has any). A material is named as Java names them (`leaves;mineable/hoe`, `default` for none); its
 parts no digger makes (leaves, cobweb, wool, plants) take the speeds of swords (the game's) and shears as
 `dig.ts` lists them, not a Java `materials.json` (some Java versions have shears at 1 there).
 

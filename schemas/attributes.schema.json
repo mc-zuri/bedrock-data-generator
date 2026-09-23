@@ -1,0 +1,18 @@
+{
+  "$id": "attributes",
+  "title": "bedrock attributes.json",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": ["name", "resource", "default", "min", "max"],
+    "additionalProperties": false,
+    "properties": {
+      "name": { "type": "string", "pattern": "^[a-z][A-Za-z]*$" },
+      "resource": { "type": "string", "pattern": "^[a-z][a-z_]*(\\.[a-z_]+)?$" },
+      "default": { "type": "number" },
+      "min": { "type": "number" },
+      "max": { "type": "number" }
+    }
+  }
+}

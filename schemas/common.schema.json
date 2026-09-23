@@ -1,0 +1,39 @@
+{
+  "$id": "common",
+  "$comment": "Pieces the bedrock file schemas share",
+  "definitions": {
+    "id": { "type": "integer", "minimum": 0 },
+    "blockName": { "type": "string", "pattern": "^[a-z][A-Za-z0-9_]*$" },
+    "itemName": { "type": "string", "pattern": "^(item\\.)?[a-z][a-z0-9_]*$" },
+    "name": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+    "displayName": { "type": "string", "pattern": "^\\S(.*\\S)?$" },
+    "stackSize": { "enum": [1, 16, 64] },
+    "light": { "type": "integer", "minimum": 0, "maximum": 15 },
+    "numericKey": { "type": "string", "pattern": "^(0|-?[1-9][0-9]*)$" },
+    "material": {
+      "type": "string",
+      "$comment": "default, or the ;-joined parts: a Java material's non-tool parts, then mineable/<tool> per tool family",
+      "pattern": "^(default|(leaves|wool|coweb|plant|gourd|vine_or_glow_lichen|sword_instantly_mines|sword_efficient|mineable/(pickaxe|axe|shovel|hoe))(;(leaves|wool|coweb|plant|gourd|vine_or_glow_lichen|sword_instantly_mines|sword_efficient|mineable/(pickaxe|axe|shovel|hoe)))*)$"
+    },
+    "enchantCategory": {
+      "enum": ["armor", "armor_head", "armor_chest", "armor_legs", "armor_feet", "head_armor", "chest_armor", "leg_armor", "foot_armor", "breakable", "bow", "crossbow", "digger", "durability", "equippable", "fire_aspect", "fishing", "fishing_rod", "lunge", "mace", "melee_weapon", "mining", "mining_loot", "sharp_weapon", "sweeping", "sword", "trident", "vanishable", "vanishing", "weapon", "wearable"]
+    },
+    "nbtTag": {
+      "type": "object",
+      "required": ["type", "value"],
+      "properties": {
+        "type": { "enum": ["byte", "short", "int", "long", "float", "double", "string", "list", "compound", "byteArray", "intArray", "longArray"] },
+        "name": { "type": "string" },
+        "value": {}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        { "if": { "properties": { "type": { "const": "compound" } } }, "then": { "properties": { "value": { "type": "object", "additionalProperties": { "$ref": "#/definitions/nbtTag" } } } } },
+        { "if": { "properties": { "type": { "const": "list" } } }, "then": { "properties": { "value": { "type": "object", "required": ["type", "value"], "additionalProperties": false, "properties": { "type": { "type": "string" }, "value": { "type": "array" } } } } } },
+        { "if": { "properties": { "type": { "enum": ["byte", "short", "int", "float", "double"] } } }, "then": { "properties": { "value": { "type": "number" } } } },
+        { "if": { "properties": { "type": { "const": "string" } } }, "then": { "properties": { "value": { "type": "string" } } } },
+        { "if": { "properties": { "type": { "const": "long" } } }, "then": { "properties": { "value": { "type": "array", "items": { "type": "integer" }, "minItems": 2, "maxItems": 2 } } } }
+      ]
+    }
+  }
+}

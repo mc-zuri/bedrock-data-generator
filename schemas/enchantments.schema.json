@@ -1,0 +1,29 @@
+{
+  "$id": "enchantments",
+  "title": "bedrock enchantments.json",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "displayName", "maxLevel", "minCost", "maxCost", "treasureOnly", "curse", "exclude", "category", "weight", "tradeable", "discoverable"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "$ref": "common#/definitions/id" },
+      "name": { "$ref": "common#/definitions/name" },
+      "displayName": { "$ref": "common#/definitions/displayName" },
+      "maxLevel": { "type": "integer", "minimum": 1, "maximum": 10 },
+      "minCost": { "$ref": "#/definitions/cost" },
+      "maxCost": { "$ref": "#/definitions/cost" },
+      "treasureOnly": { "type": "boolean" },
+      "curse": { "type": "boolean" },
+      "exclude": { "type": "array", "uniqueItems": true, "items": { "$ref": "common#/definitions/name" } },
+      "category": { "$ref": "common#/definitions/enchantCategory" },
+      "weight": { "enum": [1, 2, 5, 10] },
+      "tradeable": { "type": "boolean" },
+      "discoverable": { "type": "boolean" }
+    }
+  },
+  "definitions": {
+    "cost": { "type": "object", "required": ["a", "b"], "additionalProperties": false, "properties": { "a": { "type": "integer" }, "b": { "type": "integer" } } }
+  }
+}

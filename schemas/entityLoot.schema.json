@@ -1,0 +1,29 @@
+{
+  "$id": "entityLoot",
+  "title": "bedrock entityLoot.json",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": ["entity", "drops"],
+    "additionalProperties": false,
+    "properties": {
+      "entity": { "$ref": "common#/definitions/name" },
+      "drops": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["item", "dropChance", "stackSizeRange", "metadata"],
+          "additionalProperties": false,
+          "properties": {
+            "item": { "$ref": "common#/definitions/itemName" },
+            "dropChance": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 },
+            "stackSizeRange": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "integer", "minimum": 0, "maximum": 64 } },
+            "metadata": { "type": "integer", "minimum": 0 },
+            "playerKill": { "const": true }
+          }
+        }
+      }
+    }
+  }
+}

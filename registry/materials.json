@@ -1,0 +1,16 @@
+{
+  "coweb": [["1.16.201","1.26.51",true]],
+  "default": [["1.16.201","1.26.51",true]],
+  "gourd;mineable/axe": [["1.16.201","1.26.51",true]],
+  "leaves;mineable/hoe": [["1.16.201","1.26.51",true]],
+  "mineable/axe": [["1.16.201","1.26.51",true]],
+  "mineable/hoe": [["1.16.201","1.26.51",true]],
+  "mineable/pickaxe": [["1.16.201","1.26.51",true]],
+  "mineable/shovel": [["1.16.201","1.26.51",true]],
+  "plant": [["1.16.201","1.21.60",true]],
+  "plant;mineable/axe": [["1.16.201","1.26.51",true]],
+  "sword_instantly_mines": [["1.21.70","1.26.51",true]],
+  "sword_instantly_mines;mineable/axe": [["1.21.70","1.26.51",true]],
+  "vine_or_glow_lichen;plant;mineable/axe": [["1.16.201","1.26.51",true]],
+  "wool": [["1.16.201","1.26.51",true]]
+}

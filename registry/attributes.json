@@ -1,0 +1,19 @@
+{
+  "absorption": [["1.16.201","1.26.51","absorption"]],
+  "airDragModifier": [["1.26.20","1.26.51","air_drag_modifier"]],
+  "attackDamage": [["1.16.201","1.26.51","attack_damage"]],
+  "bounciness": [["1.26.20","1.26.51","bounciness"]],
+  "followRange": [["1.16.201","1.26.51","follow_range"]],
+  "frictionModifier": [["1.26.20","1.26.51","friction_modifier"]],
+  "health": [["1.16.201","1.26.51","health"]],
+  "knockbackResistance": [["1.16.201","1.26.51","knockback_resistance"]],
+  "lavaMovement": [["1.16.201","1.26.51","lava_movement"]],
+  "luck": [["1.16.201","1.26.51","luck"]],
+  "movement": [["1.16.201","1.26.51","movement"]],
+  "playerExhaustion": [["1.16.201","1.26.51","player.exhaustion"]],
+  "playerExperience": [["1.16.201","1.26.51","player.experience"]],
+  "playerHunger": [["1.16.201","1.26.51","player.hunger"]],
+  "playerLevel": [["1.16.201","1.26.51","player.level"]],
+  "playerSaturation": [["1.16.201","1.26.51","player.saturation"]],
+  "underwaterMovement": [["1.16.201","1.26.51","underwater_movement"]]
+}

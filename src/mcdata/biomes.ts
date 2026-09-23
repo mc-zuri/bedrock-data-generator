@@ -81,6 +81,7 @@ export function biomes (defs: Record<string, BiomeDefinition>, bedrock: BiomeTab
  * - dimension: its `nether` / `the_end` tag, else the overworld;
  * - depth: its depth (sent from 1.21.60);
  * - has_precipitation / precipitation: its rain flag (sent from 1.21.60): snow where it rains below 0.15;
+ * - parent: the Bedrock biome that names it its child (the older Java data names the Java parent);
  * - displayName: unique in a version: where several biomes have one name (a Java biome some Bedrock biomes
  *   map to, as desert_hills and desert to Java 1.18's desert, sulfur_caves to dripstone_caves), the biome of
  *   that name keeps it (else the lowest id), the others are named after themselves.
@@ -100,6 +101,13 @@ export function withServerBiomeFields (list: any[], defs: Record<string, BiomeDe
     }
     return e
   })
+  const parentOf = new Map(out.filter(e => e.child !== undefined).map(e => [e.child, e.name]))
+  for (const e of out) {
+    if (e.parent === undefined) continue
+    const parent = parentOf.get(e.id)
+    if (parent === undefined) throw new Error(`biomes: ${e.name} has a parent, but no biome names it its child`)
+    e.parent = parent
+  }
   const byName = new Map<string, any[]>()
   for (const e of out) (byName.get(e.displayName) ?? byName.set(e.displayName, []).get(e.displayName)!).push(e)
   const title = (name: string) => name.replace(/_/g, ' ').replace(/\b\S/g, s => s.toUpperCase())

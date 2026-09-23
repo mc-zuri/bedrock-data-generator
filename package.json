@@ -18,7 +18,9 @@
     "build:native": "cd native && xmake f -p windows -a x64 -m release -y -q && xmake -y -q",
     "check": "node --env-file-if-exists=.env src/main.ts check",
     "typecheck": "tsc",
-    "mcdata": "node --env-file-if-exists=.env src/main.ts mcdata"
+    "test": "node --test \"test/**/*.test.ts\"",
+    "mcdata": "node --env-file-if-exists=.env src/main.ts mcdata",
+    "validate": "node --env-file-if-exists=.env src/main.ts validate"
   },
   "dependencies": {
     "bedrock-protocol": "link:./checkouts/bedrock-protocol",
@@ -38,6 +40,7 @@
   },
   "devDependencies": {
     "@types/node": "^24.13.5",
+    "ajv": "^8.20.0",
     "typescript": "^5.9.3"
   }
 }

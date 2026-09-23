@@ -1,0 +1,40 @@
+{
+  "$id": "items",
+  "title": "bedrock items.json",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": ["id", "stackSize", "name", "displayName"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "type": "integer" },
+      "stackSize": { "$ref": "common#/definitions/stackSize" },
+      "name": { "$ref": "common#/definitions/itemName" },
+      "displayName": { "$ref": "common#/definitions/displayName" },
+      "nbt": { "allOf": [{ "$ref": "common#/definitions/nbtTag" }, { "properties": { "type": { "const": "compound" }, "name": { "const": "" } }, "required": ["name"] }] },
+      "version": { "enum": ["legacy", "data_driven", "none"] },
+      "metadata": { "type": "integer", "minimum": 0 },
+      "variations": { "type": "array", "minItems": 1, "items": { "$ref": "#/definitions/variation" } },
+      "enchantCategories": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "common#/definitions/enchantCategory" } },
+      "repairWith": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "common#/definitions/itemName" } },
+      "maxDurability": { "type": "integer", "minimum": 1 }
+    },
+    "dependencies": { "variations": ["metadata"], "nbt": ["version"], "version": ["nbt"] }
+  },
+  "definitions": {
+    "variation": {
+      "type": "object",
+      "required": ["metadata", "id", "displayName", "name", "stackSize"],
+      "additionalProperties": false,
+      "properties": {
+        "metadata": { "type": "integer", "minimum": 1 },
+        "id": { "type": "integer" },
+        "displayName": { "$ref": "common#/definitions/displayName" },
+        "name": { "$ref": "common#/definitions/itemName" },
+        "stackSize": { "$ref": "common#/definitions/stackSize" },
+        "enchantCategories": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "common#/definitions/enchantCategory" } }
+      }
+    }
+  }
+}

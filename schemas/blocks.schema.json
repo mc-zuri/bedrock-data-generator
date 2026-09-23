@@ -1,0 +1,36 @@
+{
+  "$id": "blocks",
+  "title": "bedrock blocks.json",
+  "type": "array",
+  "minItems": 1,
+  "uniqueItems": true,
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "displayName", "hardness", "resistance", "stackSize", "diggable", "material", "transparent", "emitLight", "filterLight", "defaultState", "minStateId", "maxStateId", "drops", "boundingBox"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "$ref": "common#/definitions/id" },
+      "name": { "$ref": "common#/definitions/blockName" },
+      "displayName": { "$ref": "common#/definitions/displayName" },
+      "hardness": { "type": "number", "minimum": -1 },
+      "resistance": { "type": "number", "minimum": 0 },
+      "stackSize": { "$ref": "common#/definitions/stackSize" },
+      "diggable": { "type": "boolean" },
+      "material": { "$ref": "common#/definitions/material" },
+      "transparent": { "type": "boolean" },
+      "emitLight": { "$ref": "common#/definitions/light" },
+      "filterLight": { "$ref": "common#/definitions/light" },
+      "defaultState": { "$ref": "common#/definitions/id" },
+      "minStateId": { "$ref": "common#/definitions/id" },
+      "maxStateId": { "$ref": "common#/definitions/id" },
+      "harvestTools": {
+        "type": "object",
+        "minProperties": 1,
+        "propertyNames": { "$ref": "common#/definitions/numericKey" },
+        "additionalProperties": { "const": true }
+      },
+      "drops": { "type": "array", "uniqueItems": true, "items": { "type": "integer" } },
+      "boundingBox": { "enum": ["block", "empty"] }
+    }
+  }
+}

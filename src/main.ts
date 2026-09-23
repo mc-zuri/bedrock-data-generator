@@ -3,7 +3,8 @@
 //   blocks    block_palette.nbt + block-state-shapes.nbt, by the native agent (pnpm build:native first)
 //   network   packets.nbt: the first raw packet of every id a client receives while joining
 //   steve     steve.json: the skin a real client sends (manual: connect with Minecraft)
-//   mcdata    attributes.json, blocks.json, blockStates.json, blockCollisionShapes.json, biomes.json, entities.json, items.json, steve.json, language.json of every build into the minecraft-data checkout
+//   mcdata    (--accept: take the registry's differences) attributes.json, blocks.json, blockStates.json, blockCollisionShapes.json, biomes.json, entities.json, items.json, steve.json, language.json of every build into the minecraft-data checkout
+//   validate  the published files through mcdata's validation (strict schemas, each file's validator, the registry)
 //   all       servers, blocks, network, mcdata
 //   status    which data files each build has
 //   check     resolve native/bindings against every server exe without starting it
@@ -16,6 +17,7 @@ import { steve } from './steps/steve.ts'
 import { status } from './steps/status.ts'
 import { check } from './steps/check.ts'
 import { mcdata } from './steps/mcdata.ts'
+import { validate } from './steps/validate.ts'
 
 const [command, ...rest] = process.argv.slice(2)
 const force = rest.includes('--force')
@@ -42,9 +44,10 @@ async function main (): Promise<string[]> {
     }
     case 'status': return status(builds)
     case 'check': return check(builds)
-    case 'mcdata': return mcdata()
+    case 'mcdata': return mcdata(rest.includes('--accept'))
+    case 'validate': return validate(builds)
     default:
-      throw new Error(`unknown step ${command ?? '(none)'}: servers | blocks | network | steve | mcdata | all | status | check`)
+      throw new Error(`unknown step ${command ?? '(none)'}: servers | blocks | network | steve | mcdata | validate | all | status | check`)
   }
 }
 

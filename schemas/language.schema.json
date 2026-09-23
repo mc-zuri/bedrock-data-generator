@@ -1,0 +1,8 @@
+{
+  "$id": "language",
+  "title": "bedrock language.json: the server's en_US.lang",
+  "type": "object",
+  "minProperties": 1000,
+  "propertyNames": { "pattern": "^[\\x21-\\x7e]+$" },
+  "additionalProperties": { "type": "string" }
+}
