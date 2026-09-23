@@ -1,0 +1,6 @@
+allowBuilds:
+  raknet-native: true
+
+patchedDependencies:
+  # download exactly the build versions.json names (e.g. 1.21.42.01), never another build of that version
+  minecraft-bedrock-server@1.5.2: patches/minecraft-bedrock-server.patch

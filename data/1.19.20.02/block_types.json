@@ -1,0 +1,7163 @@
+{
+  "minecraft:acacia_button": {
+    "defaultBlockStateHash": 7233,
+    "defaultBlockStateId": 7233,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.acacia_button",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:acacia_door": {
+    "defaultBlockStateHash": 4402,
+    "defaultBlockStateId": 4402,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.acacia_door",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:acacia_fence_gate": {
+    "defaultBlockStateHash": 7588,
+    "defaultBlockStateId": 7588,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.acacia_fence_gate",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:acacia_pressure_plate": {
+    "defaultBlockStateHash": 5249,
+    "defaultBlockStateId": 5249,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.acacia_pressure_plate",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:acacia_stairs": {
+    "defaultBlockStateHash": 6202,
+    "defaultBlockStateId": 6202,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.acacia_stairs",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:acacia_standing_sign": {
+    "defaultBlockStateHash": 6250,
+    "defaultBlockStateId": 6250,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.acacia_standing_sign",
+    "tags": [
+      "minecraft:text_sign",
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:acacia_trapdoor": {
+    "defaultBlockStateHash": 5591,
+    "defaultBlockStateId": 5591,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.acacia_trapdoor",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:acacia_wall_sign": {
+    "defaultBlockStateHash": 3661,
+    "defaultBlockStateId": 3661,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.acacia_wall_sign",
+    "tags": [
+      "minecraft:text_sign",
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:activator_rail": {
+    "defaultBlockStateHash": 309,
+    "defaultBlockStateId": 309,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.activator_rail",
+    "tags": [
+      "minecraft:rail"
+    ]
+  },
+  "minecraft:air": {
+    "defaultBlockStateHash": 6692,
+    "defaultBlockStateId": 6692,
+    "hardness": -1,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.air"
+  },
+  "minecraft:allow": {
+    "defaultBlockStateHash": 7084,
+    "defaultBlockStateId": 7084,
+    "hardness": 0.2,
+    "explosionResistance": 3600,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.allow"
+  },
+  "minecraft:amethyst_block": {
+    "defaultBlockStateHash": 290,
+    "defaultBlockStateId": 290,
+    "hardness": 1.5,
+    "explosionResistance": 1.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.amethyst_block"
+  },
+  "minecraft:amethyst_cluster": {
+    "defaultBlockStateHash": 7812,
+    "defaultBlockStateId": 7812,
+    "hardness": 1.5,
+    "explosionResistance": 1.5,
+    "lightEmission": 5,
+    "lightDampening": 0,
+    "descriptionId": "tile.amethyst_cluster"
+  },
+  "minecraft:ancient_debris": {
+    "defaultBlockStateHash": 6109,
+    "defaultBlockStateId": 6109,
+    "hardness": 30,
+    "explosionResistance": 720,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.ancient_debris"
+  },
+  "minecraft:andesite_stairs": {
+    "defaultBlockStateHash": 5310,
+    "defaultBlockStateId": 5310,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.andesite_stairs"
+  },
+  "minecraft:anvil": {
+    "defaultBlockStateHash": 6636,
+    "defaultBlockStateId": 6636,
+    "hardness": 5,
+    "explosionResistance": 1200,
+    "lightEmission": 0,
+    "lightDampening": 3,
+    "descriptionId": "tile.anvil"
+  },
+  "minecraft:azalea": {
+    "defaultBlockStateHash": 6890,
+    "defaultBlockStateId": 6890,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.azalea"
+  },
+  "minecraft:azalea_leaves": {
+    "defaultBlockStateHash": 7712,
+    "defaultBlockStateId": 7712,
+    "hardness": 0.2,
+    "explosionResistance": 0.2,
+    "lightEmission": 0,
+    "lightDampening": 1,
+    "descriptionId": "tile.azalea_leaves"
+  },
+  "minecraft:azalea_leaves_flowered": {
+    "defaultBlockStateHash": 6341,
+    "defaultBlockStateId": 6341,
+    "hardness": 0.2,
+    "explosionResistance": 0.2,
+    "lightEmission": 0,
+    "lightDampening": 1,
+    "descriptionId": "tile.azalea_leaves_flowered"
+  },
+  "minecraft:bamboo": {
+    "defaultBlockStateHash": 3686,
+    "defaultBlockStateId": 3686,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.bamboo"
+  },
+  "minecraft:bamboo_sapling": {
+    "defaultBlockStateHash": 7557,
+    "defaultBlockStateId": 7557,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.bamboo_sapling"
+  },
+  "minecraft:barrel": {
+    "defaultBlockStateHash": 4520,
+    "defaultBlockStateId": 4520,
+    "hardness": 2.5,
+    "explosionResistance": 2.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.barrel",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:barrier": {
+    "defaultBlockStateHash": 6038,
+    "defaultBlockStateId": 6038,
+    "hardness": -1,
+    "explosionResistance": 3600000,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.barrier"
+  },
+  "minecraft:basalt": {
+    "defaultBlockStateHash": 4351,
+    "defaultBlockStateId": 4351,
+    "hardness": 1.25,
+    "explosionResistance": 4.2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.basalt"
+  },
+  "minecraft:beacon": {
+    "defaultBlockStateHash": 145,
+    "defaultBlockStateId": 145,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 15,
+    "lightDampening": 14,
+    "descriptionId": "tile.beacon"
+  },
+  "minecraft:bed": {
+    "defaultBlockStateHash": 6693,
+    "defaultBlockStateId": 6693,
+    "hardness": 0.2,
+    "explosionResistance": 0.2,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.bed"
+  },
+  "minecraft:bedrock": {
+    "defaultBlockStateHash": 7019,
+    "defaultBlockStateId": 7019,
+    "hardness": -1,
+    "explosionResistance": 3600000,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.bedrock",
+    "tags": [
+      "minecraft:not_feature_replaceable"
+    ]
+  },
+  "minecraft:bee_nest": {
+    "defaultBlockStateHash": 5756,
+    "defaultBlockStateId": 5756,
+    "hardness": 0.3,
+    "explosionResistance": 2.7,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.bee_nest"
+  },
+  "minecraft:beehive": {
+    "defaultBlockStateHash": 6110,
+    "defaultBlockStateId": 6110,
+    "hardness": 0.6,
+    "explosionResistance": 5.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.beehive"
+  },
+  "minecraft:beetroot": {
+    "defaultBlockStateHash": 5286,
+    "defaultBlockStateId": 5286,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.beetroot",
+    "tags": [
+      "minecraft:crop"
+    ]
+  },
+  "minecraft:bell": {
+    "defaultBlockStateHash": 6910,
+    "defaultBlockStateId": 6910,
+    "hardness": 1,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.bell"
+  },
+  "minecraft:big_dripleaf": {
+    "defaultBlockStateHash": 5982,
+    "defaultBlockStateId": 5982,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.big_dripleaf"
+  },
+  "minecraft:birch_button": {
+    "defaultBlockStateHash": 7768,
+    "defaultBlockStateId": 7768,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.birch_button",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:birch_door": {
+    "defaultBlockStateHash": 7085,
+    "defaultBlockStateId": 7085,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.birch_door",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:birch_fence_gate": {
+    "defaultBlockStateHash": 3779,
+    "defaultBlockStateId": 3779,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.birch_fence_gate",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:birch_pressure_plate": {
+    "defaultBlockStateHash": 3557,
+    "defaultBlockStateId": 3557,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.birch_pressure_plate",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:birch_stairs": {
+    "defaultBlockStateHash": 7005,
+    "defaultBlockStateId": 7005,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.birch_stairs",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:birch_standing_sign": {
+    "defaultBlockStateHash": 8,
+    "defaultBlockStateId": 8,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.birch_standing_sign",
+    "tags": [
+      "minecraft:text_sign",
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:birch_trapdoor": {
+    "defaultBlockStateHash": 6652,
+    "defaultBlockStateId": 6652,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.birch_trapdoor",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:birch_wall_sign": {
+    "defaultBlockStateHash": 6892,
+    "defaultBlockStateId": 6892,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.birch_wall_sign",
+    "tags": [
+      "minecraft:text_sign",
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:black_candle": {
+    "defaultBlockStateHash": 171,
+    "defaultBlockStateId": 171,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.black_candle"
+  },
+  "minecraft:black_candle_cake": {
+    "defaultBlockStateHash": 4585,
+    "defaultBlockStateId": 4585,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.black_candle_cake"
+  },
+  "minecraft:black_glazed_terracotta": {
+    "defaultBlockStateHash": 5836,
+    "defaultBlockStateId": 5836,
+    "hardness": 1.4,
+    "explosionResistance": 1.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.glazedTerracotta.black"
+  },
+  "minecraft:blackstone": {
+    "defaultBlockStateHash": 7587,
+    "defaultBlockStateId": 7587,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.blackstone"
+  },
+  "minecraft:blackstone_double_slab": {
+    "defaultBlockStateHash": 114,
+    "defaultBlockStateId": 114,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.blackstone_double_slab"
+  },
+  "minecraft:blackstone_slab": {
+    "defaultBlockStateHash": 912,
+    "defaultBlockStateId": 912,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.blackstone_slab"
+  },
+  "minecraft:blackstone_stairs": {
+    "defaultBlockStateHash": 7021,
+    "defaultBlockStateId": 7021,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.blackstone_stairs"
+  },
+  "minecraft:blackstone_wall": {
+    "defaultBlockStateHash": 3932,
+    "defaultBlockStateId": 3932,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.blackstone_wall"
+  },
+  "minecraft:blast_furnace": {
+    "defaultBlockStateHash": 7569,
+    "defaultBlockStateId": 7569,
+    "hardness": 3.5,
+    "explosionResistance": 3.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.blast_furnace"
+  },
+  "minecraft:blue_candle": {
+    "defaultBlockStateHash": 0,
+    "defaultBlockStateId": 0,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.blue_candle"
+  },
+  "minecraft:blue_candle_cake": {
+    "defaultBlockStateHash": 6010,
+    "defaultBlockStateId": 6010,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.blue_candle_cake"
+  },
+  "minecraft:blue_glazed_terracotta": {
+    "defaultBlockStateHash": 5467,
+    "defaultBlockStateId": 5467,
+    "hardness": 1.4,
+    "explosionResistance": 1.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.glazedTerracotta.blue"
+  },
+  "minecraft:blue_ice": {
+    "defaultBlockStateHash": 7029,
+    "defaultBlockStateId": 7029,
+    "hardness": 2.8,
+    "explosionResistance": 2.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.blue_ice"
+  },
+  "minecraft:bone_block": {
+    "defaultBlockStateHash": 4236,
+    "defaultBlockStateId": 4236,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.bone_block"
+  },
+  "minecraft:bookshelf": {
+    "defaultBlockStateHash": 6673,
+    "defaultBlockStateId": 6673,
+    "hardness": 1.5,
+    "explosionResistance": 1.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.bookshelf"
+  },
+  "minecraft:border_block": {
+    "defaultBlockStateHash": 4901,
+    "defaultBlockStateId": 4901,
+    "hardness": 0.2,
+    "explosionResistance": 3600,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.border_block"
+  },
+  "minecraft:brewing_stand": {
+    "defaultBlockStateHash": 7549,
+    "defaultBlockStateId": 7549,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 3,
+    "descriptionId": "tile.brewing_stand"
+  },
+  "minecraft:brick_block": {
+    "defaultBlockStateHash": 4767,
+    "defaultBlockStateId": 4767,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.brick_block",
+    "tags": [
+      "minecraft:stone"
+    ]
+  },
+  "minecraft:brick_stairs": {
+    "defaultBlockStateHash": 6532,
+    "defaultBlockStateId": 6532,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.brick_stairs"
+  },
+  "minecraft:brown_candle": {
+    "defaultBlockStateHash": 5877,
+    "defaultBlockStateId": 5877,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.brown_candle"
+  },
+  "minecraft:brown_candle_cake": {
+    "defaultBlockStateHash": 3659,
+    "defaultBlockStateId": 3659,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.brown_candle_cake"
+  },
+  "minecraft:brown_glazed_terracotta": {
+    "defaultBlockStateHash": 3549,
+    "defaultBlockStateId": 3549,
+    "hardness": 1.4,
+    "explosionResistance": 1.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.glazedTerracotta.brown"
+  },
+  "minecraft:brown_mushroom": {
+    "defaultBlockStateHash": 3548,
+    "defaultBlockStateId": 3548,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 1,
+    "lightDampening": 0,
+    "descriptionId": "tile.brown_mushroom"
+  },
+  "minecraft:brown_mushroom_block": {
+    "defaultBlockStateHash": 7350,
+    "defaultBlockStateId": 7350,
+    "hardness": 0.2,
+    "explosionResistance": 0.2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.brown_mushroom_block"
+  },
+  "minecraft:bubble_column": {
+    "defaultBlockStateHash": 5780,
+    "defaultBlockStateId": 5780,
+    "hardness": -1,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.bubble_column"
+  },
+  "minecraft:budding_amethyst": {
+    "defaultBlockStateHash": 7004,
+    "defaultBlockStateId": 7004,
+    "hardness": 1.5,
+    "explosionResistance": 1.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.budding_amethyst"
+  },
+  "minecraft:cactus": {
+    "defaultBlockStateHash": 6988,
+    "defaultBlockStateId": 6988,
+    "hardness": 0.4,
+    "explosionResistance": 0.4,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.cactus"
+  },
+  "minecraft:cake": {
+    "defaultBlockStateHash": 7127,
+    "defaultBlockStateId": 7127,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.cake"
+  },
+  "minecraft:calcite": {
+    "defaultBlockStateHash": 215,
+    "defaultBlockStateId": 215,
+    "hardness": 0.75,
+    "explosionResistance": 0.75,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.calcite"
+  },
+  "minecraft:camera": {
+    "defaultBlockStateHash": 7286,
+    "defaultBlockStateId": 7286,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.camera"
+  },
+  "minecraft:campfire": {
+    "defaultBlockStateHash": 5782,
+    "defaultBlockStateId": 5782,
+    "hardness": 5,
+    "explosionResistance": 5,
+    "lightEmission": 15,
+    "lightDampening": 0,
+    "descriptionId": "tile.campfire"
+  },
+  "minecraft:candle": {
+    "defaultBlockStateHash": 7405,
+    "defaultBlockStateId": 7405,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.candle"
+  },
+  "minecraft:candle_cake": {
+    "defaultBlockStateHash": 7584,
+    "defaultBlockStateId": 7584,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.candle_cake"
+  },
+  "minecraft:carpet": {
+    "defaultBlockStateHash": 951,
+    "defaultBlockStateId": 951,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.carpet"
+  },
+  "minecraft:carrots": {
+    "defaultBlockStateHash": 5908,
+    "defaultBlockStateId": 5908,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.carrots",
+    "tags": [
+      "minecraft:crop"
+    ]
+  },
+  "minecraft:cartography_table": {
+    "defaultBlockStateHash": 8290,
+    "defaultBlockStateId": 8290,
+    "hardness": 2.5,
+    "explosionResistance": 2.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.cartography_table"
+  },
+  "minecraft:carved_pumpkin": {
+    "defaultBlockStateHash": 7380,
+    "defaultBlockStateId": 7380,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.carved_pumpkin",
+    "tags": [
+      "minecraft:pumpkin"
+    ]
+  },
+  "minecraft:cauldron": {
+    "defaultBlockStateHash": 7457,
+    "defaultBlockStateId": 7457,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 3,
+    "descriptionId": "tile.cauldron",
+    "tags": [
+      "minecraft:metal"
+    ]
+  },
+  "minecraft:cave_vines": {
+    "defaultBlockStateHash": 4777,
+    "defaultBlockStateId": 4777,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.cave_vines"
+  },
+  "minecraft:cave_vines_body_with_berries": {
+    "defaultBlockStateHash": 5932,
+    "defaultBlockStateId": 5932,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 14,
+    "lightDampening": 0,
+    "descriptionId": "tile.cave_vines_body_with_berries"
+  },
+  "minecraft:cave_vines_head_with_berries": {
+    "defaultBlockStateHash": 7478,
+    "defaultBlockStateId": 7478,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 14,
+    "lightDampening": 0,
+    "descriptionId": "tile.cave_vines_head_with_berries"
+  },
+  "minecraft:chain": {
+    "defaultBlockStateHash": 7123,
+    "defaultBlockStateId": 7123,
+    "hardness": 5,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.chain"
+  },
+  "minecraft:chain_command_block": {
+    "defaultBlockStateHash": 6570,
+    "defaultBlockStateId": 6570,
+    "hardness": -1,
+    "explosionResistance": 3600000,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.chain_command_block"
+  },
+  "minecraft:chemical_heat": {
+    "defaultBlockStateHash": 7440,
+    "defaultBlockStateId": 7440,
+    "hardness": 2.5,
+    "explosionResistance": 2.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.chemical_heat"
+  },
+  "minecraft:chemistry_table": {
+    "defaultBlockStateHash": 7296,
+    "defaultBlockStateId": 7296,
+    "hardness": 2.5,
+    "explosionResistance": 2.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.chemistry_table"
+  },
+  "minecraft:chest": {
+    "defaultBlockStateHash": 7117,
+    "defaultBlockStateId": 7117,
+    "hardness": 2.5,
+    "explosionResistance": 2.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.chest",
+    "tags": [
+      "minecraft:not_feature_replaceable"
+    ]
+  },
+  "minecraft:chiseled_deepslate": {
+    "defaultBlockStateHash": 5236,
+    "defaultBlockStateId": 5236,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.chiseled_deepslate"
+  },
+  "minecraft:chiseled_nether_bricks": {
+    "defaultBlockStateHash": 7251,
+    "defaultBlockStateId": 7251,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.chiseled_nether_bricks"
+  },
+  "minecraft:chiseled_polished_blackstone": {
+    "defaultBlockStateHash": 5064,
+    "defaultBlockStateId": 5064,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.chiseled_polished_blackstone"
+  },
+  "minecraft:chorus_flower": {
+    "defaultBlockStateHash": 4532,
+    "defaultBlockStateId": 4532,
+    "hardness": 0.4,
+    "explosionResistance": 0.4,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.chorus_flower"
+  },
+  "minecraft:chorus_plant": {
+    "defaultBlockStateHash": 5507,
+    "defaultBlockStateId": 5507,
+    "hardness": 0.4,
+    "explosionResistance": 0.4,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.chorus_plant"
+  },
+  "minecraft:clay": {
+    "defaultBlockStateHash": 7126,
+    "defaultBlockStateId": 7126,
+    "hardness": 0.6,
+    "explosionResistance": 0.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.clay"
+  },
+  "minecraft:client_request_placeholder_block": {
+    "defaultBlockStateHash": 4290,
+    "defaultBlockStateId": 4290,
+    "hardness": -1,
+    "explosionResistance": 3600000,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.client_request_placeholder_block"
+  },
+  "minecraft:coal_block": {
+    "defaultBlockStateHash": 5400,
+    "defaultBlockStateId": 5400,
+    "hardness": 5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.coal_block"
+  },
+  "minecraft:coal_ore": {
+    "defaultBlockStateHash": 4289,
+    "defaultBlockStateId": 4289,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.coal_ore",
+    "tags": [
+      "minecraft:diamond_pick_diggable",
+      "minecraft:iron_pick_diggable"
+    ]
+  },
+  "minecraft:cobbled_deepslate": {
+    "defaultBlockStateHash": 6672,
+    "defaultBlockStateId": 6672,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.cobbled_deepslate"
+  },
+  "minecraft:cobbled_deepslate_double_slab": {
+    "defaultBlockStateHash": 5853,
+    "defaultBlockStateId": 5853,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.cobbled_deepslate_double_slab"
+  },
+  "minecraft:cobbled_deepslate_slab": {
+    "defaultBlockStateHash": 7312,
+    "defaultBlockStateId": 7312,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.cobbled_deepslate_slab"
+  },
+  "minecraft:cobbled_deepslate_stairs": {
+    "defaultBlockStateHash": 147,
+    "defaultBlockStateId": 147,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.cobbled_deepslate_stairs"
+  },
+  "minecraft:cobbled_deepslate_wall": {
+    "defaultBlockStateHash": 8084,
+    "defaultBlockStateId": 8084,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.cobbled_deepslate_wall"
+  },
+  "minecraft:cobblestone": {
+    "defaultBlockStateHash": 3617,
+    "defaultBlockStateId": 3617,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.cobblestone",
+    "tags": [
+      "minecraft:stone"
+    ]
+  },
+  "minecraft:cobblestone_wall": {
+    "defaultBlockStateHash": 1184,
+    "defaultBlockStateId": 1184,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.cobblestone_wall",
+    "tags": [
+      "minecraft:stone"
+    ]
+  },
+  "minecraft:cocoa": {
+    "defaultBlockStateHash": 6504,
+    "defaultBlockStateId": 6504,
+    "hardness": 0.2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.cocoa"
+  },
+  "minecraft:colored_torch_bp": {
+    "defaultBlockStateHash": 7520,
+    "defaultBlockStateId": 7520,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 14,
+    "lightDampening": 0,
+    "descriptionId": "tile.colored_torch_bp"
+  },
+  "minecraft:colored_torch_rg": {
+    "defaultBlockStateHash": 7532,
+    "defaultBlockStateId": 7532,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 14,
+    "lightDampening": 0,
+    "descriptionId": "tile.colored_torch_rg"
+  },
+  "minecraft:command_block": {
+    "defaultBlockStateHash": 7780,
+    "defaultBlockStateId": 7780,
+    "hardness": -1,
+    "explosionResistance": 3600000,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.command_block"
+  },
+  "minecraft:composter": {
+    "defaultBlockStateHash": 5417,
+    "defaultBlockStateId": 5417,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.composter"
+  },
+  "minecraft:concrete": {
+    "defaultBlockStateHash": 662,
+    "defaultBlockStateId": 662,
+    "hardness": 1.8,
+    "explosionResistance": 1.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.concrete"
+  },
+  "minecraft:concrete_powder": {
+    "defaultBlockStateHash": 6266,
+    "defaultBlockStateId": 6266,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.concretePowder"
+  },
+  "minecraft:conduit": {
+    "defaultBlockStateHash": 4234,
+    "defaultBlockStateId": 4234,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 15,
+    "lightDampening": 0,
+    "descriptionId": "tile.conduit"
+  },
+  "minecraft:copper_block": {
+    "defaultBlockStateHash": 4653,
+    "defaultBlockStateId": 4653,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.copper_block",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:copper_ore": {
+    "defaultBlockStateHash": 3556,
+    "defaultBlockStateId": 3556,
+    "hardness": 3,
+    "explosionResistance": 1.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.copper_ore",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:coral": {
+    "defaultBlockStateHash": 6491,
+    "defaultBlockStateId": 6491,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.coral"
+  },
+  "minecraft:coral_block": {
+    "defaultBlockStateHash": 5239,
+    "defaultBlockStateId": 5239,
+    "hardness": 7,
+    "explosionResistance": 0.9,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.coral_block"
+  },
+  "minecraft:coral_fan": {
+    "defaultBlockStateHash": 4615,
+    "defaultBlockStateId": 4615,
+    "hardness": 0,
+    "explosionResistance": 0.9,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.coral_fan"
+  },
+  "minecraft:coral_fan_dead": {
+    "defaultBlockStateHash": 66,
+    "defaultBlockStateId": 66,
+    "hardness": 0,
+    "explosionResistance": 0.9,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.coral_fan_dead"
+  },
+  "minecraft:coral_fan_hang": {
+    "defaultBlockStateHash": 4538,
+    "defaultBlockStateId": 4538,
+    "hardness": 0,
+    "explosionResistance": 0.9,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.coral_fan_hang"
+  },
+  "minecraft:coral_fan_hang2": {
+    "defaultBlockStateHash": 4102,
+    "defaultBlockStateId": 4102,
+    "hardness": 0,
+    "explosionResistance": 0.9,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.coral_fan_hang2"
+  },
+  "minecraft:coral_fan_hang3": {
+    "defaultBlockStateHash": 4118,
+    "defaultBlockStateId": 4118,
+    "hardness": 0,
+    "explosionResistance": 0.9,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.coral_fan_hang3"
+  },
+  "minecraft:cracked_deepslate_bricks": {
+    "defaultBlockStateHash": 5366,
+    "defaultBlockStateId": 5366,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.cracked_deepslate_bricks"
+  },
+  "minecraft:cracked_deepslate_tiles": {
+    "defaultBlockStateHash": 4162,
+    "defaultBlockStateId": 4162,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.cracked_deepslate_tiles"
+  },
+  "minecraft:cracked_nether_bricks": {
+    "defaultBlockStateHash": 4554,
+    "defaultBlockStateId": 4554,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.cracked_nether_bricks"
+  },
+  "minecraft:cracked_polished_blackstone_bricks": {
+    "defaultBlockStateHash": 7216,
+    "defaultBlockStateId": 7216,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.cracked_polished_blackstone_bricks"
+  },
+  "minecraft:crafting_table": {
+    "defaultBlockStateHash": 5856,
+    "defaultBlockStateId": 5856,
+    "hardness": 2.5,
+    "explosionResistance": 2.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.crafting_table"
+  },
+  "minecraft:crimson_button": {
+    "defaultBlockStateHash": 4434,
+    "defaultBlockStateId": 4434,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.crimson_button"
+  },
+  "minecraft:crimson_door": {
+    "defaultBlockStateHash": 3839,
+    "defaultBlockStateId": 3839,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.crimson_door"
+  },
+  "minecraft:crimson_double_slab": {
+    "defaultBlockStateHash": 681,
+    "defaultBlockStateId": 681,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.crimson_double_slab"
+  },
+  "minecraft:crimson_fence": {
+    "defaultBlockStateHash": 7998,
+    "defaultBlockStateId": 7998,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.crimson_fence"
+  },
+  "minecraft:crimson_fence_gate": {
+    "defaultBlockStateHash": 4663,
+    "defaultBlockStateId": 4663,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.crimson_fence_gate"
+  },
+  "minecraft:crimson_fungus": {
+    "defaultBlockStateHash": 7755,
+    "defaultBlockStateId": 7755,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.crimson_fungus"
+  },
+  "minecraft:crimson_hyphae": {
+    "defaultBlockStateHash": 4296,
+    "defaultBlockStateId": 4296,
+    "hardness": 0.3,
+    "explosionResistance": 0.3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.crimson_hyphae"
+  },
+  "minecraft:crimson_nylium": {
+    "defaultBlockStateHash": 4191,
+    "defaultBlockStateId": 4191,
+    "hardness": 0.4,
+    "explosionResistance": 0.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.crimson_nylium",
+    "tags": [
+      "minecraft:fertilize_area"
+    ]
+  },
+  "minecraft:crimson_planks": {
+    "defaultBlockStateHash": 4852,
+    "defaultBlockStateId": 4852,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.crimson_planks"
+  },
+  "minecraft:crimson_pressure_plate": {
+    "defaultBlockStateHash": 8270,
+    "defaultBlockStateId": 8270,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.crimson_pressure_plate"
+  },
+  "minecraft:crimson_roots": {
+    "defaultBlockStateHash": 7575,
+    "defaultBlockStateId": 7575,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.crimson_roots"
+  },
+  "minecraft:crimson_slab": {
+    "defaultBlockStateHash": 5902,
+    "defaultBlockStateId": 5902,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.crimson_slab"
+  },
+  "minecraft:crimson_stairs": {
+    "defaultBlockStateHash": 6282,
+    "defaultBlockStateId": 6282,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.crimson_stairs"
+  },
+  "minecraft:crimson_standing_sign": {
+    "defaultBlockStateHash": 7315,
+    "defaultBlockStateId": 7315,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.crimson_standing_sign",
+    "tags": [
+      "minecraft:text_sign"
+    ]
+  },
+  "minecraft:crimson_stem": {
+    "defaultBlockStateHash": 5899,
+    "defaultBlockStateId": 5899,
+    "hardness": 2,
+    "explosionResistance": 0.3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.crimson_stem"
+  },
+  "minecraft:crimson_trapdoor": {
+    "defaultBlockStateHash": 4335,
+    "defaultBlockStateId": 4335,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.crimson_trapdoor"
+  },
+  "minecraft:crimson_wall_sign": {
+    "defaultBlockStateHash": 138,
+    "defaultBlockStateId": 138,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.crimson_wall_sign",
+    "tags": [
+      "minecraft:text_sign"
+    ]
+  },
+  "minecraft:crying_obsidian": {
+    "defaultBlockStateHash": 6724,
+    "defaultBlockStateId": 6724,
+    "hardness": 35,
+    "explosionResistance": 1200,
+    "lightEmission": 10,
+    "lightDampening": 15,
+    "descriptionId": "tile.crying_obsidian"
+  },
+  "minecraft:cut_copper": {
+    "defaultBlockStateHash": 4691,
+    "defaultBlockStateId": 4691,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.cut_copper",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:cut_copper_slab": {
+    "defaultBlockStateHash": 5237,
+    "defaultBlockStateId": 5237,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.cut_copper_slab"
+  },
+  "minecraft:cut_copper_stairs": {
+    "defaultBlockStateHash": 4606,
+    "defaultBlockStateId": 4606,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.cut_copper_stairs",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:cyan_candle": {
+    "defaultBlockStateHash": 7728,
+    "defaultBlockStateId": 7728,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.cyan_candle"
+  },
+  "minecraft:cyan_candle_cake": {
+    "defaultBlockStateHash": 712,
+    "defaultBlockStateId": 712,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.cyan_candle_cake"
+  },
+  "minecraft:cyan_glazed_terracotta": {
+    "defaultBlockStateHash": 5360,
+    "defaultBlockStateId": 5360,
+    "hardness": 1.4,
+    "explosionResistance": 1.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.glazedTerracotta.cyan"
+  },
+  "minecraft:dark_oak_button": {
+    "defaultBlockStateHash": 93,
+    "defaultBlockStateId": 93,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.dark_oak_button",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:dark_oak_door": {
+    "defaultBlockStateHash": 5719,
+    "defaultBlockStateId": 5719,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.dark_oak_door",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:dark_oak_fence_gate": {
+    "defaultBlockStateHash": 4175,
+    "defaultBlockStateId": 4175,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.dark_oak_fence_gate",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:dark_oak_pressure_plate": {
+    "defaultBlockStateHash": 5958,
+    "defaultBlockStateId": 5958,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.dark_oak_pressure_plate",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:dark_oak_stairs": {
+    "defaultBlockStateHash": 5065,
+    "defaultBlockStateId": 5065,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.dark_oak_stairs",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:dark_oak_trapdoor": {
+    "defaultBlockStateHash": 7504,
+    "defaultBlockStateId": 7504,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.dark_oak_trapdoor",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:dark_prismarine_stairs": {
+    "defaultBlockStateHash": 7432,
+    "defaultBlockStateId": 7432,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.dark_prismarine_stairs"
+  },
+  "minecraft:darkoak_standing_sign": {
+    "defaultBlockStateHash": 7331,
+    "defaultBlockStateId": 7331,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.darkoak_standing_sign",
+    "tags": [
+      "minecraft:text_sign",
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:darkoak_wall_sign": {
+    "defaultBlockStateHash": 5346,
+    "defaultBlockStateId": 5346,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.darkoak_wall_sign",
+    "tags": [
+      "minecraft:text_sign",
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:daylight_detector": {
+    "defaultBlockStateHash": 4199,
+    "defaultBlockStateId": 4199,
+    "hardness": 0.2,
+    "explosionResistance": 0.2,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.daylight_detector"
+  },
+  "minecraft:daylight_detector_inverted": {
+    "defaultBlockStateHash": 4504,
+    "defaultBlockStateId": 4504,
+    "hardness": 0.2,
+    "explosionResistance": 0.2,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.daylight_detector_inverted"
+  },
+  "minecraft:deadbush": {
+    "defaultBlockStateHash": 4679,
+    "defaultBlockStateId": 4679,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.deadbush"
+  },
+  "minecraft:deepslate": {
+    "defaultBlockStateHash": 253,
+    "defaultBlockStateId": 253,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.deepslate"
+  },
+  "minecraft:deepslate_brick_double_slab": {
+    "defaultBlockStateHash": 3458,
+    "defaultBlockStateId": 3458,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.deepslate_brick_double_slab"
+  },
+  "minecraft:deepslate_brick_slab": {
+    "defaultBlockStateHash": 3718,
+    "defaultBlockStateId": 3718,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.deepslate_brick_slab"
+  },
+  "minecraft:deepslate_brick_stairs": {
+    "defaultBlockStateHash": 7424,
+    "defaultBlockStateId": 7424,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.deepslate_brick_stairs"
+  },
+  "minecraft:deepslate_brick_wall": {
+    "defaultBlockStateHash": 431,
+    "defaultBlockStateId": 431,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.deepslate_brick_wall"
+  },
+  "minecraft:deepslate_bricks": {
+    "defaultBlockStateHash": 5466,
+    "defaultBlockStateId": 5466,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.deepslate_bricks"
+  },
+  "minecraft:deepslate_coal_ore": {
+    "defaultBlockStateHash": 7198,
+    "defaultBlockStateId": 7198,
+    "hardness": 4.5,
+    "explosionResistance": 1.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.deepslate_coal_ore",
+    "tags": [
+      "minecraft:diamond_pick_diggable",
+      "minecraft:iron_pick_diggable"
+    ]
+  },
+  "minecraft:deepslate_copper_ore": {
+    "defaultBlockStateHash": 105,
+    "defaultBlockStateId": 105,
+    "hardness": 4.5,
+    "explosionResistance": 1.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.deepslate_copper_ore",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:deepslate_diamond_ore": {
+    "defaultBlockStateHash": 8040,
+    "defaultBlockStateId": 8040,
+    "hardness": 4.5,
+    "explosionResistance": 1.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.deepslate_diamond_ore",
+    "tags": [
+      "minecraft:diamond_pick_diggable",
+      "minecraft:iron_pick_diggable"
+    ]
+  },
+  "minecraft:deepslate_emerald_ore": {
+    "defaultBlockStateHash": 6352,
+    "defaultBlockStateId": 6352,
+    "hardness": 4.5,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.deepslate_emerald_ore",
+    "tags": [
+      "minecraft:diamond_pick_diggable",
+      "minecraft:iron_pick_diggable"
+    ]
+  },
+  "minecraft:deepslate_gold_ore": {
+    "defaultBlockStateHash": 6108,
+    "defaultBlockStateId": 6108,
+    "hardness": 4.5,
+    "explosionResistance": 1.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.deepslate_gold_ore",
+    "tags": [
+      "minecraft:diamond_pick_diggable",
+      "minecraft:iron_pick_diggable"
+    ]
+  },
+  "minecraft:deepslate_iron_ore": {
+    "defaultBlockStateHash": 7275,
+    "defaultBlockStateId": 7275,
+    "hardness": 4.5,
+    "explosionResistance": 1.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.deepslate_iron_ore",
+    "tags": [
+      "minecraft:diamond_pick_diggable",
+      "minecraft:iron_pick_diggable"
+    ]
+  },
+  "minecraft:deepslate_lapis_ore": {
+    "defaultBlockStateHash": 7264,
+    "defaultBlockStateId": 7264,
+    "hardness": 4.5,
+    "explosionResistance": 1.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.deepslate_lapis_ore"
+  },
+  "minecraft:deepslate_redstone_ore": {
+    "defaultBlockStateHash": 6618,
+    "defaultBlockStateId": 6618,
+    "hardness": 4.5,
+    "explosionResistance": 1.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.deepslate_redstone_ore",
+    "tags": [
+      "minecraft:diamond_pick_diggable",
+      "minecraft:iron_pick_diggable"
+    ]
+  },
+  "minecraft:deepslate_tile_double_slab": {
+    "defaultBlockStateHash": 361,
+    "defaultBlockStateId": 361,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.deepslate_tile_double_slab"
+  },
+  "minecraft:deepslate_tile_slab": {
+    "defaultBlockStateHash": 4293,
+    "defaultBlockStateId": 4293,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.deepslate_tile_slab"
+  },
+  "minecraft:deepslate_tile_stairs": {
+    "defaultBlockStateHash": 4655,
+    "defaultBlockStateId": 4655,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.deepslate_tile_stairs"
+  },
+  "minecraft:deepslate_tile_wall": {
+    "defaultBlockStateHash": 5073,
+    "defaultBlockStateId": 5073,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.deepslate_tile_wall"
+  },
+  "minecraft:deepslate_tiles": {
+    "defaultBlockStateHash": 4583,
+    "defaultBlockStateId": 4583,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.deepslate_tiles"
+  },
+  "minecraft:deny": {
+    "defaultBlockStateHash": 5755,
+    "defaultBlockStateId": 5755,
+    "hardness": 0.2,
+    "explosionResistance": 3600,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.deny"
+  },
+  "minecraft:detector_rail": {
+    "defaultBlockStateHash": 4134,
+    "defaultBlockStateId": 4134,
+    "hardness": 0.7,
+    "explosionResistance": 0.7,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.detector_rail",
+    "tags": [
+      "minecraft:rail"
+    ]
+  },
+  "minecraft:diamond_block": {
+    "defaultBlockStateHash": 272,
+    "defaultBlockStateId": 272,
+    "hardness": 5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.diamond_block"
+  },
+  "minecraft:diamond_ore": {
+    "defaultBlockStateHash": 4363,
+    "defaultBlockStateId": 4363,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.diamond_ore",
+    "tags": [
+      "minecraft:diamond_pick_diggable",
+      "minecraft:iron_pick_diggable"
+    ]
+  },
+  "minecraft:diorite_stairs": {
+    "defaultBlockStateHash": 4393,
+    "defaultBlockStateId": 4393,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.diorite_stairs"
+  },
+  "minecraft:dirt": {
+    "defaultBlockStateHash": 5753,
+    "defaultBlockStateId": 5753,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.dirt",
+    "tags": [
+      "minecraft:grass"
+    ]
+  },
+  "minecraft:dirt_with_roots": {
+    "defaultBlockStateHash": 5399,
+    "defaultBlockStateId": 5399,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.dirt_with_roots"
+  },
+  "minecraft:dispenser": {
+    "defaultBlockStateHash": 8012,
+    "defaultBlockStateId": 8012,
+    "hardness": 3.5,
+    "explosionResistance": 3.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.dispenser"
+  },
+  "minecraft:double_cut_copper_slab": {
+    "defaultBlockStateHash": 3653,
+    "defaultBlockStateId": 3653,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.double_cut_copper_slab"
+  },
+  "minecraft:double_plant": {
+    "defaultBlockStateHash": 5454,
+    "defaultBlockStateId": 5454,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.double_plant",
+    "tags": [
+      "minecraft:plant"
+    ]
+  },
+  "minecraft:double_stone_block_slab": {
+    "defaultBlockStateHash": 6619,
+    "defaultBlockStateId": 6619,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.double_stone_slab",
+    "tags": [
+      "minecraft:stone"
+    ]
+  },
+  "minecraft:double_stone_block_slab2": {
+    "defaultBlockStateHash": 6440,
+    "defaultBlockStateId": 6440,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.double_stone_slab2"
+  },
+  "minecraft:double_stone_block_slab3": {
+    "defaultBlockStateHash": 6456,
+    "defaultBlockStateId": 6456,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.double_stone_slab3"
+  },
+  "minecraft:double_stone_block_slab4": {
+    "defaultBlockStateHash": 6472,
+    "defaultBlockStateId": 6472,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.double_stone_slab4"
+  },
+  "minecraft:double_wooden_slab": {
+    "defaultBlockStateHash": 5865,
+    "defaultBlockStateId": 5865,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.double_wooden_slab",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:dragon_egg": {
+    "defaultBlockStateHash": 7273,
+    "defaultBlockStateId": 7273,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 1,
+    "lightDampening": 0,
+    "descriptionId": "tile.dragon_egg"
+  },
+  "minecraft:dried_kelp_block": {
+    "defaultBlockStateHash": 7981,
+    "defaultBlockStateId": 7981,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.dried_kelp_block"
+  },
+  "minecraft:dripstone_block": {
+    "defaultBlockStateHash": 895,
+    "defaultBlockStateId": 895,
+    "hardness": 1.5,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.dripstone_block",
+    "tags": [
+      "minecraft:stone"
+    ]
+  },
+  "minecraft:dropper": {
+    "defaultBlockStateHash": 7384,
+    "defaultBlockStateId": 7384,
+    "hardness": 3.5,
+    "explosionResistance": 3.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.dropper"
+  },
+  "minecraft:element_0": {
+    "defaultBlockStateHash": 7277,
+    "defaultBlockStateId": 7277,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_0"
+  },
+  "minecraft:element_1": {
+    "defaultBlockStateHash": 7276,
+    "defaultBlockStateId": 7276,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_1"
+  },
+  "minecraft:element_10": {
+    "defaultBlockStateHash": 7605,
+    "defaultBlockStateId": 7605,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_10"
+  },
+  "minecraft:element_100": {
+    "defaultBlockStateHash": 5556,
+    "defaultBlockStateId": 5556,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_100"
+  },
+  "minecraft:element_101": {
+    "defaultBlockStateHash": 5557,
+    "defaultBlockStateId": 5557,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_101"
+  },
+  "minecraft:element_102": {
+    "defaultBlockStateHash": 5558,
+    "defaultBlockStateId": 5558,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_102"
+  },
+  "minecraft:element_103": {
+    "defaultBlockStateHash": 5559,
+    "defaultBlockStateId": 5559,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_103"
+  },
+  "minecraft:element_104": {
+    "defaultBlockStateHash": 5560,
+    "defaultBlockStateId": 5560,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_104"
+  },
+  "minecraft:element_105": {
+    "defaultBlockStateHash": 5561,
+    "defaultBlockStateId": 5561,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_105"
+  },
+  "minecraft:element_106": {
+    "defaultBlockStateHash": 5562,
+    "defaultBlockStateId": 5562,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_106"
+  },
+  "minecraft:element_107": {
+    "defaultBlockStateHash": 5563,
+    "defaultBlockStateId": 5563,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_107"
+  },
+  "minecraft:element_108": {
+    "defaultBlockStateHash": 5564,
+    "defaultBlockStateId": 5564,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_108"
+  },
+  "minecraft:element_109": {
+    "defaultBlockStateHash": 5565,
+    "defaultBlockStateId": 5565,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_109"
+  },
+  "minecraft:element_11": {
+    "defaultBlockStateHash": 7606,
+    "defaultBlockStateId": 7606,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_11"
+  },
+  "minecraft:element_110": {
+    "defaultBlockStateHash": 5569,
+    "defaultBlockStateId": 5569,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_110"
+  },
+  "minecraft:element_111": {
+    "defaultBlockStateHash": 5568,
+    "defaultBlockStateId": 5568,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_111"
+  },
+  "minecraft:element_112": {
+    "defaultBlockStateHash": 5567,
+    "defaultBlockStateId": 5567,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_112"
+  },
+  "minecraft:element_113": {
+    "defaultBlockStateHash": 5566,
+    "defaultBlockStateId": 5566,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_113"
+  },
+  "minecraft:element_114": {
+    "defaultBlockStateHash": 5573,
+    "defaultBlockStateId": 5573,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_114"
+  },
+  "minecraft:element_115": {
+    "defaultBlockStateHash": 5572,
+    "defaultBlockStateId": 5572,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_115"
+  },
+  "minecraft:element_116": {
+    "defaultBlockStateHash": 5571,
+    "defaultBlockStateId": 5571,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_116"
+  },
+  "minecraft:element_117": {
+    "defaultBlockStateHash": 5570,
+    "defaultBlockStateId": 5570,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_117"
+  },
+  "minecraft:element_118": {
+    "defaultBlockStateHash": 5574,
+    "defaultBlockStateId": 5574,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_118"
+  },
+  "minecraft:element_12": {
+    "defaultBlockStateHash": 7607,
+    "defaultBlockStateId": 7607,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_12"
+  },
+  "minecraft:element_13": {
+    "defaultBlockStateHash": 7608,
+    "defaultBlockStateId": 7608,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_13"
+  },
+  "minecraft:element_14": {
+    "defaultBlockStateHash": 7609,
+    "defaultBlockStateId": 7609,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_14"
+  },
+  "minecraft:element_15": {
+    "defaultBlockStateHash": 7610,
+    "defaultBlockStateId": 7610,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_15"
+  },
+  "minecraft:element_16": {
+    "defaultBlockStateHash": 7611,
+    "defaultBlockStateId": 7611,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_16"
+  },
+  "minecraft:element_17": {
+    "defaultBlockStateHash": 7612,
+    "defaultBlockStateId": 7612,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_17"
+  },
+  "minecraft:element_18": {
+    "defaultBlockStateHash": 7613,
+    "defaultBlockStateId": 7613,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_18"
+  },
+  "minecraft:element_19": {
+    "defaultBlockStateHash": 7614,
+    "defaultBlockStateId": 7614,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_19"
+  },
+  "minecraft:element_2": {
+    "defaultBlockStateHash": 7279,
+    "defaultBlockStateId": 7279,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_2"
+  },
+  "minecraft:element_20": {
+    "defaultBlockStateHash": 7628,
+    "defaultBlockStateId": 7628,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_20"
+  },
+  "minecraft:element_21": {
+    "defaultBlockStateHash": 7627,
+    "defaultBlockStateId": 7627,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_21"
+  },
+  "minecraft:element_22": {
+    "defaultBlockStateHash": 7630,
+    "defaultBlockStateId": 7630,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_22"
+  },
+  "minecraft:element_23": {
+    "defaultBlockStateHash": 7629,
+    "defaultBlockStateId": 7629,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_23"
+  },
+  "minecraft:element_24": {
+    "defaultBlockStateHash": 7632,
+    "defaultBlockStateId": 7632,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_24"
+  },
+  "minecraft:element_25": {
+    "defaultBlockStateHash": 7631,
+    "defaultBlockStateId": 7631,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_25"
+  },
+  "minecraft:element_26": {
+    "defaultBlockStateHash": 7634,
+    "defaultBlockStateId": 7634,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_26"
+  },
+  "minecraft:element_27": {
+    "defaultBlockStateHash": 7633,
+    "defaultBlockStateId": 7633,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_27"
+  },
+  "minecraft:element_28": {
+    "defaultBlockStateHash": 7626,
+    "defaultBlockStateId": 7626,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_28"
+  },
+  "minecraft:element_29": {
+    "defaultBlockStateHash": 7625,
+    "defaultBlockStateId": 7625,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_29"
+  },
+  "minecraft:element_3": {
+    "defaultBlockStateHash": 7278,
+    "defaultBlockStateId": 7278,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_3"
+  },
+  "minecraft:element_30": {
+    "defaultBlockStateHash": 7621,
+    "defaultBlockStateId": 7621,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_30"
+  },
+  "minecraft:element_31": {
+    "defaultBlockStateHash": 7622,
+    "defaultBlockStateId": 7622,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_31"
+  },
+  "minecraft:element_32": {
+    "defaultBlockStateHash": 7619,
+    "defaultBlockStateId": 7619,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_32"
+  },
+  "minecraft:element_33": {
+    "defaultBlockStateHash": 7620,
+    "defaultBlockStateId": 7620,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_33"
+  },
+  "minecraft:element_34": {
+    "defaultBlockStateHash": 7617,
+    "defaultBlockStateId": 7617,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_34"
+  },
+  "minecraft:element_35": {
+    "defaultBlockStateHash": 7618,
+    "defaultBlockStateId": 7618,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_35"
+  },
+  "minecraft:element_36": {
+    "defaultBlockStateHash": 7615,
+    "defaultBlockStateId": 7615,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_36"
+  },
+  "minecraft:element_37": {
+    "defaultBlockStateHash": 7616,
+    "defaultBlockStateId": 7616,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_37"
+  },
+  "minecraft:element_38": {
+    "defaultBlockStateHash": 7623,
+    "defaultBlockStateId": 7623,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_38"
+  },
+  "minecraft:element_39": {
+    "defaultBlockStateHash": 7624,
+    "defaultBlockStateId": 7624,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_39"
+  },
+  "minecraft:element_4": {
+    "defaultBlockStateHash": 7281,
+    "defaultBlockStateId": 7281,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_4"
+  },
+  "minecraft:element_40": {
+    "defaultBlockStateHash": 7654,
+    "defaultBlockStateId": 7654,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_40"
+  },
+  "minecraft:element_41": {
+    "defaultBlockStateHash": 7653,
+    "defaultBlockStateId": 7653,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_41"
+  },
+  "minecraft:element_42": {
+    "defaultBlockStateHash": 7652,
+    "defaultBlockStateId": 7652,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_42"
+  },
+  "minecraft:element_43": {
+    "defaultBlockStateHash": 7651,
+    "defaultBlockStateId": 7651,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_43"
+  },
+  "minecraft:element_44": {
+    "defaultBlockStateHash": 7650,
+    "defaultBlockStateId": 7650,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_44"
+  },
+  "minecraft:element_45": {
+    "defaultBlockStateHash": 7649,
+    "defaultBlockStateId": 7649,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_45"
+  },
+  "minecraft:element_46": {
+    "defaultBlockStateHash": 7648,
+    "defaultBlockStateId": 7648,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_46"
+  },
+  "minecraft:element_47": {
+    "defaultBlockStateHash": 7647,
+    "defaultBlockStateId": 7647,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_47"
+  },
+  "minecraft:element_48": {
+    "defaultBlockStateHash": 7646,
+    "defaultBlockStateId": 7646,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_48"
+  },
+  "minecraft:element_49": {
+    "defaultBlockStateHash": 7645,
+    "defaultBlockStateId": 7645,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_49"
+  },
+  "minecraft:element_5": {
+    "defaultBlockStateHash": 7280,
+    "defaultBlockStateId": 7280,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_5"
+  },
+  "minecraft:element_50": {
+    "defaultBlockStateHash": 7641,
+    "defaultBlockStateId": 7641,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_50"
+  },
+  "minecraft:element_51": {
+    "defaultBlockStateHash": 7642,
+    "defaultBlockStateId": 7642,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_51"
+  },
+  "minecraft:element_52": {
+    "defaultBlockStateHash": 7643,
+    "defaultBlockStateId": 7643,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_52"
+  },
+  "minecraft:element_53": {
+    "defaultBlockStateHash": 7644,
+    "defaultBlockStateId": 7644,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_53"
+  },
+  "minecraft:element_54": {
+    "defaultBlockStateHash": 7637,
+    "defaultBlockStateId": 7637,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_54"
+  },
+  "minecraft:element_55": {
+    "defaultBlockStateHash": 7638,
+    "defaultBlockStateId": 7638,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_55"
+  },
+  "minecraft:element_56": {
+    "defaultBlockStateHash": 7639,
+    "defaultBlockStateId": 7639,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_56"
+  },
+  "minecraft:element_57": {
+    "defaultBlockStateHash": 7640,
+    "defaultBlockStateId": 7640,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_57"
+  },
+  "minecraft:element_58": {
+    "defaultBlockStateHash": 7635,
+    "defaultBlockStateId": 7635,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_58"
+  },
+  "minecraft:element_59": {
+    "defaultBlockStateHash": 7636,
+    "defaultBlockStateId": 7636,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_59"
+  },
+  "minecraft:element_6": {
+    "defaultBlockStateHash": 7283,
+    "defaultBlockStateId": 7283,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_6"
+  },
+  "minecraft:element_60": {
+    "defaultBlockStateHash": 7670,
+    "defaultBlockStateId": 7670,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_60"
+  },
+  "minecraft:element_61": {
+    "defaultBlockStateHash": 7669,
+    "defaultBlockStateId": 7669,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_61"
+  },
+  "minecraft:element_62": {
+    "defaultBlockStateHash": 7672,
+    "defaultBlockStateId": 7672,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_62"
+  },
+  "minecraft:element_63": {
+    "defaultBlockStateHash": 7671,
+    "defaultBlockStateId": 7671,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_63"
+  },
+  "minecraft:element_64": {
+    "defaultBlockStateHash": 7666,
+    "defaultBlockStateId": 7666,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_64"
+  },
+  "minecraft:element_65": {
+    "defaultBlockStateHash": 7665,
+    "defaultBlockStateId": 7665,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_65"
+  },
+  "minecraft:element_66": {
+    "defaultBlockStateHash": 7668,
+    "defaultBlockStateId": 7668,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_66"
+  },
+  "minecraft:element_67": {
+    "defaultBlockStateHash": 7667,
+    "defaultBlockStateId": 7667,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_67"
+  },
+  "minecraft:element_68": {
+    "defaultBlockStateHash": 7674,
+    "defaultBlockStateId": 7674,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_68"
+  },
+  "minecraft:element_69": {
+    "defaultBlockStateHash": 7673,
+    "defaultBlockStateId": 7673,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_69"
+  },
+  "minecraft:element_7": {
+    "defaultBlockStateHash": 7282,
+    "defaultBlockStateId": 7282,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_7"
+  },
+  "minecraft:element_70": {
+    "defaultBlockStateHash": 7657,
+    "defaultBlockStateId": 7657,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_70"
+  },
+  "minecraft:element_71": {
+    "defaultBlockStateHash": 7658,
+    "defaultBlockStateId": 7658,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_71"
+  },
+  "minecraft:element_72": {
+    "defaultBlockStateHash": 7655,
+    "defaultBlockStateId": 7655,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_72"
+  },
+  "minecraft:element_73": {
+    "defaultBlockStateHash": 7656,
+    "defaultBlockStateId": 7656,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_73"
+  },
+  "minecraft:element_74": {
+    "defaultBlockStateHash": 7661,
+    "defaultBlockStateId": 7661,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_74"
+  },
+  "minecraft:element_75": {
+    "defaultBlockStateHash": 7662,
+    "defaultBlockStateId": 7662,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_75"
+  },
+  "minecraft:element_76": {
+    "defaultBlockStateHash": 7659,
+    "defaultBlockStateId": 7659,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_76"
+  },
+  "minecraft:element_77": {
+    "defaultBlockStateHash": 7660,
+    "defaultBlockStateId": 7660,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_77"
+  },
+  "minecraft:element_78": {
+    "defaultBlockStateHash": 7663,
+    "defaultBlockStateId": 7663,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_78"
+  },
+  "minecraft:element_79": {
+    "defaultBlockStateHash": 7664,
+    "defaultBlockStateId": 7664,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_79"
+  },
+  "minecraft:element_8": {
+    "defaultBlockStateHash": 7285,
+    "defaultBlockStateId": 7285,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_8"
+  },
+  "minecraft:element_80": {
+    "defaultBlockStateHash": 7690,
+    "defaultBlockStateId": 7690,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_80"
+  },
+  "minecraft:element_81": {
+    "defaultBlockStateHash": 7689,
+    "defaultBlockStateId": 7689,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_81"
+  },
+  "minecraft:element_82": {
+    "defaultBlockStateHash": 7688,
+    "defaultBlockStateId": 7688,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_82"
+  },
+  "minecraft:element_83": {
+    "defaultBlockStateHash": 7687,
+    "defaultBlockStateId": 7687,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_83"
+  },
+  "minecraft:element_84": {
+    "defaultBlockStateHash": 7694,
+    "defaultBlockStateId": 7694,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_84"
+  },
+  "minecraft:element_85": {
+    "defaultBlockStateHash": 7693,
+    "defaultBlockStateId": 7693,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_85"
+  },
+  "minecraft:element_86": {
+    "defaultBlockStateHash": 7692,
+    "defaultBlockStateId": 7692,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_86"
+  },
+  "minecraft:element_87": {
+    "defaultBlockStateHash": 7691,
+    "defaultBlockStateId": 7691,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_87"
+  },
+  "minecraft:element_88": {
+    "defaultBlockStateHash": 7686,
+    "defaultBlockStateId": 7686,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_88"
+  },
+  "minecraft:element_89": {
+    "defaultBlockStateHash": 7685,
+    "defaultBlockStateId": 7685,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_89"
+  },
+  "minecraft:element_9": {
+    "defaultBlockStateHash": 7284,
+    "defaultBlockStateId": 7284,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_9"
+  },
+  "minecraft:element_90": {
+    "defaultBlockStateHash": 7677,
+    "defaultBlockStateId": 7677,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_90"
+  },
+  "minecraft:element_91": {
+    "defaultBlockStateHash": 7678,
+    "defaultBlockStateId": 7678,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_91"
+  },
+  "minecraft:element_92": {
+    "defaultBlockStateHash": 7679,
+    "defaultBlockStateId": 7679,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_92"
+  },
+  "minecraft:element_93": {
+    "defaultBlockStateHash": 7680,
+    "defaultBlockStateId": 7680,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_93"
+  },
+  "minecraft:element_94": {
+    "defaultBlockStateHash": 7681,
+    "defaultBlockStateId": 7681,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_94"
+  },
+  "minecraft:element_95": {
+    "defaultBlockStateHash": 7682,
+    "defaultBlockStateId": 7682,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_95"
+  },
+  "minecraft:element_96": {
+    "defaultBlockStateHash": 7683,
+    "defaultBlockStateId": 7683,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_96"
+  },
+  "minecraft:element_97": {
+    "defaultBlockStateHash": 7684,
+    "defaultBlockStateId": 7684,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_97"
+  },
+  "minecraft:element_98": {
+    "defaultBlockStateHash": 7675,
+    "defaultBlockStateId": 7675,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_98"
+  },
+  "minecraft:element_99": {
+    "defaultBlockStateHash": 7676,
+    "defaultBlockStateId": 7676,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.element_99"
+  },
+  "minecraft:emerald_block": {
+    "defaultBlockStateHash": 1161,
+    "defaultBlockStateId": 1161,
+    "hardness": 5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.emerald_block"
+  },
+  "minecraft:emerald_ore": {
+    "defaultBlockStateHash": 7349,
+    "defaultBlockStateId": 7349,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.emerald_ore",
+    "tags": [
+      "minecraft:diamond_pick_diggable",
+      "minecraft:iron_pick_diggable"
+    ]
+  },
+  "minecraft:enchanting_table": {
+    "defaultBlockStateHash": 6725,
+    "defaultBlockStateId": 6725,
+    "hardness": 5,
+    "explosionResistance": 1200,
+    "lightEmission": 7,
+    "lightDampening": 0,
+    "descriptionId": "tile.enchanting_table"
+  },
+  "minecraft:end_brick_stairs": {
+    "defaultBlockStateHash": 6384,
+    "defaultBlockStateId": 6384,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.end_brick_stairs"
+  },
+  "minecraft:end_bricks": {
+    "defaultBlockStateHash": 281,
+    "defaultBlockStateId": 281,
+    "hardness": 0.8,
+    "explosionResistance": 0.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.end_bricks"
+  },
+  "minecraft:end_gateway": {
+    "defaultBlockStateHash": 144,
+    "defaultBlockStateId": 144,
+    "hardness": -1,
+    "explosionResistance": 3600000,
+    "lightEmission": 15,
+    "lightDampening": 0,
+    "descriptionId": "tile.end_gateway"
+  },
+  "minecraft:end_portal": {
+    "defaultBlockStateHash": 7586,
+    "defaultBlockStateId": 7586,
+    "hardness": -1,
+    "explosionResistance": 3600000,
+    "lightEmission": 15,
+    "lightDampening": 0,
+    "descriptionId": "tile.end_portal"
+  },
+  "minecraft:end_portal_frame": {
+    "defaultBlockStateHash": 6079,
+    "defaultBlockStateId": 6079,
+    "hardness": -1,
+    "explosionResistance": 3600000,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.end_portal_frame",
+    "tags": [
+      "minecraft:not_feature_replaceable"
+    ]
+  },
+  "minecraft:end_rod": {
+    "defaultBlockStateHash": 5893,
+    "defaultBlockStateId": 5893,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 14,
+    "lightDampening": 0,
+    "descriptionId": "tile.end_rod"
+  },
+  "minecraft:end_stone": {
+    "defaultBlockStateHash": 3838,
+    "defaultBlockStateId": 3838,
+    "hardness": 3,
+    "explosionResistance": 9,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.end_stone"
+  },
+  "minecraft:ender_chest": {
+    "defaultBlockStateHash": 4371,
+    "defaultBlockStateId": 4371,
+    "hardness": 22.5,
+    "explosionResistance": 600,
+    "lightEmission": 7,
+    "lightDampening": 0,
+    "descriptionId": "tile.ender_chest"
+  },
+  "minecraft:exposed_copper": {
+    "defaultBlockStateHash": 595,
+    "defaultBlockStateId": 595,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.exposed_copper",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:exposed_cut_copper": {
+    "defaultBlockStateHash": 6168,
+    "defaultBlockStateId": 6168,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.exposed_cut_copper",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:exposed_cut_copper_slab": {
+    "defaultBlockStateHash": 6602,
+    "defaultBlockStateId": 6602,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.exposed_cut_copper_slab"
+  },
+  "minecraft:exposed_cut_copper_stairs": {
+    "defaultBlockStateHash": 4589,
+    "defaultBlockStateId": 4589,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.exposed_cut_copper_stairs",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:exposed_double_cut_copper_slab": {
+    "defaultBlockStateHash": 633,
+    "defaultBlockStateId": 633,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.exposed_double_cut_copper_slab"
+  },
+  "minecraft:farmland": {
+    "defaultBlockStateHash": 3914,
+    "defaultBlockStateId": 3914,
+    "hardness": 0.6,
+    "explosionResistance": 0.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.farmland",
+    "tags": [
+      "minecraft:dirt"
+    ]
+  },
+  "minecraft:fence": {
+    "defaultBlockStateHash": 7366,
+    "defaultBlockStateId": 7366,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.fence",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:fence_gate": {
+    "defaultBlockStateHash": 76,
+    "defaultBlockStateId": 76,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.fence_gate",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:fire": {
+    "defaultBlockStateHash": 6057,
+    "defaultBlockStateId": 6057,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 15,
+    "lightDampening": 0,
+    "descriptionId": "tile.fire"
+  },
+  "minecraft:fletching_table": {
+    "defaultBlockStateHash": 5835,
+    "defaultBlockStateId": 5835,
+    "hardness": 2.5,
+    "explosionResistance": 2.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.fletching_table",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:flower_pot": {
+    "defaultBlockStateHash": 292,
+    "defaultBlockStateId": 292,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.flower_pot"
+  },
+  "minecraft:flowering_azalea": {
+    "defaultBlockStateHash": 5479,
+    "defaultBlockStateId": 5479,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.flowering_azalea"
+  },
+  "minecraft:flowing_lava": {
+    "defaultBlockStateHash": 7217,
+    "defaultBlockStateId": 7217,
+    "hardness": 100,
+    "explosionResistance": 100,
+    "lightEmission": 15,
+    "lightDampening": 15,
+    "descriptionId": "tile.flowing_lava"
+  },
+  "minecraft:flowing_water": {
+    "defaultBlockStateHash": 4751,
+    "defaultBlockStateId": 4751,
+    "hardness": 100,
+    "explosionResistance": 100,
+    "lightEmission": 0,
+    "lightDampening": 2,
+    "descriptionId": "tile.flowing_water",
+    "tags": [
+      "minecraft:water"
+    ]
+  },
+  "minecraft:frame": {
+    "defaultBlockStateHash": 4248,
+    "defaultBlockStateId": 4248,
+    "hardness": 0.25,
+    "explosionResistance": 0.25,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.frame"
+  },
+  "minecraft:frog_spawn": {
+    "defaultBlockStateHash": 4401,
+    "defaultBlockStateId": 4401,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.frog_spawn"
+  },
+  "minecraft:frosted_ice": {
+    "defaultBlockStateHash": 4725,
+    "defaultBlockStateId": 4725,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 3,
+    "descriptionId": "tile.frosted_ice"
+  },
+  "minecraft:furnace": {
+    "defaultBlockStateHash": 7804,
+    "defaultBlockStateId": 7804,
+    "hardness": 3.5,
+    "explosionResistance": 3.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.furnace"
+  },
+  "minecraft:gilded_blackstone": {
+    "defaultBlockStateHash": 4588,
+    "defaultBlockStateId": 4588,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.gilded_blackstone"
+  },
+  "minecraft:glass": {
+    "defaultBlockStateHash": 6166,
+    "defaultBlockStateId": 6166,
+    "hardness": 0.3,
+    "explosionResistance": 0.3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.glass"
+  },
+  "minecraft:glass_pane": {
+    "defaultBlockStateHash": 5235,
+    "defaultBlockStateId": 5235,
+    "hardness": 0.3,
+    "explosionResistance": 0.3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.glass_pane"
+  },
+  "minecraft:glow_frame": {
+    "defaultBlockStateHash": 179,
+    "defaultBlockStateId": 179,
+    "hardness": 0.25,
+    "explosionResistance": 0.25,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.glow_frame"
+  },
+  "minecraft:glow_lichen": {
+    "defaultBlockStateHash": 5686,
+    "defaultBlockStateId": 5686,
+    "hardness": 0.2,
+    "explosionResistance": 0.2,
+    "lightEmission": 7,
+    "lightDampening": 0,
+    "descriptionId": "tile.glow_lichen"
+  },
+  "minecraft:glowingobsidian": {
+    "defaultBlockStateHash": 3547,
+    "defaultBlockStateId": 3547,
+    "hardness": 10,
+    "explosionResistance": 1200,
+    "lightEmission": 13,
+    "lightDampening": 15,
+    "descriptionId": "tile.glowingobsidian"
+  },
+  "minecraft:glowstone": {
+    "defaultBlockStateHash": 3887,
+    "defaultBlockStateId": 3887,
+    "hardness": 0.3,
+    "explosionResistance": 0.3,
+    "lightEmission": 15,
+    "lightDampening": 15,
+    "descriptionId": "tile.glowstone"
+  },
+  "minecraft:gold_block": {
+    "defaultBlockStateHash": 291,
+    "defaultBlockStateId": 291,
+    "hardness": 3,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.gold_block",
+    "tags": [
+      "minecraft:metal"
+    ]
+  },
+  "minecraft:gold_ore": {
+    "defaultBlockStateHash": 914,
+    "defaultBlockStateId": 914,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.gold_ore",
+    "tags": [
+      "minecraft:diamond_pick_diggable",
+      "minecraft:iron_pick_diggable"
+    ]
+  },
+  "minecraft:golden_rail": {
+    "defaultBlockStateHash": 5334,
+    "defaultBlockStateId": 5334,
+    "hardness": 0.7,
+    "explosionResistance": 0.7,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.golden_rail",
+    "tags": [
+      "minecraft:rail"
+    ]
+  },
+  "minecraft:granite_stairs": {
+    "defaultBlockStateHash": 3539,
+    "defaultBlockStateId": 3539,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.granite_stairs"
+  },
+  "minecraft:grass": {
+    "defaultBlockStateHash": 6977,
+    "defaultBlockStateId": 6977,
+    "hardness": 0.6,
+    "explosionResistance": 0.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.grass",
+    "tags": [
+      "minecraft:fertilize_area",
+      "minecraft:grass"
+    ]
+  },
+  "minecraft:grass_path": {
+    "defaultBlockStateHash": 8083,
+    "defaultBlockStateId": 8083,
+    "hardness": 0.65,
+    "explosionResistance": 0.65,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.grass_path",
+    "tags": [
+      "minecraft:grass"
+    ]
+  },
+  "minecraft:gravel": {
+    "defaultBlockStateHash": 8289,
+    "defaultBlockStateId": 8289,
+    "hardness": 0.6,
+    "explosionResistance": 0.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.gravel",
+    "tags": [
+      "minecraft:gravel"
+    ]
+  },
+  "minecraft:gray_candle": {
+    "defaultBlockStateHash": 941,
+    "defaultBlockStateId": 941,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.gray_candle"
+  },
+  "minecraft:gray_candle_cake": {
+    "defaultBlockStateHash": 136,
+    "defaultBlockStateId": 136,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.gray_candle_cake"
+  },
+  "minecraft:gray_glazed_terracotta": {
+    "defaultBlockStateHash": 8255,
+    "defaultBlockStateId": 8255,
+    "hardness": 1.4,
+    "explosionResistance": 1.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.glazedTerracotta.gray"
+  },
+  "minecraft:green_candle": {
+    "defaultBlockStateHash": 688,
+    "defaultBlockStateId": 688,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.green_candle"
+  },
+  "minecraft:green_candle_cake": {
+    "defaultBlockStateHash": 3597,
+    "defaultBlockStateId": 3597,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.green_candle_cake"
+  },
+  "minecraft:green_glazed_terracotta": {
+    "defaultBlockStateHash": 6612,
+    "defaultBlockStateId": 6612,
+    "hardness": 1.4,
+    "explosionResistance": 1.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.glazedTerracotta.green"
+  },
+  "minecraft:grindstone": {
+    "defaultBlockStateHash": 8041,
+    "defaultBlockStateId": 8041,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.grindstone"
+  },
+  "minecraft:hanging_roots": {
+    "defaultBlockStateHash": 205,
+    "defaultBlockStateId": 205,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.hanging_roots"
+  },
+  "minecraft:hard_glass": {
+    "defaultBlockStateHash": 4768,
+    "defaultBlockStateId": 4768,
+    "hardness": 10,
+    "explosionResistance": 10,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.hard_glass"
+  },
+  "minecraft:hard_glass_pane": {
+    "defaultBlockStateHash": 678,
+    "defaultBlockStateId": 678,
+    "hardness": 10,
+    "explosionResistance": 10,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.hard_glass_pane"
+  },
+  "minecraft:hard_stained_glass": {
+    "defaultBlockStateHash": 6210,
+    "defaultBlockStateId": 6210,
+    "hardness": 10,
+    "explosionResistance": 10,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.hard_stained_glass"
+  },
+  "minecraft:hard_stained_glass_pane": {
+    "defaultBlockStateHash": 8024,
+    "defaultBlockStateId": 8024,
+    "hardness": 10,
+    "explosionResistance": 10,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.hard_stained_glass_pane"
+  },
+  "minecraft:hardened_clay": {
+    "defaultBlockStateHash": 643,
+    "defaultBlockStateId": 643,
+    "hardness": 1.25,
+    "explosionResistance": 4.2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.hardened_clay"
+  },
+  "minecraft:hay_block": {
+    "defaultBlockStateHash": 697,
+    "defaultBlockStateId": 697,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.hay_block"
+  },
+  "minecraft:heavy_weighted_pressure_plate": {
+    "defaultBlockStateHash": 1162,
+    "defaultBlockStateId": 1162,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.heavy_weighted_pressure_plate"
+  },
+  "minecraft:honey_block": {
+    "defaultBlockStateHash": 894,
+    "defaultBlockStateId": 894,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.honey_block"
+  },
+  "minecraft:honeycomb_block": {
+    "defaultBlockStateHash": 4478,
+    "defaultBlockStateId": 4478,
+    "hardness": 0.6,
+    "explosionResistance": 0.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.honeycomb_block"
+  },
+  "minecraft:hopper": {
+    "defaultBlockStateHash": 6898,
+    "defaultBlockStateId": 6898,
+    "hardness": 3,
+    "explosionResistance": 4.8,
+    "lightEmission": 0,
+    "lightDampening": 3,
+    "descriptionId": "tile.hopper"
+  },
+  "minecraft:ice": {
+    "defaultBlockStateHash": 6691,
+    "defaultBlockStateId": 6691,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 3,
+    "descriptionId": "tile.ice"
+  },
+  "minecraft:infested_deepslate": {
+    "defaultBlockStateHash": 4643,
+    "defaultBlockStateId": 4643,
+    "hardness": 1.5,
+    "explosionResistance": 1.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.infested_deepslate"
+  },
+  "minecraft:info_update": {
+    "defaultBlockStateHash": 245,
+    "defaultBlockStateId": 245,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.info_update"
+  },
+  "minecraft:info_update2": {
+    "defaultBlockStateHash": 7810,
+    "defaultBlockStateId": 7810,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.info_update2"
+  },
+  "minecraft:invisible_bedrock": {
+    "defaultBlockStateHash": 950,
+    "defaultBlockStateId": 950,
+    "hardness": -1,
+    "explosionResistance": 3600000,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.invisibleBedrock"
+  },
+  "minecraft:iron_bars": {
+    "defaultBlockStateHash": 4803,
+    "defaultBlockStateId": 4803,
+    "hardness": 5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.iron_bars",
+    "tags": [
+      "minecraft:metal"
+    ]
+  },
+  "minecraft:iron_block": {
+    "defaultBlockStateHash": 8263,
+    "defaultBlockStateId": 8263,
+    "hardness": 5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.iron_block",
+    "tags": [
+      "minecraft:metal"
+    ]
+  },
+  "minecraft:iron_door": {
+    "defaultBlockStateHash": 4446,
+    "defaultBlockStateId": 4446,
+    "hardness": 5,
+    "explosionResistance": 5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.iron_door",
+    "tags": [
+      "minecraft:metal"
+    ]
+  },
+  "minecraft:iron_ore": {
+    "defaultBlockStateHash": 4692,
+    "defaultBlockStateId": 4692,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.iron_ore",
+    "tags": [
+      "minecraft:diamond_pick_diggable",
+      "minecraft:iron_pick_diggable"
+    ]
+  },
+  "minecraft:iron_trapdoor": {
+    "defaultBlockStateHash": 321,
+    "defaultBlockStateId": 321,
+    "hardness": 5,
+    "explosionResistance": 5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.iron_trapdoor"
+  },
+  "minecraft:jigsaw": {
+    "defaultBlockStateHash": 4877,
+    "defaultBlockStateId": 4877,
+    "hardness": -1,
+    "explosionResistance": 3600000,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.jigsaw"
+  },
+  "minecraft:jukebox": {
+    "defaultBlockStateHash": 4876,
+    "defaultBlockStateId": 4876,
+    "hardness": 0.8,
+    "explosionResistance": 0.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.jukebox"
+  },
+  "minecraft:jungle_button": {
+    "defaultBlockStateHash": 116,
+    "defaultBlockStateId": 116,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.jungle_button",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:jungle_door": {
+    "defaultBlockStateHash": 6134,
+    "defaultBlockStateId": 6134,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.jungle_door",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:jungle_fence_gate": {
+    "defaultBlockStateHash": 5367,
+    "defaultBlockStateId": 5367,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.jungle_fence_gate",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:jungle_pressure_plate": {
+    "defaultBlockStateHash": 3637,
+    "defaultBlockStateId": 3637,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.jungle_pressure_plate",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:jungle_stairs": {
+    "defaultBlockStateHash": 6969,
+    "defaultBlockStateId": 6969,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.jungle_stairs",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:jungle_standing_sign": {
+    "defaultBlockStateHash": 6039,
+    "defaultBlockStateId": 6039,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.jungle_standing_sign",
+    "tags": [
+      "minecraft:text_sign",
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:jungle_trapdoor": {
+    "defaultBlockStateHash": 5383,
+    "defaultBlockStateId": 5383,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.jungle_trapdoor",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:jungle_wall_sign": {
+    "defaultBlockStateHash": 4385,
+    "defaultBlockStateId": 4385,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.jungle_wall_sign",
+    "tags": [
+      "minecraft:text_sign",
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:kelp": {
+    "defaultBlockStateHash": 5428,
+    "defaultBlockStateId": 5428,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.kelp"
+  },
+  "minecraft:ladder": {
+    "defaultBlockStateHash": 8264,
+    "defaultBlockStateId": 8264,
+    "hardness": 0.4,
+    "explosionResistance": 0.4,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.ladder",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:lantern": {
+    "defaultBlockStateHash": 7076,
+    "defaultBlockStateId": 7076,
+    "hardness": 5,
+    "explosionResistance": 5,
+    "lightEmission": 15,
+    "lightDampening": 0,
+    "descriptionId": "tile.lantern"
+  },
+  "minecraft:lapis_block": {
+    "defaultBlockStateHash": 4288,
+    "defaultBlockStateId": 4288,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.lapis_block"
+  },
+  "minecraft:lapis_ore": {
+    "defaultBlockStateHash": 7701,
+    "defaultBlockStateId": 7701,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.lapis_ore",
+    "tags": [
+      "minecraft:diamond_pick_diggable",
+      "minecraft:iron_pick_diggable"
+    ]
+  },
+  "minecraft:large_amethyst_bud": {
+    "defaultBlockStateHash": 4730,
+    "defaultBlockStateId": 4730,
+    "hardness": 1.5,
+    "explosionResistance": 1.5,
+    "lightEmission": 4,
+    "lightDampening": 0,
+    "descriptionId": "tile.large_amethyst_bud"
+  },
+  "minecraft:lava": {
+    "defaultBlockStateHash": 3812,
+    "defaultBlockStateId": 3812,
+    "hardness": 100,
+    "explosionResistance": 100,
+    "lightEmission": 15,
+    "lightDampening": 15,
+    "descriptionId": "tile.lava"
+  },
+  "minecraft:lava_cauldron": {
+    "defaultBlockStateHash": 610,
+    "defaultBlockStateId": 610,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 15,
+    "lightDampening": 14,
+    "descriptionId": "tile.lava_cauldron"
+  },
+  "minecraft:leaves": {
+    "defaultBlockStateHash": 6092,
+    "defaultBlockStateId": 6092,
+    "hardness": 0.2,
+    "explosionResistance": 0.2,
+    "lightEmission": 0,
+    "lightDampening": 1,
+    "descriptionId": "tile.leaves"
+  },
+  "minecraft:leaves2": {
+    "defaultBlockStateHash": 4355,
+    "defaultBlockStateId": 4355,
+    "hardness": 0.2,
+    "explosionResistance": 0.2,
+    "lightEmission": 0,
+    "lightDampening": 1,
+    "descriptionId": "tile.leaves2"
+  },
+  "minecraft:lectern": {
+    "defaultBlockStateHash": 6942,
+    "defaultBlockStateId": 6942,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.lectern"
+  },
+  "minecraft:lever": {
+    "defaultBlockStateHash": 6516,
+    "defaultBlockStateId": 6516,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.lever"
+  },
+  "minecraft:light_block": {
+    "defaultBlockStateHash": 7997,
+    "defaultBlockStateId": 7997,
+    "hardness": -1,
+    "explosionResistance": 3600000,
+    "lightEmission": 15,
+    "lightDampening": 0,
+    "descriptionId": "tile.light_block"
+  },
+  "minecraft:light_blue_candle": {
+    "defaultBlockStateHash": 4571,
+    "defaultBlockStateId": 4571,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.light_blue_candle"
+  },
+  "minecraft:light_blue_candle_cake": {
+    "defaultBlockStateHash": 284,
+    "defaultBlockStateId": 284,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.light_blue_candle_cake"
+  },
+  "minecraft:light_blue_glazed_terracotta": {
+    "defaultBlockStateHash": 5473,
+    "defaultBlockStateId": 5473,
+    "hardness": 1.4,
+    "explosionResistance": 1.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.glazedTerracotta.light_blue"
+  },
+  "minecraft:light_gray_candle": {
+    "defaultBlockStateHash": 6226,
+    "defaultBlockStateId": 6226,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.light_gray_candle"
+  },
+  "minecraft:light_gray_candle_cake": {
+    "defaultBlockStateHash": 5300,
+    "defaultBlockStateId": 5300,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.light_gray_candle_cake"
+  },
+  "minecraft:light_weighted_pressure_plate": {
+    "defaultBlockStateHash": 3667,
+    "defaultBlockStateId": 3667,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.light_weighted_pressure_plate"
+  },
+  "minecraft:lightning_rod": {
+    "defaultBlockStateHash": 1178,
+    "defaultBlockStateId": 1178,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.lightning_rod"
+  },
+  "minecraft:lime_candle": {
+    "defaultBlockStateHash": 6370,
+    "defaultBlockStateId": 6370,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.lime_candle"
+  },
+  "minecraft:lime_candle_cake": {
+    "defaultBlockStateHash": 8081,
+    "defaultBlockStateId": 8081,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.lime_candle_cake"
+  },
+  "minecraft:lime_glazed_terracotta": {
+    "defaultBlockStateHash": 223,
+    "defaultBlockStateId": 223,
+    "hardness": 1.4,
+    "explosionResistance": 1.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.glazedTerracotta.lime"
+  },
+  "minecraft:lit_blast_furnace": {
+    "defaultBlockStateHash": 7078,
+    "defaultBlockStateId": 7078,
+    "hardness": 3.5,
+    "explosionResistance": 3.5,
+    "lightEmission": 13,
+    "lightDampening": 15,
+    "descriptionId": "tile.lit_blast_furnace"
+  },
+  "minecraft:lit_deepslate_redstone_ore": {
+    "defaultBlockStateHash": 7604,
+    "defaultBlockStateId": 7604,
+    "hardness": 4.5,
+    "explosionResistance": 3,
+    "lightEmission": 9,
+    "lightDampening": 15,
+    "descriptionId": "tile.lit_deepslate_redstone_ore",
+    "tags": [
+      "minecraft:diamond_pick_diggable",
+      "minecraft:iron_pick_diggable"
+    ]
+  },
+  "minecraft:lit_furnace": {
+    "defaultBlockStateHash": 7245,
+    "defaultBlockStateId": 7245,
+    "hardness": 3.5,
+    "explosionResistance": 3.5,
+    "lightEmission": 13,
+    "lightDampening": 15,
+    "descriptionId": "tile.lit_furnace"
+  },
+  "minecraft:lit_pumpkin": {
+    "defaultBlockStateHash": 6687,
+    "defaultBlockStateId": 6687,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 15,
+    "lightDampening": 15,
+    "descriptionId": "tile.lit_pumpkin",
+    "tags": [
+      "minecraft:pumpkin"
+    ]
+  },
+  "minecraft:lit_redstone_lamp": {
+    "defaultBlockStateHash": 4354,
+    "defaultBlockStateId": 4354,
+    "hardness": 0.3,
+    "explosionResistance": 0.3,
+    "lightEmission": 15,
+    "lightDampening": 15,
+    "descriptionId": "tile.lit_redstone_lamp"
+  },
+  "minecraft:lit_redstone_ore": {
+    "defaultBlockStateHash": 4654,
+    "defaultBlockStateId": 4654,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 9,
+    "lightDampening": 15,
+    "descriptionId": "tile.lit_redstone_ore",
+    "tags": [
+      "minecraft:diamond_pick_diggable",
+      "minecraft:iron_pick_diggable"
+    ]
+  },
+  "minecraft:lit_smoker": {
+    "defaultBlockStateHash": 7695,
+    "defaultBlockStateId": 7695,
+    "hardness": 3.5,
+    "explosionResistance": 3.5,
+    "lightEmission": 13,
+    "lightDampening": 15,
+    "descriptionId": "tile.lit_smoker"
+  },
+  "minecraft:lodestone": {
+    "defaultBlockStateHash": 8261,
+    "defaultBlockStateId": 8261,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.lodestone"
+  },
+  "minecraft:log": {
+    "defaultBlockStateHash": 6674,
+    "defaultBlockStateId": 6674,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.log",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:log2": {
+    "defaultBlockStateHash": 3832,
+    "defaultBlockStateId": 3832,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.log2",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:loom": {
+    "defaultBlockStateHash": 3828,
+    "defaultBlockStateId": 3828,
+    "hardness": 2.5,
+    "explosionResistance": 2.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.loom"
+  },
+  "minecraft:magenta_candle": {
+    "defaultBlockStateHash": 420,
+    "defaultBlockStateId": 420,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.magenta_candle"
+  },
+  "minecraft:magenta_candle_cake": {
+    "defaultBlockStateHash": 6090,
+    "defaultBlockStateId": 6090,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.magenta_candle_cake"
+  },
+  "minecraft:magenta_glazed_terracotta": {
+    "defaultBlockStateHash": 967,
+    "defaultBlockStateId": 967,
+    "hardness": 1.4,
+    "explosionResistance": 1.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.glazedTerracotta.magenta"
+  },
+  "minecraft:magma": {
+    "defaultBlockStateHash": 8011,
+    "defaultBlockStateId": 8011,
+    "hardness": 0.5,
+    "explosionResistance": 1.5,
+    "lightEmission": 3,
+    "lightDampening": 15,
+    "descriptionId": "tile.magma"
+  },
+  "minecraft:mangrove_button": {
+    "defaultBlockStateHash": 7064,
+    "defaultBlockStateId": 7064,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.mangrove_button",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:mangrove_door": {
+    "defaultBlockStateHash": 6405,
+    "defaultBlockStateId": 6405,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.mangrove_door"
+  },
+  "minecraft:mangrove_double_slab": {
+    "defaultBlockStateHash": 428,
+    "defaultBlockStateId": 428,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.mangrove_double_slab"
+  },
+  "minecraft:mangrove_fence": {
+    "defaultBlockStateHash": 6635,
+    "defaultBlockStateId": 6635,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.mangrove_fence"
+  },
+  "minecraft:mangrove_fence_gate": {
+    "defaultBlockStateHash": 4627,
+    "defaultBlockStateId": 4627,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.mangrove_fence_gate",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:mangrove_leaves": {
+    "defaultBlockStateHash": 6668,
+    "defaultBlockStateId": 6668,
+    "hardness": 0.2,
+    "explosionResistance": 0.2,
+    "lightEmission": 0,
+    "lightDampening": 1,
+    "descriptionId": "tile.mangrove_leaves"
+  },
+  "minecraft:mangrove_log": {
+    "defaultBlockStateHash": 350,
+    "defaultBlockStateId": 350,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.mangrove_log",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:mangrove_planks": {
+    "defaultBlockStateHash": 949,
+    "defaultBlockStateId": 949,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.mangrove_planks"
+  },
+  "minecraft:mangrove_pressure_plate": {
+    "defaultBlockStateHash": 3871,
+    "defaultBlockStateId": 3871,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.mangrove_pressure_plate",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:mangrove_propagule": {
+    "defaultBlockStateHash": 6978,
+    "defaultBlockStateId": 6978,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.mangrove_propagule"
+  },
+  "minecraft:mangrove_roots": {
+    "defaultBlockStateHash": 6177,
+    "defaultBlockStateId": 6177,
+    "hardness": 0.7,
+    "explosionResistance": 0.7,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.mangrove_roots"
+  },
+  "minecraft:mangrove_slab": {
+    "defaultBlockStateHash": 1151,
+    "defaultBlockStateId": 1151,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.mangrove_slab"
+  },
+  "minecraft:mangrove_stairs": {
+    "defaultBlockStateHash": 4597,
+    "defaultBlockStateId": 4597,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.mangrove_stairs"
+  },
+  "minecraft:mangrove_standing_sign": {
+    "defaultBlockStateHash": 4215,
+    "defaultBlockStateId": 4215,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.mangrove_standing_sign",
+    "tags": [
+      "minecraft:text_sign",
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:mangrove_trapdoor": {
+    "defaultBlockStateHash": 4487,
+    "defaultBlockStateId": 4487,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.mangrove_trapdoor",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:mangrove_wall_sign": {
+    "defaultBlockStateHash": 5265,
+    "defaultBlockStateId": 5265,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.mangrove_wall_sign",
+    "tags": [
+      "minecraft:text_sign",
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:mangrove_wood": {
+    "defaultBlockStateHash": 4163,
+    "defaultBlockStateId": 4163,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.mangrove_wood",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:medium_amethyst_bud": {
+    "defaultBlockStateHash": 4378,
+    "defaultBlockStateId": 4378,
+    "hardness": 1.5,
+    "explosionResistance": 1.5,
+    "lightEmission": 2,
+    "lightDampening": 0,
+    "descriptionId": "tile.medium_amethyst_bud"
+  },
+  "minecraft:melon_block": {
+    "defaultBlockStateHash": 394,
+    "defaultBlockStateId": 394,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.melon_block"
+  },
+  "minecraft:melon_stem": {
+    "defaultBlockStateHash": 4804,
+    "defaultBlockStateId": 4804,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.melon_stem"
+  },
+  "minecraft:mob_spawner": {
+    "defaultBlockStateHash": 403,
+    "defaultBlockStateId": 403,
+    "hardness": 5,
+    "explosionResistance": 5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.mob_spawner",
+    "tags": [
+      "minecraft:mob_spawner",
+      "minecraft:not_feature_replaceable"
+    ]
+  },
+  "minecraft:monster_egg": {
+    "defaultBlockStateHash": 4146,
+    "defaultBlockStateId": 4146,
+    "hardness": 0.75,
+    "explosionResistance": 1.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.monster_egg"
+  },
+  "minecraft:moss_block": {
+    "defaultBlockStateHash": 6540,
+    "defaultBlockStateId": 6540,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.moss_block",
+    "tags": [
+      "minecraft:fertilize_area"
+    ]
+  },
+  "minecraft:moss_carpet": {
+    "defaultBlockStateHash": 286,
+    "defaultBlockStateId": 286,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.moss_carpet"
+  },
+  "minecraft:mossy_cobblestone": {
+    "defaultBlockStateHash": 252,
+    "defaultBlockStateId": 252,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.mossy_cobblestone",
+    "tags": [
+      "minecraft:stone"
+    ]
+  },
+  "minecraft:mossy_cobblestone_stairs": {
+    "defaultBlockStateHash": 4094,
+    "defaultBlockStateId": 4094,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.mossy_cobblestone_stairs"
+  },
+  "minecraft:mossy_stone_brick_stairs": {
+    "defaultBlockStateHash": 5885,
+    "defaultBlockStateId": 5885,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.mossy_stone_brick_stairs"
+  },
+  "minecraft:moving_block": {
+    "defaultBlockStateHash": 5584,
+    "defaultBlockStateId": 5584,
+    "hardness": -1,
+    "explosionResistance": 3600000,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.moving_block"
+  },
+  "minecraft:mud": {
+    "defaultBlockStateHash": 6686,
+    "defaultBlockStateId": 6686,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.mud"
+  },
+  "minecraft:mud_brick_double_slab": {
+    "defaultBlockStateHash": 203,
+    "defaultBlockStateId": 203,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.mud_brick_double_slab"
+  },
+  "minecraft:mud_brick_slab": {
+    "defaultBlockStateHash": 3912,
+    "defaultBlockStateId": 3912,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.mud_brick_slab"
+  },
+  "minecraft:mud_brick_stairs": {
+    "defaultBlockStateHash": 5524,
+    "defaultBlockStateId": 5524,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.mud_brick_stairs"
+  },
+  "minecraft:mud_brick_wall": {
+    "defaultBlockStateHash": 732,
+    "defaultBlockStateId": 732,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.mud_brick_wall"
+  },
+  "minecraft:mud_bricks": {
+    "defaultBlockStateHash": 6891,
+    "defaultBlockStateId": 6891,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.mud_bricks"
+  },
+  "minecraft:muddy_mangrove_roots": {
+    "defaultBlockStateHash": 345,
+    "defaultBlockStateId": 345,
+    "hardness": 0.7,
+    "explosionResistance": 0.7,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.muddy_mangrove_roots"
+  },
+  "minecraft:mycelium": {
+    "defaultBlockStateHash": 3685,
+    "defaultBlockStateId": 3685,
+    "hardness": 0.6,
+    "explosionResistance": 0.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.mycelium"
+  },
+  "minecraft:nether_brick": {
+    "defaultBlockStateHash": 7274,
+    "defaultBlockStateId": 7274,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.nether_brick"
+  },
+  "minecraft:nether_brick_fence": {
+    "defaultBlockStateHash": 4292,
+    "defaultBlockStateId": 4292,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.nether_brick_fence"
+  },
+  "minecraft:nether_brick_stairs": {
+    "defaultBlockStateHash": 106,
+    "defaultBlockStateId": 106,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.nether_brick_stairs"
+  },
+  "minecraft:nether_gold_ore": {
+    "defaultBlockStateHash": 27,
+    "defaultBlockStateId": 27,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.nether_gold_ore"
+  },
+  "minecraft:nether_sprouts": {
+    "defaultBlockStateHash": 6482,
+    "defaultBlockStateId": 6482,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.nether_sprouts"
+  },
+  "minecraft:nether_wart": {
+    "defaultBlockStateHash": 7749,
+    "defaultBlockStateId": 7749,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.nether_wart"
+  },
+  "minecraft:nether_wart_block": {
+    "defaultBlockStateHash": 4295,
+    "defaultBlockStateId": 4295,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.nether_wart_block"
+  },
+  "minecraft:netherite_block": {
+    "defaultBlockStateHash": 3777,
+    "defaultBlockStateId": 3777,
+    "hardness": 50,
+    "explosionResistance": 720,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.netherite_block"
+  },
+  "minecraft:netherrack": {
+    "defaultBlockStateHash": 7039,
+    "defaultBlockStateId": 7039,
+    "hardness": 0.4,
+    "explosionResistance": 0.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.netherrack"
+  },
+  "minecraft:netherreactor": {
+    "defaultBlockStateHash": 7423,
+    "defaultBlockStateId": 7423,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.netherreactor"
+  },
+  "minecraft:normal_stone_stairs": {
+    "defaultBlockStateHash": 635,
+    "defaultBlockStateId": 635,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.normal_stone_stairs"
+  },
+  "minecraft:noteblock": {
+    "defaultBlockStateHash": 348,
+    "defaultBlockStateId": 348,
+    "hardness": 0.8,
+    "explosionResistance": 0.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.noteblock"
+  },
+  "minecraft:oak_stairs": {
+    "defaultBlockStateHash": 273,
+    "defaultBlockStateId": 273,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.oak_stairs",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:observer": {
+    "defaultBlockStateHash": 3515,
+    "defaultBlockStateId": 3515,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.observer"
+  },
+  "minecraft:obsidian": {
+    "defaultBlockStateHash": 430,
+    "defaultBlockStateId": 430,
+    "hardness": 35,
+    "explosionResistance": 1200,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.obsidian",
+    "tags": [
+      "minecraft:diamond_pick_diggable"
+    ]
+  },
+  "minecraft:ochre_froglight": {
+    "defaultBlockStateHash": 3512,
+    "defaultBlockStateId": 3512,
+    "hardness": 0.3,
+    "explosionResistance": 0.3,
+    "lightEmission": 15,
+    "lightDampening": 15,
+    "descriptionId": "tile.ochre_froglight"
+  },
+  "minecraft:orange_candle": {
+    "defaultBlockStateHash": 364,
+    "defaultBlockStateId": 364,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.orange_candle"
+  },
+  "minecraft:orange_candle_cake": {
+    "defaultBlockStateHash": 8246,
+    "defaultBlockStateId": 8246,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.orange_candle_cake"
+  },
+  "minecraft:orange_glazed_terracotta": {
+    "defaultBlockStateHash": 1153,
+    "defaultBlockStateId": 1153,
+    "hardness": 1.4,
+    "explosionResistance": 1.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.glazedTerracotta.orange"
+  },
+  "minecraft:oxidized_copper": {
+    "defaultBlockStateHash": 3555,
+    "defaultBlockStateId": 3555,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.oxidized_copper",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:oxidized_cut_copper": {
+    "defaultBlockStateHash": 5480,
+    "defaultBlockStateId": 5480,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.oxidized_cut_copper",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:oxidized_cut_copper_slab": {
+    "defaultBlockStateHash": 5284,
+    "defaultBlockStateId": 5284,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.oxidized_cut_copper_slab"
+  },
+  "minecraft:oxidized_cut_copper_stairs": {
+    "defaultBlockStateHash": 353,
+    "defaultBlockStateId": 353,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.oxidized_cut_copper_stairs",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:oxidized_double_cut_copper_slab": {
+    "defaultBlockStateHash": 593,
+    "defaultBlockStateId": 593,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.oxidized_double_cut_copper_slab"
+  },
+  "minecraft:packed_ice": {
+    "defaultBlockStateHash": 282,
+    "defaultBlockStateId": 282,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.packed_ice"
+  },
+  "minecraft:packed_mud": {
+    "defaultBlockStateHash": 283,
+    "defaultBlockStateId": 283,
+    "hardness": 1,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.packed_mud"
+  },
+  "minecraft:pearlescent_froglight": {
+    "defaultBlockStateHash": 6437,
+    "defaultBlockStateId": 6437,
+    "hardness": 0.3,
+    "explosionResistance": 0.3,
+    "lightEmission": 15,
+    "lightDampening": 15,
+    "descriptionId": "tile.pearlescent_froglight"
+  },
+  "minecraft:pink_candle": {
+    "defaultBlockStateHash": 7372,
+    "defaultBlockStateId": 7372,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.pink_candle"
+  },
+  "minecraft:pink_candle_cake": {
+    "defaultBlockStateHash": 4160,
+    "defaultBlockStateId": 4160,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.pink_candle_cake"
+  },
+  "minecraft:pink_glazed_terracotta": {
+    "defaultBlockStateHash": 6541,
+    "defaultBlockStateId": 6541,
+    "hardness": 1.4,
+    "explosionResistance": 1.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.glazedTerracotta.pink"
+  },
+  "minecraft:piston": {
+    "defaultBlockStateHash": 923,
+    "defaultBlockStateId": 923,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.piston"
+  },
+  "minecraft:piston_arm_collision": {
+    "defaultBlockStateHash": 60,
+    "defaultBlockStateId": 60,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.piston_arm_collision"
+  },
+  "minecraft:planks": {
+    "defaultBlockStateHash": 6073,
+    "defaultBlockStateId": 6073,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.planks",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:podzol": {
+    "defaultBlockStateHash": 4652,
+    "defaultBlockStateId": 4652,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.podzol"
+  },
+  "minecraft:pointed_dripstone": {
+    "defaultBlockStateHash": 7418,
+    "defaultBlockStateId": 7418,
+    "hardness": 1.5,
+    "explosionResistance": 1.8,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.pointed_dripstone"
+  },
+  "minecraft:polished_andesite_stairs": {
+    "defaultBlockStateHash": 7030,
+    "defaultBlockStateId": 7030,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.polished_andesite_stairs"
+  },
+  "minecraft:polished_basalt": {
+    "defaultBlockStateHash": 24,
+    "defaultBlockStateId": 24,
+    "hardness": 1.25,
+    "explosionResistance": 4.2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.polished_basalt"
+  },
+  "minecraft:polished_blackstone": {
+    "defaultBlockStateHash": 3684,
+    "defaultBlockStateId": 3684,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.polished_blackstone"
+  },
+  "minecraft:polished_blackstone_brick_double_slab": {
+    "defaultBlockStateHash": 679,
+    "defaultBlockStateId": 679,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.polished_blackstone_brick_double_slab"
+  },
+  "minecraft:polished_blackstone_brick_slab": {
+    "defaultBlockStateHash": 4194,
+    "defaultBlockStateId": 4194,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.polished_blackstone_brick_slab"
+  },
+  "minecraft:polished_blackstone_brick_stairs": {
+    "defaultBlockStateHash": 4479,
+    "defaultBlockStateId": 4479,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.polished_blackstone_brick_stairs"
+  },
+  "minecraft:polished_blackstone_brick_wall": {
+    "defaultBlockStateHash": 973,
+    "defaultBlockStateId": 973,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.polished_blackstone_brick_wall"
+  },
+  "minecraft:polished_blackstone_bricks": {
+    "defaultBlockStateHash": 4682,
+    "defaultBlockStateId": 4682,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.polished_blackstone_bricks"
+  },
+  "minecraft:polished_blackstone_button": {
+    "defaultBlockStateHash": 7792,
+    "defaultBlockStateId": 7792,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.polished_blackstone_button"
+  },
+  "minecraft:polished_blackstone_double_slab": {
+    "defaultBlockStateHash": 647,
+    "defaultBlockStateId": 647,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.polished_blackstone_double_slab"
+  },
+  "minecraft:polished_blackstone_pressure_plate": {
+    "defaultBlockStateHash": 6234,
+    "defaultBlockStateId": 6234,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.polished_blackstone_pressure_plate"
+  },
+  "minecraft:polished_blackstone_slab": {
+    "defaultBlockStateHash": 6020,
+    "defaultBlockStateId": 6020,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.polished_blackstone_slab"
+  },
+  "minecraft:polished_blackstone_stairs": {
+    "defaultBlockStateHash": 4299,
+    "defaultBlockStateId": 4299,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.polished_blackstone_stairs"
+  },
+  "minecraft:polished_blackstone_wall": {
+    "defaultBlockStateHash": 6726,
+    "defaultBlockStateId": 6726,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.polished_blackstone_wall"
+  },
+  "minecraft:polished_deepslate": {
+    "defaultBlockStateHash": 7756,
+    "defaultBlockStateId": 7756,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.polished_deepslate"
+  },
+  "minecraft:polished_deepslate_double_slab": {
+    "defaultBlockStateHash": 596,
+    "defaultBlockStateId": 596,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.polished_deepslate_double_slab"
+  },
+  "minecraft:polished_deepslate_slab": {
+    "defaultBlockStateHash": 288,
+    "defaultBlockStateId": 288,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.polished_deepslate_slab"
+  },
+  "minecraft:polished_deepslate_stairs": {
+    "defaultBlockStateHash": 294,
+    "defaultBlockStateId": 294,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.polished_deepslate_stairs"
+  },
+  "minecraft:polished_deepslate_wall": {
+    "defaultBlockStateHash": 7819,
+    "defaultBlockStateId": 7819,
+    "hardness": 3.5,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.polished_deepslate_wall"
+  },
+  "minecraft:polished_diorite_stairs": {
+    "defaultBlockStateHash": 6716,
+    "defaultBlockStateId": 6716,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.polished_diorite_stairs"
+  },
+  "minecraft:polished_granite_stairs": {
+    "defaultBlockStateHash": 4152,
+    "defaultBlockStateId": 4152,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.polished_granite_stairs"
+  },
+  "minecraft:portal": {
+    "defaultBlockStateHash": 7765,
+    "defaultBlockStateId": 7765,
+    "hardness": -1,
+    "explosionResistance": 0,
+    "lightEmission": 11,
+    "lightDampening": 0,
+    "descriptionId": "tile.portal"
+  },
+  "minecraft:potatoes": {
+    "defaultBlockStateHash": 337,
+    "defaultBlockStateId": 337,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.potatoes",
+    "tags": [
+      "minecraft:crop"
+    ]
+  },
+  "minecraft:powder_snow": {
+    "defaultBlockStateHash": 92,
+    "defaultBlockStateId": 92,
+    "hardness": 0.25,
+    "explosionResistance": 0.25,
+    "lightEmission": 0,
+    "lightDampening": 1,
+    "descriptionId": "tile.powder_snow"
+  },
+  "minecraft:powered_comparator": {
+    "defaultBlockStateHash": 372,
+    "defaultBlockStateId": 372,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.powered_comparator"
+  },
+  "minecraft:powered_repeater": {
+    "defaultBlockStateHash": 4555,
+    "defaultBlockStateId": 4555,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.powered_repeater"
+  },
+  "minecraft:prismarine": {
+    "defaultBlockStateHash": 6087,
+    "defaultBlockStateId": 6087,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.prismarine"
+  },
+  "minecraft:prismarine_bricks_stairs": {
+    "defaultBlockStateHash": 206,
+    "defaultBlockStateId": 206,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.prismarine_bricks_stairs"
+  },
+  "minecraft:prismarine_stairs": {
+    "defaultBlockStateHash": 7265,
+    "defaultBlockStateId": 7265,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.prismarine_stairs"
+  },
+  "minecraft:pumpkin": {
+    "defaultBlockStateHash": 4579,
+    "defaultBlockStateId": 4579,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.pumpkin",
+    "tags": [
+      "minecraft:pumpkin"
+    ]
+  },
+  "minecraft:pumpkin_stem": {
+    "defaultBlockStateHash": 6293,
+    "defaultBlockStateId": 6293,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.pumpkin_stem"
+  },
+  "minecraft:purple_candle": {
+    "defaultBlockStateHash": 7040,
+    "defaultBlockStateId": 7040,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.purple_candle"
+  },
+  "minecraft:purple_candle_cake": {
+    "defaultBlockStateHash": 6713,
+    "defaultBlockStateId": 6713,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.purple_candle_cake"
+  },
+  "minecraft:purple_glazed_terracotta": {
+    "defaultBlockStateHash": 7013,
+    "defaultBlockStateId": 7013,
+    "hardness": 1.4,
+    "explosionResistance": 1.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.glazedTerracotta.purple"
+  },
+  "minecraft:purpur_block": {
+    "defaultBlockStateHash": 7716,
+    "defaultBlockStateId": 7716,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.purpur_block"
+  },
+  "minecraft:purpur_stairs": {
+    "defaultBlockStateHash": 7757,
+    "defaultBlockStateId": 7757,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.purpur_stairs"
+  },
+  "minecraft:quartz_block": {
+    "defaultBlockStateHash": 3698,
+    "defaultBlockStateId": 3698,
+    "hardness": 0.8,
+    "explosionResistance": 0.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.quartz_block"
+  },
+  "minecraft:quartz_bricks": {
+    "defaultBlockStateHash": 6353,
+    "defaultBlockStateId": 6353,
+    "hardness": 0.8,
+    "explosionResistance": 0.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.quartz_bricks"
+  },
+  "minecraft:quartz_ore": {
+    "defaultBlockStateHash": 4503,
+    "defaultBlockStateId": 4503,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.quartz_ore"
+  },
+  "minecraft:quartz_stairs": {
+    "defaultBlockStateHash": 4769,
+    "defaultBlockStateId": 4769,
+    "hardness": 0.8,
+    "explosionResistance": 0.8,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.quartz_stairs"
+  },
+  "minecraft:rail": {
+    "defaultBlockStateHash": 3922,
+    "defaultBlockStateId": 3922,
+    "hardness": 0.7,
+    "explosionResistance": 0.7,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.rail",
+    "tags": [
+      "minecraft:rail"
+    ]
+  },
+  "minecraft:raw_copper_block": {
+    "defaultBlockStateHash": 5271,
+    "defaultBlockStateId": 5271,
+    "hardness": 5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.raw_copper_block",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:raw_gold_block": {
+    "defaultBlockStateHash": 363,
+    "defaultBlockStateId": 363,
+    "hardness": 5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.raw_gold_block",
+    "tags": [
+      "minecraft:diamond_pick_diggable",
+      "minecraft:iron_pick_diggable"
+    ]
+  },
+  "minecraft:raw_iron_block": {
+    "defaultBlockStateHash": 8262,
+    "defaultBlockStateId": 8262,
+    "hardness": 5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.raw_iron_block",
+    "tags": [
+      "minecraft:diamond_pick_diggable",
+      "minecraft:iron_pick_diggable"
+    ]
+  },
+  "minecraft:red_candle": {
+    "defaultBlockStateHash": 4683,
+    "defaultBlockStateId": 4683,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.red_candle"
+  },
+  "minecraft:red_candle_cake": {
+    "defaultBlockStateHash": 7710,
+    "defaultBlockStateId": 7710,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.red_candle_cake"
+  },
+  "minecraft:red_flower": {
+    "defaultBlockStateHash": 3618,
+    "defaultBlockStateId": 3618,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.red_flower",
+    "tags": [
+      "minecraft:fertilize_area"
+    ]
+  },
+  "minecraft:red_glazed_terracotta": {
+    "defaultBlockStateHash": 4169,
+    "defaultBlockStateId": 4169,
+    "hardness": 1.4,
+    "explosionResistance": 1.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.glazedTerracotta.red"
+  },
+  "minecraft:red_mushroom": {
+    "defaultBlockStateHash": 4587,
+    "defaultBlockStateId": 4587,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.red_mushroom"
+  },
+  "minecraft:red_mushroom_block": {
+    "defaultBlockStateHash": 3599,
+    "defaultBlockStateId": 3599,
+    "hardness": 0.2,
+    "explosionResistance": 0.2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.red_mushroom_block"
+  },
+  "minecraft:red_nether_brick": {
+    "defaultBlockStateHash": 146,
+    "defaultBlockStateId": 146,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.red_nether_brick"
+  },
+  "minecraft:red_nether_brick_stairs": {
+    "defaultBlockStateHash": 6604,
+    "defaultBlockStateId": 6604,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.red_nether_brick_stairs"
+  },
+  "minecraft:red_sandstone": {
+    "defaultBlockStateHash": 6582,
+    "defaultBlockStateId": 6582,
+    "hardness": 0.8,
+    "explosionResistance": 0.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.red_sandstone"
+  },
+  "minecraft:red_sandstone_stairs": {
+    "defaultBlockStateHash": 5352,
+    "defaultBlockStateId": 5352,
+    "hardness": 0.8,
+    "explosionResistance": 0.8,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.red_sandstone_stairs"
+  },
+  "minecraft:redstone_block": {
+    "defaultBlockStateHash": 3778,
+    "defaultBlockStateId": 3778,
+    "hardness": 5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.redstone_block"
+  },
+  "minecraft:redstone_lamp": {
+    "defaultBlockStateHash": 251,
+    "defaultBlockStateId": 251,
+    "hardness": 0.3,
+    "explosionResistance": 0.3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.redstone_lamp"
+  },
+  "minecraft:redstone_ore": {
+    "defaultBlockStateHash": 4291,
+    "defaultBlockStateId": 4291,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.redstone_ore",
+    "tags": [
+      "minecraft:diamond_pick_diggable",
+      "minecraft:iron_pick_diggable"
+    ]
+  },
+  "minecraft:redstone_torch": {
+    "defaultBlockStateHash": 3527,
+    "defaultBlockStateId": 3527,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 7,
+    "lightDampening": 0,
+    "descriptionId": "tile.redstone_torch"
+  },
+  "minecraft:redstone_wire": {
+    "defaultBlockStateHash": 3795,
+    "defaultBlockStateId": 3795,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.redstone_wire"
+  },
+  "minecraft:reeds": {
+    "defaultBlockStateHash": 6022,
+    "defaultBlockStateId": 6022,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.reeds"
+  },
+  "minecraft:reinforced_deepslate": {
+    "defaultBlockStateHash": 5834,
+    "defaultBlockStateId": 5834,
+    "hardness": 55,
+    "explosionResistance": 720,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.reinforced_deepslate"
+  },
+  "minecraft:repeating_command_block": {
+    "defaultBlockStateHash": 7737,
+    "defaultBlockStateId": 7737,
+    "hardness": -1,
+    "explosionResistance": 3600000,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.repeating_command_block"
+  },
+  "minecraft:reserved6": {
+    "defaultBlockStateHash": 4605,
+    "defaultBlockStateId": 4605,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.reserved6"
+  },
+  "minecraft:respawn_anchor": {
+    "defaultBlockStateHash": 683,
+    "defaultBlockStateId": 683,
+    "hardness": 50,
+    "explosionResistance": 720,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.respawn_anchor"
+  },
+  "minecraft:sand": {
+    "defaultBlockStateHash": 4197,
+    "defaultBlockStateId": 4197,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.sand",
+    "tags": [
+      "minecraft:sand"
+    ]
+  },
+  "minecraft:sandstone": {
+    "defaultBlockStateHash": 3655,
+    "defaultBlockStateId": 3655,
+    "hardness": 0.8,
+    "explosionResistance": 0.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.sandstone"
+  },
+  "minecraft:sandstone_stairs": {
+    "defaultBlockStateHash": 3589,
+    "defaultBlockStateId": 3589,
+    "hardness": 0.8,
+    "explosionResistance": 0.8,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.sandstone_stairs"
+  },
+  "minecraft:sapling": {
+    "defaultBlockStateHash": 714,
+    "defaultBlockStateId": 714,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.sapling",
+    "tags": [
+      "minecraft:plant"
+    ]
+  },
+  "minecraft:scaffolding": {
+    "defaultBlockStateHash": 3573,
+    "defaultBlockStateId": 3573,
+    "hardness": 0.6,
+    "explosionResistance": 0.9,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.scaffolding"
+  },
+  "minecraft:sculk": {
+    "defaultBlockStateHash": 7038,
+    "defaultBlockStateId": 7038,
+    "hardness": 0.6,
+    "explosionResistance": 0.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.sculk"
+  },
+  "minecraft:sculk_catalyst": {
+    "defaultBlockStateHash": 3615,
+    "defaultBlockStateId": 3615,
+    "hardness": 3,
+    "explosionResistance": 1.8,
+    "lightEmission": 6,
+    "lightDampening": 15,
+    "descriptionId": "tile.sculk_catalyst"
+  },
+  "minecraft:sculk_sensor": {
+    "defaultBlockStateHash": 4391,
+    "defaultBlockStateId": 4391,
+    "hardness": 1.5,
+    "explosionResistance": 1.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.sculk_sensor"
+  },
+  "minecraft:sculk_shrieker": {
+    "defaultBlockStateHash": 219,
+    "defaultBlockStateId": 219,
+    "hardness": 3,
+    "explosionResistance": 1.8,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.sculk_shrieker"
+  },
+  "minecraft:sculk_vein": {
+    "defaultBlockStateHash": 7134,
+    "defaultBlockStateId": 7134,
+    "hardness": 0.2,
+    "explosionResistance": 0.2,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.sculk_vein"
+  },
+  "minecraft:sea_lantern": {
+    "defaultBlockStateHash": 7548,
+    "defaultBlockStateId": 7548,
+    "hardness": 0.3,
+    "explosionResistance": 0.3,
+    "lightEmission": 15,
+    "lightDampening": 15,
+    "descriptionId": "tile.seaLantern"
+  },
+  "minecraft:sea_pickle": {
+    "defaultBlockStateHash": 5857,
+    "defaultBlockStateId": 5857,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 6,
+    "lightDampening": 0,
+    "descriptionId": "tile.sea_pickle"
+  },
+  "minecraft:seagrass": {
+    "defaultBlockStateHash": 246,
+    "defaultBlockStateId": 246,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.seagrass"
+  },
+  "minecraft:shroomlight": {
+    "defaultBlockStateHash": 5063,
+    "defaultBlockStateId": 5063,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 15,
+    "lightDampening": 15,
+    "descriptionId": "tile.shroomlight"
+  },
+  "minecraft:shulker_box": {
+    "defaultBlockStateHash": 5318,
+    "defaultBlockStateId": 5318,
+    "hardness": 2.5,
+    "explosionResistance": 2.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.shulker_box"
+  },
+  "minecraft:silver_glazed_terracotta": {
+    "defaultBlockStateHash": 3533,
+    "defaultBlockStateId": 3533,
+    "hardness": 1.4,
+    "explosionResistance": 1.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.glazedTerracotta.silver"
+  },
+  "minecraft:skull": {
+    "defaultBlockStateHash": 5294,
+    "defaultBlockStateId": 5294,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.skull"
+  },
+  "minecraft:slime": {
+    "defaultBlockStateHash": 4235,
+    "defaultBlockStateId": 4235,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.slime"
+  },
+  "minecraft:small_amethyst_bud": {
+    "defaultBlockStateHash": 304,
+    "defaultBlockStateId": 304,
+    "hardness": 1.5,
+    "explosionResistance": 1.5,
+    "lightEmission": 1,
+    "lightDampening": 0,
+    "descriptionId": "tile.small_amethyst_bud"
+  },
+  "minecraft:small_dripleaf_block": {
+    "defaultBlockStateHash": 4322,
+    "defaultBlockStateId": 4322,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.small_dripleaf_block"
+  },
+  "minecraft:smithing_table": {
+    "defaultBlockStateHash": 3728,
+    "defaultBlockStateId": 3728,
+    "hardness": 2.5,
+    "explosionResistance": 2.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.smithing_table",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:smoker": {
+    "defaultBlockStateHash": 649,
+    "defaultBlockStateId": 649,
+    "hardness": 3.5,
+    "explosionResistance": 3.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.smoker"
+  },
+  "minecraft:smooth_basalt": {
+    "defaultBlockStateHash": 1159,
+    "defaultBlockStateId": 1159,
+    "hardness": 1.25,
+    "explosionResistance": 4.2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.smooth_basalt"
+  },
+  "minecraft:smooth_quartz_stairs": {
+    "defaultBlockStateHash": 7702,
+    "defaultBlockStateId": 7702,
+    "hardness": 0.8,
+    "explosionResistance": 0.8,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.smooth_quartz_stairs"
+  },
+  "minecraft:smooth_red_sandstone_stairs": {
+    "defaultBlockStateHash": 5548,
+    "defaultBlockStateId": 5548,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.smooth_red_sandstone_stairs"
+  },
+  "minecraft:smooth_sandstone_stairs": {
+    "defaultBlockStateHash": 3629,
+    "defaultBlockStateId": 3629,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.smooth_sandstone_stairs"
+  },
+  "minecraft:smooth_stone": {
+    "defaultBlockStateHash": 4584,
+    "defaultBlockStateId": 4584,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.smooth_stone"
+  },
+  "minecraft:snow": {
+    "defaultBlockStateHash": 4196,
+    "defaultBlockStateId": 4196,
+    "hardness": 0.2,
+    "explosionResistance": 0.2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.snow"
+  },
+  "minecraft:snow_layer": {
+    "defaultBlockStateHash": 155,
+    "defaultBlockStateId": 155,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.snow_layer",
+    "tags": [
+      "minecraft:snow"
+    ]
+  },
+  "minecraft:soul_campfire": {
+    "defaultBlockStateHash": 8057,
+    "defaultBlockStateId": 8057,
+    "hardness": 5,
+    "explosionResistance": 5,
+    "lightEmission": 10,
+    "lightDampening": 0,
+    "descriptionId": "tile.soul_campfire"
+  },
+  "minecraft:soul_fire": {
+    "defaultBlockStateHash": 404,
+    "defaultBlockStateId": 404,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 10,
+    "lightDampening": 0,
+    "descriptionId": "tile.soul_fire"
+  },
+  "minecraft:soul_lantern": {
+    "defaultBlockStateHash": 5751,
+    "defaultBlockStateId": 5751,
+    "hardness": 5,
+    "explosionResistance": 5,
+    "lightEmission": 10,
+    "lightDampening": 0,
+    "descriptionId": "tile.soul_lantern"
+  },
+  "minecraft:soul_sand": {
+    "defaultBlockStateHash": 5833,
+    "defaultBlockStateId": 5833,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.soul_sand"
+  },
+  "minecraft:soul_soil": {
+    "defaultBlockStateHash": 5832,
+    "defaultBlockStateId": 5832,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.soul_soil"
+  },
+  "minecraft:soul_torch": {
+    "defaultBlockStateHash": 4646,
+    "defaultBlockStateId": 4646,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 10,
+    "lightDampening": 0,
+    "descriptionId": "tile.soul_torch"
+  },
+  "minecraft:sponge": {
+    "defaultBlockStateHash": 631,
+    "defaultBlockStateId": 631,
+    "hardness": 0.6,
+    "explosionResistance": 0.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.sponge"
+  },
+  "minecraft:spore_blossom": {
+    "defaultBlockStateHash": 7314,
+    "defaultBlockStateId": 7314,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.spore_blossom"
+  },
+  "minecraft:spruce_button": {
+    "defaultBlockStateHash": 4323,
+    "defaultBlockStateId": 4323,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.spruce_button",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:spruce_door": {
+    "defaultBlockStateHash": 4693,
+    "defaultBlockStateId": 4693,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.spruce_door",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:spruce_fence_gate": {
+    "defaultBlockStateHash": 6586,
+    "defaultBlockStateId": 6586,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.spruce_fence_gate",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:spruce_pressure_plate": {
+    "defaultBlockStateHash": 3761,
+    "defaultBlockStateId": 3761,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.spruce_pressure_plate",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:spruce_stairs": {
+    "defaultBlockStateHash": 128,
+    "defaultBlockStateId": 128,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.spruce_stairs",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:spruce_standing_sign": {
+    "defaultBlockStateHash": 7048,
+    "defaultBlockStateId": 7048,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.spruce_standing_sign",
+    "tags": [
+      "minecraft:text_sign",
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:spruce_trapdoor": {
+    "defaultBlockStateHash": 6554,
+    "defaultBlockStateId": 6554,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.spruce_trapdoor",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:spruce_wall_sign": {
+    "defaultBlockStateHash": 7396,
+    "defaultBlockStateId": 7396,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.spruce_wall_sign",
+    "tags": [
+      "minecraft:text_sign",
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:stained_glass": {
+    "defaultBlockStateHash": 1135,
+    "defaultBlockStateId": 1135,
+    "hardness": 0.3,
+    "explosionResistance": 0.3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.stained_glass"
+  },
+  "minecraft:stained_glass_pane": {
+    "defaultBlockStateHash": 4854,
+    "defaultBlockStateId": 4854,
+    "hardness": 0.3,
+    "explosionResistance": 0.3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.stained_glass_pane"
+  },
+  "minecraft:stained_hardened_clay": {
+    "defaultBlockStateHash": 6178,
+    "defaultBlockStateId": 6178,
+    "hardness": 1.25,
+    "explosionResistance": 4.2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.stained_hardened_clay"
+  },
+  "minecraft:standing_banner": {
+    "defaultBlockStateHash": 6953,
+    "defaultBlockStateId": 6953,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.standing_banner"
+  },
+  "minecraft:standing_sign": {
+    "defaultBlockStateHash": 5607,
+    "defaultBlockStateId": 5607,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.standing_sign",
+    "tags": [
+      "minecraft:text_sign",
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:sticky_piston": {
+    "defaultBlockStateHash": 4365,
+    "defaultBlockStateId": 4365,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.sticky_piston"
+  },
+  "minecraft:sticky_piston_arm_collision": {
+    "defaultBlockStateHash": 6345,
+    "defaultBlockStateId": 6345,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.sticky_piston_arm_collision"
+  },
+  "minecraft:stone": {
+    "defaultBlockStateHash": 655,
+    "defaultBlockStateId": 655,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.stone",
+    "tags": [
+      "minecraft:stone"
+    ]
+  },
+  "minecraft:stone_block_slab": {
+    "defaultBlockStateHash": 4272,
+    "defaultBlockStateId": 4272,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.stone_slab",
+    "tags": [
+      "minecraft:stone"
+    ]
+  },
+  "minecraft:stone_block_slab2": {
+    "defaultBlockStateHash": 5790,
+    "defaultBlockStateId": 5790,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.stone_slab2"
+  },
+  "minecraft:stone_block_slab3": {
+    "defaultBlockStateHash": 5806,
+    "defaultBlockStateId": 5806,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.stone_slab3"
+  },
+  "minecraft:stone_block_slab4": {
+    "defaultBlockStateHash": 5822,
+    "defaultBlockStateId": 5822,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.stone_slab4"
+  },
+  "minecraft:stone_brick_stairs": {
+    "defaultBlockStateHash": 933,
+    "defaultBlockStateId": 933,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.stone_brick_stairs"
+  },
+  "minecraft:stone_button": {
+    "defaultBlockStateHash": 598,
+    "defaultBlockStateId": 598,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.stone_button",
+    "tags": [
+      "minecraft:stone"
+    ]
+  },
+  "minecraft:stone_pressure_plate": {
+    "defaultBlockStateHash": 3888,
+    "defaultBlockStateId": 3888,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.stone_pressure_plate",
+    "tags": [
+      "minecraft:stone"
+    ]
+  },
+  "minecraft:stone_stairs": {
+    "defaultBlockStateHash": 3710,
+    "defaultBlockStateId": 3710,
+    "hardness": 2,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.stone_stairs",
+    "tags": [
+      "minecraft:stone"
+    ]
+  },
+  "minecraft:stonebrick": {
+    "defaultBlockStateHash": 6549,
+    "defaultBlockStateId": 6549,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.stonebrick"
+  },
+  "minecraft:stonecutter": {
+    "defaultBlockStateHash": 921,
+    "defaultBlockStateId": 921,
+    "hardness": 3.5,
+    "explosionResistance": 3.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.stonecutter"
+  },
+  "minecraft:stonecutter_block": {
+    "defaultBlockStateHash": 7576,
+    "defaultBlockStateId": 7576,
+    "hardness": 3.5,
+    "explosionResistance": 3.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.stonecutter_block"
+  },
+  "minecraft:stripped_acacia_log": {
+    "defaultBlockStateHash": 5850,
+    "defaultBlockStateId": 5850,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.stripped_acacia_log",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:stripped_birch_log": {
+    "defaultBlockStateHash": 5974,
+    "defaultBlockStateId": 5974,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.stripped_birch_log",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:stripped_crimson_hyphae": {
+    "defaultBlockStateHash": 6501,
+    "defaultBlockStateId": 6501,
+    "hardness": 0.3,
+    "explosionResistance": 0.3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.stripped_crimson_hyphae"
+  },
+  "minecraft:stripped_crimson_stem": {
+    "defaultBlockStateHash": 6950,
+    "defaultBlockStateId": 6950,
+    "hardness": 2,
+    "explosionResistance": 0.3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.stripped_crimson_stem"
+  },
+  "minecraft:stripped_dark_oak_log": {
+    "defaultBlockStateHash": 216,
+    "defaultBlockStateId": 216,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.stripped_dark_oak_log",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:stripped_jungle_log": {
+    "defaultBlockStateHash": 644,
+    "defaultBlockStateId": 644,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.stripped_jungle_log",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:stripped_mangrove_log": {
+    "defaultBlockStateHash": 8286,
+    "defaultBlockStateId": 8286,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.stripped_mangrove_log",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:stripped_mangrove_wood": {
+    "defaultBlockStateHash": 4231,
+    "defaultBlockStateId": 4231,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.stripped_mangrove_wood",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:stripped_oak_log": {
+    "defaultBlockStateHash": 7545,
+    "defaultBlockStateId": 7545,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.stripped_oak_log",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:stripped_spruce_log": {
+    "defaultBlockStateHash": 6290,
+    "defaultBlockStateId": 6290,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.stripped_spruce_log",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:stripped_warped_hyphae": {
+    "defaultBlockStateHash": 5581,
+    "defaultBlockStateId": 5581,
+    "hardness": 0.3,
+    "explosionResistance": 0.3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.stripped_warped_hyphae"
+  },
+  "minecraft:stripped_warped_stem": {
+    "defaultBlockStateHash": 7402,
+    "defaultBlockStateId": 7402,
+    "hardness": 2,
+    "explosionResistance": 0.3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.stripped_warped_stem"
+  },
+  "minecraft:structure_block": {
+    "defaultBlockStateHash": 6378,
+    "defaultBlockStateId": 6378,
+    "hardness": -1,
+    "explosionResistance": 3600000,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.structure_block"
+  },
+  "minecraft:structure_void": {
+    "defaultBlockStateHash": 4192,
+    "defaultBlockStateId": 4192,
+    "hardness": -1,
+    "explosionResistance": 3600000,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.structure_void"
+  },
+  "minecraft:sweet_berry_bush": {
+    "defaultBlockStateHash": 6012,
+    "defaultBlockStateId": 6012,
+    "hardness": 0.2,
+    "explosionResistance": 0.2,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.sweet_berry_bush",
+    "tags": [
+      "minecraft:crop"
+    ]
+  },
+  "minecraft:tallgrass": {
+    "defaultBlockStateHash": 929,
+    "defaultBlockStateId": 929,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.tallgrass"
+  },
+  "minecraft:target": {
+    "defaultBlockStateHash": 6392,
+    "defaultBlockStateId": 6392,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.target"
+  },
+  "minecraft:tinted_glass": {
+    "defaultBlockStateHash": 5977,
+    "defaultBlockStateId": 5977,
+    "hardness": 0.3,
+    "explosionResistance": 0.3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.tinted_glass"
+  },
+  "minecraft:tnt": {
+    "defaultBlockStateHash": 6709,
+    "defaultBlockStateId": 6709,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.tnt"
+  },
+  "minecraft:torch": {
+    "defaultBlockStateHash": 726,
+    "defaultBlockStateId": 726,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 14,
+    "lightDampening": 0,
+    "descriptionId": "tile.torch"
+  },
+  "minecraft:trapdoor": {
+    "defaultBlockStateHash": 229,
+    "defaultBlockStateId": 229,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.trapdoor",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:trapped_chest": {
+    "defaultBlockStateHash": 5585,
+    "defaultBlockStateId": 5585,
+    "hardness": 2.5,
+    "explosionResistance": 2.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.trapped_chest"
+  },
+  "minecraft:trip_wire": {
+    "defaultBlockStateHash": 7441,
+    "defaultBlockStateId": 7441,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.tripWire"
+  },
+  "minecraft:tripwire_hook": {
+    "defaultBlockStateHash": 5916,
+    "defaultBlockStateId": 5916,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.tripwire_hook"
+  },
+  "minecraft:tuff": {
+    "defaultBlockStateHash": 349,
+    "defaultBlockStateId": 349,
+    "hardness": 1.5,
+    "explosionResistance": 6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.tuff"
+  },
+  "minecraft:turtle_egg": {
+    "defaultBlockStateHash": 7999,
+    "defaultBlockStateId": 7999,
+    "hardness": 0.4,
+    "explosionResistance": 0.4,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.turtle_egg"
+  },
+  "minecraft:twisting_vines": {
+    "defaultBlockStateHash": 5693,
+    "defaultBlockStateId": 5693,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.twisting_vines"
+  },
+  "minecraft:underwater_torch": {
+    "defaultBlockStateHash": 3452,
+    "defaultBlockStateId": 3452,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 14,
+    "lightDampening": 0,
+    "descriptionId": "tile.underwater_torch"
+  },
+  "minecraft:undyed_shulker_box": {
+    "defaultBlockStateHash": 3683,
+    "defaultBlockStateId": 3683,
+    "hardness": 2.5,
+    "explosionResistance": 2.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.undyed_shulker_box"
+  },
+  "minecraft:unknown": {
+    "defaultBlockStateHash": 4614,
+    "defaultBlockStateId": 4614,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.unknown"
+  },
+  "minecraft:unlit_redstone_torch": {
+    "defaultBlockStateHash": 8249,
+    "defaultBlockStateId": 8249,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.unlit_redstone_torch"
+  },
+  "minecraft:unpowered_comparator": {
+    "defaultBlockStateHash": 6354,
+    "defaultBlockStateId": 6354,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.unpowered_comparator"
+  },
+  "minecraft:unpowered_repeater": {
+    "defaultBlockStateHash": 5532,
+    "defaultBlockStateId": 5532,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.unpowered_repeater"
+  },
+  "minecraft:verdant_froglight": {
+    "defaultBlockStateHash": 6483,
+    "defaultBlockStateId": 6483,
+    "hardness": 0.3,
+    "explosionResistance": 0.3,
+    "lightEmission": 15,
+    "lightDampening": 15,
+    "descriptionId": "tile.verdant_froglight"
+  },
+  "minecraft:vine": {
+    "defaultBlockStateHash": 896,
+    "defaultBlockStateId": 896,
+    "hardness": 0.2,
+    "explosionResistance": 0.2,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.vine"
+  },
+  "minecraft:wall_banner": {
+    "defaultBlockStateHash": 5687,
+    "defaultBlockStateId": 5687,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.wall_banner"
+  },
+  "minecraft:wall_sign": {
+    "defaultBlockStateHash": 4870,
+    "defaultBlockStateId": 4870,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.wall_sign",
+    "tags": [
+      "minecraft:text_sign",
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:warped_button": {
+    "defaultBlockStateHash": 7252,
+    "defaultBlockStateId": 7252,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.warped_button"
+  },
+  "minecraft:warped_door": {
+    "defaultBlockStateHash": 28,
+    "defaultBlockStateId": 28,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.warped_door"
+  },
+  "minecraft:warped_double_slab": {
+    "defaultBlockStateHash": 4383,
+    "defaultBlockStateId": 4383,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.warped_double_slab"
+  },
+  "minecraft:warped_fence": {
+    "defaultBlockStateHash": 5855,
+    "defaultBlockStateId": 5855,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.warped_fence"
+  },
+  "minecraft:warped_fence_gate": {
+    "defaultBlockStateHash": 5401,
+    "defaultBlockStateId": 5401,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.warped_fence_gate"
+  },
+  "minecraft:warped_fungus": {
+    "defaultBlockStateHash": 287,
+    "defaultBlockStateId": 287,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.warped_fungus"
+  },
+  "minecraft:warped_hyphae": {
+    "defaultBlockStateHash": 5904,
+    "defaultBlockStateId": 5904,
+    "hardness": 0.3,
+    "explosionResistance": 0.3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.warped_hyphae"
+  },
+  "minecraft:warped_nylium": {
+    "defaultBlockStateHash": 6351,
+    "defaultBlockStateId": 6351,
+    "hardness": 0.4,
+    "explosionResistance": 0.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.warped_nylium",
+    "tags": [
+      "minecraft:fertilize_area"
+    ]
+  },
+  "minecraft:warped_planks": {
+    "defaultBlockStateHash": 922,
+    "defaultBlockStateId": 922,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.warped_planks"
+  },
+  "minecraft:warped_pressure_plate": {
+    "defaultBlockStateHash": 256,
+    "defaultBlockStateId": 256,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.warped_pressure_plate"
+  },
+  "minecraft:warped_roots": {
+    "defaultBlockStateHash": 4364,
+    "defaultBlockStateId": 4364,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.warped_roots"
+  },
+  "minecraft:warped_slab": {
+    "defaultBlockStateHash": 6486,
+    "defaultBlockStateId": 6486,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.warped_slab"
+  },
+  "minecraft:warped_stairs": {
+    "defaultBlockStateHash": 3720,
+    "defaultBlockStateId": 3720,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.warped_stairs"
+  },
+  "minecraft:warped_standing_sign": {
+    "defaultBlockStateHash": 7200,
+    "defaultBlockStateId": 7200,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.warped_standing_sign",
+    "tags": [
+      "minecraft:text_sign"
+    ]
+  },
+  "minecraft:warped_stem": {
+    "defaultBlockStateHash": 6488,
+    "defaultBlockStateId": 6488,
+    "hardness": 2,
+    "explosionResistance": 0.3,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.warped_stem"
+  },
+  "minecraft:warped_trapdoor": {
+    "defaultBlockStateHash": 4735,
+    "defaultBlockStateId": 4735,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.warped_trapdoor"
+  },
+  "minecraft:warped_wall_sign": {
+    "defaultBlockStateHash": 388,
+    "defaultBlockStateId": 388,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.warped_wall_sign",
+    "tags": [
+      "minecraft:text_sign"
+    ]
+  },
+  "minecraft:warped_wart_block": {
+    "defaultBlockStateHash": 5907,
+    "defaultBlockStateId": 5907,
+    "hardness": 1,
+    "explosionResistance": 1,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.warped_wart_block"
+  },
+  "minecraft:water": {
+    "defaultBlockStateHash": 5508,
+    "defaultBlockStateId": 5508,
+    "hardness": 100,
+    "explosionResistance": 100,
+    "lightEmission": 0,
+    "lightDampening": 2,
+    "descriptionId": "tile.water",
+    "tags": [
+      "minecraft:water"
+    ]
+  },
+  "minecraft:waterlily": {
+    "defaultBlockStateHash": 1160,
+    "defaultBlockStateId": 1160,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.waterlily"
+  },
+  "minecraft:waxed_copper": {
+    "defaultBlockStateHash": 7736,
+    "defaultBlockStateId": 7736,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.waxed_copper",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:waxed_cut_copper": {
+    "defaultBlockStateHash": 7295,
+    "defaultBlockStateId": 7295,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.waxed_cut_copper",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:waxed_cut_copper_slab": {
+    "defaultBlockStateHash": 7817,
+    "defaultBlockStateId": 7817,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.waxed_cut_copper_slab"
+  },
+  "minecraft:waxed_cut_copper_stairs": {
+    "defaultBlockStateHash": 395,
+    "defaultBlockStateId": 395,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.waxed_cut_copper_stairs",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:waxed_double_cut_copper_slab": {
+    "defaultBlockStateHash": 5426,
+    "defaultBlockStateId": 5426,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.waxed_double_cut_copper_slab"
+  },
+  "minecraft:waxed_exposed_copper": {
+    "defaultBlockStateHash": 696,
+    "defaultBlockStateId": 696,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.waxed_exposed_copper",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:waxed_exposed_cut_copper": {
+    "defaultBlockStateHash": 3811,
+    "defaultBlockStateId": 3811,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.waxed_exposed_cut_copper",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:waxed_exposed_cut_copper_slab": {
+    "defaultBlockStateHash": 249,
+    "defaultBlockStateId": 249,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.waxed_exposed_cut_copper_slab"
+  },
+  "minecraft:waxed_exposed_cut_copper_stairs": {
+    "defaultBlockStateHash": 3904,
+    "defaultBlockStateId": 3904,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.waxed_exposed_cut_copper_stairs",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:waxed_exposed_double_cut_copper_slab": {
+    "defaultBlockStateHash": 6888,
+    "defaultBlockStateId": 6888,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.waxed_exposed_double_cut_copper_slab"
+  },
+  "minecraft:waxed_oxidized_copper": {
+    "defaultBlockStateHash": 7544,
+    "defaultBlockStateId": 7544,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.waxed_oxidized_copper",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:waxed_oxidized_cut_copper": {
+    "defaultBlockStateHash": 214,
+    "defaultBlockStateId": 214,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.waxed_oxidized_cut_copper",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:waxed_oxidized_cut_copper_slab": {
+    "defaultBlockStateHash": 710,
+    "defaultBlockStateId": 710,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.waxed_oxidized_cut_copper_slab",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:waxed_oxidized_cut_copper_stairs": {
+    "defaultBlockStateHash": 5842,
+    "defaultBlockStateId": 5842,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.waxed_oxidized_cut_copper_stairs",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:waxed_oxidized_double_cut_copper_slab": {
+    "defaultBlockStateHash": 7753,
+    "defaultBlockStateId": 7753,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.waxed_oxidized_double_cut_copper_slab",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:waxed_weathered_copper": {
+    "defaultBlockStateHash": 709,
+    "defaultBlockStateId": 709,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.waxed_weathered_copper",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:waxed_weathered_cut_copper": {
+    "defaultBlockStateHash": 4853,
+    "defaultBlockStateId": 4853,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.waxed_weathered_cut_copper",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:waxed_weathered_cut_copper_slab": {
+    "defaultBlockStateHash": 6547,
+    "defaultBlockStateId": 6547,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.waxed_weathered_cut_copper_slab"
+  },
+  "minecraft:waxed_weathered_cut_copper_stairs": {
+    "defaultBlockStateHash": 6169,
+    "defaultBlockStateId": 6169,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.waxed_weathered_cut_copper_stairs",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:waxed_weathered_double_cut_copper_slab": {
+    "defaultBlockStateHash": 4680,
+    "defaultBlockStateId": 4680,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.waxed_weathered_double_cut_copper_slab"
+  },
+  "minecraft:weathered_copper": {
+    "defaultBlockStateHash": 8248,
+    "defaultBlockStateId": 8248,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.weathered_copper",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:weathered_cut_copper": {
+    "defaultBlockStateHash": 7199,
+    "defaultBlockStateId": 7199,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.weathered_cut_copper",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:weathered_cut_copper_slab": {
+    "defaultBlockStateHash": 6055,
+    "defaultBlockStateId": 6055,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.weathered_cut_copper_slab"
+  },
+  "minecraft:weathered_cut_copper_stairs": {
+    "defaultBlockStateHash": 4307,
+    "defaultBlockStateId": 4307,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.weathered_cut_copper_stairs",
+    "tags": [
+      "minecraft:stone_pick_diggable"
+    ]
+  },
+  "minecraft:weathered_double_cut_copper_slab": {
+    "defaultBlockStateHash": 7347,
+    "defaultBlockStateId": 7347,
+    "hardness": 3,
+    "explosionResistance": 3.6,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.weathered_double_cut_copper_slab"
+  },
+  "minecraft:web": {
+    "defaultBlockStateHash": 6715,
+    "defaultBlockStateId": 6715,
+    "hardness": 4,
+    "explosionResistance": 4,
+    "lightEmission": 0,
+    "lightDampening": 1,
+    "descriptionId": "tile.web"
+  },
+  "minecraft:weeping_vines": {
+    "defaultBlockStateHash": 5481,
+    "defaultBlockStateId": 5481,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.weeping_vines"
+  },
+  "minecraft:wheat": {
+    "defaultBlockStateHash": 7287,
+    "defaultBlockStateId": 7287,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.wheat",
+    "tags": [
+      "minecraft:crop"
+    ]
+  },
+  "minecraft:white_candle": {
+    "defaultBlockStateHash": 5302,
+    "defaultBlockStateId": 5302,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.white_candle"
+  },
+  "minecraft:white_candle_cake": {
+    "defaultBlockStateHash": 7582,
+    "defaultBlockStateId": 7582,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.white_candle_cake"
+  },
+  "minecraft:white_glazed_terracotta": {
+    "defaultBlockStateHash": 5575,
+    "defaultBlockStateId": 5575,
+    "hardness": 1.4,
+    "explosionResistance": 1.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.glazedTerracotta.white"
+  },
+  "minecraft:wither_rose": {
+    "defaultBlockStateHash": 6167,
+    "defaultBlockStateId": 6167,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.wither_rose"
+  },
+  "minecraft:wood": {
+    "defaultBlockStateHash": 3476,
+    "defaultBlockStateId": 3476,
+    "hardness": 2,
+    "explosionResistance": 2,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.wood",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:wooden_button": {
+    "defaultBlockStateHash": 6393,
+    "defaultBlockStateId": 6393,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.wooden_button",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:wooden_door": {
+    "defaultBlockStateHash": 3729,
+    "defaultBlockStateId": 3729,
+    "hardness": 3,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.wooden_door",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:wooden_pressure_plate": {
+    "defaultBlockStateHash": 8065,
+    "defaultBlockStateId": 8065,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.wooden_pressure_plate",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:wooden_slab": {
+    "defaultBlockStateHash": 5272,
+    "defaultBlockStateId": 5272,
+    "hardness": 2,
+    "explosionResistance": 3,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.wooden_slab",
+    "tags": [
+      "minecraft:wood"
+    ]
+  },
+  "minecraft:wool": {
+    "defaultBlockStateHash": 3460,
+    "defaultBlockStateId": 3460,
+    "hardness": 0.8,
+    "explosionResistance": 0.8,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.wool"
+  },
+  "minecraft:yellow_candle": {
+    "defaultBlockStateHash": 6194,
+    "defaultBlockStateId": 6194,
+    "hardness": 0.1,
+    "explosionResistance": 0.1,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.yellow_candle"
+  },
+  "minecraft:yellow_candle_cake": {
+    "defaultBlockStateHash": 4625,
+    "defaultBlockStateId": 4625,
+    "hardness": 0.5,
+    "explosionResistance": 0.5,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.yellow_candle_cake"
+  },
+  "minecraft:yellow_flower": {
+    "defaultBlockStateHash": 302,
+    "defaultBlockStateId": 302,
+    "hardness": 0,
+    "explosionResistance": 0,
+    "lightEmission": 0,
+    "lightDampening": 0,
+    "descriptionId": "tile.yellow_flower",
+    "tags": [
+      "minecraft:fertilize_area"
+    ]
+  },
+  "minecraft:yellow_glazed_terracotta": {
+    "defaultBlockStateHash": 915,
+    "defaultBlockStateId": 915,
+    "hardness": 1.4,
+    "explosionResistance": 1.4,
+    "lightEmission": 0,
+    "lightDampening": 15,
+    "descriptionId": "tile.glazedTerracotta.yellow"
+  }
+}

@@ -1,0 +1,176 @@
+[
+  {
+    "id": 1,
+    "descriptionId": "potion.moveSpeed",
+    "name": "speed",
+    "harmful": false
+  },
+  {
+    "id": 2,
+    "descriptionId": "potion.moveSlowdown",
+    "name": "slowness",
+    "harmful": true
+  },
+  {
+    "id": 3,
+    "descriptionId": "potion.digSpeed",
+    "name": "haste",
+    "harmful": false
+  },
+  {
+    "id": 4,
+    "descriptionId": "potion.digSlowDown",
+    "name": "mining_fatigue",
+    "harmful": true
+  },
+  {
+    "id": 5,
+    "descriptionId": "potion.damageBoost",
+    "name": "strength",
+    "harmful": false
+  },
+  {
+    "id": 6,
+    "descriptionId": "potion.heal",
+    "name": "instant_health",
+    "harmful": false
+  },
+  {
+    "id": 7,
+    "descriptionId": "potion.harm",
+    "name": "instant_damage",
+    "harmful": true
+  },
+  {
+    "id": 8,
+    "descriptionId": "potion.jump",
+    "name": "jump_boost",
+    "harmful": false
+  },
+  {
+    "id": 9,
+    "descriptionId": "potion.confusion",
+    "name": "nausea",
+    "harmful": true
+  },
+  {
+    "id": 10,
+    "descriptionId": "potion.regeneration",
+    "name": "regeneration",
+    "harmful": false
+  },
+  {
+    "id": 11,
+    "descriptionId": "potion.resistance",
+    "name": "resistance",
+    "harmful": false
+  },
+  {
+    "id": 12,
+    "descriptionId": "potion.fireResistance",
+    "name": "fire_resistance",
+    "harmful": false
+  },
+  {
+    "id": 13,
+    "descriptionId": "potion.waterBreathing",
+    "name": "water_breathing",
+    "harmful": false
+  },
+  {
+    "id": 14,
+    "descriptionId": "potion.invisibility",
+    "name": "invisibility",
+    "harmful": false
+  },
+  {
+    "id": 15,
+    "descriptionId": "potion.blindness",
+    "name": "blindness",
+    "harmful": true
+  },
+  {
+    "id": 16,
+    "descriptionId": "potion.nightVision",
+    "name": "night_vision",
+    "harmful": false
+  },
+  {
+    "id": 17,
+    "descriptionId": "potion.hunger",
+    "name": "hunger",
+    "harmful": true
+  },
+  {
+    "id": 18,
+    "descriptionId": "potion.weakness",
+    "name": "weakness",
+    "harmful": true
+  },
+  {
+    "id": 19,
+    "descriptionId": "potion.poison",
+    "name": "poison",
+    "harmful": true
+  },
+  {
+    "id": 20,
+    "descriptionId": "potion.wither",
+    "name": "wither",
+    "harmful": true
+  },
+  {
+    "id": 21,
+    "descriptionId": "potion.healthBoost",
+    "name": "health_boost",
+    "harmful": false
+  },
+  {
+    "id": 22,
+    "descriptionId": "potion.absorption",
+    "name": "absorption",
+    "harmful": false
+  },
+  {
+    "id": 23,
+    "descriptionId": "potion.saturation",
+    "name": "saturation",
+    "harmful": false
+  },
+  {
+    "id": 24,
+    "descriptionId": "potion.levitation",
+    "name": "levitation",
+    "harmful": true
+  },
+  {
+    "id": 25,
+    "descriptionId": "potion.poison",
+    "name": "fatal_poison",
+    "harmful": true
+  },
+  {
+    "id": 26,
+    "descriptionId": "potion.conduitPower",
+    "name": "conduit_power",
+    "harmful": false
+  },
+  {
+    "id": 27,
+    "descriptionId": "potion.slowFalling",
+    "name": "slow_falling",
+    "harmful": false
+  },
+  {
+    "id": 28,
+    "descriptionId": "effect.badOmen",
+    "name": "bad_omen",
+    "harmful": false
+  },
+  {
+    "id": 29,
+    "descriptionId": "effect.villageHero",
+    "name": "village_hero",
+    "harmful": false
+  }
+]

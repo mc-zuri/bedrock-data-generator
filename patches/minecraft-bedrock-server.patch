@@ -1,0 +1,37 @@
+diff --git a/src/index.js b/src/index.js
+index 206c344ed0b2dd837442f6ec4a3d56b7362cd486..e8b33d2df0a035ec7b06dbdfc09eded771054bde 100644
+--- a/src/index.js
++++ b/src/index.js
+@@ -72,7 +72,9 @@ async function download (os, version, root, path) {
+       version = '1.' + version
+     }
+   }
+-  const verStr = version.split('.').slice(0, 3).join('.')
++
++  const parts = version.split('.')
++  const verStr = parts.slice(0, 3).join('.')
+   const dir = path || 'bds-' + version
+ 
+   if (fs.existsSync(dir) && fs.readdirSync(dir).length > 1) {
+@@ -88,10 +90,18 @@ async function download (os, version, root, path) {
+ 
+   let found = false
+ 
+-  // Find the latest server build for version (major.minor.patch.BUILD)
++  // Find the server build for version (major.minor.patch.BUILD)
+   const toTry = []
+-  for (let i = 0; i < 10; i++) toTry.push(String(i))
+-  for (let i = 0; i < 20; i++) toTry.push(String(i).padStart(2, '0'))
++
++  if (parts.length > 3) {
++    // Force the EXACT requested build — do not fall back to a different build.
++    // If that exact zip isn't published, the download fails (caller skips it)
++    // rather than silently installing a mismatched binary under this folder.
++    toTry.push(parts[3])
++  } else {
++    for (let i = 0; i < 10; i++) toTry.push(String(i))
++    for (let i = 0; i < 20; i++) toTry.push(String(i).padStart(2, '0'))
++  }
+ 
+   for (const build of toTry) {
+     const u = url(os, `${verStr}.${build}`)

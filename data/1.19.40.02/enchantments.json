@@ -1,0 +1,848 @@
+[
+  {
+    "id": 0,
+    "name": "protection",
+    "descriptionId": "enchantment.protect.all",
+    "frequency": 30,
+    "tradeable": true,
+    "primarySlots": 15,
+    "secondarySlots": 0,
+    "compatibility": 3,
+    "minLevel": 1,
+    "maxLevel": 4,
+    "minCost": [
+      1,
+      12,
+      23,
+      34
+    ],
+    "maxCost": [
+      21,
+      32,
+      43,
+      54
+    ]
+  },
+  {
+    "id": 1,
+    "name": "fire_protection",
+    "descriptionId": "enchantment.protect.fire",
+    "frequency": 10,
+    "tradeable": true,
+    "primarySlots": 15,
+    "secondarySlots": 0,
+    "compatibility": 3,
+    "minLevel": 1,
+    "maxLevel": 4,
+    "minCost": [
+      10,
+      18,
+      26,
+      34
+    ],
+    "maxCost": [
+      22,
+      30,
+      38,
+      46
+    ]
+  },
+  {
+    "id": 2,
+    "name": "feather_falling",
+    "descriptionId": "enchantment.protect.fall",
+    "frequency": 10,
+    "tradeable": true,
+    "primarySlots": 4,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 4,
+    "minCost": [
+      5,
+      11,
+      17,
+      23
+    ],
+    "maxCost": [
+      15,
+      21,
+      27,
+      33
+    ]
+  },
+  {
+    "id": 3,
+    "name": "blast_protection",
+    "descriptionId": "enchantment.protect.explosion",
+    "frequency": 3,
+    "tradeable": true,
+    "primarySlots": 15,
+    "secondarySlots": 0,
+    "compatibility": 3,
+    "minLevel": 1,
+    "maxLevel": 4,
+    "minCost": [
+      5,
+      13,
+      21,
+      29
+    ],
+    "maxCost": [
+      17,
+      25,
+      33,
+      41
+    ]
+  },
+  {
+    "id": 4,
+    "name": "projectile_protection",
+    "descriptionId": "enchantment.protect.projectile",
+    "frequency": 10,
+    "tradeable": true,
+    "primarySlots": 15,
+    "secondarySlots": 0,
+    "compatibility": 3,
+    "minLevel": 1,
+    "maxLevel": 4,
+    "minCost": [
+      3,
+      9,
+      15,
+      21
+    ],
+    "maxCost": [
+      18,
+      24,
+      30,
+      36
+    ]
+  },
+  {
+    "id": 5,
+    "name": "thorns",
+    "descriptionId": "enchantment.thorns",
+    "frequency": 1,
+    "tradeable": true,
+    "primarySlots": 2,
+    "secondarySlots": 13,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 3,
+    "minCost": [
+      10,
+      30,
+      50
+    ],
+    "maxCost": [
+      61,
+      71,
+      81
+    ]
+  },
+  {
+    "id": 6,
+    "name": "respiration",
+    "descriptionId": "enchantment.oxygen",
+    "frequency": 3,
+    "tradeable": true,
+    "primarySlots": 1,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 3,
+    "minCost": [
+      10,
+      20,
+      30
+    ],
+    "maxCost": [
+      300,
+      600,
+      900
+    ]
+  },
+  {
+    "id": 7,
+    "name": "depth_strider",
+    "descriptionId": "enchantment.waterWalker",
+    "frequency": 3,
+    "tradeable": true,
+    "primarySlots": 4,
+    "secondarySlots": 0,
+    "compatibility": 4,
+    "minLevel": 1,
+    "maxLevel": 3,
+    "minCost": [
+      10,
+      20,
+      30
+    ],
+    "maxCost": [
+      100,
+      200,
+      300
+    ]
+  },
+  {
+    "id": 8,
+    "name": "aqua_affinity",
+    "descriptionId": "enchantment.waterWorker",
+    "frequency": 3,
+    "tradeable": true,
+    "primarySlots": 1,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 1,
+    "minCost": [
+      1,
+      1
+    ],
+    "maxCost": [
+      40,
+      40
+    ]
+  },
+  {
+    "id": 9,
+    "name": "sharpness",
+    "descriptionId": "enchantment.damage.all",
+    "frequency": 30,
+    "tradeable": true,
+    "primarySlots": 16,
+    "secondarySlots": 512,
+    "compatibility": 1,
+    "minLevel": 1,
+    "maxLevel": 5,
+    "minCost": [
+      1,
+      12,
+      23,
+      34,
+      45
+    ],
+    "maxCost": [
+      21,
+      32,
+      43,
+      54,
+      65
+    ]
+  },
+  {
+    "id": 10,
+    "name": "smite",
+    "descriptionId": "enchantment.damage.undead",
+    "frequency": 10,
+    "tradeable": true,
+    "primarySlots": 16,
+    "secondarySlots": 512,
+    "compatibility": 1,
+    "minLevel": 1,
+    "maxLevel": 5,
+    "minCost": [
+      5,
+      13,
+      21,
+      29,
+      37
+    ],
+    "maxCost": [
+      25,
+      33,
+      41,
+      49,
+      57
+    ]
+  },
+  {
+    "id": 11,
+    "name": "bane_of_arthropods",
+    "descriptionId": "enchantment.damage.arthropods",
+    "frequency": 10,
+    "tradeable": true,
+    "primarySlots": 16,
+    "secondarySlots": 512,
+    "compatibility": 1,
+    "minLevel": 1,
+    "maxLevel": 5,
+    "minCost": [
+      5,
+      13,
+      21,
+      29,
+      37
+    ],
+    "maxCost": [
+      25,
+      33,
+      41,
+      49,
+      57
+    ]
+  },
+  {
+    "id": 12,
+    "name": "knockback",
+    "descriptionId": "enchantment.knockback",
+    "frequency": 10,
+    "tradeable": true,
+    "primarySlots": 16,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 2,
+    "minCost": [
+      5,
+      25
+    ],
+    "maxCost": [
+      61,
+      71
+    ]
+  },
+  {
+    "id": 13,
+    "name": "fire_aspect",
+    "descriptionId": "enchantment.fire",
+    "frequency": 3,
+    "tradeable": true,
+    "primarySlots": 16,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 2,
+    "minCost": [
+      10,
+      30
+    ],
+    "maxCost": [
+      61,
+      71
+    ]
+  },
+  {
+    "id": 14,
+    "name": "looting",
+    "descriptionId": "enchantment.lootBonus",
+    "frequency": 3,
+    "tradeable": true,
+    "primarySlots": 16,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 3,
+    "minCost": [
+      15,
+      24,
+      33
+    ],
+    "maxCost": [
+      61,
+      71,
+      81
+    ]
+  },
+  {
+    "id": 15,
+    "name": "efficiency",
+    "descriptionId": "enchantment.digging",
+    "frequency": 30,
+    "tradeable": true,
+    "primarySlots": 3648,
+    "secondarySlots": 128,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 5,
+    "minCost": [
+      1,
+      11,
+      21,
+      31,
+      41
+    ],
+    "maxCost": [
+      61,
+      71,
+      81,
+      91,
+      101
+    ]
+  },
+  {
+    "id": 16,
+    "name": "silk_touch",
+    "descriptionId": "enchantment.untouching",
+    "frequency": 1,
+    "tradeable": true,
+    "primarySlots": 3648,
+    "secondarySlots": 128,
+    "compatibility": 2,
+    "minLevel": 1,
+    "maxLevel": 1,
+    "minCost": [
+      15,
+      15
+    ],
+    "maxCost": [
+      61,
+      71
+    ]
+  },
+  {
+    "id": 17,
+    "name": "unbreaking",
+    "descriptionId": "enchantment.durability",
+    "frequency": 10,
+    "tradeable": true,
+    "primarySlots": 73343,
+    "secondarySlots": 1237440,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 3,
+    "minCost": [
+      5,
+      13,
+      21
+    ],
+    "maxCost": [
+      61,
+      71,
+      81
+    ]
+  },
+  {
+    "id": 18,
+    "name": "fortune",
+    "descriptionId": "enchantment.lootBonusDigger",
+    "frequency": 3,
+    "tradeable": true,
+    "primarySlots": 3648,
+    "secondarySlots": 0,
+    "compatibility": 2,
+    "minLevel": 1,
+    "maxLevel": 3,
+    "minCost": [
+      15,
+      24,
+      33
+    ],
+    "maxCost": [
+      61,
+      71,
+      81
+    ]
+  },
+  {
+    "id": 19,
+    "name": "power",
+    "descriptionId": "enchantment.arrowDamage",
+    "frequency": 30,
+    "tradeable": true,
+    "primarySlots": 32,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 5,
+    "minCost": [
+      1,
+      11,
+      21,
+      31,
+      41
+    ],
+    "maxCost": [
+      16,
+      26,
+      36,
+      46,
+      56
+    ]
+  },
+  {
+    "id": 20,
+    "name": "punch",
+    "descriptionId": "enchantment.arrowKnockback",
+    "frequency": 3,
+    "tradeable": true,
+    "primarySlots": 32,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 2,
+    "minCost": [
+      12,
+      32
+    ],
+    "maxCost": [
+      37,
+      57
+    ]
+  },
+  {
+    "id": 21,
+    "name": "flame",
+    "descriptionId": "enchantment.arrowFire",
+    "frequency": 3,
+    "tradeable": true,
+    "primarySlots": 32,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 1,
+    "minCost": [
+      20,
+      20
+    ],
+    "maxCost": [
+      50,
+      50
+    ]
+  },
+  {
+    "id": 22,
+    "name": "infinity",
+    "descriptionId": "enchantment.arrowInfinite",
+    "frequency": 1,
+    "tradeable": true,
+    "primarySlots": 32,
+    "secondarySlots": 0,
+    "compatibility": 5,
+    "minLevel": 1,
+    "maxLevel": 1,
+    "minCost": [
+      20,
+      20
+    ],
+    "maxCost": [
+      50,
+      50
+    ]
+  },
+  {
+    "id": 23,
+    "name": "luck_of_the_sea",
+    "descriptionId": "enchantment.lootBonusFishing",
+    "frequency": 3,
+    "tradeable": true,
+    "primarySlots": 4096,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 3,
+    "minCost": [
+      15,
+      24,
+      33
+    ],
+    "maxCost": [
+      61,
+      71,
+      81
+    ]
+  },
+  {
+    "id": 24,
+    "name": "lure",
+    "descriptionId": "enchantment.fishingSpeed",
+    "frequency": 3,
+    "tradeable": true,
+    "primarySlots": 4096,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 3,
+    "minCost": [
+      15,
+      24,
+      33
+    ],
+    "maxCost": [
+      61,
+      71,
+      81
+    ]
+  },
+  {
+    "id": 25,
+    "name": "frost_walker",
+    "descriptionId": "enchantment.frostwalker",
+    "frequency": 3,
+    "tradeable": true,
+    "primarySlots": 4,
+    "secondarySlots": 0,
+    "compatibility": 4,
+    "minLevel": 1,
+    "maxLevel": 2,
+    "minCost": [
+      10,
+      20
+    ],
+    "maxCost": [
+      25,
+      35
+    ]
+  },
+  {
+    "id": 26,
+    "name": "mending",
+    "descriptionId": "enchantment.mending",
+    "frequency": 3,
+    "tradeable": true,
+    "primarySlots": 73343,
+    "secondarySlots": 1237440,
+    "compatibility": 5,
+    "minLevel": 1,
+    "maxLevel": 1,
+    "minCost": [
+      25,
+      50
+    ],
+    "maxCost": [
+      75,
+      100
+    ]
+  },
+  {
+    "id": 27,
+    "name": "binding",
+    "descriptionId": "enchantment.curse.binding",
+    "frequency": 1,
+    "tradeable": true,
+    "primarySlots": 278543,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 1,
+    "minCost": [
+      25,
+      25
+    ],
+    "maxCost": [
+      50,
+      50
+    ]
+  },
+  {
+    "id": 28,
+    "name": "vanishing",
+    "descriptionId": "enchantment.curse.vanishing",
+    "frequency": 1,
+    "tradeable": true,
+    "primarySlots": 4294967295,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 1,
+    "minCost": [
+      25,
+      25
+    ],
+    "maxCost": [
+      50,
+      50
+    ]
+  },
+  {
+    "id": 29,
+    "name": "impaling",
+    "descriptionId": "enchantment.tridentImpaling",
+    "frequency": 10,
+    "tradeable": true,
+    "primarySlots": 32768,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 5,
+    "minCost": [
+      1,
+      9,
+      17,
+      25,
+      33
+    ],
+    "maxCost": [
+      21,
+      29,
+      37,
+      45,
+      53
+    ]
+  },
+  {
+    "id": 30,
+    "name": "riptide",
+    "descriptionId": "enchantment.tridentRiptide",
+    "frequency": 3,
+    "tradeable": true,
+    "primarySlots": 32768,
+    "secondarySlots": 0,
+    "compatibility": 6,
+    "minLevel": 1,
+    "maxLevel": 3,
+    "minCost": [
+      17,
+      24,
+      31
+    ],
+    "maxCost": [
+      50,
+      50,
+      50
+    ]
+  },
+  {
+    "id": 31,
+    "name": "loyalty",
+    "descriptionId": "enchantment.tridentLoyalty",
+    "frequency": 30,
+    "tradeable": true,
+    "primarySlots": 32768,
+    "secondarySlots": 0,
+    "compatibility": 6,
+    "minLevel": 1,
+    "maxLevel": 3,
+    "minCost": [
+      12,
+      19,
+      26
+    ],
+    "maxCost": [
+      50,
+      50,
+      50
+    ]
+  },
+  {
+    "id": 32,
+    "name": "channeling",
+    "descriptionId": "enchantment.tridentChanneling",
+    "frequency": 1,
+    "tradeable": true,
+    "primarySlots": 32768,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 1,
+    "minCost": [
+      25,
+      25
+    ],
+    "maxCost": [
+      50,
+      50
+    ]
+  },
+  {
+    "id": 33,
+    "name": "multishot",
+    "descriptionId": "enchantment.crossbowMultishot",
+    "frequency": 3,
+    "tradeable": true,
+    "primarySlots": 65536,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 1,
+    "minCost": [
+      20,
+      20
+    ],
+    "maxCost": [
+      70,
+      70
+    ]
+  },
+  {
+    "id": 34,
+    "name": "piercing",
+    "descriptionId": "enchantment.crossbowPiercing",
+    "frequency": 30,
+    "tradeable": true,
+    "primarySlots": 65536,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 4,
+    "minCost": [
+      1,
+      11,
+      21,
+      31
+    ],
+    "maxCost": [
+      51,
+      61,
+      71,
+      81
+    ]
+  },
+  {
+    "id": 35,
+    "name": "quick_charge",
+    "descriptionId": "enchantment.crossbowQuickCharge",
+    "frequency": 10,
+    "tradeable": true,
+    "primarySlots": 65536,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 3,
+    "minCost": [
+      12,
+      32,
+      52
+    ],
+    "maxCost": [
+      62,
+      82,
+      102
+    ]
+  },
+  {
+    "id": 36,
+    "name": "soul_speed",
+    "descriptionId": "enchantment.soul_speed",
+    "frequency": 1,
+    "tradeable": false,
+    "primarySlots": 4,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 3,
+    "minCost": [
+      10,
+      20,
+      30
+    ],
+    "maxCost": [
+      25,
+      35,
+      45
+    ]
+  },
+  {
+    "id": 37,
+    "name": "swift_sneak",
+    "descriptionId": "enchantment.swift_sneak",
+    "frequency": 1,
+    "tradeable": false,
+    "primarySlots": 8,
+    "secondarySlots": 0,
+    "compatibility": 0,
+    "minLevel": 1,
+    "maxLevel": 3,
+    "minCost": [
+      10,
+      20,
+      30
+    ],
+    "maxCost": [
+      25,
+      35,
+      45
+    ]
+  }
+]
