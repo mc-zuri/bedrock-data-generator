@@ -68,7 +68,7 @@ Its dedupe groups are the same as the monolith generator's (1.21.124 → 1.21.12
 
 ## Workflows
 
-- [generate](.github/workflows/generate.yml): every 6 hours, half an hour after the extractor's update (which also
+- [generate](.github/workflows/generate.yml): every 6 hours, half an hour after the extractor's track (which also
   covers versions minecraft-data adds), on each push here, by hand, and by bedrock-data's notify-generator workflow on
   each commit there that changes a release, where that has a token to run it with. It generates into a fresh clone
   of upstream master, runs minecraft-data's `tools/js` tests, and force-pushes the result as one commit on the fork's

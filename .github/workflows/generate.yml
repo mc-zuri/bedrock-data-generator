@@ -1,5 +1,5 @@
 # minecraft-data regenerated from bedrock-data, as a branch of the fork: every 6 hours, half an hour after the
-# extractor's update (and for versions minecraft-data adds on its own), on each push here, and by bedrock-data's
+# extractor's track (and for versions minecraft-data adds on its own), on each push here, and by bedrock-data's
 # notify-generator workflow where that has a token to run it with. The branch is upstream master and one commit; it is
 # pushed only where that commit changes something the fork's branch does not already carry. Opening the pull request
 # is left to a person.
