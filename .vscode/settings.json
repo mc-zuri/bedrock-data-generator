@@ -4,5 +4,8 @@
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
     "package.json": "pnpm-lock.yaml, pnpm-workspace.yaml, tsconfig.json, .oxlintrc.json, .prettierrc.json, .prettierignore, .gitignore, .gitattributes, .env, .env.example, README.md, AGENTS.md"
-  }
+  },
+  // prettier formats on save, with the repo's .prettierrc.json
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
