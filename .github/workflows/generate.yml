@@ -1,0 +1,88 @@
+# minecraft-data regenerated from bedrock-data, as a branch of the fork: run by bedrock-data's notify-generator workflow
+# on each commit there that changes a release, daily (minecraft-data adds versions on its own: they get their files
+# then) and on each push here. The branch is upstream master and one commit; it is pushed only where that commit
+# changes something the fork's branch does not already carry. Opening the pull request is left to a person.
+name: generate
+
+on:
+  workflow_dispatch:
+    inputs:
+      data_ref:
+        description: 'The bedrock-data commit (or branch) to generate from'
+        required: false
+        default: main
+  schedule:
+    - cron: '41 5 * * *'
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mcdata-sync
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    env:
+      BEDROCK_DATA_DIR: bedrock-data
+      MINECRAFT_DATA_DIR: minecraft-data
+      SYNC_BRANCH: bedrock-data-sync
+    steps:
+      - uses: actions/checkout@v5
+      - name: Check out bedrock-data
+        uses: actions/checkout@v5
+        with:
+          repository: ${{ vars.BEDROCK_DATA_REPO }}
+          ref: ${{ inputs.data_ref || 'main' }}
+          path: bedrock-data
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Generate
+        # bash by name runs with pipefail: a failing generate fails the step through tee
+        shell: bash
+        run: pnpm generate 2>&1 | tee generate.log
+      - name: Test minecraft-data
+        working-directory: minecraft-data/tools/js
+        run: npm install --no-audit --no-fund && npm test
+      - name: Push the branch to the fork
+        working-directory: minecraft-data
+        env:
+          TOKEN: ${{ secrets.MINECRAFT_DATA_TOKEN }}
+          FORK: ${{ vars.MINECRAFT_DATA_FORK }}
+          BEDROCK_DATA_REPO: ${{ vars.BEDROCK_DATA_REPO }}
+        run: |
+          git add data
+          if git diff --cached --quiet; then
+            echo 'minecraft-data already says what bedrock-data does'
+            exit 0
+          fi
+          data_sha=$(git -C ../bedrock-data rev-parse HEAD)
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c "$SYNC_BRANCH"
+          git commit -q -m "Bedrock data from ${BEDROCK_DATA_REPO}@${data_sha:0:7}" \
+            -m "Generated from https://github.com/${BEDROCK_DATA_REPO}/commit/${data_sha} by ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          remote="https://x-access-token:${TOKEN}@github.com/${FORK}.git"
+          new=$(git show HEAD | git patch-id --stable | cut -d' ' -f1)
+          if git fetch -q "$remote" "$SYNC_BRANCH" 2>/dev/null; then
+            old=$(git show FETCH_HEAD | git patch-id --stable | cut -d' ' -f1)
+            if [ "$new" = "$old" ]; then
+              echo "the fork's $SYNC_BRANCH already carries this change"
+              exit 0
+            fi
+          fi
+          git push -q --force "$remote" "HEAD:refs/heads/$SYNC_BRANCH"
+          echo "pushed $SYNC_BRANCH to $FORK"
+      - name: Summary
+        if: always()
+        run: |
+          if [ -f generate.log ]; then
+            { echo '```'; cat generate.log; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          fi

@@ -1,0 +1,7 @@
+node_modules/
+.env
+# MINECRAFT_DATA_DIR's default: the minecraft-data checkout `pnpm generate` writes into
+/repos/
+# where the workflows check out bedrock-data and minecraft-data
+/bedrock-data/
+/minecraft-data/

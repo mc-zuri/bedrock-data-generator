@@ -1,0 +1,27 @@
+{
+  "name": "bedrock-data-generator",
+  "private": true,
+  "description": "Turns bedrock-data into minecraft-data's bedrock files, for every version minecraft-data has, and keeps dataPaths.json pointing at them",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@11.13.0",
+  "scripts": {
+    "generate": "node --env-file-if-exists=.env src/main.ts generate",
+    "status": "node --env-file-if-exists=.env src/main.ts status",
+    "typecheck": "tsc",
+    "lint": "oxlint --type-aware --deny-warnings src test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "verify": "pnpm typecheck && pnpm lint && pnpm format:check",
+    "test": "node --env-file-if-exists=.env --test \"test/**/*.test.ts\""
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.5",
+    "oxlint": "1.86.0",
+    "oxlint-tsgolint": "7.0.2003",
+    "prettier": "3.9.9",
+    "typescript": "7.0.2"
+  }
+}
