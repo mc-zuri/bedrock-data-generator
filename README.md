@@ -68,8 +68,9 @@ Its dedupe groups are the same as the monolith generator's (1.21.124 → 1.21.12
 
 ## Workflows
 
-- [generate](.github/workflows/generate.yml): run by bedrock-data's notify-generator workflow on each commit there that
-  changes a release, daily (for versions minecraft-data adds), and on each push here. It generates into a fresh clone
+- [generate](.github/workflows/generate.yml): every 6 hours, half an hour after the extractor's update (which also
+  covers versions minecraft-data adds), on each push here, by hand, and by bedrock-data's notify-generator workflow on
+  each commit there that changes a release, where that has a token to run it with. It generates into a fresh clone
   of upstream master, runs minecraft-data's `tools/js` tests, and force-pushes the result as one commit on the fork's
   `bedrock-data-sync` branch, only where that commit changes something the branch does not already carry. Opening the
   pull request to PrismarineJS is left to a person.
@@ -77,11 +78,11 @@ Its dedupe groups are the same as the monolith generator's (1.21.124 → 1.21.12
 
 They need:
 
-|                                |                                                                                 |
-| ------------------------------ | ------------------------------------------------------------------------------- |
-| variable `BEDROCK_DATA_REPO`   | `mc-zuri/bedrock-data`                                                          |
-| variable `MINECRAFT_DATA_FORK` | `mc-zuri/minecraft-data`                                                        |
-| secret `MINECRAFT_DATA_TOKEN`  | a token that can push to the fork (fine-grained: Contents read and write on it) |
+|                                    |                                                                                        |
+| ---------------------------------- | -------------------------------------------------------------------------------------- |
+| variable `BEDROCK_DATA_REPO`       | `mc-zuri/bedrock-data`                                                                 |
+| variable `MINECRAFT_DATA_FORK`     | `mc-zuri/minecraft-data`                                                               |
+| secret `MINECRAFT_DATA_DEPLOY_KEY` | the private half of a write deploy key of the fork: it can push there and nowhere else |
 
 ## Development
 

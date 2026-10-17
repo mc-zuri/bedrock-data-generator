@@ -1,7 +1,8 @@
-# minecraft-data regenerated from bedrock-data, as a branch of the fork: run by bedrock-data's notify-generator workflow
-# on each commit there that changes a release, daily (minecraft-data adds versions on its own: they get their files
-# then) and on each push here. The branch is upstream master and one commit; it is pushed only where that commit
-# changes something the fork's branch does not already carry. Opening the pull request is left to a person.
+# minecraft-data regenerated from bedrock-data, as a branch of the fork: every 6 hours, half an hour after the
+# extractor's update (and for versions minecraft-data adds on its own), on each push here, and by bedrock-data's
+# notify-generator workflow where that has a token to run it with. The branch is upstream master and one commit; it is
+# pushed only where that commit changes something the fork's branch does not already carry. Opening the pull request
+# is left to a person.
 name: generate
 
 on:
@@ -12,7 +13,7 @@ on:
         required: false
         default: main
   schedule:
-    - cron: '41 5 * * *'
+    - cron: '47 */6 * * *'
   push:
     branches: [main]
 
@@ -54,7 +55,8 @@ jobs:
       - name: Push the branch to the fork
         working-directory: minecraft-data
         env:
-          TOKEN: ${{ secrets.MINECRAFT_DATA_TOKEN }}
+          # the private half of the fork's write deploy key: it can push there and nowhere else
+          DEPLOY_KEY: ${{ secrets.MINECRAFT_DATA_DEPLOY_KEY }}
           FORK: ${{ vars.MINECRAFT_DATA_FORK }}
           BEDROCK_DATA_REPO: ${{ vars.BEDROCK_DATA_REPO }}
         run: |
@@ -69,7 +71,11 @@ jobs:
           git switch -c "$SYNC_BRANCH"
           git commit -q -m "Bedrock data from ${BEDROCK_DATA_REPO}@${data_sha:0:7}" \
             -m "Generated from https://github.com/${BEDROCK_DATA_REPO}/commit/${data_sha} by ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
-          remote="https://x-access-token:${TOKEN}@github.com/${FORK}.git"
+          key="$RUNNER_TEMP/fork-deploy-key"
+          printf '%s\n' "$DEPLOY_KEY" > "$key"
+          chmod 600 "$key"
+          export GIT_SSH_COMMAND="ssh -i $key -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
+          remote="git@github.com:${FORK}.git"
           new=$(git show HEAD | git patch-id --stable | cut -d' ' -f1)
           if git fetch -q "$remote" "$SYNC_BRANCH" 2>/dev/null; then
             old=$(git show FETCH_HEAD | git patch-id --stable | cut -d' ' -f1)
