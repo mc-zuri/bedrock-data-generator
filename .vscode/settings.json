@@ -1,0 +1,8 @@
+{
+  // the root's config and docs fold under package.json; versions.json stays in view
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "package.json": "pnpm-lock.yaml, pnpm-workspace.yaml, tsconfig.json, .oxlintrc.json, .prettierrc.json, .prettierignore, .gitignore, .gitattributes, .env, .env.example, README.md, AGENTS.md"
+  }
+}
