@@ -15,7 +15,24 @@ export interface BuildJson {
   binary: Partial<Record<Platform, { url: string; sha256: string; size: number }>>
   data?: {
     language?: { file: string; from: Platform }
+    blockShapes?: { file: string; from: Platform }
   }
+}
+
+/** [minX, minY, minZ, maxX, maxY, maxZ], in the block's own coordinates */
+export type Box = number[]
+
+export interface StateShapes {
+  collision: Box[]
+  visual: Box
+  ui: Box
+  outline: Box
+  camera?: Box | null
+}
+
+/** Every block type in runtime id order, each with its states' shapes in the palette's order */
+export interface BlockShapes {
+  blocks: { name: string; states: StateShapes[] }[]
 }
 
 export interface Language {
@@ -60,5 +77,19 @@ export class BedrockData {
     const file = this.build(build)?.data?.language?.file
     if (file === undefined) throw new Error(`release/${build} has no language`)
     return JSON.parse(gunzipSync(readFileSync(join(this.root, 'release', build, file))).toString('utf8')) as Language
+  }
+
+  hasBlockShapes(build: string): boolean {
+    return this.build(build)?.data?.blockShapes !== undefined
+  }
+
+  blockShapes(build: string): BlockShapes {
+    const file = this.build(build)?.data?.blockShapes?.file
+
+    if (file === undefined) {
+      throw new Error(`release/${build} has no block shapes`)
+    }
+
+    return JSON.parse(gunzipSync(readFileSync(join(this.root, 'release', build, file))).toString('utf8')) as BlockShapes
   }
 }

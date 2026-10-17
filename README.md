@@ -6,9 +6,10 @@ bedrock files, for every version minecraft-data has, and keeps its `dataPaths.js
 
 What it generates so far:
 
-| minecraft-data file | from bedrock-data                                                    |
-| ------------------- | -------------------------------------------------------------------- |
-| `language.json`     | `release/<build>/language.json.gz`: the vanilla pack's en_US strings |
+| minecraft-data file         | from bedrock-data                                                          |
+| --------------------------- | -------------------------------------------------------------------------- |
+| `language.json`             | `release/<build>/language.json.gz`: the vanilla pack's en_US strings       |
+| `blockCollisionShapes.json` | `release/<build>/block_shapes.json.gz`: each block state's collision boxes |
 
 ## Setup
 
@@ -25,7 +26,7 @@ cp .env.example .env   # optional: BEDROCK_DATA_DIR, MINECRAFT_DATA_DIR, MINECRA
 
 ```sh
 pnpm generate            # every file of every version, and dataPaths.json, into the minecraft-data checkout
-pnpm generate language   # only those named
+pnpm generate language   # only those named (language, blockCollisionShapes)
 pnpm status              # each version, the build it is made from, and where its files are
 ```
 
@@ -65,6 +66,23 @@ to 1.26.51 changed 463 strings across 48 files, all of them that kind:
 
 Its dedupe groups are the same as the monolith generator's (1.21.124 → 1.21.120, 1.26.45 → 1.26.40), and minecraft-data's
 `tools/js` tests pass on the result.
+
+### blockCollisionShapes.json
+
+`blocks`: each block (no namespace) with one shape id per state, in runtime id order; `shapes`: each id's boxes
+(`[minX, minY, minZ, maxX, maxY, maxZ]`, each number the shortest decimal of its float32), 0 being none. Tabs, one block
+or shape a line, no final newline.
+
+A file is written in the form the checkout's committed file of the version gives it (`git show HEAD`), so that it
+differs from it only in what it says: the blocks in the order of the version's `blocks.json` where that names the same
+blocks (else runtime id order), each shape keeping its id in the committed table where the table holds most of the
+shapes (a new one after its highest id; the table's shapes no block has any more stay), a block written as one id for
+all its states (`"web": 0`) kept so, and a block split one state a line kept so. Files are compared by what they say:
+each block's shapes, whatever the ids and order.
+
+bedrock-data reads the shapes from its Linux servers (where a release has one). Up to 1.26.10 the Windows servers
+differ from them in the last digit of a few floats (bedrock-data's README: Linux and Windows); from 1.26.20 they agree.
+Here that is the chests: `0.95000005` high in every release (the Windows servers up to 1.26.10: `0.95`).
 
 ## Workflows
 

@@ -2,6 +2,7 @@
 // that build. Adding one: its module here, its entry in `generators`, and the bedrock-data file it reads (bedrock-data's
 // README says each file's format).
 import type { BedrockData } from '../bedrockData.ts'
+import { blockCollisionShapes } from './blockCollisionShapes.ts'
 import { language } from './language.ts'
 
 export interface Generator {
@@ -19,6 +20,13 @@ export interface Generator {
 
   /** What a minecraft-data file says, however it is written: equal for files that say the same. */
   meaning(json: string): string
+
+  /**
+   * The file as it is written, in the form the checkout's committed files of the version give it (`committed`: a key's
+   * file there): written so, a regenerated file differs from the committed one only in what it says. Without it, json()
+   * is written.
+   */
+  format?(json: string, committed: (key: string) => string | undefined): string
 }
 
-export const generators: Generator[] = [language]
+export const generators: Generator[] = [language, blockCollisionShapes]

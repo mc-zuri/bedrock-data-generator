@@ -3,6 +3,7 @@
 // that version's. A file that already says the same stays as it is written; one no version points to any more is
 // deleted. A version made from no build bedrock-data has (0.14, or one not extracted yet) is left as it is. Only what
 // changes is printed. Nothing is committed.
+import { execFileSync } from 'node:child_process'
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import type { BedrockData } from './bedrockData.ts'
@@ -16,9 +17,14 @@ interface DataPaths {
 }
 export type Counts = Record<'new' | 'updated' | 'unchanged' | 'shared' | 'deleted' | 'notBuilt', number>
 
+/** A version's file of `key` as the checkout's HEAD has it; undefined where it has none. */
+export type Committed = (version: string, key: string) => string | undefined
+
 export interface Sources {
   data: BedrockData
   pins: Map<string, Pin>
+  /** default: the checkout's HEAD */
+  committed?: Committed
 }
 
 function readIfExists(file: string): string | undefined {
@@ -50,6 +56,35 @@ export function summary(c: Counts): string {
   return `${c.new} new, ${c.updated} updated, ${c.unchanged} unchanged, ${c.shared} shared with the version before, ${c.deleted} deleted, ${c.notBuilt} with no build in bedrock-data`
 }
 
+function showCommitted(mcData: string, path: string): string | undefined {
+  try {
+    return execFileSync('git', ['-C', mcData, 'show', `HEAD:${path}`], { encoding: 'utf8', maxBuffer: 1 << 28, stdio: ['ignore', 'pipe', 'ignore'] }).replace(/\r\n/g, '\n')
+  } catch {
+    return undefined
+  }
+}
+
+/** The checkout's HEAD, each file read once: it stays as it is while generate runs. */
+export function committedFiles(mcData: string): Committed {
+  const texts = new Map<string, string | undefined>()
+
+  function show(path: string): string | undefined {
+    if (!texts.has(path)) {
+      texts.set(path, showCommitted(mcData, path))
+    }
+
+    return texts.get(path)
+  }
+
+  const dataPaths = show('data/dataPaths.json')
+  const entries = dataPaths === undefined ? {} : (JSON.parse(dataPaths) as DataPaths).bedrock
+
+  return (version, key) => {
+    const dir = entries[version]?.[key]
+    return dir === undefined ? undefined : show(`data/${dir}/${key}.json`)
+  }
+}
+
 /** Every generator of `gens` into the minecraft-data checkout `mcData`. Returns each one's counts. */
 export function generate(mcData: string, sources: Sources, gens: Generator[]): Map<string, Counts> {
   const file = join(mcData, 'data', 'dataPaths.json')
@@ -63,8 +98,9 @@ export function generate(mcData: string, sources: Sources, gens: Generator[]): M
   const ahead = unpublished(versions, sources.pins, sources.data.releases)
   if (ahead.length) console.warn(`  warning: minecraft-data has no version of ${ahead.join(', ')} yet: its own version bump adds one`)
   const counts = new Map<string, Counts>()
+  const withCommitted = { ...sources, committed: sources.committed ?? committedFiles(mcData) }
   for (const g of gens) {
-    const c = publish(g, mcData, paths.bedrock, eol, sources)
+    const c = publish(g, mcData, paths.bedrock, eol, withCommitted)
     console.log(`${g.key}: ${summary(c)}`)
     counts.set(g.key, c)
   }
@@ -73,7 +109,7 @@ export function generate(mcData: string, sources: Sources, gens: Generator[]): M
   return counts
 }
 
-export function publish(g: Generator, mcData: string, bedrock: Record<string, Entry>, eol: string, { data, pins }: Sources): Counts {
+export function publish(g: Generator, mcData: string, bedrock: Record<string, Entry>, eol: string, { data, pins, committed = () => undefined }: Sources): Counts {
   const counts: Counts = { new: 0, updated: 0, unchanged: 0, shared: 0, deleted: 0, notBuilt: 0 }
   function fileIn(dir: string): string {
     return join(mcData, 'data', dir, `${g.key}.json`)
@@ -110,7 +146,7 @@ export function publish(g: Generator, mcData: string, bedrock: Record<string, En
     } else {
       dir = `bedrock/${v}`
       const old = readIfExists(fileIn(dir))
-      const text = withEol(json, eol)
+      const text = withEol(g.format ? g.format(json, (key) => committed(v, key)) : json, eol)
       if (old !== undefined && (old === text || g.meaning(old) === meaning)) {
         counts.unchanged++
       } else {

@@ -1,4 +1,4 @@
-import { mkdirSync, mkdtempSync, writeFileSync } from 'node:fs'
+import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { gzipSync } from 'node:zlib'
@@ -38,4 +38,21 @@ export function minecraftDataOf(bedrock: Record<string, Record<string, string>>,
     writeFileSync(join(root, 'data', path), text)
   }
   return root
+}
+
+/** `build` of the bedrock-data checkout at `root` given block shapes: each block's states' collision boxes. */
+export function withBlockShapes(root: string, build: string, blocks: Record<string, number[][][]>): void {
+  const dir = join(root, 'release', build)
+  const file = join(dir, 'build.json')
+  const json = JSON.parse(readFileSync(file, 'utf8')) as { data?: Record<string, unknown> }
+  json.data = { ...json.data, blockShapes: { file: 'block_shapes.json.gz', from: 'linux' } }
+  writeFileSync(file, JSON.stringify(json))
+  const cube = [0, 0, 0, 1, 1, 1]
+  const shapes = {
+    blocks: Object.entries(blocks).map(([name, states]) => ({
+      name: `minecraft:${name}`,
+      states: states.map((collision) => ({ collision, visual: cube, ui: cube, outline: cube })),
+    })),
+  }
+  writeFileSync(join(dir, 'block_shapes.json.gz'), gzipSync(JSON.stringify(shapes)))
 }
