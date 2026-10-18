@@ -14,6 +14,21 @@ What it generates so far:
 | `materials.json`            | `blocks.json.gz`, `items.json.gz`: what each item digs at what speed          |
 | `items.json`                | `items.json.gz`, `enchantments.json.gz`, `blocks.json.gz`, `language.json.gz` |
 | `blockCollisionShapes.json` | `block_shapes.json.gz`: each block state's collision boxes                    |
+| `attributes.json`           | `attributes.json.gz`: the player's attributes                                 |
+| `biomes.json`               | `biomes.json.gz`, `language.json.gz`                                          |
+| `entities.json`             | `entities.json.gz`, `language.json.gz`                                        |
+| `foods.json`                | `items.json.gz` (and what items.json says of each food)                       |
+| `recipes.json`              | `recipes.json.gz`, `items.json.gz`, `blocks.json.gz`                          |
+| `commands.json`             | `commands.json.gz`: the commands and the console's help for each              |
+| `instruments.json`          | `enums.json.gz`                                                               |
+| `enchantments.json`         | `enchantments.json.gz`, `language.json.gz`                                    |
+| `effects.json`              | `effects.json.gz`, `language.json.gz`                                         |
+| `particles.json`            | `enums.json.gz`                                                               |
+| `sounds.json`               | `enums.json.gz`                                                               |
+| `tints.json`                | `tints.json.gz`, `biomes.json.gz`, `block_palette.nbt`                        |
+| `mapIcons.json`             | `enums.json.gz`                                                               |
+| `entityLoot.json`           | `entities.json.gz`, `items.json.gz`                                           |
+| `blockLoot.json`            | `blocks.json.gz`, `items.json.gz`, `block_palette.nbt`                        |
 
 ## Setup
 
@@ -30,7 +45,7 @@ cp .env.example .env   # optional: BEDROCK_DATA_DIR, MINECRAFT_DATA_DIR, MINECRA
 
 ```sh
 pnpm generate            # every file of every version, and dataPaths.json, into the minecraft-data checkout
-pnpm generate language   # only those named (language, blocks, blockStates, materials, items, blockCollisionShapes)
+pnpm generate language   # only those named (language, blocks, items, recipes, ...)
 pnpm status              # each version, the build it is made from, and where its files are
 ```
 
@@ -46,7 +61,9 @@ version it does not pin is made from bedrock-data's newest release build of the 
 minecraft-data adds is covered as soon as bedrock-data has its build. Previews are never used.
 
 A version made from no build bedrock-data has (0.14, 0.15 and 1.0 have no BDS; a build not extracted yet) is left as
-it is. A release build minecraft-data has no version of is reported: minecraft-data's own bedrock version bump adds
+it is, and so is a version whose build bedrock-data has nothing for a file of (mapIcons before any exploration map
+marker is named). A version whose build says there is none (instruments from 1.21.50 to 1.26.20, and Linux's 1.26.30, which keep no table of
+them) has no entry for it. A release build minecraft-data has no version of is reported: minecraft-data's own bedrock version bump adds
 the version (its protocol and version files), never this.
 
 ### Deduplication
@@ -135,10 +152,87 @@ bedrock-data reads the shapes from its Linux servers (where a release has one). 
 differ from them in the last digit of a few floats (bedrock-data's README: Linux and Windows); from 1.26.20 they agree.
 Here that is the chests: `0.95000005` high in every release (the Windows servers up to 1.26.10: `0.95`).
 
+### attributes.json
+
+The attributes the server sends a joining player, by resource (`minecraft:movement`), each named in camelCase without
+its namespace (`player.hunger` -> `playerHunger`), with its min, max and default. A mob's own (a horse's jump strength)
+are sent only with that mob. minecraft-data's earlier files (1.16.201 to 1.19.63) were Java's.
+
+### biomes.json
+
+Every biome the server sends a definition of, by the numeric id the registry gives it: its temperature, rainfall
+(downfall), and from 1.19.20 `has_precipitation`, `depth` and `color` (its water's colour on a map; 0 before); its
+dimension and category by its tags; `displayName` the language's `biome.<name>.name` (from 1.26.20), else its name in
+title case.
+
+### entities.json
+
+Every entity the server sends a client, numbered in runtime id order (`internalId`: the runtime id): `displayName` the
+language's `entity.<name>.name`, else title case; `width` and `height` its definition's collision box (an adult
+component group's where there is one), null where it has none or no definition (an item, a painting: defined in code);
+`type` and `category` by what its definition says (families, spawn category, a projectile component).
+
+### foods.json
+
+Every item a player eats, with its id, name, displayName and stackSize as items.json has them, and its food as the
+server sends its `minecraft:food` component (the item registry's from 1.21.60, item_component's from 1.18.11), before
+that as its legacy food component has it: `foodPoints` its nutrition, `saturationRatio` twice its saturation modifier,
+`saturation` the two multiplied in floats as the game adds them to a player's, `effectiveQuality` their sum.
+
+### recipes.json
+
+The crafting grid's recipes (the crafting table's and the deprecated block's, but its furnaces') in Java's form, as
+prismarine-recipe reads them, by the id of the item each makes: `inShape` for a shaped one, `ingredients` for a
+shapeless one, an ingredient that takes several items (a tag, a complex alias) one recipe per item (by name, the first
+ingredient varying slowest); `result` with its data value (a block item with variants: its block state's); `outShape`
+what the grid gives back besides (cake's buckets), on the slots of the ingredient it is the container of. A recipe
+whose ingredient is a molang expression is left out; recipes that say the same are written once. A Bedrock block item
+past id 255 has a negative id, which minecraft-data's `schemas/recipes_schema.json` takes once `generate` widens it.
+
+### commands.json
+
+Every command the server sends, as minecraft-data's tree of nodes, from the console's help: one path a usage line,
+merged where they agree; a literal word a literal node (and each of `<list|sidebar>`); `<name: type>` an argument node,
+its parser the game's type name or enum name; executable where a usage line may end; an alias a literal node redirecting
+to its command. `parsers`: each parser once, an enum's examples its values (sorted, as bedrock-data has them).
+
+### instruments.json, particles.json, sounds.json, mapIcons.json
+
+The game's own tables, by id: the note block instruments (`name` the sound without `note.`: `bd`, not Java's
+`basedrum`; `sound` the sound where the table holds it whole, from 1.19.60), the particle types and the sound events
+(an id the game names twice keeps its first name), and the map decoration types (from 1.26.40, every type the game's
+reflection registers; before, only those exploration maps mark, named as the next release that names them does). The
+server says nothing of a map icon's `visibleInItemFrame`: `generate` makes minecraft-data's `schemas/mapIcons_schema.json`
+require it no more.
+
+### enchantments.json and effects.json
+
+Every enchantment by its id (`Enchant::Type`): `minCost` and `maxCost` the line through the game's costs at every level,
+`weight` its frequency (30, 10, 3, 1) as minecraft-data weighs those rarities (10, 5, 2, 1), `curse` where its language
+key is `enchantment.curse.*`, `exclude` those it does not go with, `category` its slots named (utils/enchantSlots.ts).
+Every mob effect by the id the server sends: its name in PascalCase (`FatalPoison`), the language's name, bad where
+harmful. minecraft-data's earlier effects.json was Java's, whose ids are not Bedrock's from 24 on.
+
+### tints.json
+
+The colours the server draws its maps with, each group's colours with the keys that take them: each biome's grass,
+foliage and water (as the server sends it from 1.19.20), the redstone wire's at each power (none from 1.21.20, where
+the server keeps no block colour), and the block types tinted with one colour wherever they are (the birch and spruce
+leaves, from 1.20.71). No group has a default: the server has none. A group may be empty (the redstone wire's from
+1.21.20): `generate` lets minecraft-data's `schemas/tints_schema.json` take it.
+
+### entityLoot.json and blockLoot.json
+
+What every entity the behavior packs define drops by its loot table (its own, else an adult group's), and what every
+block drops when mined with an empty hand as the game draws it (blocks.json.gz's drops: by name, its default state's,
+then each state that drops otherwise; a data-driven block by its loot table): `dropChance` the share of draws (or the
+table's chances multiplied through), `stackSizeRange`, `metadata` as blocks.json's drops have it, `playerKill` where a
+player must kill it. A drop gated on anything else (the killer, a variant, the tool) is left out.
+
 ### Against minecraft-data's earlier files
 
-- `displayName` is the language's: where it names a block or item nothing (`moving_block`, `piston_arm_collision`, a
-  music disc), the name in title case, not an earlier file's.
+- `displayName` is the language's: where it names a block, item, biome or entity nothing (`moving_block`,
+  `piston_arm_collision`, a music disc, a biome before 1.26.20), the name in title case, not an earlier file's.
 - Ids are Bedrock's runtime ids: blocks' `BlockLegacy::mID`, items' and drops' the item registry's.
 - What bedrock-data reads from its Linux servers is Linux's (bedrock-data's README: Linux and Windows): from 1.21.42 to
   1.26.10 the explosion resistance of 21 blocks (`4.2`, the Windows servers `4.2000003`), the chests' collision box,

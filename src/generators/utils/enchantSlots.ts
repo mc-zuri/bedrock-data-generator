@@ -54,7 +54,7 @@ function enchantmentSlots(e: Enchantment): number {
 }
 
 /** An enchantment's category: its slots, named, joined with + ("sword+axe+melee_spear"). */
-function enchantmentCategory(e: Enchantment): string {
+export function enchantmentCategory(e: Enchantment): string {
   return slotNames(enchantmentSlots(e), e.name).join('+')
 }
 

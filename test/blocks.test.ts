@@ -3,8 +3,10 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { test } from 'node:test'
 import { BedrockData } from '../src/bedrockData.ts'
+import { blockLoot } from '../src/generators/blockLoot.ts'
 import { blocks } from '../src/generators/blocks.ts'
 import { blockStates } from '../src/generators/blockStates.ts'
+import { enchantments } from '../src/generators/enchantments.ts'
 import type { Generator } from '../src/generators/index.ts'
 import { items } from '../src/generators/items.ts'
 import { materials } from '../src/generators/materials.ts'
@@ -39,13 +41,13 @@ const BLOCKS: SampleBlock[] = [
     harvestedBy: ['minecraft:wooden_pickaxe', 'minecraft:diamond_pickaxe'],
     drops: ['minecraft:cobblestone'],
   },
-  { name: 'dirt', id: 3, hardness: 0.5, states: 2, drops: ['minecraft:dirt'] },
+  { name: 'dirt', id: 3, hardness: 0.5, states: 2, drops: ['minecraft:dirt'], stateDrops: { 1: ['minecraft:diamond'] } },
   { name: 'bedrock', id: 7, hardness: -1, drops: ['minecraft:stick'] },
   { name: 'white_wool_slab', id: 1000, loot: 'loot_tables/blocks/slab.json' },
 ]
 
 function generated(gens: Generator[], key: string): unknown {
-  const data = bedrockDataOf({ '1.21.0.03': { 'tile.stone.name': 'Stone', 'item.diamond_sword.name': 'Diamond Sword' } })
+  const data = bedrockDataOf({ '1.21.0.03': { 'tile.stone.name': 'Stone', 'item.diamond_sword.name': 'Diamond Sword', 'enchantment.damage.all': 'Sharpness' } })
   withBlocks(data, '1.21.0.03', BLOCKS, ITEMS, [{ item: 'stone', blockState: 1 }])
   const mcData = minecraftDataOf({ '1.21.0': { version: 'bedrock/1.21.0' } })
   generate(mcData, { data: new BedrockData(data), pins: new Map(), committed: () => undefined }, gens)
@@ -78,7 +80,7 @@ void test('blocks.json: each block by its numeric id, its runtime ids, material,
     boundingBox: 'block',
   })
   // two states, its name in title case where the language has none
-  assert.deepEqual([out[2].displayName, out[2].minStateId, out[2].maxStateId, out[2].drops], ['Dirt', 2, 3, [3]])
+  assert.deepEqual([out[2].displayName, out[2].minStateId, out[2].maxStateId, out[2].drops], ['Dirt', 2, 3, [3, 5]])
   // a block no player can mine drops nothing; air collides with nothing and is no material's but the default
   assert.deepEqual([out[3].drops, out[3].diggable, out[0].boundingBox, out[0].material, out[0].transparent], [[], false, 'empty', 'default', true])
   // a data-driven block drops what its loot table names
@@ -163,4 +165,37 @@ void test("items_schema.json takes an item's componentBased, once", () => {
       },
 ${nbt}`,
   )
+})
+
+void test('enchantments.json: each enchantment by its id, its costs a line in the level, its weight by its frequency', () => {
+  assert.deepEqual(generated([enchantments], 'enchantments'), [
+    {
+      id: 0,
+      name: 'sharpness',
+      displayName: 'Sharpness',
+      maxLevel: 5,
+      minCost: { a: 11, b: -10 },
+      maxCost: { a: 11, b: 10 },
+      treasureOnly: false,
+      curse: false,
+      exclude: [],
+      category: 'sword+axe',
+      weight: 5,
+      tradeable: true,
+      discoverable: true,
+    },
+  ])
+})
+
+void test("blockLoot.json: each block's default state's drops, then each state that drops otherwise, by name", () => {
+  const out = generated([blockLoot], 'blockLoot') as { block: string; drops: unknown[]; states?: object }[]
+  assert.deepEqual(
+    out.map((e) => e.block),
+    ['air', 'bedrock', 'dirt', 'dirt', 'stone', 'white_wool_slab'],
+  )
+  assert.deepEqual(out[2], { block: 'dirt', drops: [{ item: 'dirt', dropChance: 1, stackSizeRange: [1, 1], metadata: 0 }] })
+  assert.deepEqual(out[3], { block: 'dirt', drops: [{ item: 'diamond', dropChance: 1, stackSizeRange: [1, 1], metadata: 0 }], states: { i: 1 } })
+  // a block no player can mine drops nothing; a data-driven one what its loot table does
+  assert.deepEqual(out[1].drops, [])
+  assert.deepEqual(out[5].drops, [{ item: 'stick', dropChance: 1, stackSizeRange: [1, 1], metadata: 0 }])
 })

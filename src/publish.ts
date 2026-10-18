@@ -15,7 +15,7 @@ export type Entry = Record<string, string>
 interface DataPaths {
   bedrock: Record<string, Entry>
 }
-export type Counts = Record<'new' | 'updated' | 'unchanged' | 'shared' | 'deleted' | 'notBuilt', number>
+export type Counts = Record<'new' | 'updated' | 'unchanged' | 'shared' | 'deleted' | 'notBuilt' | 'unsaid', number>
 
 /** A version's file of `key` as the checkout's HEAD has it; undefined where it has none. */
 export type Committed = (version: string, key: string) => string | undefined
@@ -53,7 +53,7 @@ function withKey(entry: Entry, key: string, after: string[], dir: string): Entry
 }
 
 export function summary(c: Counts): string {
-  return `${c.new} new, ${c.updated} updated, ${c.unchanged} unchanged, ${c.shared} shared with the version before, ${c.deleted} deleted, ${c.notBuilt} with no build in bedrock-data`
+  return `${c.new} new, ${c.updated} updated, ${c.unchanged} unchanged, ${c.shared} shared with the version before, ${c.deleted} deleted, ${c.notBuilt} with no build in bedrock-data${c.unsaid ? `, ${c.unsaid} whose build says none` : ''}`
 }
 
 function showCommitted(mcData: string, path: string): string | undefined {
@@ -135,7 +135,7 @@ function widenSchema(mcData: string, { file, edit }: NonNullable<Generator['sche
 }
 
 export function publish(g: Generator, mcData: string, bedrock: Record<string, Entry>, eol: string, { data, pins, committed = () => undefined }: Sources): Counts {
-  const counts: Counts = { new: 0, updated: 0, unchanged: 0, shared: 0, deleted: 0, notBuilt: 0 }
+  const counts: Counts = { new: 0, updated: 0, unchanged: 0, shared: 0, deleted: 0, notBuilt: 0, unsaid: 0 }
   function fileIn(dir: string): string {
     return join(mcData, 'data', dir, `${g.key}.json`)
   }
@@ -161,6 +161,21 @@ export function publish(g: Generator, mcData: string, bedrock: Record<string, En
       continue
     }
     generated.push(v)
+
+    if (g.says && !g.says(data, build)) {
+      // no file: the version has no entry
+      counts.unsaid++
+      previous = undefined
+
+      if (current !== undefined) {
+        const { [g.key]: _, ...rest } = entry
+        bedrock[v] = rest
+        console.log(`  ${v.padEnd(9)} ${g.key} (${build}): says none, ${current} -> no entry`)
+      }
+
+      continue
+    }
+
     const json = g.json(data, build)
     const meaning = g.meaning(json)
     const changes: string[] = []

@@ -14,8 +14,11 @@ export interface BuildJson {
   version: string
   channel: 'release' | 'preview'
   binary: Partial<Record<Platform, { url: string; sha256: string; size: number }>>
-  data?: Partial<Record<'language' | 'blockPalette' | 'blockShapes' | 'blocks' | 'items' | 'enchantments', { file: string; from: Platform }>>
+  data?: Partial<Record<Kind, { file: string; from: Platform }>>
 }
+
+type Kind =
+  'language' | 'blockPalette' | 'blockShapes' | 'blocks' | 'items' | 'enchantments' | 'biomes' | 'effects' | 'enums' | 'tints' | 'recipes' | 'entities' | 'commands' | 'attributes'
 
 /** A block state as block_palette.nbt has it: its name, its properties as NBT tags, the block state version */
 export interface BlockState {
@@ -63,13 +66,42 @@ export interface BlockFacts {
   states: StateFacts[]
 }
 
+/** A loot table as the behavior packs have it: only what is read of it is typed */
+export interface LootCondition {
+  condition?: string
+  [key: string]: unknown
+}
+
+export interface LootFunction {
+  function?: string
+  count?: number | { min?: number; max?: number }
+  limit?: number
+  data?: number
+  [key: string]: unknown
+}
+
+export interface LootEntry {
+  type?: string
+  name?: string
+  weight?: number
+  conditions?: LootCondition[]
+  functions?: LootFunction[]
+  pools?: LootPool[]
+}
+
 export interface LootPool {
-  entries?: { type?: string; name?: string; pools?: LootPool[] }[]
+  rolls?: number | { min?: number; max?: number }
+  conditions?: LootCondition[]
+  entries?: LootEntry[]
+}
+
+export interface LootTable {
+  pools?: LootPool[]
 }
 
 export interface BlockTypes {
   blocks: BlockFacts[]
-  lootTables: Record<string, { pools?: LootPool[] }>
+  lootTables: Record<string, LootTable>
 }
 
 export interface Item {
@@ -84,6 +116,10 @@ export interface Item {
   componentBased: boolean
   version?: string | number
   nbt?: unknown
+  /** item_component's components of it (1.18.11 to 1.21.50) */
+  components?: unknown
+  /** its legacy food component's, where the build keeps one */
+  food?: { nutrition: number; saturationModifier: number }
 }
 
 export interface Items {
@@ -137,6 +173,88 @@ export interface Language {
   packs: Record<string, Record<string, string>>
 }
 
+export interface Biome {
+  name: string
+  id: number
+  definition?: { temperature: number; downfall: number; depth?: number; scale?: number; rain?: boolean; mapWaterColor?: number; tags: string[] }
+}
+
+export interface Effect {
+  id: number
+  name: string
+  descriptionId: string
+  harmful: boolean
+}
+
+export interface EnumName {
+  id: number
+  name: string
+}
+
+export interface Enums {
+  sounds: EnumName[]
+  particles: EnumName[]
+  containers: EnumName[]
+  instruments: EnumName[]
+  mapDecorations: EnumName[]
+  containerNames: EnumName[]
+  explorationMarkers: EnumName[]
+}
+
+export interface Tints {
+  biomes: { name: string; grass: number; foliage: number; water?: number }[]
+  redstone: number[]
+  constant: { name: string; color: number }[]
+}
+
+export type Ingredient = ({ item: string; metadata?: number } | { descriptor: string; metadata?: number } | { tag: string } | { alias: string } | { molang: string }) & {
+  count: number
+}
+
+export interface RecipeStack {
+  item: string
+  metadata: number
+  count: number
+  blockState: number | null
+}
+
+export interface Recipe {
+  type: 'shaped' | 'shapeless' | 'shulker_box'
+  id: string
+  block: string
+  width?: number
+  height?: number
+  input: (Ingredient | null)[]
+  output: RecipeStack[]
+}
+
+/** An entity's definition as the behavior packs have it: only what is read of it is typed */
+export interface EntityDefinition {
+  description: { identifier?: string; spawn_category?: string }
+  components?: Record<string, unknown>
+  component_groups?: Record<string, Record<string, unknown>>
+  events?: Record<string, unknown>
+}
+
+export interface Entities {
+  entities: { name: string; id: number; hasSpawnEgg: boolean; summonable: boolean }[]
+  definitions: Record<string, EntityDefinition>
+  lootTables: Record<string, LootTable>
+}
+
+export interface Commands {
+  commands: { name: string; description: string; aliases: string[]; help: string[] }[]
+  enums: Record<string, string[]>
+}
+
+export interface Attribute {
+  name: string
+  min: number
+  max: number
+  default: number
+  value: number
+}
+
 interface VersionsJson {
   formatVersion: number
   release: { latest?: string; builds: string[] }
@@ -176,7 +294,7 @@ export class BedrockData {
   }
 
   /** whether bedrock-data has every one of `kinds` for `build` */
-  has(build: string, ...kinds: (keyof NonNullable<BuildJson['data']>)[]): boolean {
+  has(build: string, ...kinds: Kind[]): boolean {
     const data = this.build(build)?.data
     return kinds.every((kind) => data?.[kind] !== undefined)
   }
@@ -185,7 +303,7 @@ export class BedrockData {
     return this.has(build, 'blockShapes')
   }
 
-  private file(build: string, kind: keyof NonNullable<BuildJson['data']>): Buffer {
+  private file(build: string, kind: Kind): Buffer {
     const file = this.build(build)?.data?.[kind]?.file
 
     if (file === undefined) {
@@ -195,7 +313,7 @@ export class BedrockData {
     return readFileSync(join(this.root, 'release', build, file))
   }
 
-  private gunzippedJson<T>(build: string, kind: keyof NonNullable<BuildJson['data']>): T {
+  private gunzippedJson<T>(build: string, kind: Kind): T {
     return JSON.parse(gunzipSync(this.file(build, kind)).toString('utf8')) as T
   }
 
@@ -213,6 +331,38 @@ export class BedrockData {
 
   enchantments(build: string): Enchantments {
     return this.gunzippedJson<Enchantments>(build, 'enchantments')
+  }
+
+  biomes(build: string): Biome[] {
+    return this.gunzippedJson<{ biomes: Biome[] }>(build, 'biomes').biomes
+  }
+
+  effects(build: string): Effect[] {
+    return this.gunzippedJson<{ effects: Effect[] }>(build, 'effects').effects
+  }
+
+  enums(build: string): Enums {
+    return this.gunzippedJson<Enums>(build, 'enums')
+  }
+
+  tints(build: string): Tints {
+    return this.gunzippedJson<Tints>(build, 'tints')
+  }
+
+  recipes(build: string): Recipe[] {
+    return this.gunzippedJson<{ recipes: Recipe[] }>(build, 'recipes').recipes
+  }
+
+  entities(build: string): Entities {
+    return this.gunzippedJson<Entities>(build, 'entities')
+  }
+
+  commands(build: string): Commands {
+    return this.gunzippedJson<Commands>(build, 'commands')
+  }
+
+  attributes(build: string): Attribute[] {
+    return this.gunzippedJson<{ attributes: Attribute[] }>(build, 'attributes').attributes
   }
 
   /** Every block state, in runtime id order */

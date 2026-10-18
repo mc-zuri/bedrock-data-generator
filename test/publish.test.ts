@@ -27,7 +27,7 @@ void test('a version saying what the one before says points to its file; a chang
     '1.21.20': { protocol: 'bedrock/1.21.20', version: 'bedrock/1.21.20', language: 'bedrock/1.20.10' },
   })
   const counts = run(mcData, data).get('language')
-  assert.deepEqual(counts, { new: 2, updated: 0, unchanged: 0, shared: 1, deleted: 0, notBuilt: 0 })
+  assert.deepEqual(counts, { new: 2, updated: 0, unchanged: 0, shared: 1, deleted: 0, notBuilt: 0, unsaid: 0 })
   const paths = dataPaths(mcData)
   assert.equal(paths['1.21.0'].language, 'bedrock/1.21.0')
   assert.equal(paths['1.21.2'].language, 'bedrock/1.21.0')
@@ -43,7 +43,7 @@ void test('a second run changes nothing', () => {
   const mcData = minecraftDataOf({ '1.21.0': { version: 'bedrock/1.21.0' }, '1.21.2': { version: 'bedrock/1.21.2' } })
   run(mcData, data)
   const before = readFileSync(join(mcData, 'data', 'dataPaths.json'), 'utf8')
-  assert.deepEqual(run(mcData, data).get('language'), { new: 0, updated: 0, unchanged: 2, shared: 0, deleted: 0, notBuilt: 0 })
+  assert.deepEqual(run(mcData, data).get('language'), { new: 0, updated: 0, unchanged: 2, shared: 0, deleted: 0, notBuilt: 0, unsaid: 0 })
   assert.equal(readFileSync(join(mcData, 'data', 'dataPaths.json'), 'utf8'), before)
 })
 
@@ -54,7 +54,7 @@ void test('a file no version points to any more is deleted; one that says the sa
     { '1.21.0': { version: 'bedrock/1.21.0', language: 'bedrock/1.21.0' }, '1.21.2': { version: 'bedrock/1.21.2', language: 'bedrock/1.21.2' } },
     { 'bedrock/1.21.0/language.json': reordered, 'bedrock/1.21.2/language.json': '{}' },
   )
-  assert.deepEqual(run(mcData, data).get('language'), { new: 0, updated: 0, unchanged: 1, shared: 1, deleted: 1, notBuilt: 0 })
+  assert.deepEqual(run(mcData, data).get('language'), { new: 0, updated: 0, unchanged: 1, shared: 1, deleted: 1, notBuilt: 0, unsaid: 0 })
   assert.equal(readFileSync(join(mcData, 'data', 'bedrock', '1.21.0', 'language.json'), 'utf8'), reordered)
   assert.ok(!existsSync(join(mcData, 'data', 'bedrock', '1.21.2', 'language.json')))
   assert.equal(dataPaths(mcData)['1.21.2'].language, 'bedrock/1.21.0')
@@ -71,7 +71,7 @@ void test('a version made from no build is left as it is, and the next compares 
     },
     { 'bedrock/1.20.10/language.json': JSON.stringify(STONE, null, 2) },
   )
-  assert.deepEqual(run(mcData, data).get('language'), { new: 0, updated: 0, unchanged: 0, shared: 1, deleted: 0, notBuilt: 3 })
+  assert.deepEqual(run(mcData, data).get('language'), { new: 0, updated: 0, unchanged: 0, shared: 1, deleted: 0, notBuilt: 3, unsaid: 0 })
   const paths = dataPaths(mcData)
   assert.deepEqual(paths['1.0'], { protocol: 'bedrock/1.0' })
   assert.equal(paths['1.21.2'].language, 'bedrock/1.20.10')

@@ -78,6 +78,8 @@ export interface SampleBlock {
   speeds?: Record<string, number>
   harvestedBy?: string[]
   drops?: string[]
+  /** a state's own drops, where they are not `drops` */
+  stateDrops?: Record<number, string[]>
   loot?: string
   collides?: boolean
 }
@@ -98,7 +100,7 @@ export function withBlocks(root: string, build: string, blocks: SampleBlock[], i
       translucency: 0,
       defaultState: 0,
       ...(b.loot ? { loot: [b.loot] } : {}),
-      states: Array.from({ length: b.states ?? 1 }, () => ({
+      states: Array.from({ length: b.states ?? 1 }, (_, state) => ({
         data: 0,
         hardness: b.hardness ?? 1,
         explosionResistance: 1,
@@ -111,7 +113,7 @@ export function withBlocks(root: string, build: string, blocks: SampleBlock[], i
         mapColor: [0, 0, 0, 0],
         destroySpeeds: b.speeds ?? {},
         harvestedBy: b.harvestedBy ?? [],
-        drops: { samples: b.loot ? 0 : 64, items: (b.drops ?? []).map((item) => ({ item, aux: 0, data: 0, minCount: 1, maxCount: 1, hits: 64 })) },
+        drops: { samples: b.loot ? 0 : 64, items: (b.stateDrops?.[state] ?? b.drops ?? []).map((item) => ({ item, aux: 0, data: 0, minCount: 1, maxCount: 1, hits: 64 })) },
       })),
     })),
     lootTables: Object.fromEntries(blocks.flatMap((b) => (b.loot ? [[b.loot, { pools: [{ entries: [{ type: 'item', name: 'minecraft:stick' }] }] }] as const] : []))),
@@ -150,8 +152,8 @@ export function withBlocks(root: string, build: string, blocks: SampleBlock[], i
         secondarySlots: 512,
         minLevel: 1,
         maxLevel: 5,
-        minCost: [1],
-        maxCost: [21],
+        minCost: [1, 12, 23, 34, 45],
+        maxCost: [21, 32, 43, 54, 65],
         incompatible: [],
         treasureOnly: false,
         discoverable: true,
@@ -171,4 +173,9 @@ export function withBlocks(root: string, build: string, blocks: SampleBlock[], i
   withData(root, build, 'items', 'items.json.gz', gzipSync(JSON.stringify(registry)))
   withData(root, build, 'enchantments', 'enchantments.json.gz', gzipSync(JSON.stringify(enchantments)))
   withData(root, build, 'blockPalette', 'block_palette.nbt', gzipSync(palette))
+}
+
+/** `build` of the bedrock-data checkout at `root` given one of the kinds read whole (biomes.json.gz: { biomes }) */
+export function withKind(root: string, build: string, kind: string, value: unknown): void {
+  withData(root, build, kind, `${kind}.json.gz`, gzipSync(JSON.stringify(value)))
 }

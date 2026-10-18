@@ -2,12 +2,27 @@
 // that build. Adding one: its module here, its entry in `generators`, and the bedrock-data file it reads (bedrock-data's
 // README says each file's format).
 import type { BedrockData } from '../bedrockData.ts'
+import { attributes } from './attributes.ts'
+import { biomes } from './biomes.ts'
 import { blockCollisionShapes } from './blockCollisionShapes.ts'
+import { blockLoot } from './blockLoot.ts'
 import { blocks } from './blocks.ts'
 import { blockStates } from './blockStates.ts'
+import { commands } from './commands.ts'
+import { effects } from './effects.ts'
+import { enchantments } from './enchantments.ts'
+import { entities } from './entities.ts'
+import { entityLoot } from './entityLoot.ts'
+import { foods } from './foods.ts'
+import { instruments } from './instruments.ts'
 import { items } from './items.ts'
 import { language } from './language.ts'
+import { mapIcons } from './mapIcons.ts'
 import { materials } from './materials.ts'
+import { particles } from './particles.ts'
+import { recipes } from './recipes.ts'
+import { sounds } from './sounds.ts'
+import { tints } from './tints.ts'
 
 export interface Generator {
   /** minecraft-data's name: data/bedrock/<version>/<key>.json, and that key of a dataPaths.json entry */
@@ -16,8 +31,11 @@ export interface Generator {
   /** a new key goes after the first of these an entry has (else first): where minecraft-data puts it */
   after: string[]
 
-  /** whether bedrock-data has what the file is made from for `build` */
+  /** whether bedrock-data has what the file is made from for `build`; where not, the version keeps what it points to */
   has(data: BedrockData, build: string): boolean
+
+  /** whether what bedrock-data has of `build` says what the file holds (always, where absent); where not, the version has no entry */
+  says?(data: BedrockData, build: string): boolean
 
   /** The version's minecraft-data file, made from `build`: what versions are compared by. */
   json(data: BedrockData, build: string): string
@@ -37,4 +55,26 @@ export interface Generator {
 }
 
 // blockCollisionShapes after blocks: it writes its blocks in the order of the version's blocks.json
-export const generators: Generator[] = [language, blocks, blockStates, materials, items, blockCollisionShapes]
+export const generators: Generator[] = [
+  attributes,
+  blocks,
+  blockStates,
+  blockCollisionShapes,
+  biomes,
+  entities,
+  items,
+  foods,
+  recipes,
+  commands,
+  instruments,
+  materials,
+  enchantments,
+  effects,
+  particles,
+  sounds,
+  tints,
+  mapIcons,
+  entityLoot,
+  blockLoot,
+  language,
+]
