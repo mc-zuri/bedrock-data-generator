@@ -123,6 +123,8 @@ export interface Item {
   name: string
   id: number
   descriptionId: string
+  /** its name as the game builds it (Item::buildDescriptionName): the server's en_US name, or the key it builds where that has none */
+  descriptionName: string
   maxStackSize: number
   maxDamage: number
   enchantSlots: number

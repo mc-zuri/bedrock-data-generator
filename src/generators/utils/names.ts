@@ -22,19 +22,29 @@ export function nameOf(strings: Map<string, string>, descriptionId: string): str
 }
 
 /**
- * Where an item is named item.<x> (minecraft:item.wooden_door: the block form of the item <x>, a door's or a cauldron's),
- * the name the language gives the item <x>; undefined for another item, or where it has none.
+ * An item's name as the game builds it (bedrock-data's descriptionName, trimmed: "Cobblestone Wall " in the language):
+ * the server's en_US name, or where that has none (the chemistry pack's), the language's for the key the game built;
+ * undefined where no pack has that key, or there is no item.
  */
-export function nameOfItemFor(strings: Map<string, string>, name: string, items: Map<string, { descriptionId: string }>): string | undefined {
-  const of = /^(minecraft:)?item\.(.+)$/.exec(name)
-  const item = of && items.get(`minecraft:${of[2]}`)
-  return item ? nameOf(strings, item.descriptionId) : undefined
+export function gameNameOf(strings: Map<string, string>, item: { descriptionName: string } | undefined): string | undefined {
+  if (!item) {
+    return undefined
+  }
+
+  const name = /^[\w.]+\.name$/.test(item.descriptionName) ? strings.get(item.descriptionName) : item.descriptionName
+  return name?.trim() || undefined
 }
 
-/** "light_blue_wool" -> "Light Blue Wool": the name of what the language does not name. */
+/** Where an item is named item.<x> (minecraft:item.wooden_door: the block form of the item <x>, a door's), the item <x> */
+export function itemFor<T>(name: string, items: Map<string, T>): T | undefined {
+  const of = /^(minecraft:)?item\.(.+)$/.exec(name)
+  return of ? items.get(`minecraft:${of[2]}`) : undefined
+}
+
+/** "light_blue_wool" -> "Light Blue Wool" ("item.skull", a block's item form: "Skull"): the name of what the language does not name. */
 export function titleCase(name: string): string {
   return name
-    .replace(/^minecraft:/, '')
+    .replace(/^(minecraft:)?(item\.)?/, '')
     .replace(/_/g, ' ')
     .replace(/\b\S/g, (c) => c.toUpperCase())
 }

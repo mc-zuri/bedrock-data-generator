@@ -8,6 +8,7 @@ const ITEMS: Items = {
     name: `minecraft:${name}`,
     id,
     descriptionId: `item.${name}`,
+    descriptionName: `item.${name}.name`,
     maxStackSize: 64,
     maxDamage: 0,
     enchantSlots: 0,

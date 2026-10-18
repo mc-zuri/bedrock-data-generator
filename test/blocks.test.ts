@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { gunzipSync, gzipSync } from 'node:zlib'
 import { join } from 'node:path'
 import { test } from 'node:test'
 import { BedrockData } from '../src/bedrockData.ts'
@@ -198,4 +199,29 @@ void test("blockLoot.json: each block's default state's drops, then each state t
   // a block no player can mine drops nothing; a data-driven one what its loot table does
   assert.deepEqual(out[1].drops, [])
   assert.deepEqual(out[5].drops, [{ item: 'stick', dropChance: 1, stackSizeRange: [1, 1], metadata: 0 }])
+})
+
+void test("items.json: the game's name, its key translated where the server has none; an unnamed item none can get in title case, one the creative list has fails", () => {
+  const data = bedrockDataOf({ '1.21.0.03': { 'tile.stone.name': 'Stone', 'tile.element.h.name': 'Hydrogen' } })
+  withBlocks(data, '1.21.0.03', BLOCKS, ITEMS, [{ item: 'stone', blockState: 1 }])
+  const file = join(data, 'release', '1.21.0.03', 'items.json.gz')
+  function named(names: Record<string, string>): void {
+    const json = JSON.parse(gunzipSync(readFileSync(file)).toString('utf8')) as { items: { name: string; descriptionName: string }[] }
+    json.items = json.items.map((i) => ({ ...i, descriptionName: names[i.name] ?? i.descriptionName }))
+    writeFileSync(file, gzipSync(JSON.stringify(json)))
+  }
+  function run(): Record<string, unknown>[] {
+    const mcData = minecraftDataOf({ '1.21.0': { version: 'bedrock/1.21.0' } })
+    generate(mcData, { data: new BedrockData(data), pins: new Map(), committed: () => undefined }, [items])
+    return JSON.parse(readFileSync(join(mcData, 'data', 'bedrock', '1.21.0', 'items.json'), 'utf8')) as Record<string, unknown>[]
+  }
+
+  named({ 'minecraft:dirt': 'tile.element.h.name', 'minecraft:stick': 'item.stick.name', 'minecraft:shears': '' })
+  const out = run()
+  assert.deepEqual(
+    [3, 4, 12].map((id) => out[id].displayName),
+    ['Hydrogen', 'Stick', 'Shears'],
+  )
+  named({ 'minecraft:stone': 'tile.nothing.name' })
+  assert.throws(run, /minecraft:stone, in the creative list, has no name: the game builds 'tile.nothing.name'/)
 })

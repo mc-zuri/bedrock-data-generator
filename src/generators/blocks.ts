@@ -1,8 +1,9 @@
 // blocks.json: every block type of the build by its numeric id, from what bedrock-data says the game answers of it
 // (blocks.json.gz, items.json.gz, block_shapes.json.gz) and its language:
 // - id: the block's numeric id (BlockLegacy::mID);
-// - displayName: the language's name (any pack's, the vanilla one's first) for its description id, else for its item's,
-//   else (an item named item.<x>: a door's) the item <x>'s, else its name in title case;
+// - displayName: the language's name (any pack's, the vanilla one's first) for its description id, else its item's name
+//   as the game builds it (bedrock-data's descriptionName; for an item named item.<x>, a door's block form, else the item
+//   <x>'s), else its name in title case (a block the game names nothing);
 // - hardness, resistance, emitLight, filterLight: its default state's destroy speed, explosion resistance, light
 //   emission and light dampening; transparent: light passes it (dampening below 15);
 // - diggable: a hardness of 0 or more, but not a liquid;
@@ -18,7 +19,7 @@ import type { BedrockData, BlockFacts, BlockTypes, Items, LootPool } from '../be
 import type { Generator } from './index.ts'
 import { materials } from './utils/dig.ts'
 import { canonical, f32, withoutNamespace } from './utils/json.ts'
-import { nameOf, nameOfItemFor, ordered, strings, titleCase } from './utils/names.ts'
+import { gameNameOf, itemFor, nameOf, ordered, strings, titleCase } from './utils/names.ts'
 
 export interface Block {
   id: number
@@ -154,7 +155,7 @@ function blocksJson(data: BedrockData, build: string): Block[] {
         {
           id: block.id,
           name,
-          displayName: nameOf(lang, block.descriptionId) ?? nameOf(lang, item.descriptionId) ?? nameOfItemFor(lang, item.name, itemByName) ?? titleCase(name),
+          displayName: nameOf(lang, block.descriptionId) ?? gameNameOf(lang, item) ?? gameNameOf(lang, itemFor(item.name, itemByName)) ?? titleCase(name),
           hardness: f32(def.hardness),
           resistance: f32(def.explosionResistance),
           stackSize: item.maxStackSize,

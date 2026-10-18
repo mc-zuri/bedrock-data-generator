@@ -129,6 +129,7 @@ export function withBlocks(root: string, build: string, blocks: SampleBlock[], i
       name: `minecraft:${name}`,
       id,
       descriptionId: `item.${name}`,
+      descriptionName: name.replace(/_/g, ' ').replace(/\b\S/g, (c) => c.toUpperCase()),
       maxStackSize: name.endsWith('_sword') ? 1 : 64,
       maxDamage: name.endsWith('_sword') ? 1561 : 0,
       enchantSlots: name.endsWith('_sword') ? 16 : 0,

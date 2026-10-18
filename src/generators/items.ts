@@ -1,8 +1,10 @@
 // items.json: every item of the build's item registry by its runtime id (the id the server sends a client for it), from
 // what bedrock-data says of it (items.json.gz, enchantments.json.gz, blocks.json.gz) and its language:
 // - stackSize, and maxDurability where it wears out: Item::getMaxStackSize and Item::getMaxDamage;
-// - displayName: the language's name (any pack's, the vanilla one's first) for its description id, else for its block's
-//   (a block item), else (an item named item.<x>) the item <x>'s, else its name in title case;
+// - displayName: its name as the game builds it (bedrock-data's descriptionName: a stack of one of it), the key that
+//   builds translated by the language (any pack's) where the server's has none. One that no pack names is an item a
+//   player cannot get (a technical block's, an old name the game still registers: the game shows its key) in title
+//   case; one the creative list has fails;
 // - enchantCategories: the names of the Item::getEnchantSlot slots it answers (all: the books), then the category of
 //   every enchantment the game puts on it (utils/enchantSlots.ts);
 // - repairWith: the items Item::isValidRepairItem takes;
@@ -12,11 +14,10 @@
 // Items with data values (potions, the colours of a bed) are one entry: no variations. An item's keys are written in the
 // order the version's committed file writes that item's.
 import type { BedrockData, Items } from '../bedrockData.ts'
-import { blockItemId } from './blocks.ts'
 import type { Generator } from './index.ts'
 import { itemEnchantCategories } from './utils/enchantSlots.ts'
 import { canonical, withoutNamespace } from './utils/json.ts'
-import { inCommittedKeyOrder, nameOf, nameOfItemFor, ordered, strings, titleCase } from './utils/names.ts'
+import { gameNameOf, inCommittedKeyOrder, ordered, strings, titleCase } from './utils/names.ts'
 
 export interface Item {
   id: number
@@ -47,23 +48,25 @@ function creativeBlockStates(creative: Items['creative']): Map<string, number> {
   return new Map([...states].filter(([, s]) => s.size === 1).map(([item, s]) => [item, [...s][0]]))
 }
 
+function noName(build: string, item: { name: string; descriptionName: string }): never {
+  throw new Error(`release/${build}: ${item.name}, in the creative list, has no name: the game builds '${item.descriptionName}', which no language pack has`)
+}
+
 function itemsJson(data: BedrockData, build: string): Item[] {
   const { items, creative } = data.items(build)
   const { enchantments } = data.enchantments(build)
   const lang = strings(data.language(build))
-  const blocks = new Map(data.blocks(build).blocks.map((b) => [blockItemId(b), b]))
   const blockStates = creativeBlockStates(creative)
-  const byName = new Map(items.map((i) => [i.name, i]))
+  const obtainable = new Set(creative.map((c) => c.item))
   return items
     .map((item) => {
       const name = withoutNamespace(item.name)
-      const block = blocks.get(item.id)
       return ordered<Item>(
         {
           id: item.id,
           stackSize: item.maxStackSize,
           name,
-          displayName: nameOf(lang, item.descriptionId) ?? (block && nameOf(lang, block.descriptionId)) ?? nameOfItemFor(lang, item.name, byName) ?? titleCase(name),
+          displayName: gameNameOf(lang, item) ?? (obtainable.has(item.name) ? noName(build, item) : titleCase(name)),
           blockStateId: blockStates.get(item.name),
           enchantCategories: itemEnchantCategories(item.enchantSlots, item.name, enchantments),
           repairWith: item.repairItems.length ? item.repairItems.map(withoutNamespace) : undefined,
