@@ -98,15 +98,40 @@ export function generate(mcData: string, sources: Sources, gens: Generator[]): M
   const ahead = unpublished(versions, sources.pins, sources.data.releases)
   if (ahead.length) console.warn(`  warning: minecraft-data has no version of ${ahead.join(', ')} yet: its own version bump adds one`)
   const counts = new Map<string, Counts>()
-  const withCommitted = { ...sources, committed: sources.committed ?? committedFiles(mcData) }
+  const head = sources.committed ?? committedFiles(mcData)
+  // a key a generator before wrote: its file as this run left it (blockCollisionShapes follows the blocks.json written)
+  const written = new Set<string>()
+  function committed(version: string, key: string): string | undefined {
+    if (!written.has(key)) {
+      return head(version, key)
+    }
+
+    const dir = paths.bedrock[version]?.[key]
+    return dir === undefined ? undefined : readIfExists(join(mcData, 'data', dir, `${key}.json`))?.replace(/\r\n/g, '\n')
+  }
   for (const g of gens) {
-    const c = publish(g, mcData, paths.bedrock, eol, withCommitted)
+    const c = publish(g, mcData, paths.bedrock, eol, { ...sources, committed })
     console.log(`${g.key}: ${summary(c)}`)
     counts.set(g.key, c)
+    written.add(g.key)
+    if (g.schema) widenSchema(mcData, g.schema)
   }
   const out = withEol(JSON.stringify(paths, null, 2) + '\n', eol)
   if (out !== text) writeFileSync(file, out)
   return counts
+}
+
+/** The checkout's schemas/<file>, where it has it, as `edit` makes it (in its own line endings), written where that changes it */
+function widenSchema(mcData: string, { file, edit }: NonNullable<Generator['schema']>): void {
+  const path = join(mcData, 'schemas', file)
+  const text = readIfExists(path)
+  if (text === undefined) return
+  const eol = text.includes('\r\n') ? '\r\n' : '\n'
+  const out = withEol(edit(text.replace(/\r\n/g, '\n')), eol)
+  if (out !== text) {
+    writeFileSync(path, out)
+    console.log(`  schemas/${file} written`)
+  }
 }
 
 export function publish(g: Generator, mcData: string, bedrock: Record<string, Entry>, eol: string, { data, pins, committed = () => undefined }: Sources): Counts {

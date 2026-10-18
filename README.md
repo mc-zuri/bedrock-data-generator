@@ -6,10 +6,14 @@ bedrock files, for every version minecraft-data has, and keeps its `dataPaths.js
 
 What it generates so far:
 
-| minecraft-data file         | from bedrock-data                                                          |
-| --------------------------- | -------------------------------------------------------------------------- |
-| `language.json`             | `release/<build>/language.json.gz`: the vanilla pack's en_US strings       |
-| `blockCollisionShapes.json` | `release/<build>/block_shapes.json.gz`: each block state's collision boxes |
+| minecraft-data file         | from bedrock-data (`release/<build>/`)                                        |
+| --------------------------- | ----------------------------------------------------------------------------- |
+| `language.json`             | `language.json.gz`: the vanilla pack's en_US strings                          |
+| `blocks.json`               | `blocks.json.gz`, `items.json.gz`, `block_shapes.json.gz`, `language.json.gz` |
+| `blockStates.json`          | `block_palette.nbt`: every block state                                        |
+| `materials.json`            | `blocks.json.gz`, `items.json.gz`: what each item digs at what speed          |
+| `items.json`                | `items.json.gz`, `enchantments.json.gz`, `blocks.json.gz`, `language.json.gz` |
+| `blockCollisionShapes.json` | `block_shapes.json.gz`: each block state's collision boxes                    |
 
 ## Setup
 
@@ -26,7 +30,7 @@ cp .env.example .env   # optional: BEDROCK_DATA_DIR, MINECRAFT_DATA_DIR, MINECRA
 
 ```sh
 pnpm generate            # every file of every version, and dataPaths.json, into the minecraft-data checkout
-pnpm generate language   # only those named (language, blockCollisionShapes)
+pnpm generate language   # only those named (language, blocks, blockStates, materials, items, blockCollisionShapes)
 pnpm status              # each version, the build it is made from, and where its files are
 ```
 
@@ -67,6 +71,53 @@ to 1.26.51 changed 463 strings across 48 files, all of them that kind:
 Its dedupe groups are the same as the monolith generator's (1.21.124 → 1.21.120, 1.26.45 → 1.26.40), and minecraft-data's
 `tools/js` tests pass on the result.
 
+### blocks.json
+
+Every block type by its numeric id (`BlockLegacy::mID`), 2 spaces, no final newline:
+
+| key                                                  | from                                                                                                                                                                            |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `displayName`                                        | the language's name (any pack's, the vanilla one's first) for its description id, else its item's (for an item named `item.<x>`, the item `<x>`'s), else its name in title case |
+| `hardness`, `resistance`, `emitLight`, `filterLight` | its default state's destroy speed, explosion resistance, light emission and dampening                                                                                           |
+| `transparent`                                        | its dampening below 15                                                                                                                                                          |
+| `diggable`                                           | a hardness of 0 or more, and not a liquid                                                                                                                                       |
+| `stackSize`                                          | its item's (a block id below 256 is its item's; another's item is 255 minus it), else the item of its name's                                                                    |
+| `material`, `harvestTools`                           | what each item digs it at, and which items harvest it where it needs the right tool (below)                                                                                     |
+| `defaultState`, `minStateId`, `maxStateId`           | runtime ids: blockStates.json's indexes                                                                                                                                         |
+| `drops`                                              | every item the game drops for any of its states, mined with an empty hand (a data-driven block's: its loot tables'); none where it cannot be dug                                |
+| `boundingBox`                                        | `empty` where its default state collides with nothing                                                                                                                           |
+
+A drop with a data value is `{ drop: { id, metadata } }`: the data value a client is sent (from 1.16.220, where a
+creative stack names the block it places, a block item's own data value; before, the data of the block it carries).
+Item ids are the item registry's runtime ids (items.json's), Bedrock's own: minecraft-data's earlier bedrock blocks.json
+named blocks by Java's ids and drops by Java's items. A block item past id 255 has a negative id, which in 1.16.201 and
+1.16.210 a drop with a data value carries: `generate` widens minecraft-data's `schemas/blocks_schema.json` to take it,
+as its `items_schema.json` does.
+
+### materials.json
+
+Each material's dig speeds by item id. A material is named from the speeds, as pc's materials.json names them:
+`mineable/<tool>` for each digger whose every tier digs the block at its tier's speed (wood 2, stone 4, copper 5, iron
+6, diamond 8, netherite 9, gold 12), and `coweb`, `sword_efficient`, `sword_instantly_mines`, `leaves`, `wool`,
+`vine_or_glow_lichen` by the swords' and shears' speeds; `default` where nothing digs it faster than air. So
+prismarine-block's dig time (materials[material][held item], harvesting where the block has no harvestTools or the item
+is one) is the game's. Any other speed fails the build.
+
+### blockStates.json
+
+The palette in runtime id order, each name without its namespace, each property as its NBT tag, tabs.
+
+### items.json
+
+Every item of the registry by its runtime id, 2 spaces, each item's keys in the order the version's committed file
+writes that item's: `stackSize` and `maxDurability` (`Item::getMaxStackSize`, `Item::getMaxDamage`), `displayName` (its
+description id's, else its block's, else, for an item named `item.<x>` (a door's block form), the item `<x>`'s, else
+title case), `enchantCategories` (the names of its enchant slots, then the category of every enchantment the game puts
+on it), `repairWith`, `blockStateId` (the block state the creative list gives it, where it gives it one and no other),
+`componentBased`, and from 1.21.60 `nbt` and `version` (as the item registry the server sends has them).
+minecraft-data's `schemas/items_schema.json` has Bedrock's `nbt` and `version` but no `componentBased`: `generate` adds
+it.
+
 ### blockCollisionShapes.json
 
 `blocks`: each block (no namespace) with one shape id per state, in runtime id order; `shapes`: each id's boxes
@@ -83,6 +134,16 @@ each block's shapes, whatever the ids and order.
 bedrock-data reads the shapes from its Linux servers (where a release has one). Up to 1.26.10 the Windows servers
 differ from them in the last digit of a few floats (bedrock-data's README: Linux and Windows); from 1.26.20 they agree.
 Here that is the chests: `0.95000005` high in every release (the Windows servers up to 1.26.10: `0.95`).
+
+### Against minecraft-data's earlier files
+
+- `displayName` is the language's: where it names a block or item nothing (`moving_block`, `piston_arm_collision`, a
+  music disc), the name in title case, not an earlier file's.
+- Ids are Bedrock's runtime ids: blocks' `BlockLegacy::mID`, items' and drops' the item registry's.
+- What bedrock-data reads from its Linux servers is Linux's (bedrock-data's README: Linux and Windows): from 1.21.42 to
+  1.26.10 the explosion resistance of 21 blocks (`4.2`, the Windows servers `4.2000003`), the chests' collision box,
+  and the ids of some items (spears, bundles, trial keys, the wind charge), which each platform numbers in its own
+  order.
 
 ## Workflows
 

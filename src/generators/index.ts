@@ -3,7 +3,11 @@
 // README says each file's format).
 import type { BedrockData } from '../bedrockData.ts'
 import { blockCollisionShapes } from './blockCollisionShapes.ts'
+import { blocks } from './blocks.ts'
+import { blockStates } from './blockStates.ts'
+import { items } from './items.ts'
 import { language } from './language.ts'
+import { materials } from './materials.ts'
 
 export interface Generator {
   /** minecraft-data's name: data/bedrock/<version>/<key>.json, and that key of a dataPaths.json entry */
@@ -23,10 +27,14 @@ export interface Generator {
 
   /**
    * The file as it is written, in the form the checkout's committed files of the version give it (`committed`: a key's
-   * file there): written so, a regenerated file differs from the committed one only in what it says. Without it, json()
-   * is written.
+   * file there, or as this run wrote it where a generator before this one did): written so, a regenerated file differs
+   * from the committed one only in what it says. Without it, json() is written.
    */
   format?(json: string, committed: (key: string) => string | undefined): string
+
+  /** minecraft-data's schema of the file (schemas/<file>), where it must take more than it does: the edited text */
+  schema?: { file: string; edit: (text: string) => string }
 }
 
-export const generators: Generator[] = [language, blockCollisionShapes]
+// blockCollisionShapes after blocks: it writes its blocks in the order of the version's blocks.json
+export const generators: Generator[] = [language, blocks, blockStates, materials, items, blockCollisionShapes]

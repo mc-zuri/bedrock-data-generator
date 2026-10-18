@@ -23,5 +23,8 @@
     "oxlint-tsgolint": "7.0.2003",
     "prettier": "3.9.9",
     "typescript": "7.0.2"
+  },
+  "dependencies": {
+    "prismarine-nbt": "2.8.0"
   }
 }
