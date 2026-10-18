@@ -55,6 +55,26 @@ export interface Generator {
   schema?: { file: string; edit: (text: string) => string }
 }
 
+/** What `pnpm generate` writes where neither it nor GENERATE names files: those of the pull request open to PrismarineJS */
+export const DEFAULT_KEYS = ['blocks', 'blockStates', 'blockCollisionShapes', 'materials', 'items']
+
+/** The generators of `keys` (`all`: every one; none: DEFAULT_KEYS'), in the order they run */
+export function generatorsOf(keys: string[]): Generator[] {
+  const wanted = keys.length ? keys : DEFAULT_KEYS
+
+  if (wanted.includes('all')) {
+    return generators
+  }
+
+  const unknown = wanted.filter((k) => !generators.some((g) => g.key === k))
+
+  if (unknown.length) {
+    throw new Error(`no generator ${unknown.join(', ')}: ${generators.map((g) => g.key).join(', ')}, or all`)
+  }
+
+  return generators.filter((g) => wanted.includes(g.key))
+}
+
 // blockCollisionShapes after blocks: it writes its blocks in the order of the version's blocks.json
 export const generators: Generator[] = [
   attributes,

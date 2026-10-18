@@ -1,7 +1,7 @@
 import { BedrockData } from './bedrockData.ts'
 import { ensureCheckout } from './checkout.ts'
-import { BEDROCK_DATA_DIR, MINECRAFT_DATA_DIR, MINECRAFT_DATA_FORK, VERSIONS_FILE } from './config.ts'
-import { generators } from './generators/index.ts'
+import { BEDROCK_DATA_DIR, GENERATE, MINECRAFT_DATA_DIR, MINECRAFT_DATA_FORK, VERSIONS_FILE } from './config.ts'
+import { DEFAULT_KEYS, generators, generatorsOf } from './generators/index.ts'
 import { bedrockDataPaths, generate } from './publish.ts'
 import { errorMessage } from './util.ts'
 import { buildFor, compareVersions, loadPins } from './versions.ts'
@@ -12,17 +12,16 @@ interface Step {
 }
 
 const steps: Record<string, Step> = {
-  generate: { about: "every version's files (or only those named: language) and dataPaths.json into the minecraft-data checkout", run: generateFiles },
+  generate: { about: "every version's files (those named, else GENERATE's, else the pull request's) and dataPaths.json into the minecraft-data checkout", run: generateFiles },
   status: { about: 'each minecraft-data version, the build it is made from, and where its files are', run: status },
 }
 
 function generateFiles(keys: string[]): void {
-  const unknown = keys.filter((k) => !generators.some((g) => g.key === k))
-  if (unknown.length) throw new Error(`no generator ${unknown.join(', ')}: ${generators.map((g) => g.key).join(', ')}`)
+  const gens = generatorsOf(keys.length ? keys : GENERATE)
   ensureCheckout(MINECRAFT_DATA_DIR, MINECRAFT_DATA_FORK)
   const data = new BedrockData(BEDROCK_DATA_DIR)
-  console.log(`generate: ${data.root} -> ${MINECRAFT_DATA_DIR}`)
-  generate(MINECRAFT_DATA_DIR, { data, pins: loadPins(VERSIONS_FILE) }, keys.length ? generators.filter((g) => keys.includes(g.key)) : generators)
+  console.log(`generate: ${data.root} -> ${MINECRAFT_DATA_DIR}: ${gens.map((g) => g.key).join(', ')}`)
+  generate(MINECRAFT_DATA_DIR, { data, pins: loadPins(VERSIONS_FILE) }, gens)
   console.log(`  review: git -C "${MINECRAFT_DATA_DIR}" status`)
 }
 
@@ -55,7 +54,7 @@ function usage(): string {
   return [
     'usage: pnpm <step> [files...]',
     ...Object.entries(steps).map(([name, step]) => `  ${name.padEnd(width)}  ${step.about}`),
-    `files: ${generators.map((g) => g.key).join(', ')}; none means all of them`,
+    `files: ${generators.map((g) => g.key).join(', ')}, or all; none means GENERATE's (.env), else ${DEFAULT_KEYS.join(', ')}`,
   ].join('\n')
 }
 

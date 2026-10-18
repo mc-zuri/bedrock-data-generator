@@ -4,16 +4,16 @@ Turns [bedrock-data](https://github.com/mc-zuri/bedrock-data) (what each Bedrock
 [bedrock-data-extractor](../bedrock-data-extractor)) into [minecraft-data](https://github.com/PrismarineJS/minecraft-data)'s
 bedrock files, for every version minecraft-data has, and keeps its `dataPaths.json` pointing at them.
 
-What it generates so far:
+What it can generate (`pnpm generate` writes the first five where `GENERATE` does not say otherwise: [Steps](#steps)):
 
 | minecraft-data file         | from bedrock-data (`release/<build>/`)                                        |
 | --------------------------- | ----------------------------------------------------------------------------- |
-| `language.json`             | `language.json.gz`: the vanilla pack's en_US strings                          |
 | `blocks.json`               | `blocks.json.gz`, `items.json.gz`, `block_shapes.json.gz`, `language.json.gz` |
 | `blockStates.json`          | `block_palette.nbt`: every block state                                        |
 | `materials.json`            | `blocks.json.gz`, `items.json.gz`: what each item digs at what speed          |
 | `items.json`                | `items.json.gz`, `enchantments.json.gz`, `blocks.json.gz`, `language.json.gz` |
 | `blockCollisionShapes.json` | `block_shapes.json.gz`: each block state's collision boxes                    |
+| `language.json`             | `language.json.gz`: the vanilla pack's en_US strings                          |
 | `attributes.json`           | `attributes.json.gz`: the player's attributes                                 |
 | `biomes.json`               | `biomes.json.gz`, `language.json.gz`                                          |
 | `entities.json`             | `entities.json.gz`, `language.json.gz`                                        |
@@ -39,19 +39,26 @@ minecraft-data checkout is cloned from PrismarineJS (blobless) into `repos/minec
 ```sh
 git clone https://github.com/mc-zuri/bedrock-data ../bedrock-data
 pnpm install
-cp .env.example .env   # optional: BEDROCK_DATA_DIR, MINECRAFT_DATA_DIR, MINECRAFT_DATA_FORK
+cp .env.example .env   # optional: BEDROCK_DATA_DIR, MINECRAFT_DATA_DIR, MINECRAFT_DATA_FORK, GENERATE
 ```
 
 ## Steps
 
 ```sh
-pnpm generate            # every file of every version, and dataPaths.json, into the minecraft-data checkout
+pnpm generate            # the files GENERATE names, of every version, and dataPaths.json, into the minecraft-data checkout
 pnpm generate language   # only those named (language, blocks, items, recipes, ...)
+pnpm generate all        # every file there is a generator of
 pnpm status              # each version, the build it is made from, and where its files are
 ```
 
 `generate` edits the checkout's working tree and never commits: review `git -C repos/minecraft-data status`. Running
 it again changes nothing.
+
+Which files a `generate` that names none writes is the `GENERATE` setting (`.env`, or the workflow's variable): keys
+comma-separated (`GENERATE=blocks,blockStates,blockCollisionShapes,materials,items,language`), or `all`. Unset, it is
+the files of the pull request open to PrismarineJS: `blocks`, `blockStates`, `blockCollisionShapes`, `materials`,
+`items` (`DEFAULT_KEYS` in `src/generators/index.ts`). The others' entries in `dataPaths.json` and their files are left
+as they are.
 
 ### Which build a version is made from
 
@@ -243,9 +250,9 @@ player must kill it. A drop gated on anything else (the killer, a variant, the t
   `piston_arm_collision`, a music disc, a biome before 1.26.20), the name in title case, not an earlier file's.
 - Ids are Bedrock's runtime ids: blocks' `BlockLegacy::mID`, items' and drops' the item registry's.
 - What bedrock-data reads from its Linux servers is Linux's (bedrock-data's README: Linux and Windows): from 1.21.42 to
-  1.26.10 the explosion resistance of 21 blocks (`4.2`, the Windows servers `4.2000003`), the chests' collision box,
-  and the ids of some items (spears, bundles, trial keys, the wind charge), which each platform numbers in its own
-  order.
+  1.26.10 the explosion resistance of 21 blocks (`4.2`, the Windows servers `4.2000003`), and the ids of some items
+  (spears, bundles, trial keys, the wind charge), which each platform numbers in its own order. The chests' collision
+  box is the Windows servers' (`0.95` high up to 1.26.10): the extractor writes a Linux server's shapes so.
 
 ## Workflows
 
@@ -263,6 +270,7 @@ They need:
 | ---------------------------------- | -------------------------------------------------------------------------------------- |
 | variable `BEDROCK_DATA_REPO`       | `mc-zuri/bedrock-data`                                                                 |
 | variable `MINECRAFT_DATA_FORK`     | `mc-zuri/minecraft-data`                                                               |
+| variable `GENERATE` (optional)     | the files generated, as in `.env`: unset, the pull request's                           |
 | secret `MINECRAFT_DATA_DEPLOY_KEY` | the private half of a write deploy key of the fork: it can push there and nowhere else |
 
 ## Development

@@ -30,6 +30,8 @@ jobs:
     env:
       BEDROCK_DATA_DIR: bedrock-data
       MINECRAFT_DATA_DIR: minecraft-data
+      # the files generated (.env.example); unset, those of the pull request open to PrismarineJS
+      GENERATE: ${{ vars.GENERATE }}
       SYNC_BRANCH: bedrock-data-sync
     steps:
       - uses: actions/checkout@v5

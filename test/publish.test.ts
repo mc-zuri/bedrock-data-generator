@@ -3,6 +3,7 @@ import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { test } from 'node:test'
 import { BedrockData } from '../src/bedrockData.ts'
+import { generators, generatorsOf } from '../src/generators/index.ts'
 import { language } from '../src/generators/language.ts'
 import { generate, type Entry } from '../src/publish.ts'
 import type { Pin } from '../src/versions.ts'
@@ -99,4 +100,18 @@ void test("versions.json's pins pick the build", () => {
 
 void test('a bedrock-data checkout of another formatVersion is refused', () => {
   assert.throws(() => new BedrockData(bedrockDataOf({ '1.21.0.03': STONE }, 2)), /formatVersion 2/)
+})
+
+void test("the files generated: those named, all, or where none are, the pull request's", () => {
+  assert.deepEqual(
+    generatorsOf([]).map((g) => g.key),
+    ['blocks', 'blockStates', 'blockCollisionShapes', 'items', 'materials'],
+  )
+  assert.deepEqual(
+    generatorsOf(['language', 'blocks']).map((g) => g.key),
+    ['blocks', 'language'],
+    'in the order they run',
+  )
+  assert.equal(generatorsOf(['all']), generators)
+  assert.throws(() => generatorsOf(['windows']), /no generator windows: .*, or all/)
 })

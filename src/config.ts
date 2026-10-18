@@ -16,5 +16,11 @@ export const BEDROCK_DATA_DIR = pathSetting('BEDROCK_DATA_DIR', '../bedrock-data
 export const MINECRAFT_DATA_DIR = pathSetting('MINECRAFT_DATA_DIR', join('repos', 'minecraft-data'))
 // a fork it is made `origin` for; PrismarineJS's own where unset
 export const MINECRAFT_DATA_FORK = process.env.MINECRAFT_DATA_FORK || PRISMARINE_MINECRAFT_DATA
+// the files `pnpm generate` writes where it names none: generators' keys, comma-separated, or all; unset, those of the
+// pull request open to PrismarineJS (generators/index.ts: DEFAULT_KEYS)
+export const GENERATE = (process.env.GENERATE ?? '')
+  .split(',')
+  .map((k) => k.trim())
+  .filter(Boolean)
 // the minecraft-data version -> exact build pins
 export const VERSIONS_FILE = join(ROOT, 'versions.json')
