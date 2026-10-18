@@ -14,11 +14,26 @@ export interface BuildJson {
   version: string
   channel: 'release' | 'preview'
   binary: Partial<Record<Platform, { url: string; sha256: string; size: number }>>
-  data?: Partial<Record<Kind, { file: string; from: Platform }>>
+  /** each kind's file and the platform it was read from (steve: none, it is recorded from a client) */
+  data?: Partial<Record<Kind, { file: string; from?: Platform }>>
 }
 
 type Kind =
-  'language' | 'blockPalette' | 'blockShapes' | 'blocks' | 'items' | 'enchantments' | 'biomes' | 'effects' | 'enums' | 'tints' | 'recipes' | 'entities' | 'commands' | 'attributes'
+  | 'language'
+  | 'blockPalette'
+  | 'blockShapes'
+  | 'blocks'
+  | 'items'
+  | 'enchantments'
+  | 'biomes'
+  | 'effects'
+  | 'enums'
+  | 'tints'
+  | 'recipes'
+  | 'entities'
+  | 'commands'
+  | 'attributes'
+  | 'steve'
 
 /** A block state as block_palette.nbt has it: its name, its properties as NBT tags, the block state version */
 export interface BlockState {
@@ -359,6 +374,11 @@ export class BedrockData {
 
   commands(build: string): Commands {
     return this.gunzippedJson<Commands>(build, 'commands')
+  }
+
+  /** the default skin a client of the release's version sends, its fields as the login has them */
+  steve(build: string): Record<string, unknown> {
+    return this.gunzippedJson<Record<string, unknown>>(build, 'steve')
   }
 
   attributes(build: string): Attribute[] {

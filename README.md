@@ -29,6 +29,7 @@ What it generates so far:
 | `mapIcons.json`             | `enums.json.gz`                                                               |
 | `entityLoot.json`           | `entities.json.gz`, `items.json.gz`                                           |
 | `blockLoot.json`            | `blocks.json.gz`, `items.json.gz`, `block_palette.nbt`                        |
+| `steve.json`                | `steve.json.gz`: the default skin a client sends, recorded from one           |
 
 ## Setup
 
@@ -220,6 +221,13 @@ foliage and water (as the server sends it from 1.19.20), the redstone wire's at 
 the server keeps no block colour), and the block types tinted with one colour wherever they are (the birch and spruce
 leaves, from 1.20.71). No group has a default: the server has none. A group may be empty (the redstone wire's from
 1.21.20): `generate` lets minecraft-data's `schemas/tints_schema.json` take it.
+
+### steve.json
+
+The default skin a client of the version sends in its login, as bedrock-data keeps it (recorded from a real client,
+its persona id a fixed one, where the account's was), on one line as minecraft-data keeps it. A version whose build has
+no recording keeps what it points to (1.21.50, made from 1.21.50.10: `pnpm steve 1.21.50.10` in the extractor records
+it).
 
 ### entityLoot.json and blockLoot.json
 

@@ -22,6 +22,7 @@ import { materials } from './materials.ts'
 import { particles } from './particles.ts'
 import { recipes } from './recipes.ts'
 import { sounds } from './sounds.ts'
+import { steve } from './steve.ts'
 import { tints } from './tints.ts'
 
 export interface Generator {
@@ -74,6 +75,7 @@ export const generators: Generator[] = [
   sounds,
   tints,
   mapIcons,
+  steve,
   entityLoot,
   blockLoot,
   language,

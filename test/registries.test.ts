@@ -12,6 +12,7 @@ import { mapIcons } from '../src/generators/mapIcons.ts'
 import { particles } from '../src/generators/particles.ts'
 import { recipes } from '../src/generators/recipes.ts'
 import { sounds } from '../src/generators/sounds.ts'
+import { steve } from '../src/generators/steve.ts'
 import { tints } from '../src/generators/tints.ts'
 import { generate, type Entry } from '../src/publish.ts'
 import { bedrockDataOf, minecraftDataOf, withBlocks, withKind } from './helpers.ts'
@@ -220,4 +221,15 @@ void test('the schemas take what the server says: no visibleInItemFrame, a negat
     assert.equal(g.schema?.edit(before), after, g.key)
     assert.equal(g.schema?.edit(after), after, `${g.key}, edited again`)
   }
+})
+
+void test('steve.json: the recorded skin on one line; a build without one keeps what the version points to', () => {
+  const skin = { ArmSize: 'wide', SkinId: 'persona-123456789012345-0', SkinImageWidth: 64 }
+  const out = generated(release({ steve: skin }), [steve], 'steve')
+  assert.deepEqual(out, skin)
+  const data = release({})
+  const mcData = minecraftDataOf({ '1.21.0': { version: 'bedrock/1.21.0', steve: 'bedrock/1.16.201' } })
+  generate(mcData, { data: new BedrockData(data), pins: new Map(), committed: () => undefined }, [steve])
+  const paths = (JSON.parse(readFileSync(join(mcData, 'data', 'dataPaths.json'), 'utf8')) as { bedrock: Record<string, Entry> }).bedrock
+  assert.equal(paths['1.21.0'].steve, 'bedrock/1.16.201')
 })
