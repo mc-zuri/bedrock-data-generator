@@ -58,23 +58,7 @@ export function enchantmentCategory(e: Enchantment): string {
   return slotNames(enchantmentSlots(e), e.name).join('+')
 }
 
-/**
- * An item's enchantCategories: the names of its own slots, then the category of every enchantment that can be put on one
- * of them, so that an item's enchantCategories has an enchantment's category exactly where the game puts it on the item.
- * Undefined where nothing enchants it.
- */
-export function itemEnchantCategories(slots: number, name: string, enchantments: Enchantment[]): string[] | undefined {
-  if (slots === 0) {
-    return undefined
-  }
-
-  const categories = new Set(slotNames(slots, name))
-
-  for (const e of enchantments) {
-    if (enchantmentSlots(e) & slots) {
-      categories.add(enchantmentCategory(e))
-    }
-  }
-
-  return [...categories]
+/** An item's enchantCategories: the names of its own slots; undefined where nothing enchants it. */
+export function itemEnchantCategories(slots: number, name: string): string[] | undefined {
+  return slots === 0 ? undefined : slotNames(slots, name)
 }

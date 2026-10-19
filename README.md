@@ -139,8 +139,7 @@ writes that item's: `stackSize` and `maxDurability` (`Item::getMaxStackSize`, `I
 name as the game builds it, bedrock-data's `descriptionName`: "Bucket of Cod", "White Bed"; the key it builds translated
 by the language where the server's has none, the chemistry pack's; where no pack names it, an item no player can get
 (a technical block's, an old name the game still registers) in title case, and one the creative list has fails the
-run), `enchantCategories` (the names of its enchant slots, then the category of every enchantment the game puts
-on it), `repairWith`, `blockStateId` (the block state the creative list gives it, where it gives it one and no other),
+run), `enchantCategories` (the names of its enchant slots: `["sword"]`, the books' `["all"]`), `repairWith`, `blockStateId` (the block state the creative list gives it, where it gives it one and no other),
 `componentBased`, and from 1.21.60 `nbt` and `version` (as the item registry the server sends has them).
 minecraft-data's `schemas/items_schema.json` has Bedrock's `nbt` and `version` but no `componentBased`: `generate` adds
 it.

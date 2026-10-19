@@ -1,12 +1,11 @@
 // items.json: every item of the build's item registry by its runtime id (the id the server sends a client for it), from
-// what bedrock-data says of it (items.json.gz, enchantments.json.gz, blocks.json.gz) and its language:
+// what bedrock-data says of it (items.json.gz) and its language:
 // - stackSize, and maxDurability where it wears out: Item::getMaxStackSize and Item::getMaxDamage;
 // - displayName: its name as the game builds it (bedrock-data's descriptionName: a stack of one of it), the key that
 //   builds translated by the language (any pack's) where the server's has none. One that no pack names is an item a
 //   player cannot get (a technical block's, an old name the game still registers: the game shows its key) in title
 //   case; one the creative list has fails;
-// - enchantCategories: the names of the Item::getEnchantSlot slots it answers (all: the books), then the category of
-//   every enchantment the game puts on it (utils/enchantSlots.ts);
+// - enchantCategories: the names of the Item::getEnchantSlot slots it answers (all: the books; utils/enchantSlots.ts);
 // - repairWith: the items Item::isValidRepairItem takes;
 // - blockStateId: the block state the creative list gives it, where it gives it one;
 // - componentBased: as the item registry the server sends has it;
@@ -54,7 +53,6 @@ function noName(build: string, item: { name: string; descriptionName: string }):
 
 function itemsJson(data: BedrockData, build: string): Item[] {
   const { items, creative } = data.items(build)
-  const { enchantments } = data.enchantments(build)
   const lang = strings(data.language(build))
   const blockStates = creativeBlockStates(creative)
   const obtainable = new Set(creative.map((c) => c.item))
@@ -68,7 +66,7 @@ function itemsJson(data: BedrockData, build: string): Item[] {
           name,
           displayName: gameNameOf(lang, item) ?? (obtainable.has(item.name) ? noName(build, item) : titleCase(name)),
           blockStateId: blockStates.get(item.name),
-          enchantCategories: itemEnchantCategories(item.enchantSlots, item.name, enchantments),
+          enchantCategories: itemEnchantCategories(item.enchantSlots, item.name),
           repairWith: item.repairItems.length ? item.repairItems.map(withoutNamespace) : undefined,
           maxDurability: item.maxDamage > 0 ? item.maxDamage : undefined,
           componentBased: item.componentBased,
@@ -93,7 +91,7 @@ const COMPONENT_BASED = `      "componentBased": {
 export const items: Generator = {
   key: 'items',
   after: ['entities', 'biomes', 'blockCollisionShapes', 'blockStates', 'blocks'],
-  has: (data, build) => data.has(build, 'items', 'enchantments', 'blocks', 'language'),
+  has: (data, build) => data.has(build, 'items', 'language'),
   json(data, build) {
     // 2 spaces, no final newline: as minecraft-data writes it
     return JSON.stringify(itemsJson(data, build), null, 2)

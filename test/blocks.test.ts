@@ -135,7 +135,7 @@ void test('items.json: each item by its runtime id, with its stack size, durabil
     stackSize: 1,
     name: 'diamond_sword',
     displayName: 'Diamond Sword',
-    enchantCategories: ['sword', 'sword+axe'],
+    enchantCategories: ['sword'],
     repairWith: ['diamond'],
     maxDurability: 1561,
     componentBased: false,
