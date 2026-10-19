@@ -3,7 +3,8 @@
 // - id: the block's numeric id (BlockLegacy::mID);
 // - displayName: the language's name (any pack's, the vanilla one's first) for its description id, else its item's name
 //   as the game builds it (bedrock-data's descriptionName; for an item named item.<x>, a door's block form, else the item
-//   <x>'s), else its name in title case (a block the game names nothing);
+//   <x>'s); a block the game names nothing (lit_furnace, a double slab) the version's committed file's name for it, else
+//   its name in title case;
 // - hardness, resistance, emitLight, filterLight: its default state's destroy speed, explosion resistance, light
 //   emission and light dampening; transparent: light passes it (dampening below 15);
 // - diggable: a hardness of 0 or more, but not a liquid;
@@ -19,7 +20,7 @@ import type { BedrockData, BlockFacts, BlockTypes, Items, LootPool } from '../be
 import type { Generator } from './index.ts'
 import { materials } from './utils/dig.ts'
 import { canonical, f32, withoutNamespace } from './utils/json.ts'
-import { gameNameOf, itemFor, nameOf, ordered, strings, titleCase } from './utils/names.ts'
+import { committedNames, gameNameOf, itemFor, nameOf, ordered, strings, titleCase } from './utils/names.ts'
 
 export interface Block {
   id: number
@@ -112,11 +113,12 @@ function dropsOf(block: BlockFacts, lootTables: BlockTypes['lootTables'], itemId
   return unique.map((d) => (d.metadata ? { drop: d } : d.id))
 }
 
-function blocksJson(data: BedrockData, build: string): Block[] {
+function blocksJson(data: BedrockData, build: string, committed: (key: string) => string | undefined): Block[] {
   const { blocks, lootTables } = data.blocks(build)
   const items: Items = data.items(build)
   const shapes = data.blockShapes(build).blocks
   const lang = strings(data.language(build))
+  const committedName = committedNames(committed('blocks'))
   const itemById = new Map(items.items.map((i) => [i.id, i]))
   const itemByName = new Map(items.items.map((i) => [i.name, i]))
   const itemId = new Map(items.items.map((i) => [withoutNamespace(i.name), i.id]))
@@ -155,7 +157,8 @@ function blocksJson(data: BedrockData, build: string): Block[] {
         {
           id: block.id,
           name,
-          displayName: nameOf(lang, block.descriptionId) ?? gameNameOf(lang, item) ?? gameNameOf(lang, itemFor(item.name, itemByName)) ?? titleCase(name),
+          displayName:
+            nameOf(lang, block.descriptionId) ?? gameNameOf(lang, item) ?? gameNameOf(lang, itemFor(item.name, itemByName)) ?? committedName.get(name) ?? titleCase(name),
           hardness: f32(def.hardness),
           resistance: f32(def.explosionResistance),
           stackSize: item.maxStackSize,
@@ -192,9 +195,9 @@ export const blocks: Generator = {
   key: 'blocks',
   after: [],
   has: (data, build) => data.has(build, 'blocks', 'items', 'blockShapes', 'language'),
-  json(data, build) {
+  json(data, build, committed = () => undefined) {
     // 2 spaces, no final newline: as minecraft-data writes it
-    return JSON.stringify(blocksJson(data, build), null, 2)
+    return JSON.stringify(blocksJson(data, build, committed), null, 2)
   },
   meaning: canonical,
   schema: { file: 'blocks_schema.json', edit: (text) => text.replace(DROP_ID, ANY_DROP_ID) },

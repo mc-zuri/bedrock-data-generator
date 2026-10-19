@@ -60,8 +60,8 @@ function itemFoods(registry: RegistryItem[]): ItemFood[] {
   return registry.flatMap(({ name, food }) => (food ? [{ name, ...food }] : []))
 }
 
-function foodsJson(data: BedrockData, build: string): Food[] {
-  const byName = new Map((JSON.parse(items.json(data, build)) as Item[]).map((i) => [i.name, i]))
+function foodsJson(data: BedrockData, build: string, committed?: (key: string) => string | undefined): Food[] {
+  const byName = new Map((JSON.parse(items.json(data, build, committed)) as Item[]).map((i) => [i.name, i]))
   return itemFoods(data.items(build).items)
     .map(({ name, nutrition, saturationModifier: written }) => {
       const item = byName.get(withoutNamespace(name))
@@ -92,9 +92,9 @@ export const foods: Generator = {
   after: ['items'],
   has: (data, build) => items.has(data, build),
   says: (data, build) => itemFoods(data.items(build).items).length > 0,
-  json(data, build) {
+  json(data, build, committed) {
     // 2 spaces, no final newline: as minecraft-data writes it
-    return JSON.stringify(foodsJson(data, build), null, 2)
+    return JSON.stringify(foodsJson(data, build, committed), null, 2)
   },
   meaning: canonical,
 }

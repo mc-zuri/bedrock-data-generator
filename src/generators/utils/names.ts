@@ -41,6 +41,16 @@ export function itemFor<T>(name: string, items: Map<string, T>): T | undefined {
   return of ? items.get(`minecraft:${of[2]}`) : undefined
 }
 
+/** The displayName the version's committed file (blocks.json, items.json) gives each name. */
+export function committedNames(file: string | undefined): Map<string, string> {
+  if (file === undefined) {
+    return new Map()
+  }
+
+  const entries = JSON.parse(file) as { name?: unknown; displayName?: unknown }[]
+  return new Map(entries.flatMap(({ name, displayName }) => (typeof name === 'string' && typeof displayName === 'string' ? [[name, displayName] as const] : [])))
+}
+
 /** "light_blue_wool" -> "Light Blue Wool" ("item.skull", a block's item form: "Skull"): the name of what the language does not name. */
 export function titleCase(name: string): string {
   return name

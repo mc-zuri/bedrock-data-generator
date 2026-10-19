@@ -100,17 +100,17 @@ Its dedupe groups are the same as the monolith generator's (1.21.124 → 1.21.12
 
 Every block type by its numeric id (`BlockLegacy::mID`), 2 spaces, no final newline:
 
-| key                                                  | from                                                                                                                                                                |
-| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `displayName`                                        | the language's name (any pack's, the vanilla one's first) for its description id, else its item's as the game builds it (items.json's), else its name in title case |
-| `hardness`, `resistance`, `emitLight`, `filterLight` | its default state's destroy speed, explosion resistance, light emission and dampening                                                                               |
-| `transparent`                                        | its dampening below 15                                                                                                                                              |
-| `diggable`                                           | a hardness of 0 or more, and not a liquid                                                                                                                           |
-| `stackSize`                                          | its item's (a block id below 256 is its item's; another's item is 255 minus it), else the item of its name's                                                        |
-| `material`, `harvestTools`                           | what each item digs it at, and which items harvest it where it needs the right tool (below)                                                                         |
-| `defaultState`, `minStateId`, `maxStateId`           | runtime ids: blockStates.json's indexes                                                                                                                             |
-| `drops`                                              | every item the game drops for any of its states, mined with an empty hand (a data-driven block's: its loot tables'); none where it cannot be dug                    |
-| `boundingBox`                                        | `empty` where its default state collides with nothing                                                                                                               |
+| key                                                  | from                                                                                                                                                                                                                 |
+| ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `displayName`                                        | the language's name (any pack's, the vanilla one's first) for its description id, else its item's as the game builds it (items.json's), else the version's committed file's name for it, else its name in title case |
+| `hardness`, `resistance`, `emitLight`, `filterLight` | its default state's destroy speed, explosion resistance, light emission and dampening                                                                                                                                |
+| `transparent`                                        | its dampening below 15                                                                                                                                                                                               |
+| `diggable`                                           | a hardness of 0 or more, and not a liquid                                                                                                                                                                            |
+| `stackSize`                                          | its item's (a block id below 256 is its item's; another's item is 255 minus it), else the item of its name's                                                                                                         |
+| `material`, `harvestTools`                           | what each item digs it at, and which items harvest it where it needs the right tool (below)                                                                                                                          |
+| `defaultState`, `minStateId`, `maxStateId`           | runtime ids: blockStates.json's indexes                                                                                                                                                                              |
+| `drops`                                              | every item the game drops for any of its states, mined with an empty hand (a data-driven block's: its loot tables'); none where it cannot be dug                                                                     |
+| `boundingBox`                                        | `empty` where its default state collides with nothing                                                                                                                                                                |
 
 A drop with a data value is `{ drop: { id, metadata } }`: the data value a client is sent (from 1.16.220, where a
 creative stack names the block it places, a block item's own data value; before, the data of the block it carries).
@@ -138,8 +138,8 @@ Every item of the registry by its runtime id, 2 spaces, each item's keys in the 
 writes that item's: `stackSize` and `maxDurability` (`Item::getMaxStackSize`, `Item::getMaxDamage`), `displayName` (its
 name as the game builds it, bedrock-data's `descriptionName`: "Bucket of Cod", "White Bed"; the key it builds translated
 by the language where the server's has none, the chemistry pack's; where no pack names it, an item no player can get
-(a technical block's, an old name the game still registers) in title case, and one the creative list has fails the
-run), `enchantCategories` (the names of its enchant slots: `["sword"]`, the books' `["all"]`), `repairWith`, `blockStateId` (the block state the creative list gives it, where it gives it one and no other),
+(a technical block's, an old name the game still registers) the version's committed file's name for it, else its name
+in title case, and one the creative list has fails the run), `enchantCategories` (the names of its enchant slots: `["sword"]`, the books' `["all"]`), `repairWith`, `blockStateId` (the block state the creative list gives it, where it gives it one and no other),
 `componentBased`, and from 1.21.60 `nbt` and `version` (as the item registry the server sends has them).
 minecraft-data's `schemas/items_schema.json` has Bedrock's `nbt` and `version` but no `componentBased`: `generate` adds
 it.
@@ -247,14 +247,15 @@ player must kill it. A drop gated on anything else (the killer, a variant, the t
 
 ### Against minecraft-data's earlier files
 
-- `displayName` is the game's: an item's as it builds it, a block's, biome's or entity's the language's; where nothing
-  names it (`moving_block`, `piston_arm_collision`, a biome before 1.26.20), the name in title case, not an earlier
-  file's.
+- `displayName` is the game's: an item's as it builds it, a block's, biome's or entity's the language's. Where nothing
+  names a block or an item (`lit_furnace`, a double slab, `planks` once the game split it), it is the version's
+  committed file's name (`Furnace`, `Oak Slab`, `Oak Planks`), else the name in title case (`moving_block`, a biome
+  before 1.26.20).
 - Ids are Bedrock's runtime ids: blocks' `BlockLegacy::mID`, items' and drops' the item registry's.
-- What bedrock-data reads from its Linux servers is Linux's (bedrock-data's README: Linux and Windows): from 1.21.42 to
-  1.26.10 the explosion resistance of 21 blocks (`4.2`, the Windows servers `4.2000003`), and the ids of some items
-  (spears, bundles, trial keys, the wind charge), which each platform numbers in its own order. The chests' collision
-  box is the Windows servers' (`0.95` high up to 1.26.10): the extractor writes a Linux server's shapes so.
+- What bedrock-data reads from its Linux servers is the Windows servers' where only the platform makes them differ
+  (bedrock-data's README: Linux and Windows): the chests' collision box (`0.95` high up to 1.26.10), the explosion
+  resistance of 21 blocks from 1.21.42 to 1.26.10 (`4.2000003`), and up to 1.26.30 the ids of the items a pack defines
+  (spears, bundles, trial keys, the wind charge): the extractor writes a Linux server's so.
 
 ## Workflows
 

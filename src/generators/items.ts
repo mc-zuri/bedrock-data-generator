@@ -3,8 +3,8 @@
 // - stackSize, and maxDurability where it wears out: Item::getMaxStackSize and Item::getMaxDamage;
 // - displayName: its name as the game builds it (bedrock-data's descriptionName: a stack of one of it), the key that
 //   builds translated by the language (any pack's) where the server's has none. One that no pack names is an item a
-//   player cannot get (a technical block's, an old name the game still registers: the game shows its key) in title
-//   case; one the creative list has fails;
+//   player cannot get (a technical block's, an old name the game still registers: the game shows its key): the version's
+//   committed file's name for it, else its name in title case; one the creative list has fails;
 // - enchantCategories: the names of the Item::getEnchantSlot slots it answers (all: the books; utils/enchantSlots.ts);
 // - repairWith: the items Item::isValidRepairItem takes;
 // - blockStateId: the block state the creative list gives it, where it gives it one;
@@ -16,7 +16,7 @@ import type { BedrockData, Items } from '../bedrockData.ts'
 import type { Generator } from './index.ts'
 import { itemEnchantCategories } from './utils/enchantSlots.ts'
 import { canonical, withoutNamespace } from './utils/json.ts'
-import { gameNameOf, inCommittedKeyOrder, ordered, strings, titleCase } from './utils/names.ts'
+import { committedNames, gameNameOf, inCommittedKeyOrder, ordered, strings, titleCase } from './utils/names.ts'
 
 export interface Item {
   id: number
@@ -51,9 +51,10 @@ function noName(build: string, item: { name: string; descriptionName: string }):
   throw new Error(`release/${build}: ${item.name}, in the creative list, has no name: the game builds '${item.descriptionName}', which no language pack has`)
 }
 
-function itemsJson(data: BedrockData, build: string): Item[] {
+function itemsJson(data: BedrockData, build: string, committed: (key: string) => string | undefined): Item[] {
   const { items, creative } = data.items(build)
   const lang = strings(data.language(build))
+  const committedName = committedNames(committed('items'))
   const blockStates = creativeBlockStates(creative)
   const obtainable = new Set(creative.map((c) => c.item))
   return items
@@ -64,7 +65,7 @@ function itemsJson(data: BedrockData, build: string): Item[] {
           id: item.id,
           stackSize: item.maxStackSize,
           name,
-          displayName: gameNameOf(lang, item) ?? (obtainable.has(item.name) ? noName(build, item) : titleCase(name)),
+          displayName: gameNameOf(lang, item) ?? (obtainable.has(item.name) ? noName(build, item) : (committedName.get(name) ?? titleCase(name))),
           blockStateId: blockStates.get(item.name),
           enchantCategories: itemEnchantCategories(item.enchantSlots, item.name),
           repairWith: item.repairItems.length ? item.repairItems.map(withoutNamespace) : undefined,
@@ -92,9 +93,9 @@ export const items: Generator = {
   key: 'items',
   after: ['entities', 'biomes', 'blockCollisionShapes', 'blockStates', 'blocks'],
   has: (data, build) => data.has(build, 'items', 'language'),
-  json(data, build) {
+  json(data, build, committed = () => undefined) {
     // 2 spaces, no final newline: as minecraft-data writes it
-    return JSON.stringify(itemsJson(data, build), null, 2)
+    return JSON.stringify(itemsJson(data, build, committed), null, 2)
   },
   format(json, committed) {
     return JSON.stringify(inCommittedKeyOrder(JSON.parse(json) as Item[], committed('items'), ORDER), null, 2)

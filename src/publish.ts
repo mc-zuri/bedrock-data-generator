@@ -176,7 +176,7 @@ export function publish(g: Generator, mcData: string, bedrock: Record<string, En
       continue
     }
 
-    const json = g.json(data, build)
+    const json = g.json(data, build, (key) => committed(v, key))
     const meaning = g.meaning(json)
     const changes: string[] = []
     let dir: string

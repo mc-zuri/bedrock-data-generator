@@ -38,8 +38,11 @@ export interface Generator {
   /** whether what bedrock-data has of `build` says what the file holds (always, where absent); where not, the version has no entry */
   says?(data: BedrockData, build: string): boolean
 
-  /** The version's minecraft-data file, made from `build`: what versions are compared by. */
-  json(data: BedrockData, build: string): string
+  /**
+   * The version's minecraft-data file, made from `build`: what versions are compared by. `committed` (a key's file as
+   * format() gets it) names what the game names nothing.
+   */
+  json(data: BedrockData, build: string, committed?: (key: string) => string | undefined): string
 
   /** What a minecraft-data file says, however it is written: equal for files that say the same. */
   meaning(json: string): string

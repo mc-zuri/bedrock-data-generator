@@ -225,3 +225,30 @@ void test("items.json: the game's name, its key translated where the server has 
   named({ 'minecraft:stone': 'tile.nothing.name' })
   assert.throws(run, /minecraft:stone, in the creative list, has no name: the game builds 'tile.nothing.name'/)
 })
+
+void test("blocks.json and items.json: what the game names nothing, the version's committed file's name for it, else its name in title case", () => {
+  const data = bedrockDataOf({ '1.21.0.03': { 'tile.stone.name': 'Stone' } })
+  withBlocks(data, '1.21.0.03', BLOCKS, ITEMS, [{ item: 'stone', blockState: 1 }])
+  const file = join(data, 'release', '1.21.0.03', 'items.json.gz')
+  const json = JSON.parse(gunzipSync(readFileSync(file)).toString('utf8')) as { items: { name: string; descriptionName: string }[] }
+  const unnamed: Record<string, string> = { 'minecraft:dirt': '', 'minecraft:stick': 'item.stick.name' }
+  json.items = json.items.map((i) => ({ ...i, descriptionName: unnamed[i.name] ?? i.descriptionName }))
+  writeFileSync(file, gzipSync(JSON.stringify(json)))
+  const committedFiles: Record<string, string> = {
+    blocks: JSON.stringify([{ name: 'dirt', displayName: 'Dirt Block' }]),
+    items: JSON.stringify([{ name: 'dirt', displayName: 'Coarse Dirt' }]),
+  }
+  const mcData = minecraftDataOf({ '1.21.0': { version: 'bedrock/1.21.0' } })
+  generate(mcData, { data: new BedrockData(data), pins: new Map(), committed: (_, key) => committedFiles[key] }, [blocks, items])
+
+  function names(key: string): Record<string, unknown> {
+    const out = JSON.parse(readFileSync(join(mcData, 'data', 'bedrock', '1.21.0', `${key}.json`), 'utf8')) as { name: string; displayName: string }[]
+    return Object.fromEntries(out.map((e) => [e.name, e.displayName]))
+  }
+
+  assert.equal(names('blocks').dirt, 'Dirt Block')
+  assert.equal(names('items').dirt, 'Coarse Dirt')
+  assert.equal(names('items').stick, 'Stick')
+  // the game's name over the committed one
+  assert.equal(names('blocks').stone, 'Stone')
+})
