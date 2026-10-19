@@ -147,13 +147,13 @@ it.
 
 ### blockCollisionShapes.json
 
-`blocks`: each block (no namespace) with one shape id per state, in runtime id order; `shapes`: each id's boxes
+`blocks`: each block (no namespace) with one shape id per state, in runtime id order, the blocks by numeric block id as
+`blocks.json` lists them (from bedrock-data, whatever else a run writes); `shapes`: each id's boxes
 (`[minX, minY, minZ, maxX, maxY, maxZ]`, each number the shortest decimal of its float32), 0 being none. Tabs, one block
 or shape a line, no final newline.
 
 A file is written in the form the checkout's committed file of the version gives it (`git show HEAD`), so that it
-differs from it only in what it says: the blocks in the order of the version's `blocks.json` where that names the same
-blocks (else runtime id order), each shape keeping its id in the committed table where the table holds most of the
+differs from it only in what it says: each shape keeping its id in the committed table where the table holds most of the
 shapes (a new one after its highest id; the table's shapes no block has any more stay), a block written as one id for
 all its states (`"web": 0`) kept so, and a block split one state a line kept so. Files are compared by what they say:
 each block's shapes, whatever the ids and order.

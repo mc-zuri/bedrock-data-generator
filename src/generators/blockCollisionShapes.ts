@@ -1,6 +1,6 @@
-// blockCollisionShapes.json: each block's shape id per state (runtime id order), and `shapes`: each id's boxes
-// ([minX, minY, minZ, maxX, maxY, maxZ]), 0 being none.
-import type { Box, BlockShapes } from '../bedrockData.ts'
+// blockCollisionShapes.json: each block's shape id per state (runtime id order), its blocks in blocks.json's order (by
+// the server's numeric block id), and `shapes`: each id's boxes ([minX, minY, minZ, maxX, maxY, maxZ]), 0 being none.
+import type { Box, BlockShapes, BlockTypes } from '../bedrockData.ts'
 import type { Generator } from './index.ts'
 import { f32, withoutNamespace } from './utils/json.ts'
 
@@ -18,8 +18,6 @@ interface CollisionShapes {
 
 /** How the checkout's committed file writes the version's blocks, both forms being valid minecraft-data. */
 interface Form {
-  /** the version's blocks.json order where it names the same blocks */
-  order: string[]
   /** the committed shape table: a shape keeps its id there while most of the shapes are in it */
   table: Map<number, Shape>
   /** blocks written as one shape id for all their states ("web": 0) */
@@ -36,34 +34,29 @@ function shapeKey(shape: Shape): string {
   return JSON.stringify(shortened(shape))
 }
 
-function blocksOf(shapes: BlockShapes): Block[] {
-  return shapes.blocks.map((b) => ({ name: withoutNamespace(b.name), states: b.states.map((s) => s.collision) }))
+// in blocks.json's order: by the numeric id, whatever else the run writes or the checkout has
+function blocksOf(shapes: BlockShapes, types: BlockTypes): Block[] {
+  const ids = new Map(types.blocks.map((b) => [b.name, b.id]))
+  return shapes.blocks
+    .map((b) => ({ name: withoutNamespace(b.name), states: b.states.map((s) => s.collision), id: ids.get(b.name) ?? Infinity }))
+    .sort((a, b) => a.id - b.id)
+    .map(({ name, states }) => ({ name, states }))
 }
 
-function plainForm(blocks: Block[]): Form {
-  return { order: blocks.map((b) => b.name), table: new Map(), asNumber: new Set(), multiline: new Set() }
+function plainForm(): Form {
+  return { table: new Map(), asNumber: new Set(), multiline: new Set() }
 }
 
-function committedForm(blocks: Block[], committed: (key: string) => string | undefined): Form {
-  const form = plainForm(blocks)
-  const blocksJson = committed('blocks')
-  const listed = blocksJson === undefined ? [] : (JSON.parse(blocksJson) as { name: string }[]).map((b) => b.name)
-  const names = new Set(form.order)
-
-  if (listed.length === names.size && listed.every((name) => names.has(name))) {
-    form.order = listed
-  }
-
+function committedForm(committed: (key: string) => string | undefined): Form {
   const text = committed('blockCollisionShapes')
 
   if (text === undefined) {
-    return form
+    return plainForm()
   }
 
   const { blocks: written, shapes } = JSON.parse(text) as CollisionShapes
 
   return {
-    order: form.order,
     table: new Map(Object.entries(shapes).map(([id, shape]) => [Number(id), shape])),
     asNumber: new Set(Object.keys(written).filter((name) => typeof written[name] === 'number')),
     multiline: new Set([...text.matchAll(/^\t\t"([^"]+)": \[$/gm)].map((m) => m[1])),
@@ -80,9 +73,8 @@ function keptTableIds(blocks: Block[], table: Map<number, Shape>): Map<string, n
 }
 
 // 0 is no box. A shape keeps its id from the committed table, a new one goes after the table's highest id; without
-// a table every id is numbered as met, in `form.order`. The table's shapes no block has any more stay.
+// a table every id is numbered as met, in the blocks' order. The table's shapes no block has any more stay.
 function collisionJson(blocks: Block[], form: Form): string {
-  const byName = new Map(blocks.map((b) => [b.name, b.states]))
   const keptIds = keptTableIds(blocks, form.table)
   const shapes: Record<number, Shape> = { 0: [] }
   const ids = new Map([['[]', 0]])
@@ -103,8 +95,8 @@ function collisionJson(blocks: Block[], form: Form): string {
 
   const out: Record<string, number | number[]> = {}
 
-  for (const name of form.order) {
-    const stateIds = (byName.get(name) ?? []).map(shapeId)
+  for (const { name, states } of blocks) {
+    const stateIds = states.map(shapeId)
     out[name] = form.asNumber.has(name) && stateIds.every((id) => id === stateIds[0]) ? stateIds[0] : stateIds
   }
 
@@ -182,14 +174,12 @@ function collisionJsonText(file: CollisionShapes, multiline: ReadonlySet<string>
 export const blockCollisionShapes: Generator = {
   key: 'blockCollisionShapes',
   after: ['blockStates', 'blocks', 'attributes'],
-  has: (data, build) => data.hasBlockShapes(build),
+  has: (data, build) => data.hasBlockShapes(build) && data.has(build, 'blocks'),
   json(data, build) {
-    const blocks = blocksOf(data.blockShapes(build))
-    return collisionJson(blocks, plainForm(blocks))
+    return collisionJson(blocksOf(data.blockShapes(build), data.blocks(build)), plainForm())
   },
   format(json, committed) {
-    const blocks = blocksOfJson(json)
-    return collisionJson(blocks, committedForm(blocks, committed))
+    return collisionJson(blocksOfJson(json), committedForm(committed))
   },
   meaning(json) {
     // the block order and the shape ids are only how a file is written; a block written as one id is compared as written

@@ -41,13 +41,18 @@ export function minecraftDataOf(bedrock: Record<string, Record<string, string>>,
   return root
 }
 
-/** `build` of the bedrock-data checkout at `root` given block shapes: each block's states' collision boxes. */
-export function withBlockShapes(root: string, build: string, blocks: Record<string, number[][][]>): void {
+/**
+ * `build` of the bedrock-data checkout at `root` given block shapes, each block's states' collision boxes in runtime id
+ * order, and the blocks' numeric ids (`ids`, else their runtime order).
+ */
+export function withBlockShapes(root: string, build: string, blocks: Record<string, number[][][]>, ids: Record<string, number> = {}): void {
   const dir = join(root, 'release', build)
   const file = join(dir, 'build.json')
   const json = JSON.parse(readFileSync(file, 'utf8')) as { data?: Record<string, unknown> }
-  json.data = { ...json.data, blockShapes: { file: 'block_shapes.json.gz', from: 'linux' } }
+  json.data = { ...json.data, blockShapes: { file: 'block_shapes.json.gz', from: 'linux' }, blocks: { file: 'blocks.json.gz', from: 'linux' } }
   writeFileSync(file, JSON.stringify(json))
+  const types = { blocks: Object.keys(blocks).map((name, i) => ({ name: `minecraft:${name}`, id: ids[name] ?? i })), lootTables: {} }
+  writeFileSync(join(dir, 'blocks.json.gz'), gzipSync(JSON.stringify(types)))
   const cube = [0, 0, 0, 1, 1, 1]
   const shapes = {
     blocks: Object.entries(blocks).map(([name, states]) => ({

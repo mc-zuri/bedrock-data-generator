@@ -75,7 +75,6 @@ export function generatorsOf(keys: string[]): Generator[] {
   return generators.filter((g) => wanted.includes(g.key))
 }
 
-// blockCollisionShapes after blocks: it writes its blocks in the order of the version's blocks.json
 export const generators: Generator[] = [
   attributes,
   blocks,
