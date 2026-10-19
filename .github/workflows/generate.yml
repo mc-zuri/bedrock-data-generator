@@ -62,7 +62,8 @@ jobs:
           FORK: ${{ vars.MINECRAFT_DATA_FORK }}
           BEDROCK_DATA_REPO: ${{ vars.BEDROCK_DATA_REPO }}
         run: |
-          git add data
+          # the files and the schemas the generators widen to take them
+          git add data schemas
           if git diff --cached --quiet; then
             echo 'minecraft-data already says what bedrock-data does'
             exit 0
