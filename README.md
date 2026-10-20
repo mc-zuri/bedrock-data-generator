@@ -263,8 +263,10 @@ player must kill it. A drop gated on anything else (the killer, a variant, the t
   covers versions minecraft-data adds), on each push here, by hand, and by bedrock-data's notify-generator workflow on
   each commit there that changes a release, where that has a token to run it with. It generates into a fresh clone
   of upstream master, runs minecraft-data's `tools/js` tests, and force-pushes the result as one commit on the fork's
-  `bedrock-data-sync` branch, only where that commit changes something the branch does not already carry. Opening the
-  pull request to PrismarineJS is left to a person.
+  `bedrock-data-sync` branch, only where that commit changes something the branch does not already carry. Run by hand
+  with `base`, it generates onto that branch of the fork instead and pushes `bedrock-data-sync-on-<base>`
+  (`gh workflow run generate -f base=data`: what changed since the pull request's files). Opening the pull request to
+  PrismarineJS is left to a person.
 - [CI](.github/workflows/ci.yml): `pnpm verify` and `pnpm test`.
 
 They need:

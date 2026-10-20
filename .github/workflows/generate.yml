@@ -1,8 +1,10 @@
 # minecraft-data regenerated from bedrock-data, as a branch of the fork: every 6 hours, half an hour after the
 # extractor's track (and for versions minecraft-data adds on its own), on each push here, and by bedrock-data's
 # notify-generator workflow where that has a token to run it with. The branch is upstream master and one commit; it is
-# pushed only where that commit changes something the fork's branch does not already carry. Opening the pull request
-# is left to a person.
+# pushed only where that commit changes something the fork's branch does not already carry. Run by hand with a base,
+# it is that branch of the fork and one commit, pushed as bedrock-data-sync-on-<base> (data: the files of the pull
+# request open to PrismarineJS, so the branch says only what changed since). Opening the pull request is left to a
+# person.
 name: generate
 
 on:
@@ -12,6 +14,10 @@ on:
         description: 'The bedrock-data commit (or branch) to generate from'
         required: false
         default: main
+      base:
+        description: "The fork's branch to generate onto (data: the pull request's files); empty: upstream master"
+        required: false
+        default: ''
   schedule:
     - cron: '47 */6 * * *'
   push:
@@ -32,9 +38,19 @@ jobs:
       MINECRAFT_DATA_DIR: minecraft-data
       # the files generated (.env.example); unset, those of the pull request open to PrismarineJS
       GENERATE: ${{ vars.GENERATE }}
-      SYNC_BRANCH: bedrock-data-sync
+      BASE: ${{ inputs.base }}
+      SYNC_BRANCH: ${{ inputs.base && format('bedrock-data-sync-on-{0}', inputs.base) || 'bedrock-data-sync' }}
     steps:
       - uses: actions/checkout@v5
+      # where it is there, generate writes into it, not into a clone of upstream master
+      - name: Check out the fork's base branch
+        if: env.BASE != ''
+        uses: actions/checkout@v5
+        with:
+          repository: ${{ vars.MINECRAFT_DATA_FORK }}
+          ref: ${{ env.BASE }}
+          path: minecraft-data
+          persist-credentials: false
       - name: Check out bedrock-data
         uses: actions/checkout@v5
         with:
