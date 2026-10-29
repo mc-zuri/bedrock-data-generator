@@ -105,7 +105,7 @@ void test('a bedrock-data checkout of another formatVersion is refused', () => {
 void test("the files generated: those named, all, or where none are, the pull request's", () => {
   assert.deepEqual(
     generatorsOf([]).map((g) => g.key),
-    ['blocks', 'blockStates', 'blockCollisionShapes', 'items', 'materials'],
+    ['blocks', 'blockStates', 'blockCollisionShapes', 'blockSelectionShapes', 'biomes', 'items', 'materials'],
   )
   assert.deepEqual(
     generatorsOf(['language', 'blocks']).map((g) => g.key),

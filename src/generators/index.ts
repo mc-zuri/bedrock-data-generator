@@ -6,6 +6,7 @@ import { attributes } from './attributes.ts'
 import { biomes } from './biomes.ts'
 import { blockCollisionShapes } from './blockCollisionShapes.ts'
 import { blockLoot } from './blockLoot.ts'
+import { blockSelectionShapes } from './blockSelectionShapes.ts'
 import { blocks } from './blocks.ts'
 import { blockStates } from './blockStates.ts'
 import { commands } from './commands.ts'
@@ -59,7 +60,7 @@ export interface Generator {
 }
 
 /** What `pnpm generate` writes where neither it nor GENERATE names files: those of the pull request open to PrismarineJS */
-export const DEFAULT_KEYS = ['blocks', 'blockStates', 'blockCollisionShapes', 'materials', 'items']
+export const DEFAULT_KEYS = ['blocks', 'blockStates', 'blockCollisionShapes', 'blockSelectionShapes', 'materials', 'items', 'biomes']
 
 /** The generators of `keys` (`all`: every one; none: DEFAULT_KEYS'), in the order they run */
 export function generatorsOf(keys: string[]): Generator[] {
@@ -83,6 +84,7 @@ export const generators: Generator[] = [
   blocks,
   blockStates,
   blockCollisionShapes,
+  blockSelectionShapes,
   biomes,
   entities,
   items,

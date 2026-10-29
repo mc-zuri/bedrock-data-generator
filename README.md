@@ -23,7 +23,7 @@ Set `MINECRAFT_DATA_FORK` to your fork URL if needed.
 ```sh
 pnpm generate                  # configured files, or the five defaults below
 pnpm generate language recipes # only these generators
-pnpm generate all              # all 22 generators
+pnpm generate all              # all 23 generators
 pnpm status                    # versions, source builds and output paths
 ```
 
@@ -43,10 +43,11 @@ This selection also applies to the sync workflow unless its `GENERATE` repositor
 | `blocks.json`               | Block properties, drops and harvest tools             | Yes             |
 | `blockStates.json`          | Global block state palette                            | Yes             |
 | `blockCollisionShapes.json` | Collision boxes for each block state                  | Yes             |
+| `blockSelectionShapes.json` | Selection (outline) box of each block state           | Yes             |
 | `materials.json`            | Tool mining speeds by material                        | Yes             |
 | `items.json`                | Item registry, stack sizes, durability and components | Yes             |
 | `attributes.json`           | Joining player's attributes                           | No              |
-| `biomes.json`               | Biome IDs, climate and properties                     | No              |
+| `biomes.json`               | Biome IDs, climate and properties                     | Yes             |
 | `entities.json`             | Entity IDs, dimensions and categories                 | No              |
 | `foods.json`                | Nutrition and saturation                              | No              |
 | `recipes.json`              | Crafting grid recipes                                 | No              |
