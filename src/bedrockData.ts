@@ -1,5 +1,4 @@
-// A bedrock-data checkout, read as its README says (formatVersion 1). Only its releases are read: a preview is kept
-// there by its downloads alone.
+// A bedrock-data checkout, read as its README says (formatVersion 1). Only its releases are read, never its previews.
 import nbt from 'prismarine-nbt'
 import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'

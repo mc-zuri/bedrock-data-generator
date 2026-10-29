@@ -168,6 +168,19 @@ ${nbt}`,
   )
 })
 
+void test('blocks_schema.json says blocks are unique by their ids, items_schema.json items by their names, once', () => {
+  // the top of each as minecraft-data's schemas have it
+  const cases = [
+    [blocks, '  "type": "array",\n  "uniqueItems": true,\n  "uniqueItemProperties": ["id"],\n', '  "type": "array",\n  "uniqueItemProperties": ["id"],\n'],
+    [items, '  "type": "array",\n  "uniqueItems": true,\n  "items" : {\n', '  "type": "array",\n  "uniqueItemProperties": ["name"],\n  "items" : {\n'],
+  ] as const
+
+  for (const [g, before, after] of cases) {
+    assert.equal(g.schema?.edit(before), after, g.key)
+    assert.equal(g.schema?.edit(after), after, `${g.key}, edited again`)
+  }
+})
+
 void test('enchantments.json: each enchantment by its id, its costs a line in the level, its weight by its frequency', () => {
   assert.deepEqual(generated([enchantments], 'enchantments'), [
     {

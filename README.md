@@ -70,7 +70,7 @@ Files go into `data/bedrock/<version>/` inside the minecraft-data checkout, with
 - Versions use the exact builds pinned in [versions.json](versions.json), otherwise the newest release build with the same major.minor.patch. Previews are excluded.
 - Only existing minecraft-data versions are updated. Missing source data keeps the existing output; an explicitly empty source can remove its entry, such as unavailable instruments.
 - Identical data shares the previous version's file. Unreferenced generated files are removed, and rerunning with the same inputs changes nothing.
-- Generators update schemas where needed to represent Bedrock data. Block and item IDs come from Bedrock; translations preserve embedded `=` and `#` that older minecraft-data files truncated.
+- Generators update schemas where needed to represent Bedrock data. Blocks are checked unique by ID and items by name rather than by Ajv's `uniqueItems`, which compares every entry with every other and pushes minecraft-data's test suite past its 40-second limit. Block and item IDs come from Bedrock; translations preserve embedded `=` and `#` that older minecraft-data files truncated.
 
 See [bedrock-data's README](https://github.com/mc-zuri/bedrock-data#format) for source formats and
 [minecraft-data's Bedrock documentation](https://github.com/PrismarineJS/minecraft-data/blob/master/doc/bedrock.md) for downstream usage.

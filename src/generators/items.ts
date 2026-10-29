@@ -88,6 +88,13 @@ const COMPONENT_BASED = `      "componentBased": {
         "type": "boolean"
       },
 `
+// unique names for uniqueItems: Ajv compares every item with every other, 85 ms a Bedrock file in a suite that must
+// finish in 40 s. Not ids: minecraft-data's audit_blockitems.js adds to the items it loads, before they are checked, an
+// item of each block no item names, with the block's id.
+const EVERY_ITEM_UNIQUE = `  "type": "array",
+  "uniqueItems": true,`
+const UNIQUE_NAMES = `  "type": "array",
+  "uniqueItemProperties": ["name"],`
 
 export const items: Generator = {
   key: 'items',
@@ -101,5 +108,8 @@ export const items: Generator = {
     return JSON.stringify(inCommittedKeyOrder(JSON.parse(json) as Item[], committed('items'), ORDER), null, 2)
   },
   meaning: canonical,
-  schema: { file: 'items_schema.json', edit: (text) => (text.includes('"componentBased"') ? text : text.replace(NBT, COMPONENT_BASED + NBT)) },
+  schema: {
+    file: 'items_schema.json',
+    edit: (text) => (text.includes('"componentBased"') ? text : text.replace(NBT, COMPONENT_BASED + NBT)).replace(EVERY_ITEM_UNIQUE, UNIQUE_NAMES),
+  },
 }

@@ -190,6 +190,11 @@ const ANY_DROP_ID = `"id": {
                             "description": "The dropped item's id (Bedrock edition also uses negative ids)",
                             "type": "integer"
                           },`
+// Ajv's uniqueItems compares every block with every other, 50 ms a Bedrock file in a suite that must finish in 40 s;
+// unique ids already make every block unique
+const EVERY_BLOCK_UNIQUE = `  "uniqueItems": true,
+  "uniqueItemProperties": ["id"],`
+const UNIQUE_IDS = `  "uniqueItemProperties": ["id"],`
 
 export const blocks: Generator = {
   key: 'blocks',
@@ -200,5 +205,5 @@ export const blocks: Generator = {
     return JSON.stringify(blocksJson(data, build, committed), null, 2)
   },
   meaning: canonical,
-  schema: { file: 'blocks_schema.json', edit: (text) => text.replace(DROP_ID, ANY_DROP_ID) },
+  schema: { file: 'blocks_schema.json', edit: (text) => text.replace(DROP_ID, ANY_DROP_ID).replace(EVERY_BLOCK_UNIQUE, UNIQUE_IDS) },
 }
